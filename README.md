@@ -35,6 +35,7 @@ yarn install
 This command installs all necessary dependencies for the entire monorepo, leveraging Yarn's efficient dependency management system.
 
 ### Serve an Application
+
 To start a development server for a specific application with Nx and Yarn, use the following command. For a web application, run:
 
 ```bash
@@ -42,6 +43,7 @@ yarn nx serve web-app-name
 ```
 
 Or, for a mobile application (make sure you have the necessary mobile development environment set up):
+
 ```bash
 nx serve mobile-app-name
 ```
@@ -49,6 +51,7 @@ nx serve mobile-app-name
 Yarn will manage the dependencies, while Nx efficiently orchestrates the build and serve processes.
 
 ### Explore the Workspace
+
 **Apps**: Located in /apps, this directory contains individual applications. Utilize Nx commands to generate and manage these applications efficiently.
 **Libraries**: Shared code libraries are found in /libs. They can be utilized across applications within the workspace, facilitated by Yarn and Nx for dependency management and modular development.
 
