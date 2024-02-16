@@ -10,5 +10,55 @@
     ],
     "sharedGlobals": []
   },
+  "workspaceLayout": {
+    "libsDir": "libs",
+    "appsDir": "apps"
+  },
+  "release": {
+    "version": {
+      "conventionalCommits": true
+    },
+    "projectsRelationship": "independent"
+  },
+  "generators": {
+    "nx/react": {
+      "application": {
+        "style": "css",
+        "babel": false,
+        "e2eTestRunner": "playwright"
+      },
+      "library": {
+        "unitTestRunner": "vitest",
+        "bundler": "vite"
+      }
+    },
+    "nx/angular": {
+      "application": {
+        "style": "css",
+        "strict": true,
+        "linter": "eslint",
+        "unitTestRunner": "jest",
+        "e2eTestRunner": "playwright"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint",
+        "unitTestRunner": "jest",
+        "buildable": true
+      }
+    },
+    "nx/nest": {
+      "application": {
+        "unitTestRunner": "jest",
+        "e2eTestRunner": "jest",
+        "strict": true
+      },
+      "library": {
+        "unitTestRunner": "jest",
+        "buildable": true,
+        "strict": true
+      }
+    }
+  },
   "nxCloudAccessToken": "YjI2OTcwZmEtNTZjYi00ZGViLWI2ZmMtOThhOWNiZmM5ODhhfHJlYWQtd3JpdGU="
 }
