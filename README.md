@@ -16,8 +16,8 @@ Jump into NexaNode development with these steps:
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/yourusername/NexaNode.git
-cd NexaNode
+git clone https://github.com/NexaNode-dev/nexanode.git
+cd nexanode
 ```
 
 ## Getting Started
