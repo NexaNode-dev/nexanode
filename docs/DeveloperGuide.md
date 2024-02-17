@@ -4,7 +4,7 @@ Welcome to the NexaNode Developer Guide! This document provides an overview of o
 
 ## General Development Approach
 
-At NexaNode, we strive for clean, maintainable, and efficient code. We encourage contributions that align with these principles and our architectural decisions described in [ARCHITECTURE.md](ARCHITECTURE.md).
+At NexaNode, we strive for clean, maintainable, and efficient code. We encourage contributions that align with these principles and our architectural decisions described in [ARCHITECTURE.md](../ARCHITECTURE.md).
 
 ### Key Principles
 
