@@ -65,6 +65,28 @@ Our development workflow emphasizes collaboration, code quality, and continuous 
 - **Testing:** Comprehensive testing is essential. We aim for high test coverage across unit, integration, and end-to-end tests.
 - **CI/CD:** Utilize continuous integration and deployment to automate testing and deployment processes, ensuring reliable application updates.
 
+## Code Formatting with Prettier
+
+Maintaining a consistent code style across our entire codebase is crucial for readability, maintainability, and reducing merge conflicts. To achieve this, we leverage Prettier, an opinionated code formatter that supports many languages and integrates well with most editors.
+
+### Importance of Using Prettier
+
+- **Consistency:** Prettier ensures that all developers contributing to the project follow the same set of formatting rules, leading to a more uniform codebase.
+- **Efficiency:** Automating code formatting with Prettier allows developers to focus on the logic and functionality of their code rather than its appearance.
+- **Reduced Merge Conflicts:** By standardizing the format of our code files, we minimize the potential for merge conflicts related to styling differences.
+
+### Best Practices
+
+- **Automate Formatting:** Utilize the pre-commit hooks set up by NX to automatically format staged files with Prettier before each commit. This ensures that all committed code adheres to our formatting standards without requiring manual intervention.
+- **Editor Integration:** Most IDEs and editors have plugins or built-in support for Prettier. Configure your editor to format files on save or use the format command frequently to keep your code consistently formatted.
+- **Code Reviews:** While reviewing code, avoid focusing on stylistic issues that Prettier can automatically fix. This allows reviewers and contributors to concentrate on the quality of the code itself.
+
+### Continuous Integration
+
+Our CI pipeline includes a step to check that all submitted code follows our formatting standards. If a pull request introduces code that is not properly formatted, it will be flagged automatically, and the contributor will be asked to format the code before merging.
+
+By adhering to these practices, we ensure that our project's code is clean, consistent, and easy to work with for all team members. Remember, writing code is not just about making it work but also about making it readable and maintainable for future you and others.
+
 ## Further Reading
 
 For more detailed guidance on specific development aspects, please explore the documentation in the `/docs` directory:
