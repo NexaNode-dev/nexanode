@@ -55,7 +55,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20
-          cache: 'yarn'
+          cache: "yarn"
       - run: yarn install --frozen-lockfile
       - uses: nrwl/nx-set-shas@v4
 
