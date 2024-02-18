@@ -69,9 +69,17 @@ Our development workflow emphasizes collaboration, code quality, and continuous 
 
 For more detailed guidance on specific development aspects, please explore the documentation in the `/docs` directory:
 
+- [Domain Interfaces](docs/domain-interfaces.md)
+- [Data Transfer Objects](docs/DTOs.md)
 - [Backend Data Access](docs/backend-data-access.md)
+- [Backend Application Layer](docs/backend-application-layer.md)
+- [Backend Presentation](docs/backend-presentation.md)
 - [Frontend Data Access](docs/frontend-data-access.md)
-- [State Management](docs/frontend-state-management.md)
+- [Frontend Feature](docs/frontend-feature.md)
+- [Frontend UI](docs/frontend-ui.md)
+- [Frontend State Management](docs/frontend-state.md)
+- [Backend Apps](docs/backend-app.md)
+- [Frontend Apps](docs/frontend-app.md)
 - [Testing Guidelines](docs/testing-guidelines.md)
 - [CI/CD Pipeline](docs/ci-cd-pipeline.md)
 

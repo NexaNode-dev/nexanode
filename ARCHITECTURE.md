@@ -30,6 +30,10 @@ The frontend structure is similarly organized to promote modularity and ease of 
 
 - **UI Libraries:** Focused on presentation, these libraries contain reusable UI components and styling definitions. They define the look and feel of the application, providing a consistent user experience across the application.
 
+## Test-Driven Development (TDD)
+
+Our project adopts Test-Driven Development (TDD) as a core practice to ensure high code quality and robustness. By writing tests before implementing features, we can clarify requirements, improve design, and facilitate refactoring. This approach is integrated into our development process across all features and components, encouraging thorough testing and documentation.
+
 ## DevOps and CI/CD
 
 NexaNode leverages **GitHub Actions** for Continuous Integration and Continuous Deployment (CI/CD), automating the workflow from code changes to deployment. This approach ensures that every commit is built and tested automatically, maintaining high code quality and enabling rapid deployment of new features and bug fixes.
