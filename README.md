@@ -57,7 +57,14 @@ Yarn will manage the dependencies, while Nx efficiently orchestrates the build a
 
 ### Documentation
 
-For comprehensive guides on utilizing NexaNode, detailed documentation, including Yarn and Nx command references, is available here: NexaNode Documentation.
+For more detailed information on our project architecture, getting started guides, contribution guidelines, and developer guides, please refer to the following documents:
+
+- [Architecture Overview](ARCHITECTURE.md) - Learn about the structure and design principles behind our project.
+- [Getting Started](GETTING_STARTED.md) - Step-by-step guide to set up your development environment and start contributing.
+- [Contributing Guidelines](CONTRIBUTING.md) - Information on how to contribute to the project, including code of conduct, commit message standards, and pull request processes.
+- [Developer Guide](docs/DeveloperGuide.md) - Comprehensive guide on our development practices, including coding standards, testing, and more.
+
+## Quick Start
 
 ### Contributing
 
