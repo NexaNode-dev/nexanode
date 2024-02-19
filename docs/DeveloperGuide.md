@@ -154,19 +154,19 @@ When making changes that affect multiple libraries within our project, we strive
 
 For more detailed guidance on specific development aspects, please explore the documentation in the `/docs` directory:
 
-- [Domain Interfaces](docs/domain-interfaces.md)
-- [Data Transfer Objects](docs/DTOs.md)
-- [Backend Data Access](docs/backend-data-access.md)
-- [Backend Application Layer](docs/backend-application-layer.md)
-- [Backend Presentation](docs/backend-presentation.md)
-- [Frontend Data Access](docs/frontend-data-access.md)
-- [Frontend Feature](docs/frontend-feature.md)
-- [Frontend UI](docs/frontend-ui.md)
-- [Frontend State Management](docs/frontend-state.md)
-- [Backend Apps](docs/backend-app.md)
-- [Frontend Apps](docs/frontend-app.md)
-- [Testing Guidelines](docs/testing-guidelines.md)
-- [CI/CD Pipeline](docs/ci-cd-pipeline.md)
+- [Domain Interfaces](domain-interfaces.md)
+- [Data Transfer Objects](DTOs.md)
+- [Backend Data Access](backend-data-access.md)
+- [Backend Application Layer](backend-application-layer.md)
+- [Backend Presentation](backend-presentation.md)
+- [Frontend Data Access](frontend-data-access.md)
+- [Frontend Feature](frontend-feature.md)
+- [Frontend UI](frontend-ui.md)
+- [Frontend State Management](frontend-state.md)
+- [Backend Apps](backend-app.md)
+- [Frontend Apps](frontend-app.md)
+- [Testing Guidelines](testing-guidelines.md)
+- [CI/CD Pipeline](ci-cd-pipeline.md)
 
 ## Need Help?
 
