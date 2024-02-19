@@ -87,6 +87,69 @@ Our CI pipeline includes a step to check that all submitted code follows our for
 
 By adhering to these practices, we ensure that our project's code is clean, consistent, and easy to work with for all team members. Remember, writing code is not just about making it work but also about making it readable and maintainable for future you and others.
 
+## Commit Message Guidelines
+
+We enforce a conventional commit message format that simplifies the creation of human and machine-readable commit histories. This format facilitates semantic versioning and simplifies the automation of changelog generation.
+
+### Conventional Commits
+
+A conventional commit message should be structured as follows:
+
+```
+<type>(<scope>): <description>
+```
+
+- **Type**: This indicates the purpose of the commit and its impact on the version number (based on semantic versioning). Common types include:
+
+  - `feat`: A new feature (minor version bump).
+  - `fix`: A bug fix (patch version bump).
+  - `docs`: Documentation changes.
+  - `style`: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).
+  - `refactor`: A code change that neither fixes a bug nor adds a feature.
+  - `perf`: A code change that improves performance.
+  - `test`: Adding missing tests or correcting existing tests.
+  - `chore`: Other changes that don't modify `src` or `test` files.
+
+- **Scope**: The scope could be anything specifying the place of the commit change (e.g., `users-data-access`). It provides additional contextual information on the impact of the change.
+
+- **Description**: A brief, imperative mood description of the change.
+
+### Example Commit Message
+
+```
+feat(users-data-access): add email verification flow
+```
+
+This message indicates that a new feature has been added to the `users-data-access` library, specifically an email verification flow.
+
+### Benefits of Conventional Commits
+
+- **Automated Semantic Versioning**: Using tools like [semantic-release](https://semantic-release.gitbook.io/), version numbers and changelogs can be automatically generated based on the commit messages.
+- **Improved Readability**: The structured format makes it easier to understand the nature and scope of changes at a glance.
+- **Facilitates Team Collaboration**: Enforces a standardized commit message format, making it easier for team members to follow along and understand the project's history.
+
+### Splitting Commits for Multi-Library Changes
+
+When making changes that affect multiple libraries within our project, we strive for clarity and manageability in our commit history. To achieve this, we recommend splitting the work into smaller, atomic commits that target specific libraries or areas of the project. This approach not only facilitates easier code review and potential rollback but also enhances the traceability of changes across the project.
+
+#### Guidelines for Splitting Commits:
+
+1. **Atomic Commits:** Each commit should encapsulate a complete and self-contained change to a single library or a specific area of the project. This makes the commit easier to understand, review, and, if necessary, revert without impacting unrelated parts of the project.
+
+2. **Descriptive Messages:** Use descriptive commit messages that clearly articulate the scope and nature of the changes. Include the library or area being affected and a brief description of what was done and why, if not immediately obvious.
+
+3. **Example Commit Messages:**
+
+   - `feat(users-data-access): optimize user data-fetching`
+   - `feat(articles-data-access): add batch request support`
+   - `feat(comments-data-access): implement caching to improve performance`
+
+   These messages clearly indicate the area affected by the changes and the nature of the improvement or feature added.
+
+4. **Cross-Reference Related Commits:** If your commits are part of a larger feature or refactor that spans multiple libraries, reference related commits or the overarching pull request in your commit messages or pull request descriptions. This helps maintain the context and relationships between changes.
+
+5. **Use Pull Requests for Comprehensive Changes:** For complex changes that require modifications across multiple libraries, encapsulate these changes within a single pull request. Use the pull request description to detail the scope of the changes, the libraries affected, and any relevant details that would aid in the review process.
+
 ## Further Reading
 
 For more detailed guidance on specific development aspects, please explore the documentation in the `/docs` directory:
