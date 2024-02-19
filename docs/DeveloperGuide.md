@@ -155,7 +155,7 @@ When making changes that affect multiple libraries within our project, we strive
 For more detailed guidance on specific development aspects, please explore the documentation in the `/docs` directory:
 
 - [Domain Interfaces](domain-interfaces.md)
-- [Data Transfer Objects](DTOs.md)
+- [Data Transfer Objects](dtos.md)
 - [Backend Data Access](backend-data-access.md)
 - [Backend Application Layer](backend-application-layer.md)
 - [Backend Presentation](backend-presentation.md)
