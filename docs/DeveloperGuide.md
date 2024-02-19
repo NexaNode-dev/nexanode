@@ -78,7 +78,7 @@ Maintaining a consistent code style across our entire codebase is crucial for re
 ### Best Practices
 
 - **Automate Formatting:** Utilize the `yarn nx format:write --uncomitted` command provided by NX to automatically format staged files with Prettier before each commit. This ensures that all committed code adheres to our formatting standards without requiring manual intervention.
-- **Editor Integration:** Most IDEs and editors have plugins or built-in support for Prettier. Configure your editor to format files on save or use the format command frequently to keep your code consistently formatted.
+- **Editor Integration:** Most IDEs and editors have plugins or built-in support for Prettier. Configure your editor to format files on save or use the format command frequently to keep your code consistently formatted. NX comes with Prettier configured, which should be sufficient.
 - **Code Reviews:** While reviewing code, avoid focusing on stylistic issues that Prettier can automatically fix. This allows reviewers and contributors to concentrate on the quality of the code itself.
 
 ### Continuous Integration
