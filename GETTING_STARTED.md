@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed on your system:
 NexaNode uses Yarn to manage its dependencies. To install them, run the following command in the root of your project directory:
 
 ```bash
-cd NexaNode
+yarn
 ```
 
 ## Running the Application
