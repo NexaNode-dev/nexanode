@@ -61,8 +61,8 @@ For more detailed information on our project architecture, getting started guide
 
 - [Architecture Overview](ARCHITECTURE.md) - Learn about the structure and design principles behind our project.
 - [Getting Started](GETTING_STARTED.md) - Step-by-step guide to set up your development environment and start contributing.
-- [Contributing Guidelines](CONTRIBUTING.md) - Information on how to contribute to the project, including code of conduct, commit message standards, and pull request processes.
-- [Developer Guide](docs/DeveloperGuide.md) - Comprehensive guide on our development practices, including coding standards, testing, and more.
+- [Contributing Guidelines](CONTRIBUTING.md) - Information on how to contribute to the project, including code of conduct and pull request processes.
+- [Developer Guide](docs/DeveloperGuide.md) - Comprehensive guide on our development practices, including coding standards, testing, commit message standards and more.
 
 ## Quick Start
 
