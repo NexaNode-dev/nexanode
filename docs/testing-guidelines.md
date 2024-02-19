@@ -24,8 +24,8 @@ Our tests follow the "Arrange-Act-Assert" (AAA) pattern:
 
 ## Testing Tools
 
-- For **Angular applications**, we use Jasmine and Karma for unit and integration tests. End-to-end tests are handled by Cypress.
-- For **React applications**, Jest is used for unit and integration testing, with React Testing Library to render components. Cypress is used for end-to-end testing.
+- For **Angular applications**, we use Jest for unit and integration tests. End-to-end tests are handled by Playwright.
+- For **React applications**, Vitest is used for unit and integration testing, with React Testing Library to render components. Playwright is used for end-to-end testing.
 - For **NestJS backend applications**, Jest is used for unit and integration tests.
 
 ## Continuous Integration
