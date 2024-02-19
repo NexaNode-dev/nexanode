@@ -24,7 +24,7 @@ We welcome new ideas to improve NexaNode. To submit a feature request:
 
 ## Pull Request Process
 
-1. **Fork the Repository** and create your branch from `main`.
+1. **Create your branch** from `main`.
 2. **Make your changes** following our coding conventions and write tests if applicable.
 3. **Run the tests** to ensure your changes don't introduce any new issues.
 4. **Update the documentation** to reflect your changes if necessary.
