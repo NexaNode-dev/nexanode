@@ -2,10 +2,6 @@
 
 We're thrilled that you're interested in contributing to NexaNode! This document provides guidelines for contributions to ensure a smooth collaboration process and maintain the quality of the project.
 
-## Code of Conduct
-
-NexaNode adheres to a code of conduct that applies to all project participants. By contributing, you are expected to uphold this code. Please read [Code of Conduct](CODE_OF_CONDUCT.md) before proceeding.
-
 ## Getting Started
 
 Before making your contribution, please set up your development environment. The [Getting Started Guide](GETTING_STARTED.md) provides detailed instructions on how to clone the repository, install dependencies, and start developing.
