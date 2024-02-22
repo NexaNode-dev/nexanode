@@ -1,1 +1,1 @@
-export * from './lib/domain-interfaces';
+export * from './lib/contact.interface';
