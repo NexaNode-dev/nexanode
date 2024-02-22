@@ -23,5 +23,6 @@ export default defineConfig({
       reportsDirectory: '../../../../coverage/libs/shared/domain/interfaces',
       provider: 'v8',
     },
+    passWithNoTests: true,
   },
 });
