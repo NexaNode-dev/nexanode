@@ -1,0 +1,26 @@
+{
+  "name": "domain-interfaces",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/domain/interfaces/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/domain/interfaces",
+        "main": "libs/shared/domain/interfaces/src/index.ts",
+        "tsConfig": "libs/shared/domain/interfaces/tsconfig.lib.json",
+        "assets": ["libs/shared/domain/interfaces/*.md"]
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["{options.reportsDirectory}"],
+      "options": {
+        "reportsDirectory": "../../../../coverage/libs/shared/domain/interfaces"
+      }
+    }
+  },
+  "tags": ["scope:domain", "type:interfaces"]
+}
