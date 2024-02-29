@@ -1,6 +1,6 @@
 {
   "name": "backend-contacts-data-access",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/shared/backend/contacts/data-access/src",
   "projectType": "library",
   "targets": {
