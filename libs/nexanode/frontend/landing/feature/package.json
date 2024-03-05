@@ -1,0 +1,12 @@
+{
+  "name": "@nexanode/frontend-nexanode-landing-feature",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^17.1.0",
+    "@angular/material": "~17.2.1",
+    "@angular/router": "~17.1.0",
+    "@nx/angular": "18.0.4"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}

@@ -26,6 +26,9 @@
       ],
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
+      ],
+      "@nexanode/frontend-nexanode-landing-feature": [
+        "libs/nexanode/src/index.ts"
       ]
     }
   },
