@@ -1,0 +1,20 @@
+{
+  "name": "backend-contacts-application",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/contacts/application/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/contacts/application",
+        "tsConfig": "libs/shared/backend/contacts/application/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/contacts/application/package.json",
+        "main": "libs/shared/backend/contacts/application/src/index.ts",
+        "assets": ["libs/shared/backend/contacts/application/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:application-layer", "domain:contacts"]
+}

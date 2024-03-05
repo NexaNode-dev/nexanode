@@ -15,8 +15,14 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/backend-contacts-application": [
+        "libs/shared/backend/contacts/application/src/index.ts"
+      ],
       "@nexanode/backend-contacts-data-access": [
         "libs/shared/backend/contacts/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-contacts-presentation": [
+        "libs/shared/backend/contacts/presentation/src/index.ts"
       ],
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
