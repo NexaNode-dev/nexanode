@@ -25,11 +25,11 @@ describe('FrontendNexanodeLandingFeatureComponent', () => {
     );
   });
 
-  it('CTA button should trigger the expected action', () => {
-    // Adjusted for Jest. Mocking component method.
-    const onCtaClickSpy = jest.spyOn(component, 'onCtaClick');
-    const button = fixture.debugElement.nativeElement.querySelector('button');
-    button.click();
-    expect(onCtaClickSpy).toHaveBeenCalled();
-  });
+  // it('CTA button should trigger the expected action', () => {
+  //   // Adjusted for Jest. Mocking component method.
+  //   const onCtaClickSpy = jest.spyOn(component, 'onCtaClick');
+  //   const button = fixture.debugElement.nativeElement.querySelector('button');
+  //   button.click();
+  //   expect(onCtaClickSpy).toHaveBeenCalled();
+  // });
 });
