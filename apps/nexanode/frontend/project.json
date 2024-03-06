@@ -4,24 +4,16 @@
   "projectType": "application",
   "prefix": "nexanode",
   "sourceRoot": "apps/nexanode/frontend/src",
-  "tags": [
-    "scope:frontend",
-    "type:app",
-    "domain:landing"
-  ],
+  "tags": ["scope:frontend", "type:app", "domain:landing"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/nexanode/frontend",
         "index": "apps/nexanode/frontend/src/index.html",
         "browser": "apps/nexanode/frontend/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/nexanode/frontend/tsconfig.app.json",
         "assets": [
           "apps/nexanode/frontend/src/favicon.ico",
