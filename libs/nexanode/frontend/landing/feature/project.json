@@ -1,7 +1,7 @@
 {
   "name": "frontend-nexanode-landing-feature",
   "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/nexanode/src",
+  "sourceRoot": "libs/nexanode/frontend/landing/feature/src",
   "prefix": "nexanode",
   "tags": [
     "scope:fronted",
@@ -15,15 +15,15 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/nexanode/ng-package.json",
-        "tailwindConfig": "libs/nexanode/tailwind.config.js"
+        "project": "libs/nexanode/frontend/landing/feature/ng-package.json",
+        "tailwindConfig": "libs/nexanode/frontend/landing/feature/tailwind.config.js"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/nexanode/tsconfig.lib.prod.json"
+          "tsConfig": "libs/nexanode/frontend/landing/feature/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/nexanode/tsconfig.lib.json"
+          "tsConfig": "libs/nexanode/frontend/landing/feature/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
