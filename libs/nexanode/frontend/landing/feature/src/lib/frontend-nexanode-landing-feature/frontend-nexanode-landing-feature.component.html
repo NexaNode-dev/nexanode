@@ -1,6 +1,6 @@
 <section
   class="hero bg-cover bg-center h-screen"
-  style="background-image: url('nexanode-hero.webp')"
+  style="background-image: url('assets/nexanode-hero.webp')"
 >
   <mat-toolbar color="primary" class="bg-opacity-50">
     <!-- Add toolbar content here -->
@@ -21,13 +21,8 @@
     </button>
   </div>
 </section>
-<mat-card
-  class="mx-auto my-12 p-8 bg-white shadow-lg max-w-4xl"
-  ngClass="tw-block"
->
-  <mat-card-title
-    class="text-2xl font-bold text-center text-gray-800"
-    ngClass="tw-mb-4"
+<mat-card class="mx-auto my-12 p-8 bg-white shadow-lg max-w-4xl mat-elevation-z8">
+  <mat-card-title class="text-4xl font-bold text-center text-gray-800"
     >About NexaNode</mat-card-title
   >
   <mat-card-content class="text-gray-600" ngClass="tw-text-lg">
@@ -86,11 +81,11 @@
       </p>
     </div>
 
-    <mat-grid-list cols="3" rowHeight="350px" ngClass="tw-block">
+    <mat-grid-list cols="2" rowHeight="420px">
       <mat-grid-tile ngClass="tw-block">
-        <mat-card ngClass="tw-block">
+        <mat-card ngClass="tw-block" class="h-full">
           <mat-card-header ngClass="tw-block">
-            <mat-card-title>Web Applications</mat-card-title>
+            <mat-card-title class="text-2xl">Web Applications</mat-card-title>
           </mat-card-header>
           <mat-card-content>
             Cutting-edge web apps built using Angular and React, delivering rich
@@ -98,9 +93,15 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
+      <mat-grid-tile ngClass="tw-block">
+        <img src="assets/webapps.webp" />
+      </mat-grid-tile>
 
       <mat-grid-tile ngClass="tw-block">
-        <mat-card ngClass="tw-block">
+        <img src="assets/mobapps.webp" />
+      </mat-grid-tile>
+      <mat-grid-tile ngClass="tw-block">
+        <mat-card ngClass="tw-block" class="h-full">
           <mat-card-header ngClass="tw-block">
             <mat-card-title>Mobile Applications</mat-card-title>
           </mat-card-header>
@@ -112,7 +113,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile ngClass="tw-block">
-        <mat-card ngClass="tw-block">
+        <mat-card ngClass="tw-block" class="h-full">
           <mat-card-header ngClass="tw-block">
             <mat-card-title>API Development</mat-card-title>
           </mat-card-header>
@@ -122,9 +123,15 @@
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
+      <mat-grid-tile>
+        <img src="assets/apis.webp" />
+      </mat-grid-tile>
 
+      <mat-grid-tile>
+        <img src="assets/cms.webp" />
+      </mat-grid-tile>
       <mat-grid-tile ngClass="tw-block">
-        <mat-card ngClass="tw-block">
+        <mat-card ngClass="tw-block" class="h-full">
           <mat-card-header ngClass="tw-block">
             <mat-card-title>NexaNode CMS</mat-card-title>
           </mat-card-header>
@@ -136,7 +143,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile ngClass="tw-block">
-        <mat-card ngClass="tw-block">
+        <mat-card ngClass="tw-block" class="h-full">
           <mat-card-header ngClass="tw-block">
             <mat-card-title>Microservices</mat-card-title>
           </mat-card-header>
@@ -145,6 +152,9 @@
             modular, maintainable, and independently scalable services.
           </mat-card-content>
         </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <img src="assets/microservices.webp" />
       </mat-grid-tile>
     </mat-grid-list>
   </div>
@@ -190,10 +200,10 @@
         <ul class="flex" ngClass="tw-flex">
           <!-- Insert social media links here -->
           <li class="mr-6" ngClass="tw-mr-6">
-            <a href="https://twitter.com/NexaNode_dev">X</a>
+            <a href="https://twitter.com/NexaNode_dev" target="_blank"><ng-icon name="bootstrapTwitterX"></ng-icon></a>
           </li>
           <li class="mr-6" ngClass="tw-mr-6">
-            <a href="https://linkedin.com/company/nexanode">LinkedIn</a>
+            <a href="https://linkedin.com/company/nexanode-dev" target="_blank"><ng-icon name="bootstrapLinkedin"></ng-icon></a>
           </li>
         </ul>
       </div>
