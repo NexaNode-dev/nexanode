@@ -1,0 +1,38 @@
+<div class="hero bg-cover bg-center h-screen flex items-start justify-center" style="background-image: url('/assets/hero.webp');">
+  <div class="text-center">
+    <h1 class="text-5xl text-teal-600 font-bold mb-4 pt-2 shadow-text ojuju-logo">Optimalist Consulting</h1>
+    <p class="text-2xl text-teal-700 mb-8 shadow-text ojuju-logo">Crafting robust data solutions for tomorrow's challenges</p>
+  </div>
+</div>
+<div class="services bg-gray-100 py-12">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-6">Our Services</h2>
+    <p class="text-xl text-center text-gray-600 mb-12">
+      Tailored data solutions to drive strategic decision-making and operational efficiency.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    @for (service of services; track $index) {
+      <div class="service-card p-6 bg-white shadow-xl rounded-lg text-center">
+        <h3 class="text-2xl font-semibold mb-4">{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    }
+    </div>
+  </div>
+</div>
+<footer class="footer bg-teal-700 text-white py-6">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="mb-4">
+      <h3 class="text-2xl font-bold">Optimalist Consulting</h3>
+      <p class="text-gray-400 text-md mt-2">Your blueprint for data excellence.</p>
+    </div>
+    <div class="footer-content mb-4">
+      <p>Contact us at: <a href="mailto:consulting@optimalist.me" class="text-blue-300 hover:underline">consulting&#64;optimalist.me</a></p>
+      <p>Call us: <a href="tel:+32473370598" class="text-blue-300 hover:underline">+32 473 370 598</a></p>
+    </div>
+    <div class="footer-legal">
+      <p class="text-gray-400 text-sm">&copy; 2021 Optimalist Consulting. All rights reserved.</p>
+      <p class="text-gray-400 text-sm mt-2">Privacy Policy | Terms of Use</p>
+    </div>
+  </div>
+</footer>

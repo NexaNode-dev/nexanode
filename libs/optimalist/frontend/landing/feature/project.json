@@ -1,0 +1,27 @@
+{
+  "name": "optimalist-frontend-landing-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/optimalist/frontend/landing/feature/src",
+  "prefix": "optimalist",
+  "tags": ["scope:frontend", "type:feature", "domain:optimalist"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/optimalist/frontend/landing/feature/ng-package.json",
+        "tailwindConfig": "libs/optimalist/frontend/landing/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/optimalist/frontend/landing/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/optimalist/frontend/landing/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
