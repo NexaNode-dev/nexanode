@@ -1,8 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&family=Oxygen:wght@300;400;700&display=swap');
+
 .hero {
   background-size: cover;
   background-position: center;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 500;
 }
 
 .shadow-text {
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.services h2 {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 400;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: .5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: transform .3s ease;
+}
+.service-card:hover {
+  transform: translateY(-5px);
 }
