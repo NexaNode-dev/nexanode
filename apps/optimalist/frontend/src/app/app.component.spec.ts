@@ -9,18 +9,9 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome optimalist-frontend',
-    );
-  });
-
-  it(`should have as title 'optimalist-frontend'`, () => {
+  it(`should have as title 'Optimalist Consulting'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('optimalist-frontend');
+    expect(app.title).toEqual('Optimalist Consulting');
   });
 });
