@@ -2,11 +2,12 @@
   "name": "@nexanode/optimalist-frontend-about-feature",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.1.0",
-    "@angular/core": "^17.1.0"
+    "@angular/core": "^17.1.0",
+    "@angular/router": "~17.1.0",
+    "@ng-icons/bootstrap-icons": "^27.2.0",
+    "@ng-icons/core": "^27.2.0",
+    "@nx/angular": "18.0.4"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
+  "dependencies": {},
   "sideEffects": false
 }

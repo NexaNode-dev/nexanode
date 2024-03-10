@@ -17,5 +17,5 @@ describe('OptimalistFrontendAboutFeatureComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });  
 });

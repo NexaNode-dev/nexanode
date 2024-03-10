@@ -20,4 +20,10 @@ describe('OptimalistFrontendLandingFeatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  // Add more tests according to the logic of optimalist-frontend-landing-feature.component.ts and optimalist-frontend-landing-feature.component.html
+
+  it('should render the services', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('Our Services');
+  });
 });
