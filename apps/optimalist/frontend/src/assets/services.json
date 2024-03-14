@@ -1,0 +1,50 @@
+[
+  {
+    "id": "data-architecture-and-strategy",
+    "title": "Data Architecture and Strategy",
+    "summary": "Crafting the blueprint for your data landscape to align with business objectives.",
+    "description": "This service focuses on developing a comprehensive data architecture that aligns with your company's goals and objectives, ensuring data consistency, quality, and accessibility across the organization. By analyzing current data systems and processes, we aim to design a scalable architecture that supports future growth and data-driven decision-making.",
+    "icon": "assets/data-architecture.svg",
+    "coverImage": "assets/covers/data-architecture.webp"
+  },
+  {
+    "id": "data-modelling",
+    "title": "Data Modelling",
+    "summary": "Designing structured data models that facilitate in-depth analysis and insights.",
+    "description": "Our data modeling service is designed to create efficient, structured data models that serve as the foundation for reliable analysis and business intelligence. By understanding your data needs and operational context, we design models that improve data quality, reduce redundancy, and enable advanced data analytics capabilities.",
+    "icon": "assets/data-modelling.svg",
+    "coverImage": "assets/covers/data-modelling.webp"
+  },
+  {
+    "id": "etl-elt",
+    "title": "ETL/ELT",
+    "summary": "Efficiently extracting, transforming, and loading data for optimized warehousing.",
+    "description": "Our ETL/ELT services streamline the process of integrating data from various sources into a centralized data warehouse. With a focus on efficiency and data integrity, we implement solutions that automate data extraction, transformation, and loading processes, facilitating timely and accurate data availability for reporting and analysis.",
+    "icon": "assets/elt.svg",
+    "coverImage": "assets/covers/elt-etl.webp"
+  },
+  {
+    "id": "data-governance",
+    "title": "Data Governance",
+    "summary": "Implementing frameworks to ensure data quality, security, and compliance.",
+    "description": "Data governance is crucial for maintaining data quality, security, and compliance with regulations. Our services establish clear governance frameworks and policies that define data ownership, data quality standards, and security protocols, ensuring your data assets are managed responsibly and effectively.",
+    "icon": "assets/data-governance.svg",
+    "coverImage": "assets/covers/data-governance.webp"
+  },
+  {
+    "id": "data-engineering",
+    "title": "Data Engineering",
+    "summary": "Building robust data pipelines for seamless data flow and integration.",
+    "description": "Our data engineering expertise enables us to build and maintain scalable data pipelines that support the seamless flow and integration of data across systems. By leveraging modern data processing frameworks and technologies, we ensure that your data is accessible, reliable, and ready for analysis.",
+    "icon": "assets/data-engineering.svg",
+    "coverImage": "assets/covers/data-engineering.webp"
+  },
+  {
+    "id": "data-science",
+    "title": "Data Science",
+    "summary": "Applying advanced analytics and machine learning to extract actionable insights.",
+    "description": "Our data science services utilize advanced analytics, statistical modeling, and machine learning techniques to uncover hidden patterns, correlations, and insights in your data. From predictive modeling to customer segmentation, we empower your organization to make data-driven decisions that drive growth and innovation.",
+    "icon": "assets/data-science.svg",
+    "coverImage": "assets/covers/data-science.webp"
+  }
+]

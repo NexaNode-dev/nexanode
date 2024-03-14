@@ -15,4 +15,11 @@ export const appRoutes: Route[] = [
         (m) => m.optimalistFrontendAboutFeatureRoutes,
       ),
   },
+  {
+    path: 'services/:id',
+    loadComponent: () =>
+      import('@nexanode/optimalist-frontend-services-feature').then(
+        (c) => c.DetailComponent,
+      ),
+  },
 ];

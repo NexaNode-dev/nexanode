@@ -1,0 +1,24 @@
+<!-- service-detail.component.html -->
+<div class="bg-gray-100 py-12 min-h-screen">
+  <div class="max-w-6xl mx-auto">
+    <!-- Card with Cover Image -->
+    <div class="bg-white shadow-lg overflow-hidden rounded-lg">
+      <div class="relative">
+        <!-- Cover Image -->
+        <img
+          [src]="service().coverImage"
+          alt="Cover Image"
+          class="w-full h-96 object-cover"
+        />
+      </div>
+      <div class="p-6">
+        <!-- Service Title -->
+        <h2 class="text-3xl font-bold text-teal-700 mb-4">
+          {{ service().title }}
+        </h2>
+        <!-- Service Description -->
+        <p class="text-gray-700 text-lg">{{ service().description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
