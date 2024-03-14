@@ -8,7 +8,7 @@ import {
 import { ServicesService } from '@nexanode/optimalist-frontend-services-data-access';
 import { computed, inject } from '@angular/core';
 
-interface IService {
+export interface IService {
   id: string;
   title: string;
   summary: string;
@@ -35,6 +35,7 @@ const initialState: ServicesState = {
 };
 
 export const ServicesStore = signalStore(
+  { providedIn: 'root' },
   withState(initialState),
   withMethods((store, servicesService = inject(ServicesService)) => ({
     async getServices() {
@@ -43,7 +44,7 @@ export const ServicesStore = signalStore(
       patchState(store, { loading: false, services });
     },
     async getServiceById(id: string) {
-      patchState(store, { loading: true });
+      //patchState(store, { loading: true });
       let service = store.services().find((s) => s.id === id);
       if (!service) {
         service = await servicesService.getServiceById(id);
@@ -53,13 +54,16 @@ export const ServicesStore = signalStore(
           selectedId: service?.id,
         }));
       } else {
-        patchState(store, { selectedId: service.id });
+        patchState(store, (state) => ({ ...state, selectedId: service?.id }));
       }
     },
   })),
-  withComputed((store) => ({
+  withComputed((state) => ({
     selectedService: computed(() =>
-      store.services().filter((s) => s.id === store.selectedId()),
+      state.services().find((s) => s.id === state.selectedId()),
+    ),
+    otherServices: computed(() =>
+      state.services().filter((s) => s.id !== state.selectedId()),
     ),
   })),
 );

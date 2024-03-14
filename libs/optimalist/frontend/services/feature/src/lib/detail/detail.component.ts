@@ -1,37 +1,25 @@
-import {
-  Component,
-  OnInit,
-  effect,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
-import { CommonModule, ViewportScroller } from '@angular/common';
-import { ServicesService } from '@nexanode/optimalist-frontend-services-data-access';
+import { Component, OnInit, inject, input } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { ServicesStore } from '@nexanode/optimalist-frontend-services-state';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'optimalist-services-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [RouterModule],
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css',
 })
 export class DetailComponent implements OnInit {
-  private servicesService = inject(ServicesService);
+  private store = inject(ServicesStore);
   id = input.required<string>();
-  service = signal<{
-    id: string;
-    title: string;
-    description: string;
-    coverImage: string;
-  }>({ id: '', title: '', description: '', coverImage: '' });
-  private serviceEffect = effect(async () => {
-    this.service.set(await this.servicesService.getServiceById(this.id()));
-  });
+  service = this.store.selectedService;
+  otherServices = this.store.otherServices;
 
-  constructor(private viweportScroller: ViewportScroller) {}
+  constructor(private viewportScroller: ViewportScroller) {}
 
   ngOnInit(): void {
-    this.viweportScroller.scrollToPosition([0, 0]);
+    this.viewportScroller.scrollToPosition([0, 0]);
+    this.store.getServiceById(this.id());
   }
 }
