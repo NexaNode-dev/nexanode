@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nexanode/optimalist-frontend-services-feature": [
-        "libs/optimalist/frontend/services/feature/src/index.ts"
-      ],
       "@nexanode/backend-contacts-application": [
         "libs/shared/backend/contacts/application/src/index.ts"
       ],
@@ -38,6 +35,12 @@
       ],
       "@nexanode/optimalist-frontend-services-data-access": [
         "libs/optimalist/frontend/services/data-access/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-services-feature": [
+        "libs/optimalist/frontend/services/feature/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-services-state": [
+        "libs/optimalist/frontend/services/state/src/index.ts"
       ]
     }
   },
