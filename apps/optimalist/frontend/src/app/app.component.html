@@ -1,3 +1,6 @@
+@if (router.url !== '/') {
+  <optimalist-navbar></optimalist-navbar>
+}
 <div class="flex flex-col min-h-screen">
   <main class="flex-grow bg-gray-100 shadow-lg">
     <router-outlet></router-outlet>
