@@ -4,9 +4,10 @@
   "peerDependencies": {
     "@angular/common": "^17.1.0",
     "@angular/core": "^17.1.0",
-    "@nexanode/optimalist-frontend-services-data-access": "0.0.1",
-    "@angular/router": "~17.1.0",
-    "@nx/angular": "18.0.4"
+    "@angular/router": "17.3.0",
+    "@nx/angular": "18.0.4",
+    "@nexanode/optimalist-frontend-services-state": "0.0.1",
+    "@nexanode/frontend-markdown-util-pipe": "0.0.1"
   },
   "dependencies": {},
   "sideEffects": false
