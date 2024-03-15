@@ -13,8 +13,4 @@ import { ServicesStore } from '@nexanode/optimalist-frontend-services-state';
 export class ListComponent {
   private store = inject(ServicesStore);
   services = this.store.services;
-
-  constructor() {
-    this.store.getServices();
-  }
 }

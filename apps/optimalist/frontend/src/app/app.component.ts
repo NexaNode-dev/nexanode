@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ServicesStore } from '@nexanode/optimalist-frontend-services-state';
 
 @Component({
   standalone: true,
@@ -10,4 +11,9 @@ import { RouterModule } from '@angular/router';
 })
 export class AppComponent {
   title = 'Optimalist Consulting';
+  store = inject(ServicesStore);
+
+  constructor() {
+    this.store.getServices();
+  }
 }
