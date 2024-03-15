@@ -22,7 +22,10 @@
     "version": {
       "conventionalCommits": true
     },
-    "projectsRelationship": "independent"
+    "projectsRelationship": "independent",
+    "changelog": {
+      "projectChangelogs": true
+    }
   },
   "generators": {
     "nx/react": {
