@@ -4,23 +4,16 @@
   "projectType": "application",
   "prefix": "optimalist",
   "sourceRoot": "apps/optimalist/frontend/src",
-  "tags": [
-    "scope:backend",
-    "type:application"
-  ],
+  "tags": ["scope:backend", "type:application"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/optimalist/frontend",
         "index": "apps/optimalist/frontend/src/index.html",
         "browser": "apps/optimalist/frontend/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/optimalist/frontend/tsconfig.app.json",
         "assets": [
           "apps/optimalist/frontend/src/favicon.ico",
