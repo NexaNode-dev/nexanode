@@ -1,11 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersRepository } from './users.repository';
 import { IUser } from '@nexanode/domain-interfaces';
-import { de, faker } from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 import { User } from './user.entity';
-import { get } from 'http';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import exp = require('constants');
 import { NotFoundException } from '@nestjs/common';
 
 describe('UsersRepository', () => {
@@ -31,18 +29,20 @@ describe('UsersRepository', () => {
     create: jest.fn().mockReturnValue(expectedUser),
     save: jest.fn().mockResolvedValue(expectedUser),
     preload: jest.fn().mockResolvedValue(expectedUser),
-    remove: jest.fn().mockResolvedValue(expectedUser),
+    remove: jest.fn().mockResolvedValue(expectedUser.id),
   };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [UsersRepository],
-    }).useMocker((token) => {
-      if (token === getRepositoryToken(User)) {
-        return mockRepository;
-      }
-      return;
-    }).compile();
+    })
+      .useMocker((token) => {
+        if (token === getRepositoryToken(User)) {
+          return mockRepository;
+        }
+        return;
+      })
+      .compile();
 
     provider = module.get<UsersRepository>(UsersRepository);
   });
@@ -63,14 +63,15 @@ describe('UsersRepository', () => {
     it('should return a single user', async () => {
       const result = await provider.findOne(expectedUser.id);
       expect(result).toEqual(expectedUser);
-      expect(mockRepository.findOne).toHaveBeenCalledWith(expectedUser.id);
+      expect(mockRepository.findOne).toHaveBeenCalledWith({
+        where: { id: expectedUser.id },
+      });
     });
     it('should throw a NotFoundException if no user is found', async () => {
-      mockRepository.findOne.mockRejectedValueOnce(undefined);
+      mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
         await provider.findOne(expectedUser.id);
-      }
-      catch (e) {
+      } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
     });
@@ -96,11 +97,10 @@ describe('UsersRepository', () => {
       expect(mockRepository.save).toHaveBeenCalledWith(expectedUser);
     });
     it('should throw a NotFoundException if no user is found', async () => {
-      mockRepository.preload.mockRejectedValueOnce(undefined);
+      mockRepository.preload.mockRejectedValueOnce(new NotFoundException());
       try {
         await provider.update(expectedUser.id, userData);
-      }
-      catch (e) {
+      } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
     });
@@ -109,15 +109,14 @@ describe('UsersRepository', () => {
   describe('delete', () => {
     it('should delete a user', async () => {
       const result = await provider.delete(expectedUser.id);
-      expect(result).toEqual(expectedUser);
+      expect(result).toEqual(expectedUser.id);
       expect(mockRepository.remove).toHaveBeenCalledWith(expectedUser);
     });
     it('should throw a NotFoundException if no user is found', async () => {
-      mockRepository.remove.mockRejectedValueOnce(undefined);
+      mockRepository.remove.mockRejectedValueOnce(new NotFoundException());
       try {
         await provider.delete(expectedUser.id);
-      }
-      catch (e) {
+      } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
     });
