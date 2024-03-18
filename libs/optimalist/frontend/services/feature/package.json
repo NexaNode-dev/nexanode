@@ -1,0 +1,14 @@
+{
+  "name": "@nexanode/optimalist-frontend-services-feature",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.1.0",
+    "@angular/core": "^17.1.0",
+    "@angular/router": "17.3.0",
+    "@nx/angular": "18.0.4",
+    "@nexanode/optimalist-frontend-services-state": "0.0.1",
+    "@nexanode/frontend-markdown-util-pipe": "0.0.1"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}

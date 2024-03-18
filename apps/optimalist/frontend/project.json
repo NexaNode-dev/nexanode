@@ -1,0 +1,71 @@
+{
+  "name": "optimalist-frontend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "optimalist",
+  "sourceRoot": "apps/optimalist/frontend/src",
+  "tags": ["scope:backend", "type:application"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/optimalist/frontend",
+        "index": "apps/optimalist/frontend/src/index.html",
+        "browser": "apps/optimalist/frontend/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/optimalist/frontend/tsconfig.app.json",
+        "assets": [
+          "apps/optimalist/frontend/src/favicon.ico",
+          "apps/optimalist/frontend/src/assets"
+        ],
+        "styles": [
+          "apps/optimalist/frontend/src/custom-theme.scss",
+          "apps/optimalist/frontend/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "optimalist-frontend:build:production"
+        },
+        "development": {
+          "buildTarget": "optimalist-frontend:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "optimalist-frontend:build"
+      }
+    }
+  }
+}

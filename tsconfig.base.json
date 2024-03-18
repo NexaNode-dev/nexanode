@@ -27,6 +27,27 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-markdown-util-pipe": [
+        "libs/shared/frontend/markdown/util/pipe/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-about-feature": [
+        "libs/optimalist/frontend/about/feature/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-landing-feature": [
+        "libs/optimalist/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-navbar-feature": [
+        "libs/optimalist/frontend/navbar/feature/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-services-data-access": [
+        "libs/optimalist/frontend/services/data-access/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-services-feature": [
+        "libs/optimalist/frontend/services/feature/src/index.ts"
+      ],
+      "@nexanode/optimalist-frontend-services-state": [
+        "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
       ]

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+
+.hero {
+  background-size: cover;
+  background-position: center;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 500;
+}
+
+.shadow-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}

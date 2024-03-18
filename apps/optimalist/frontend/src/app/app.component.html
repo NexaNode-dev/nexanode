@@ -1,0 +1,58 @@
+@if (router.url !== '/') {
+  <optimalist-navbar></optimalist-navbar>
+}
+<div class="flex flex-col min-h-screen">
+  <main class="flex-grow bg-gray-100 shadow-lg">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="footer bg-teal-700 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <div class="mb-4">
+        <h3 class="text-2xl font-bold">Optimalist Consulting</h3>
+        <p class="text-gray-300 text-md mt-2">
+          Your blueprint for data excellence.
+        </p>
+      </div>
+      <div class="footer-content mb-4">
+        <p>
+          Contact us at:
+          <a
+            href="mailto:consulting@optimalist.me"
+            class="text-teal-300 hover:text-teal-400 hover:underline"
+            >consulting&#64;optimalist.me</a
+          >
+        </p>
+        <p>
+          Call us:
+          <a
+            href="tel:+32473370598"
+            class="text-teal-300 hover:text-teal-400 hover:underline"
+            >+32 473 370 598</a
+          >
+        </p>
+        <p>
+          <a
+            href="/about"
+            class="text-teal-300 hover:text-teal-400 hover:underline"
+            >About us</a
+          >
+        </p>
+      </div>
+      <div class="footer-legal">
+        <p class="text-gray-300 text-sm">
+          &copy; 2021 Optimalist Consulting. All rights reserved.
+        </p>
+        <!--<p class="text-gray-300 text-sm mt-2">Privacy Policy | Terms of Use</p>-->
+      </div>
+      <div class="text-center text-sm p-4">
+        Crafted with <span class="text-teal-500">💙</span> by
+        <a
+          href="https://nexanode.dev"
+          target="_blank"
+          class="text-current underline"
+          >NexaNode</a
+        >
+      </div>
+    </div>
+  </footer>
+</div>

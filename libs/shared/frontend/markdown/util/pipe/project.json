@@ -1,0 +1,26 @@
+{
+  "name": "frontend-markdown-util-pipe",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/frontend/markdown/util/pipe/src",
+  "prefix": "nexanode",
+  "tags": ["scope:frontend", "type:util", "domain:markdown"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/frontend/markdown/util/pipe/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/frontend/markdown/util/pipe/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/frontend/markdown/util/pipe/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
