@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { RolesRepository } from './roles.repository';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Role } from './role.enity';
 
 @Module({
-  controllers: [],
+  imports: [TypeOrmModule.forFeature([Role])],
   providers: [RolesRepository],
-  exports: [],
+  exports: [RolesRepository, TypeOrmModule],
 })
 export class BackendRolesDataAccessModule {}
