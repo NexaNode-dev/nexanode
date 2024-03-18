@@ -18,4 +18,9 @@ describe('OptimalistFrontendAboutFeatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a title', () => {
+    const title = fixture.nativeElement.querySelector('h2');
+    expect(title.textContent).toContain('About Johan Vrolix');
+  });
 });
