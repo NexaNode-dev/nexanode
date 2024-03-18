@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponent } from 'ng-mocks';
 import { OptimalistFrontendLandingFeatureComponent } from './optimalist-frontend-landing-feature.component';
+import { ListComponent } from '@nexanode/optimalist-frontend-services-feature';
 
 describe('OptimalistFrontendLandingFeatureComponent', () => {
   let component: OptimalistFrontendLandingFeatureComponent;
@@ -7,7 +9,7 @@ describe('OptimalistFrontendLandingFeatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OptimalistFrontendLandingFeatureComponent],
+      imports: [OptimalistFrontendLandingFeatureComponent, MockComponent(ListComponent)],
     }).compileComponents();
 
     fixture = TestBed.createComponent(
@@ -20,10 +22,9 @@ describe('OptimalistFrontendLandingFeatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  // Add more tests according to the logic of optimalist-frontend-landing-feature.component.ts and optimalist-frontend-landing-feature.component.html
-
+  
   it('should render the services', () => {
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain('Our Services');
+    expect(compiled.querySelector('a').textContent).toContain('Our Services');
   });
 });
