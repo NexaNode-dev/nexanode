@@ -1,0 +1,31 @@
+{
+  "name": "optimalist-frontend-services-data-access",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/optimalist/frontend/services/data-access/src",
+  "prefix": "nexanode",
+  "tags": [
+    "scope:frontend",
+    "type:data-access",
+    "domain:services",
+    "app:optimalist"
+  ],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/optimalist/frontend/services/data-access/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/optimalist/frontend/services/data-access/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/optimalist/frontend/services/data-access/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

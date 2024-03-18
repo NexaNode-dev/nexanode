@@ -1,0 +1,27 @@
+{
+  "name": "optimalist-frontend-navbar-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/optimalist/frontend/navbar/feature/src",
+  "prefix": "optimalist",
+  "tags": ["scope:frontend", "type:feature", "domain:navbar"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/optimalist/frontend/navbar/feature/ng-package.json",
+        "tailwindConfig": "libs/optimalist/frontend/navbar/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/optimalist/frontend/navbar/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/optimalist/frontend/navbar/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}

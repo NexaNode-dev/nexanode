@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="/">Home</a>
+  <span class="flex-spacer"></span>
+  <mat-menu #servicesMenu="matMenu">
+    <button mat-menu-item routerLink="/services/data-architecture-and-strategy">
+      Data Architecture
+    </button>
+    <button mat-menu-item routerLink="/services/data-modelling">
+      Data Modelling
+    </button>
+    <button mat-menu-item routerLink="/services/etl-elt">ETL/ELT</button>
+    <button mat-menu-item routerLink="/services/data-governance">
+      Data Governance
+    </button>
+    <button mat-menu-item routerLink="/services/data-engineering">
+      Data Engineering
+    </button>
+    <button mat-menu-item routerLink="/services/data-science">
+      Data Science
+    </button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="servicesMenu">Services</button>
+  <a mat-button routerLink="/about">About</a>
+</mat-toolbar>
