@@ -47,6 +47,12 @@
       ],
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
+      "@nexanode/stoic-frontend-landing-feature": [
+        "libs/stoic/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/stoic-frontend-navbar-feature": [
+        "libs/stoic/frontend/navbar/feature/src/index.ts"
       ]
     }
   },
