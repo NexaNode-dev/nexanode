@@ -9,7 +9,9 @@ import {
 
 @Module({})
 export class BackendHashingUtilModule extends ConfigurableModuleClass {
-  constructor(@Inject(HASHING_MODULE_OPTIONS) private options: string | symbol) {
+  constructor(
+    @Inject(HASHING_MODULE_OPTIONS) private options: string | symbol,
+  ) {
     super();
   }
 
