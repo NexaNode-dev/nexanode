@@ -24,6 +24,9 @@
       "@nexanode/backend-contacts-presentation": [
         "libs/shared/backend/contacts/presentation/src/index.ts"
       ],
+      "@nexanode/backend-hashing-util": [
+        "libs/shared/backend/hashing/util/src/index.ts"
+      ],
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
