@@ -27,16 +27,14 @@
       "@nexanode/backend-roles-permissions-data-access": [
         "libs/shared/backend/roles-permissions/data-access/src/index.ts"
       ],
-<<<<<<< HEAD
       "@nexanode/backend-users-roles-data-access": [
         "libs/shared/backend/users-roles/data-access/src/index.ts"
-=======
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
       "@nexanode/backend-roles-data-access": [
         "libs/shared/backend/roles/data-access/src/index.ts"
->>>>>>> origin/main
       ],
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
