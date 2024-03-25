@@ -1,0 +1,20 @@
+{
+  "name": "backend-users-roles-data-access",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/users-roles/data-access/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/users-roles/data-access",
+        "tsConfig": "libs/shared/backend/users-roles/data-access/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/users-roles/data-access/package.json",
+        "main": "libs/shared/backend/users-roles/data-access/src/index.ts",
+        "assets": ["libs/shared/backend/users-roles/data-access/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:data-access", "domain:users-roles"]
+}
