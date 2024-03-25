@@ -1,0 +1,20 @@
+{
+  "name": "backend-permissions-data-access",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/permissions/data-access/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/permissions/data-access",
+        "tsConfig": "libs/shared/backend/permissions/data-access/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/permissions/data-access/package.json",
+        "main": "libs/shared/backend/permissions/data-access/src/index.ts",
+        "assets": ["libs/shared/backend/permissions/data-access/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:data-access", "domain:permissions"]
+}
