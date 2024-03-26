@@ -22,10 +22,13 @@
     "version": {
       "conventionalCommits": true
     },
-    "projectsRelationship": "independent"
+    "projectsRelationship": "independent",
+    "changelog": {
+      "projectChangelogs": true
+    }
   },
   "generators": {
-    "nx/react": {
+    "@nx/react": {
       "application": {
         "style": "css",
         "babel": false,
@@ -36,7 +39,7 @@
         "bundler": "vite"
       }
     },
-    "nx/angular": {
+    "@nx/angular": {
       "application": {
         "style": "css",
         "strict": true,
@@ -51,7 +54,7 @@
         "buildable": true
       }
     },
-    "nx/nest": {
+    "@nx/nest": {
       "application": {
         "unitTestRunner": "jest",
         "e2eTestRunner": "jest",
