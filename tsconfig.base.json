@@ -65,6 +65,9 @@
       ],
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
+      "@nexanode/frontend-nexanode-landing-feature": [
+        "libs/nexanode/frontend/landing/feature/src/index.ts"
       ]
     }
   },
