@@ -24,11 +24,32 @@
       "@nexanode/backend-contacts-presentation": [
         "libs/shared/backend/contacts/presentation/src/index.ts"
       ],
+      "@nexanode/backend-hashing-util": [
+        "libs/shared/backend/hashing/util/src/index.ts"
+      ],
+      "@nexanode/backend-permissions-data-access": [
+        "libs/shared/backend/permissions/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-roles-data-access": [
+        "libs/shared/backend/roles/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-roles-permissions-data-access": [
+        "libs/shared/backend/roles-permissions/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-users-data-access": [
+        "libs/shared/backend/users/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-users-roles-data-access": [
+        "libs/shared/backend/users-roles/data-access/src/index.ts"
+      ],
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
       "@nexanode/frontend-markdown-util-pipe": [
         "libs/shared/frontend/markdown/util/pipe/src/index.ts"
+      ],
+      "@nexanode/frontend-nexanode-landing-feature": [
+        "libs/nexanode/frontend/landing/feature/src/index.ts"
       ],
       "@nexanode/optimalist-frontend-about-feature": [
         "libs/optimalist/frontend/about/feature/src/index.ts"

@@ -1,0 +1,13 @@
+{
+  "name": "@nexanode/frontend-nexanode-landing-feature",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^17.1.0",
+    "@angular/router": "17.3.0",
+    "@nx/angular": "18.0.4",
+    "@ng-icons/core": "^27.2.0",
+    "@ng-icons/bootstrap-icons": "^27.2.0"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}
