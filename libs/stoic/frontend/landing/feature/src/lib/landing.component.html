@@ -1,36 +1,10 @@
-<!-- In je Angular hoofdcomponent template, bijvoorbeeld app.component.html -->
 <div class="flex flex-col">
-
-  <!-- Hero Section -->
   <stoic-hero />
-
-  <!-- Main Content Section voor grote schermen -->
-  <div class="hidden md:flex md:flex-grow">
-
-    <!-- Introduction Section -->
-    <stoic-intro class="md:w-1/3"></stoic-intro>
-
-    <!-- Virtues and Beliefs Section Container -->
-    <div class="md:w-2/3 flex flex-col">
+  <div class="flex flex-col md:flex-row">
+    <stoic-intro class="lg:w-1/5 xl:w-1/3"></stoic-intro>
+    <div class="lg:w-4/5 xl:w-2/3 flex flex-col">
       <stoic-virtues />
       <stoic-beliefs />
     </div>
-
   </div>
-
-  <!-- Main Content Section voor kleine schermen -->
-  <div class="flex flex-col md:hidden">
-
-    <!-- Introduction Section -->
-    <stoic-intro />
-
-    <!-- Virtues Section -->
-    <stoic-virtues />
-
-    <!-- Core Beliefs Section -->
-    <stoic-beliefs />
-
-  </div>
-
 </div>
-
