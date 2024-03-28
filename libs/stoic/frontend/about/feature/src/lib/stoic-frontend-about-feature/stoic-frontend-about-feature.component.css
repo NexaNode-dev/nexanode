@@ -7,7 +7,7 @@ mat-card {
     width: 50vw;
     margin: 1rem;
   }
-  background-color: theme(colors.blue.100);
+  background-color: theme(colors.primary.light);
 }
 
 mat-card-title {
