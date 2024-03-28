@@ -8,4 +8,11 @@ export const appRoutes: Route[] = [
         (m) => m.stoicFrontendLandingFeatureRoutes,
       ),
   },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('@nexanode/stoic-frontend-about-feature').then(
+        (m) => m.stoicFrontendAboutFeatureRoutes,
+      ),
+  }
 ];
