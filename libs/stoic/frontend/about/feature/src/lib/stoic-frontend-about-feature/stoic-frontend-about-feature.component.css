@@ -1,6 +1,7 @@
 mat-card {
   @media screen(sm) {
     width: 100vw;
+    margin-bottom: 1rem;
   }
   @media screen(md) {
     width: 50vw;
