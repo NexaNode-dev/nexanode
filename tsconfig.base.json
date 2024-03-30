@@ -30,6 +30,9 @@
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
+      "@nexanode/backend-rbac-util": [
+        "libs/shared/backend/rbac/util/src/index.ts"
+      ],
       "@nexanode/backend-roles-data-access": [
         "libs/shared/backend/roles/data-access/src/index.ts"
       ],
