@@ -32,13 +32,13 @@ describe('JwtAuth', () => {
     createdAt: faker.date.recent(),
     updatedAt: faker.date.recent(),
     loginExpires: faker.date.soon(),
-  }
+  };
 
   const userRoles = [
     {
       userId: expectedUser.id,
       roleId: faker.string.uuid(),
-    }
+    },
   ];
 
   const roles: IRole[] = [
@@ -47,14 +47,14 @@ describe('JwtAuth', () => {
       name: faker.commerce.department(),
       createdAt: faker.date.recent(),
       updatedAt: faker.date.recent(),
-    }
+    },
   ];
 
   const rolePermissions = [
     {
       roleId: roles[0].id,
       permissionId: faker.string.uuid(),
-    }
+    },
   ];
 
   const permissions: IPermission[] = [
@@ -65,7 +65,7 @@ describe('JwtAuth', () => {
       subject: faker.commerce.product(),
       createdAt: faker.date.recent(),
       updatedAt: faker.date.recent(),
-    }
+    },
   ];
 
   const mockUsersRepository = {
@@ -102,30 +102,32 @@ describe('JwtAuth', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [JwtAuth],
-    }).useMocker((token) => {
-      if (token === UsersRepository) {
-        return mockUsersRepository;
-      }
-      if (token === UsersRolesRepository) {
-        return mockUserRolesRepository;
-      }
-      if (token === RolesRepository) {
-        return mockRolesRepository;
-      }
-      if (token === RolesPermissionsRepository) {
-        return mockRolesPermissionsRepository;
-      }
-      if (token === PermissionsRepository) {
-        return mockPermissionsRepository;
-      }
-      if (token === HashingService) {
-        return mockHashingService;
-      }
-      if (token === JwtService) {
-        return mockJwtService;
-      }
-    return;
-    }).compile();
+    })
+      .useMocker((token) => {
+        if (token === UsersRepository) {
+          return mockUsersRepository;
+        }
+        if (token === UsersRolesRepository) {
+          return mockUserRolesRepository;
+        }
+        if (token === RolesRepository) {
+          return mockRolesRepository;
+        }
+        if (token === RolesPermissionsRepository) {
+          return mockRolesPermissionsRepository;
+        }
+        if (token === PermissionsRepository) {
+          return mockPermissionsRepository;
+        }
+        if (token === HashingService) {
+          return mockHashingService;
+        }
+        if (token === JwtService) {
+          return mockJwtService;
+        }
+        return;
+      })
+      .compile();
 
     provider = module.get<JwtAuth>(JwtAuth);
   });
@@ -144,18 +146,24 @@ describe('JwtAuth', () => {
       try {
         await provider.login({ credential: 'not found', password });
       } catch (error) {
-        expect(error).toBeInstanceOf(BadRequestException)
+        expect(error).toBeInstanceOf(BadRequestException);
       }
     });
     it('should throw error if password is invalid', async () => {
       try {
-        await provider.login({ credential: userData.email, password: 'invalid' });
+        await provider.login({
+          credential: userData.email,
+          password: 'invalid',
+        });
       } catch (error) {
-        expect(error).toBeInstanceOf(BadRequestException)
+        expect(error).toBeInstanceOf(BadRequestException);
       }
     });
     it('should return user if credentials are valid', async () => {
-      const result = await provider.login({ credential: userData.email, password });
+      const result = await provider.login({
+        credential: userData.email,
+        password,
+      });
       expect(result.user).toEqual(expectedUser);
     });
   });
