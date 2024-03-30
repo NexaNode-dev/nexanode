@@ -4,9 +4,14 @@ import { RbacFactory } from './factories/rbac.factory';
 import { PermissionsRepository } from '@nexanode/backend-permissions-data-access';
 import { RolesPermissionsRepository } from '@nexanode/backend-roles-permissions-data-access';
 import { UsersRolesRepository } from '@nexanode/backend-users-roles-data-access';
+import { UsersRepository } from '@nexanode/backend-users-data-access';
 
 describe('RbacGuard', () => {
   let guard: RbacGuard;
+
+  const mockUsersRepository = {
+    findAll: jest.fn(),
+  };
 
   const mockUsersRolesRepository = {
     findAll: jest.fn(),
@@ -25,6 +30,9 @@ describe('RbacGuard', () => {
       providers: [RbacGuard, RbacFactory],
     })
       .useMocker((token) => {
+        if (token === UsersRepository) {
+          return mockUsersRepository;
+        }
         if (token === UsersRolesRepository) {
           return mockUsersRolesRepository;
         }

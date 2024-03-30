@@ -8,12 +8,14 @@ import { UsersRolesRepository } from '@nexanode/backend-users-roles-data-access'
 import { RolesPermissionsRepository } from '@nexanode/backend-roles-permissions-data-access';
 import { PermissionsRepository } from '@nexanode/backend-permissions-data-access';
 import { IPermission, IUser } from '@nexanode/domain-interfaces';
+import { UsersRepository } from '@nexanode/backend-users-data-access';
 
 @Injectable()
 export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
   constructor(
     private readonly reflector: Reflector,
     private readonly rbacFactory: RbacFactory,
+    private readonly usersRepository: UsersRepository,
     private readonly usersRolesRepository: UsersRolesRepository,
     private readonly rolesPermissionsRepository: RolesPermissionsRepository,
     private readonly permissionsRepository: PermissionsRepository,
@@ -26,7 +28,9 @@ export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
       context.getHandler(),
       context.getClass(),
     ]);
-    const { user } = context.switchToHttp().getRequest() as { user: IUser };
+    const { user } = context.switchToHttp().getRequest() as {
+      user: IUser | undefined;
+    };
     const permissions = await this.resolvePermissions(user);
     const ability = this.rbacFactory.createRbac(permissions);
     return rbac.some((rule) =>
@@ -34,7 +38,17 @@ export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
     );
   }
 
-  private async resolvePermissions(user: IUser): Promise<IPermission[]> {
+  private async resolvePermissions(
+    user: IUser | undefined,
+  ): Promise<IPermission[]> {
+    if (!user) {
+      user = (
+        await this.usersRepository.findAll({
+          where: { name: 'Guest' },
+          take: 1,
+        })
+      )[0];
+    }
     const userRoles = await this.usersRolesRepository.findAll({
       where: { userId: user.id },
     });

@@ -10,7 +10,8 @@
     "@nestjs/passport": "^10.0.3",
     "@nexanode/backend-users-roles-data-access": "0.0.1",
     "@nexanode/backend-roles-permissions-data-access": "0.0.1",
-    "@nexanode/backend-permissions-data-access": "0.0.1"
+    "@nexanode/backend-permissions-data-access": "0.0.1",
+    "@nexanode/backend-users-data-access": "0.0.1"
   },
   "type": "commonjs",
   "main": "./src/index.js",
