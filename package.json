@@ -19,7 +19,9 @@
     "@angular/ssr": "17.3.2",
     "@nestjs/common": "10.3.7",
     "@nestjs/core": "10.3.7",
+    "@nestjs/jwt": "^10.2.0",
     "@nestjs/mapped-types": "2.0.5",
+    "@nestjs/passport": "^10.0.3",
     "@nestjs/platform-express": "10.3.7",
     "@nestjs/typeorm": "10.0.2",
     "@ng-icons/bootstrap-icons": "^27.2.0",
@@ -29,6 +31,8 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "marked": "^12.0.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
     "pg": "^8.11.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -73,12 +77,13 @@
     "@swc/cli": "~0.1.62",
     "@swc/core": "~1.3.85",
     "@swc/helpers": "~0.5.2",
-    "@types/express": "4.17.14",
     "@types/bcrypt": "^5.0.2",
+    "@types/express": "4.17.14",
     "@types/jest": "^29.4.0",
     "@types/marked": "^6.0.0",
     "@types/node": "18.16.9",
     "@types/nodemailer": "^6.4.14",
+    "@types/passport-jwt": "^4.0.1",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "@vitest/coverage-v8": "1.4.0",
@@ -107,4 +112,3 @@
     "vitest": "1.4.0"
   }
 }
-
