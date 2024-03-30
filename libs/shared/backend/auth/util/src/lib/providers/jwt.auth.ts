@@ -5,7 +5,6 @@ import { LoginDto } from '../dtos/login.dto';
 import { RegisterDto } from '../dtos/register.dto';
 import { UsersRepository } from '@nexanode/backend-users-data-access';
 import { HashingService } from '@nexanode/backend-hashing-util';
-import { RolesRepository } from '@nexanode/backend-roles-data-access';
 import { JwtService } from '@nestjs/jwt';
 import { UsersRolesRepository } from '@nexanode/backend-users-roles-data-access';
 import { RolesPermissionsRepository } from '@nexanode/backend-roles-permissions-data-access';
@@ -16,7 +15,6 @@ export class JwtAuth implements AuthService {
   constructor(
     private readonly usersRepository: UsersRepository,
     private readonly userRolesRepository: UsersRolesRepository,
-    private readonly rolesRepository: RolesRepository,
     private readonly rolesPermissionsRepository: RolesPermissionsRepository,
     private readonly permissionsRepository: PermissionsRepository,
     private readonly hashingService: HashingService,
@@ -66,11 +64,8 @@ export class JwtAuth implements AuthService {
       where: [{ userId: user.id }],
       select: ['roleId'],
     });
-    const roles = await this.rolesRepository.findAll({
-      where: userRoles.map((ur) => ({ id: ur.roleId })),
-    });
     const rolePermissions = await this.rolesPermissionsRepository.findAll({
-      where: roles.map((r) => ({ roleId: r.id })),
+      where: userRoles.map((r) => ({ roleId: r.roleId })),
     });
     const permissions = await this.permissionsRepository.findAll({
       where: rolePermissions.map((rp) => ({ id: rp.permissionId })),

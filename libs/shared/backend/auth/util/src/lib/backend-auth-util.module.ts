@@ -9,6 +9,10 @@ import {
 } from './backend-auth-util.module-definition';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import { BackendUsersDataAccessModule } from '@nexanode/backend-users-data-access';
+import { BackendUsersRolesDataAccessModule } from '@nexanode/backend-users-roles-data-access';
+import { BackendRolesPermissionsDataAccessModule } from '@nexanode/backend-roles-permissions-data-access';
+import { BackendPermissionsDataAccessModule } from '@nexanode/backend-permissions-data-access';
 
 @Module({
   imports: [
@@ -17,12 +21,16 @@ import { JwtModule } from '@nestjs/jwt';
     }),
     JwtModule.register({
       secret: process.env['JWT_SECRET'],
-      signOptions: { 
+      signOptions: {
         expiresIn: process.env['JWT_EXPIRES_IN'],
         audience: process.env['JWT_AUDIENCE'],
-        issuer: process.env['JWT_ISSUER'], 
+        issuer: process.env['JWT_ISSUER'],
       },
-    })
+    }),
+    BackendUsersDataAccessModule,
+    BackendUsersRolesDataAccessModule,
+    BackendRolesPermissionsDataAccessModule,
+    BackendPermissionsDataAccessModule,
   ],
 })
 export class BackendAuthUtilModule extends ConfigurableModuleClass {
