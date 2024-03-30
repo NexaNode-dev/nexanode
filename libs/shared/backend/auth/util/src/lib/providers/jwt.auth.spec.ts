@@ -11,6 +11,7 @@ import { RolesPermissionsRepository } from '@nexanode/backend-roles-permissions-
 import { UsersRolesRepository } from '@nexanode/backend-users-roles-data-access';
 import { HashingService } from '@nexanode/backend-hashing-util';
 import { JwtService } from '@nestjs/jwt';
+import { DataSource } from 'typeorm';
 
 describe('JwtAuth', () => {
   let provider: JwtAuth;
@@ -32,6 +33,7 @@ describe('JwtAuth', () => {
     createdAt: faker.date.recent(),
     updatedAt: faker.date.recent(),
     loginExpires: faker.date.soon(),
+    isActive: true,
   };
 
   const userRoles = [
@@ -67,6 +69,11 @@ describe('JwtAuth', () => {
       updatedAt: faker.date.recent(),
     },
   ];
+
+  const mockDataSource = {
+    getCustomRepository: jest.fn(),
+    transaction: jest.fn().mockResolvedValue(expectedUser),
+  }
 
   const mockUsersRepository = {
     create: jest.fn().mockResolvedValue(expectedUser),
@@ -125,6 +132,9 @@ describe('JwtAuth', () => {
         if (token === JwtService) {
           return mockJwtService;
         }
+        if (token === DataSource) {
+          return mockDataSource;
+        }
         return;
       })
       .compile();
@@ -164,7 +174,7 @@ describe('JwtAuth', () => {
         credential: userData.email,
         password,
       });
-      expect(result.user).toEqual(expectedUser);
+      expect(result).toEqual(expectedUser);
     });
   });
 });
