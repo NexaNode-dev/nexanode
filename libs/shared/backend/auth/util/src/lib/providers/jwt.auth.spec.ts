@@ -73,7 +73,7 @@ describe('JwtAuth', () => {
   const mockDataSource = {
     getCustomRepository: jest.fn(),
     transaction: jest.fn().mockResolvedValue(expectedUser),
-  }
+  };
 
   const mockUsersRepository = {
     create: jest.fn().mockResolvedValue(expectedUser),

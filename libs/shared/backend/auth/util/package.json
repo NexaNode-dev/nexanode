@@ -14,7 +14,8 @@
     "@nexanode/backend-roles-permissions-data-access": "0.0.1",
     "@nexanode/backend-permissions-data-access": "0.0.1",
     "@nestjs/passport": "^10.0.3",
-    "passport-jwt": "^4.0.1"
+    "passport-jwt": "^4.0.1",
+    "typeorm": "^0.3.20"
   },
   "type": "commonjs",
   "main": "./src/index.js",
