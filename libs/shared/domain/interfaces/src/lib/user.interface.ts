@@ -6,6 +6,7 @@ export interface IUser {
   accessToken?: string;
   refreshToken?: string;
   loginExpires: Date;
+  isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
 }
