@@ -1,8 +1,12 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { JwtAuth } from './jwt.auth';
 import { faker } from '@faker-js/faker';
-import { RegisterDto } from '../dtos/register.dto';
-import { IPermission, IRole, IUser } from '@nexanode/domain-interfaces';
+import {
+  IPermission,
+  IRegister,
+  IRole,
+  IUser,
+} from '@nexanode/domain-interfaces';
 import { BadRequestException } from '@nestjs/common';
 import { UsersRepository } from '@nexanode/backend-users-data-access';
 import { PermissionsRepository } from '@nexanode/backend-permissions-data-access';
@@ -18,7 +22,7 @@ describe('JwtAuth', () => {
 
   const password = faker.internet.password();
 
-  const userData: RegisterDto = {
+  const userData: IRegister = {
     name: faker.internet.userName(),
     email: faker.internet.email(),
     password,

@@ -1,8 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AuthService } from '../auth.service';
-import { IUser } from '@nexanode/domain-interfaces';
-import { LoginDto } from '../dtos/login.dto';
-import { RegisterDto } from '../dtos/register.dto';
+import { ILogin, IRegister, IUser } from '@nexanode/domain-interfaces';
 import { UsersRepository } from '@nexanode/backend-users-data-access';
 import { HashingService } from '@nexanode/backend-hashing-util';
 import { JwtService } from '@nestjs/jwt';
@@ -19,8 +17,8 @@ export class JwtAuth implements AuthService {
     private readonly hashingService: HashingService,
     private readonly jwtService: JwtService,
   ) {}
-  async register(registerDto: RegisterDto): Promise<IUser> {
-    if (registerDto.password !== registerDto.confirmPassword) {
+  async register(register: IRegister): Promise<IUser> {
+    if (register.password !== register.confirmPassword) {
       throw new BadRequestException('Passwords do not match');
     }
     return await this.dataSource.transaction(async (manager) => {
@@ -28,9 +26,9 @@ export class JwtAuth implements AuthService {
       const rolesRepository = manager.getCustomRepository(RolesRepository);
       const usersRolesRepository =
         manager.getCustomRepository(UsersRolesRepository);
-      const pwd = await this.hashingService.hash(registerDto.password);
+      const pwd = await this.hashingService.hash(register.password);
       const user = await usersRepository.create({
-        ...registerDto,
+        ...register,
         password: pwd,
       });
       const role = (
@@ -48,7 +46,7 @@ export class JwtAuth implements AuthService {
       return userWithoutPassword;
     });
   }
-  async login(loginDto: LoginDto): Promise<{ user: IUser }> {
+  async login(login: ILogin): Promise<{ user: IUser }> {
     return await this.dataSource.transaction(async (manager) => {
       const usersRepository = manager.getCustomRepository(UsersRepository);
       const userRolesRepository =
@@ -61,7 +59,7 @@ export class JwtAuth implements AuthService {
       );
       const user = (
         await usersRepository.findAll({
-          where: [{ name: loginDto.credential, email: loginDto.credential }],
+          where: [{ name: login.credential, email: login.credential }],
           select: [
             'id',
             'name',
@@ -79,7 +77,7 @@ export class JwtAuth implements AuthService {
         throw new BadRequestException('Invalid credentials');
       }
       const isPasswordValid = await this.hashingService.compare(
-        loginDto.password,
+        login.password,
         user.password || '',
       );
       if (!isPasswordValid) {
