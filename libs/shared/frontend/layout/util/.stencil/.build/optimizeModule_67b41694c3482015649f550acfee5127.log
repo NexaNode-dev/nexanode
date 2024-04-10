@@ -1,0 +1,1 @@
+import{p as o,b as t}from"./p-4f2d55d2.js";export{s as setNonce}from"./p-4f2d55d2.js";import{g as e}from"./p-e1255160.js";const r=()=>{const t=import.meta.url;const e={};if(t!==""){e.resourcesUrl=new URL(".",t).href}return o(e)};r().then((async o=>{await e();return t([["p-48c74b2d",[[1,"nexanode-card",{header:[1],content:[1],footer:[1],config:[1]}]]]],o)}));

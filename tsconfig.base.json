@@ -45,6 +45,13 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-layout-util": ["dist/libs/shared/frontend/layout/util"],
+      "@nexanode/frontend-layout-util/*": [
+        "dist/libs/shared/frontend/layout/util/dist/components/*"
+      ],
+      "@nexanode/frontend-layout-util/loader": [
+        "dist/libs/shared/frontend/layout/util/loader"
+      ],
       "@nexanode/frontend-markdown-util-pipe": [
         "libs/shared/frontend/markdown/util/pipe/src/index.ts"
       ],
