@@ -1,0 +1,44 @@
+.App-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #abd4f477; 
+}
+.App-inlogo {
+  height: 250px;
+  width: 600px;
+  background-color: #1992ce7e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App-textP, .App-textH1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+.App-textP {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.App-textH1 {
+  font-size: 40px;
+}
+.construction-text {
+  margin: 50px 100px 100px 100px;
+  color: #1C6E9D;
+  
+}
+.construction-text h1 {
+  font-size: 36px; 
+  font-weight: bold; 
+  margin-bottom: 20px; 
+}
+.construction-text p {
+  margin-top: 20px; 
+  line-height: 1.5; 
+}
+

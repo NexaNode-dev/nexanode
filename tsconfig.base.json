@@ -80,6 +80,12 @@
       ],
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
+      "@nexanode/pmspads-homepage": [
+        "libs/frontend/presentation/pmspads-homepage/src/index.ts"
+      ],
+      "@nexanode/pmspadsHomepage": [
+        "libs/frontend/pmspadsHomepage/src/index.ts"
       ]
     }
   },

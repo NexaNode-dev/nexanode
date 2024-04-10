@@ -1,0 +1,34 @@
+{
+  "aboutContent": [
+    {
+      "title": "Empowering Full Stack Development & Strategy",
+      "content": "Andy, a skilled full stack developer, brings over 2 years of experience to the realm of web development. With expertise in a variety of programming languages and databases, Andy is proficient in crafting efficient and scalable solutions for diverse projects. He excels in leveraging technologies like C#, React, Node.js, and databases such as MySQL and SQL Server to deliver high-quality software products. "
+    },
+    {
+      "title": "Expertise Across Technologies",
+      "content": "From frontend development to backend server management with C#, Andy's skill set spans the entire technology stack. His familiarity with modern frameworks and libraries allows him to build dynamic and responsive user interfaces, while his backend ensures robust and secure server-side operations. Andy's collaborative mindset and skills make him a valuable asset to any development team."
+    },
+    {
+      "title": "A Commitment to Excellence",
+      "content": "Andy's dedication to excellence is reflected in his approach to software development. He believes in continuous learning and improvement, staying updated with the latest trends. His collaborative mindset and problem-solving skills make him a valuable asset to any development team."
+    },
+    {
+      "title": "Contact",
+      "content": "For project collaborations or to learn more about Andy's expertise, feel free to contact him at andy@nexanode.dev"
+    }
+  ],
+  "links": [
+    {
+      "title": "Email",
+      "url": "mailto:andy@nexanode.dev"
+    },
+    {
+      "title": "LinkedIn",
+      "url": "https://www.linkedin.com/in/andylauwers/"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com/Andyke87"
+    }
+  ]
+}
