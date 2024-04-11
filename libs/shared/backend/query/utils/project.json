@@ -1,0 +1,20 @@
+{
+  "name": "backend-query-utils",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/query/utils/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/query/utils",
+        "tsConfig": "libs/shared/backend/query/utils/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/query/utils/package.json",
+        "main": "libs/shared/backend/query/utils/src/index.ts",
+        "assets": ["libs/shared/backend/query/utils/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:util", "scope:query"]
+}
