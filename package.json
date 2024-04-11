@@ -2,7 +2,6 @@
   "name": "@nexanode/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
   "private": true,
   "dependencies": {
     "@angular/animations": "17.3.2",
