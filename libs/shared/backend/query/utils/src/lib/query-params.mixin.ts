@@ -1,8 +1,24 @@
-import { Repository, FindManyOptions, FindOptionsWhere } from 'typeorm';
+import {
+  Repository,
+  FindManyOptions,
+  FindOptionsWhere,
+  MoreThan,
+  Equal,
+  LessThan,
+  Like,
+} from 'typeorm';
 import { IQueryParams } from '@nexanode/domain-interfaces';
 import { Type } from '@nestjs/common';
 
-export function QueryParamsMixin<TBase extends Type>(entity: { new (): TBase }) {
+export type OperatorMap = {
+  gt: '>';
+  lt: '<';
+  like: 'like';
+};
+
+export function QueryParamsMixin<TBase extends Type>(entity: {
+  new (): TBase;
+}) {
   // Assuming entity is needed for repository operations or further type extraction
   return class {
     repository: Repository<TBase>;
@@ -11,49 +27,65 @@ export function QueryParamsMixin<TBase extends Type>(entity: { new (): TBase }) 
       this.repository = repository;
     }
 
-    transformQueryParamsToFindOptions(queryParams: IQueryParams<TBase>): FindManyOptions<TBase> {
-      const findOptions: FindManyOptions<TBase>= {};
-
-      // Handle 'select'
-      if (queryParams.select && queryParams.select.length) {
-        findOptions.select = queryParams.select;
+    transformQueryParams(query: IQueryParams<TBase>): FindManyOptions<TBase> {
+      const options: FindManyOptions<TBase> = {};
+  
+      // Select
+      if (query.select) {
+        options.select = query.select;
       }
-
-      // Handle 'relations'
-      if (queryParams.relations && queryParams.relations.length) {
-        findOptions.relations = queryParams.relations.map((relation) => relation.toString());
+  
+      // Where
+      if (query.where) {
+        options.where = this.parseWhereCondition(query.where);
       }
-
-      // Handle 'where'
-      if (queryParams.where) {
-        findOptions.where = this.parseWhereConditions(queryParams.where);
+  
+      // Relations
+      if (query.relations) {
+        options.relations = query.relations.map((relation) => relation.toString());
       }
-
-      // Handle ordering
-      // if (queryParams.order) {
-      //   findOptions.order = queryParams.order; // Simplification: Adjust based on your ordering structure
-      // }
-
-      // Handle pagination
-      if (queryParams.skip !== undefined) {
-        findOptions.skip = queryParams.skip;
+  
+      // Order
+      if (query.order) {
+        options.order = this.parseOrderCondition(query.order);
       }
-      if (queryParams.take !== undefined) {
-        findOptions.take = queryParams.take;
+  
+      // withDeleted
+      if (query.withDeleted !== undefined) {
+        options.withDeleted = query.withDeleted;
       }
-
-      // Handle soft deletes
-      if (queryParams.withDeleted) {
-        findOptions.withDeleted = queryParams.withDeleted;
+  
+      // Skip and Take
+      if (query.skip !== undefined) {
+        options.skip = query.skip;
       }
-
-      return findOptions;
+      if (query.take !== undefined) {
+        options.take = query.take;
+      }
+  
+      return options;
     }
-
-    parseWhereConditions(where: IQueryParams<TBase>['where']): FindOptionsWhere<TBase> {
-      // Implement parsing logic based on your application's needs
-      // This could be complex, depending on the operators and conditions you support
-      return where as FindOptionsWhere<TBase>;
+  
+    private parseWhereCondition(condition: IQueryParams<TBase>['where']): object {
+      const whereObj: FindOptionsWhere<TBase> = {};
+      for (const key in condition) {
+        const value = condition[key];
+        if (typeof value === 'object') {
+          const operator = value?[Object.keys(value)[0]] as IQueryParams<TBase>['where'][key];
+          whereObj[key] = { [OperatorMap[operator]]: value };
+        } else {
+          whereObj[key] = value;
+        }
+      }
+      return whereObj;
     }
-  };
+  
+    parseOrderCondition(condition: IQueryParams<TBase>['order']): Record<string, 'ASC' | 'DESC'> {
+      const orderObj: Record<string, 'ASC' | 'DESC'> = {};
+      for (const key in condition) {
+        orderObj[key]?  condition[key] : null;
+      }
+      return orderObj;
+    }
+  }
 }
