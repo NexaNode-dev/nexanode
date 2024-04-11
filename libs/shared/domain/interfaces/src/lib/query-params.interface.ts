@@ -14,11 +14,17 @@ type WhereCondition<T> = {
   [K in keyof T]?: T[K] | { [op in ConditionOperators]?: T[K] }; // Support direct value or operators
 };
 
+type OrderDirection = 'ASC' | 'DESC';
+
+type OrderCondition<T> = {
+  [K in keyof T]?: OrderDirection;
+};
+
 export interface IQueryParams<T> {
   select?: ScalarKeys<T>[];
   where?: WhereCondition<T>;
   relations?: RelationKeys<T>[];
-  order?: 'ASC' | 'DESC';
+  order?: OrderCondition<T>;
   withDeleted?: boolean;
   skip?: number;
   take?: number;
