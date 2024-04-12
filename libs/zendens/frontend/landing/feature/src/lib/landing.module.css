@@ -1,0 +1,63 @@
+.header {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+  opacity: 0.8; /* Maak de afbeelding iets doorschijnend voor betere tekstzichtbaarheid */
+  margin: 0;
+}
+
+.header-text {
+  text-align: center;
+  background-color: #f4e8e9; /* Soft pink background */
+  color: #5a5a5a;
+  padding: 1rem;
+  margin: 0;
+  height: 100%;
+}
+
+.header h1 {
+  font-size: 2.5rem; /* Grotere tekst voor de titel */
+  margin: 0;
+  padding-top: 0.25rem;
+}
+
+.intro {
+  padding: 1rem;
+  margin: 0;
+  background-color: #f4e8e9; /* Soft pink background */
+  color: #5a5a5a;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+}
+
+.intro img {
+  border-radius: 10px;
+  object-fit: cover;
+  width: 30rem;
+}
+
+.intro div {
+  font-size: 1.5rem;
+  margin: 1.5rem;
+  padding: 1rem;
+  width: 30rem;
+  text-align: center;
+}
+
+.footer {
+  border-top: 5px solid #505050;
+  background-color: #5a5a5a; /* Soft pink background */
+  color: #f4e8e9;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  font-size: 1.25rem;
+}

@@ -30,13 +30,20 @@
   "generators": {
     "@nx/react": {
       "application": {
-        "style": "css",
         "babel": false,
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "vite",
         "e2eTestRunner": "playwright"
       },
       "library": {
+        "style": "css",
+        "linter": "eslint",
         "unitTestRunner": "vitest",
         "bundler": "vite"
+      },
+      "component": {
+        "style": "css"
       }
     },
     "@nx/angular": {
@@ -124,6 +131,16 @@
       "plugin": "@nx/playwright/plugin",
       "options": {
         "targetName": "e2e"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
       }
     }
   ]
