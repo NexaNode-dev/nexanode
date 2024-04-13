@@ -1,5 +1,5 @@
 import styles from './landing.module.css';
-import Banner from '../assets/zendens-banner.webp';
+import Banner from '../assets/zendens-banner.png';
 import Overview from '../assets/zendens-overview.webp';
 import Rooms from '../assets/zendens-rooms.webp';
 import Rooms2 from '../assets/zendens-rooms2.webp';
