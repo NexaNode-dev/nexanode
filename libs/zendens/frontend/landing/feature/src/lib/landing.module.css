@@ -6,15 +6,12 @@
 
 .header-image {
   width: 100%;
-  height: auto;
-  max-height: 60rem;
-  opacity: 0.8; /* Maak de afbeelding iets doorschijnend voor betere tekstzichtbaarheid */
   margin: 0;
   object-fit: cover;
 }
 
 .header-text {
-  text-align: center; /* Soft pink background */
+  text-align: center;
   color: #6a6a6a;
   padding: 1rem;
   margin: 0;
@@ -31,13 +28,14 @@
 .intro {
   width: 65rem;
   padding: 1rem;
-  margin: 0 auto; /* Soft pink background */
+  margin: 0 auto;
   color: var(--color-text);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  gap: 1rem;
 }
 
 .intro img {
