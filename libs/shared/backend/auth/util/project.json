@@ -1,0 +1,20 @@
+{
+  "name": "backend-auth-util",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/auth/util/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/auth/util",
+        "tsConfig": "libs/shared/backend/auth/util/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/auth/util/package.json",
+        "main": "libs/shared/backend/auth/util/src/index.ts",
+        "assets": ["libs/shared/backend/auth/util/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:util", "domain:auth"]
+}

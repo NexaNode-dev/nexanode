@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/backend-auth-util": [
+        "libs/shared/backend/auth/util/src/index.ts"
+      ],
       "@nexanode/backend-contacts-application": [
         "libs/shared/backend/contacts/application/src/index.ts"
       ],
