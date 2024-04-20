@@ -31,6 +31,9 @@ export class User implements IUser {
   @Column()
   loginExpires!: Date;
 
+  @Column({ default: false })
+  isActive!: boolean;
+
   @CreateDateColumn()
   createdAt!: Date;
 
