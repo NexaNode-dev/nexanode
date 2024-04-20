@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/backend-auth-util": [
+        "libs/shared/backend/auth/util/src/index.ts"
+      ],
       "@nexanode/backend-contacts-application": [
         "libs/shared/backend/contacts/application/src/index.ts"
       ],
@@ -27,8 +30,17 @@
       "@nexanode/backend-hashing-util": [
         "libs/shared/backend/hashing/util/src/index.ts"
       ],
+      "@nexanode/backend-iam-application": [
+        "libs/shared/backend/iam/application/src/index.ts"
+      ],
+      "@nexanode/backend-iam-presentation": [
+        "libs/shared/backend/iam/presentation/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-rbac-util": [
+        "libs/shared/backend/rbac/util/src/index.ts"
       ],
       "@nexanode/backend-roles-data-access": [
         "libs/shared/backend/roles/data-access/src/index.ts"
