@@ -13,14 +13,18 @@ export function Landing(props: LandingProps) {
       <div className={styles['header-text']}>
         <h1>Welcome to Zen Dens</h1>
       </div>
-      <img src={Banner} alt="Zen Dens" className={styles['header-image']} />
+      <div>
+        <img src={Banner} alt="Zen Dens" className={styles['header-image']} />
+      </div>
     </header>,
     <section className={styles['intro']}>
-      <img
-        src={Overview}
-        alt="Zen Dens Overview"
-        className={styles['intro-image']}
-      />
+      <div>
+        <img
+          src={Overview}
+          alt="Zen Dens Overview"
+          className={styles['intro-image']}
+        />
+      </div>
       <div className={styles['intro-text']}>
         <h2>Discover Your Sanctuary of Tranquility</h2>
         <p>
@@ -34,6 +38,13 @@ export function Landing(props: LandingProps) {
           space for you.
         </p>
       </div>
+      <div>
+        <img
+          src={Rooms}
+          alt="Zen Dens Rooms"
+          className={styles['intro-image']}
+        />
+      </div>
       <div className={styles['intro-rooms']}>
         <h2>Sleep well and freshen up in our soothing rooms</h2>
         <p>
@@ -46,12 +57,14 @@ export function Landing(props: LandingProps) {
           need to make your stay comfortable and relaxing.
         </p>
       </div>
-      <img src={Rooms} alt="Zen Dens Rooms" className={styles['intro-image']} />
-      <img
-        src={Rooms2}
-        alt="Zen Dens Rooms"
-        className={styles['intro-image']}
-      />
+      
+      <div>
+        <img
+          src={Rooms2}
+          alt="Zen Dens Rooms"
+          className={styles['intro-image']}
+        />
+      </div>
       <div className={styles['intro-rooms2']}>
         <h2>Our rooms are designed to help you relax and rejuvenate</h2>
         <p>

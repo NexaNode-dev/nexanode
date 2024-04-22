@@ -12,54 +12,83 @@
 
 .header-text {
   text-align: center;
-  color: #6a6a6a;
+  color: var(--color-text);
   padding: 1rem;
   margin: 0;
   height: 100%;
 }
 
 .header h1 {
-  font-size: 5rem; /* Grotere tekst voor de titel */
+  font-size: 3rem; /* Grotere tekst voor de titel */
   font-weight: 700;
   margin: 0;
   padding-top: 0.25rem;
 }
 
 .intro {
-  width: 65rem;
-  padding: 1rem;
   margin: 0 auto;
   color: var(--color-text);
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 100%;
   gap: 1rem;
 }
 
 .intro img {
   border-radius: 10px;
-  object-fit: cover;
-  width: 30rem;
-  margin: 0.5rem;
+  width: 80%;
 }
 
 .intro div h2 {
-  font-size: 2.75rem;
+  font-size: 1.5rem;
   margin: 0.5rem;
 }
 
 .intro div p {
-  font-size: 1.35rem;
+  font-size: 1rem;
   margin: 0.5rem;
 }
 
 .intro div {
-  margin: 0.5rem;
-  padding: 1rem;
-  width: 30rem;
+  width: 100%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header h1 {
+    font-size: 5rem;
+  }
+  .intro {
+    width: 65rem;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    grid-auto-flow: dense; /* Helps fill in gaps in the grid */
+    gap: 1.5rem;
+  }
+
+  .intro div,
+  img {
+    width: 30rem;
+    margin: 0.5rem;
+  }
+
+  .intro div:nth-child(4n+1), /* 1st item in a set of four */
+  .intro div:nth-child(4n+4) {
+    /* 4th item in a set of four */
+    grid-column: 1;
+  }
+
+  .intro div:nth-child(4n+2), /* 2nd item in a set of four */
+  .intro div:nth-child(4n+3) {
+    /* 3rd item in a set of four */
+    grid-column: 2;
+  }
+
+  .intro div h2 {
+    font-size: 2.75rem;
+  }
+
+  .intro div p {
+    font-size: 1.35rem;
+  }
 }
 
 .footer {
