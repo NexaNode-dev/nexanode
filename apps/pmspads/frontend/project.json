@@ -1,9 +1,0 @@
-{
-  "name": "pmspads-frontend",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/pmspads/frontend/src",
-  "projectType": "application",
-  "tags": ["scope:frontend", "type:application", "application:pmspads"],
-  "// targets": "to see all targets run: nx show project pmspads-frontend --web",
-  "targets": {}
-}
