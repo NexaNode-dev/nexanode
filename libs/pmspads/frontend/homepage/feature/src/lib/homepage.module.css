@@ -1,0 +1,92 @@
+header {
+  margin: 0;
+  background: #4682B4;
+  padding: 1rem 0;
+}
+
+nav {
+  width: 60vw;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #c0c0c0;
+  border: 1px solid transparent;
+  text-decoration: none;
+  padding: 0.3rem;
+}
+
+nav a:hover {
+  color: #36454F;
+  border: 1px solid #36454F;
+  border-radius: 5px;
+}
+
+.heading {
+  font-size: 5rem;
+  text-align: center;
+  color: #36454F;
+  text-shadow: 1px 1px 1px #7c7d7e;
+}
+
+.intro {
+  text-align: center;
+  color: #c0c0c0;
+  width: 85vw;
+  margin: 0 auto;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+}
+
+.features {
+  color: #c0c0c0;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.features h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.features .featurelist {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: dense;
+  align-items: center;
+  text-align: center;
+}
+
+.features .featurelist .feature {
+  background: #36454F;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #7c7d7e;
+}
+
+.features .featurelist .feature img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.footer {
+  background: #c0c0c0;
+  color: #4682B4;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+}
