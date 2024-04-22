@@ -20,7 +20,7 @@ nav li {
 }
 
 nav a {
-  color: #c0c0c0;
+  color: #CACCCE;
   border: 1px solid transparent;
   text-decoration: none;
   padding: 0.3rem;
@@ -41,7 +41,7 @@ nav a:hover {
 
 .intro {
   text-align: center;
-  color: #c0c0c0;
+  color: #CACCCE;
   width: 85vw;
   margin: 0 auto;
 }
@@ -51,7 +51,7 @@ nav a:hover {
 }
 
 .features {
-  color: #c0c0c0;
+  color: #CACCCE;
   width: 90vw;
   margin: 0 auto;
 }
@@ -84,7 +84,7 @@ nav a:hover {
 }
 
 .footer {
-  background: #c0c0c0;
+  background: #CACCCE;
   color: #4682B4;
   text-align: center;
   padding: 1rem 0;
