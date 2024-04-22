@@ -4247,9 +4247,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/common@npm:10.3.7":
-  version: 10.3.7
-  resolution: "@nestjs/common@npm:10.3.7"
+"@nestjs/common@npm:10.3.8":
+  version: 10.3.8
+  resolution: "@nestjs/common@npm:10.3.8"
   dependencies:
     iterare: "npm:1.2.1"
     tslib: "npm:2.6.2"
@@ -4264,13 +4264,13 @@ __metadata:
       optional: true
     class-validator:
       optional: true
-  checksum: 10c0/d25fba11d553f32a1c80e16da85ff05739eba5678d752feac159ba4ff6c4129d254bd289c95d64106e5c13d78e716a1f3673e6db7897bbcd569fbef49d4f9ec0
+  checksum: 10c0/732985cd72f37afc155e1704261a01caf417a655224bc0618ed94a603ac167d4e194acbc7c5443701483804a18de3112f24d664db11343d08052a8996c9aa116
   languageName: node
   linkType: hard
 
-"@nestjs/core@npm:10.3.7":
-  version: 10.3.7
-  resolution: "@nestjs/core@npm:10.3.7"
+"@nestjs/core@npm:10.3.8":
+  version: 10.3.8
+  resolution: "@nestjs/core@npm:10.3.8"
   dependencies:
     "@nuxtjs/opencollective": "npm:0.3.2"
     fast-safe-stringify: "npm:2.1.1"
@@ -4292,11 +4292,11 @@ __metadata:
       optional: true
     "@nestjs/websockets":
       optional: true
-  checksum: 10c0/961cf1b0f157cd8f9aaab3bfe4d2247f41e104a5b1c669764146061915d8206a261cf1833deb5bf37d35d97c74a5288f0de092a5ce247dab34b7ad39e7910d03
+  checksum: 10c0/2133b49d00d730edc3b3b00678d002549851f453d8d7a9d73c07c269da5bbc14ae56f913cdcfefad0ff6f96adaed51769d8f57f461380072dac2b41d5ebacc8d
   languageName: node
   linkType: hard
 
-"@nestjs/jwt@npm:^10.2.0":
+"@nestjs/jwt@npm:10.2.0":
   version: 10.2.0
   resolution: "@nestjs/jwt@npm:10.2.0"
   dependencies:
@@ -4325,7 +4325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/passport@npm:^10.0.3":
+"@nestjs/passport@npm:10.0.3":
   version: 10.0.3
   resolution: "@nestjs/passport@npm:10.0.3"
   peerDependencies:
@@ -4335,9 +4335,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/platform-express@npm:10.3.7":
-  version: 10.3.7
-  resolution: "@nestjs/platform-express@npm:10.3.7"
+"@nestjs/platform-express@npm:10.3.8":
+  version: 10.3.8
+  resolution: "@nestjs/platform-express@npm:10.3.8"
   dependencies:
     body-parser: "npm:1.20.2"
     cors: "npm:2.8.5"
@@ -4347,7 +4347,7 @@ __metadata:
   peerDependencies:
     "@nestjs/common": ^10.0.0
     "@nestjs/core": ^10.0.0
-  checksum: 10c0/281ce6149bb9c7288dda3eabe6d3732d6874c9c47ad923a74022659ec765c1c76d1c05323d6f570faf6f976014b7bc8dabd328e4e86e0db9e4f0f1752c6df7d1
+  checksum: 10c0/28877eae9b551a3eafa07fe1fe4e4608aafa97176322698c79d82179f5e87f01021a6c867e649df40dc134dfd25524601ee3ea9269eb1935471f21f680a0393c
   languageName: node
   linkType: hard
 
@@ -4380,9 +4380,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nestjs/testing@npm:10.3.7":
-  version: 10.3.7
-  resolution: "@nestjs/testing@npm:10.3.7"
+"@nestjs/testing@npm:10.3.8":
+  version: 10.3.8
+  resolution: "@nestjs/testing@npm:10.3.8"
   dependencies:
     tslib: "npm:2.6.2"
   peerDependencies:
@@ -4395,7 +4395,7 @@ __metadata:
       optional: true
     "@nestjs/platform-express":
       optional: true
-  checksum: 10c0/1599e457dd43666903ae367c7941e3b6821006f895dca422ccf9411a9e8bf6280fcd99fbd7bdd887efbb616d85bf49b8baf84a1ef35d761ce6f16cbf31fd607b
+  checksum: 10c0/c08052ae0c3f55c4504e5912705f8530c403b9d4de046a370ac0644a307213e2866e159f578a6fa6c6a6a032941c8e065d89b49fc003107f6575e467d18b71d7
   languageName: node
   linkType: hard
 
@@ -4442,14 +4442,14 @@ __metadata:
     "@casl/ability": "npm:^6.7.1"
     "@faker-js/faker": "npm:^8.4.1"
     "@nestjs-modules/mailer": "npm:1.11.2"
-    "@nestjs/common": "npm:10.3.7"
-    "@nestjs/core": "npm:10.3.7"
-    "@nestjs/jwt": "npm:^10.2.0"
+    "@nestjs/common": "npm:10.3.8"
+    "@nestjs/core": "npm:10.3.8"
+    "@nestjs/jwt": "npm:10.2.0"
     "@nestjs/mapped-types": "npm:2.0.5"
-    "@nestjs/passport": "npm:^10.0.3"
-    "@nestjs/platform-express": "npm:10.3.7"
+    "@nestjs/passport": "npm:10.0.3"
+    "@nestjs/platform-express": "npm:10.3.8"
     "@nestjs/schematics": "npm:10.1.1"
-    "@nestjs/testing": "npm:10.3.7"
+    "@nestjs/testing": "npm:10.3.8"
     "@nestjs/typeorm": "npm:10.0.2"
     "@ng-icons/bootstrap-icons": "npm:^27.2.0"
     "@ng-icons/core": "npm:^27.2.0"
