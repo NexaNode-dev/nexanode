@@ -24,12 +24,13 @@ export class DetailComponent implements OnInit {
   id = input.required<string>();
   service = this.store.selectedService;
   otherServices = this.store.otherServices;
+  viewPortScroller = inject(ViewportScroller);
 
-  constructor(private viewportScroller: ViewportScroller) {
+  constructor() {
     effect(
       () => {
         this.store.getServiceById(this.id());
-        this.viewportScroller.scrollToPosition([0, 0]);
+        this.viewPortScroller.scrollToPosition([0, 0]);
       },
       {
         allowSignalWrites: true,
@@ -38,6 +39,6 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.viewportScroller.scrollToPosition([0, 0]);
+    this.viewPortScroller.scrollToPosition([0, 0]);
   }
 }
