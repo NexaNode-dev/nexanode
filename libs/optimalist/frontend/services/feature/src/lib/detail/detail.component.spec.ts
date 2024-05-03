@@ -20,7 +20,10 @@ describe('DetailComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DetailComponent],
-      providers: [{ provide: ServicesStore, useValue: mockServicesStore }, ViewportScroller],
+      providers: [
+        { provide: ServicesStore, useValue: mockServicesStore },
+        ViewportScroller,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DetailComponent);
