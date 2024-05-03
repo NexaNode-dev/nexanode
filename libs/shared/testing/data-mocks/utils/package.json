@@ -1,0 +1,12 @@
+{
+  "name": "@nexanode/testing-data-mocks-utils",
+  "version": "0.0.1",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@nexanode/domain-interfaces": "0.1.0"
+  },
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "private": true
+}
