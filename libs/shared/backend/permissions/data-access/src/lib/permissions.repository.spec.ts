@@ -52,15 +52,15 @@ describe('PermissionsRepository', () => {
   });
   describe('findAll', () => {
     it('should return an array of permissions', async () => {
-      expect(await provider.findAll()).toEqual(expectedPermissions);
+      expect(await provider.getPermissions()).toEqual(expectedPermissions);
       expect(mockRepository.find).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
     it('should return a permission', async () => {
-      expect(await provider.findOne(expectedPermission.id)).toEqual(
-        expectedPermission,
-      );
+      expect(
+        await provider.getPermission({ where: { id: expectedPermission.id } }),
+      ).toEqual(expectedPermission);
       expect(mockRepository.findOne).toHaveBeenCalledWith({
         where: { id: expectedPermission.id },
       });
@@ -68,7 +68,7 @@ describe('PermissionsRepository', () => {
     it('should throw a NotFoundException', async () => {
       mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.findOne(expectedPermission.id);
+        await provider.getPermission({ where: { id: expectedPermission.id } });
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
@@ -76,7 +76,9 @@ describe('PermissionsRepository', () => {
   });
   describe('create', () => {
     it('should return a permission', async () => {
-      expect(await provider.create(permissionData)).toEqual(expectedPermission);
+      expect(await provider.createPermission(permissionData)).toEqual(
+        expectedPermission,
+      );
       expect(mockRepository.create).toHaveBeenCalledWith(permissionData);
       expect(mockRepository.save).toHaveBeenCalledWith(expectedPermission);
     });
@@ -84,7 +86,7 @@ describe('PermissionsRepository', () => {
   describe('update', () => {
     it('should return a permission', async () => {
       expect(
-        await provider.update(expectedPermission.id, permissionData),
+        await provider.updatePermission(expectedPermission.id, permissionData),
       ).toEqual(expectedPermission);
       expect(mockRepository.preload).toHaveBeenCalledWith({
         id: expectedPermission.id,
@@ -95,7 +97,7 @@ describe('PermissionsRepository', () => {
     it('should throw a NotFoundException', async () => {
       mockRepository.preload.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.update(expectedPermission.id, permissionData);
+        await provider.updatePermission(expectedPermission.id, permissionData);
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
@@ -103,15 +105,15 @@ describe('PermissionsRepository', () => {
   });
   describe('delete', () => {
     it('should return a permission id', async () => {
-      expect(await provider.delete(expectedPermission.id)).toEqual(
+      expect(await provider.deletePermission(expectedPermission.id)).toEqual(
         expectedPermission.id,
       );
       expect(mockRepository.remove).toHaveBeenCalledWith(expectedPermission);
     });
     it('should throw a NotFoundException', async () => {
-      mockRepository.remove.mockRejectedValueOnce(new NotFoundException());
+      mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.delete(expectedPermission.id);
+        await provider.deletePermission(expectedPermission.id);
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
