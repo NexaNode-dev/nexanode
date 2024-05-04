@@ -52,14 +52,14 @@ describe('RolesPermissionsRepository', () => {
   });
   describe('findAll', () => {
     it('should return all rolePermissions', async () => {
-      const rolePermissions = await provider.findAll();
+      const rolePermissions = await provider.getRolePermissions();
       expect(rolePermissions).toEqual(expectedRolePermissions);
       expect(mockRepository.find).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
     it('should return a rolePermission by id', async () => {
-      const rolePermission = await provider.findOne({
+      const rolePermission = await provider.getRolePermission({
         where: { ...rolePermissionData },
       });
       expect(rolePermission).toEqual(expectedRolePermission);
@@ -70,7 +70,7 @@ describe('RolesPermissionsRepository', () => {
     it('should return a NotFoundException if rolePermission is not found', async () => {
       mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.findOne({ where: { ...rolePermissionData } });
+        await provider.getRolePermission({ where: { ...rolePermissionData } });
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -78,14 +78,15 @@ describe('RolesPermissionsRepository', () => {
   });
   describe('create', () => {
     it('should create a rolePermission', async () => {
-      const rolePermission = await provider.create(rolePermissionData);
+      const rolePermission =
+        await provider.createRolePermission(rolePermissionData);
       expect(rolePermission).toEqual(expectedRolePermission);
       expect(mockRepository.create).toHaveBeenCalledWith(rolePermissionData);
     });
   });
   describe('update', () => {
     it('should update a rolePermission', async () => {
-      const rolePermission = await provider.update(
+      const rolePermission = await provider.updateRolePermission(
         rolePermissionData,
         rolePermissionData,
       );
@@ -99,7 +100,10 @@ describe('RolesPermissionsRepository', () => {
     it('should return a NotFoundException if rolePermission is not found', async () => {
       mockRepository.preload.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.update(rolePermissionData, rolePermissionData);
+        await provider.updateRolePermission(
+          rolePermissionData,
+          rolePermissionData,
+        );
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -107,7 +111,7 @@ describe('RolesPermissionsRepository', () => {
   });
   describe('delete', () => {
     it('should remove a rolePermission', async () => {
-      const rolePermission = await provider.delete({
+      const rolePermission = await provider.deleteRolePermission({
         where: { ...rolePermissionData },
       });
       expect(rolePermission).toEqual(expectedRolePermission.id);
@@ -118,7 +122,9 @@ describe('RolesPermissionsRepository', () => {
     it('should return a NotFoundException if rolePermission is not found', async () => {
       mockRepository.remove.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.delete({ where: { ...rolePermissionData } });
+        await provider.deleteRolePermission({
+          where: { ...rolePermissionData },
+        });
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
