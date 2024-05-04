@@ -18,7 +18,9 @@ export class UsersRepository extends Repository<User> {
   async getUser(options: FindOneOptions = {}): Promise<User> {
     const user = await this.usersRepository.findOne(options);
     if (!user) {
-      throw new NotFoundException(`User with options #${JSON.stringify(options)} not found`);
+      throw new NotFoundException(
+        `User with options #${JSON.stringify(options)} not found`,
+      );
     }
     return user;
   }
@@ -40,7 +42,7 @@ export class UsersRepository extends Repository<User> {
   }
 
   async deleteUser(id: string): Promise<string> {
-    const user = await this.getUser({where: {id}});
+    const user = await this.getUser({ where: { id } });
     await this.usersRepository.remove(user);
     return id;
   }
