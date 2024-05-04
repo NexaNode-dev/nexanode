@@ -24,11 +24,11 @@ describe('ContactsService', () => {
   };
 
   const mockRepository = {
-    findAll: jest.fn().mockResolvedValue(expectedContacts),
-    findOne: jest.fn().mockResolvedValue(expectedContact),
-    create: jest.fn().mockResolvedValue(expectedContact),
-    update: jest.fn().mockResolvedValue(expectedContact),
-    delete: jest.fn().mockResolvedValue(expectedContact.id),
+    getContacts: jest.fn().mockResolvedValue(expectedContacts),
+    getContact: jest.fn().mockResolvedValue(expectedContact),
+    createContact: jest.fn().mockResolvedValue(expectedContact),
+    updateContact: jest.fn().mockResolvedValue(expectedContact),
+    deleteContact: jest.fn().mockResolvedValue(expectedContact.id),
   };
 
   beforeEach(async () => {
@@ -48,56 +48,66 @@ describe('ContactsService', () => {
   });
   describe('findAll', () => {
     it('should return an array of contacts', async () => {
-      expect(await service.findAll()).toEqual(expectedContacts);
-      expect(mockRepository.findAll).toHaveBeenCalled();
+      expect(await service.getContacts()).toEqual(expectedContacts);
+      expect(mockRepository.getContacts).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
     it('should return a contact', async () => {
-      expect(await service.findOne(expectedContact.id)).toEqual(
+      expect(await service.getContactById(expectedContact.id)).toEqual(
         expectedContact,
       );
-      expect(mockRepository.findOne).toHaveBeenCalledWith(expectedContact.id);
+      expect(mockRepository.getContact).toHaveBeenCalledWith({
+        where: { id: expectedContact.id },
+      });
     });
     it('should throw an error if the contact does not exist', async () => {
-      mockRepository.findOne.mockRejectedValueOnce(new Error());
-      await expect(service.findOne(expectedContact.id)).rejects.toThrow();
+      mockRepository.getContact.mockRejectedValueOnce(new Error());
+      await expect(
+        service.getContactById(expectedContact.id),
+      ).rejects.toThrow();
     });
   });
   describe('create', () => {
     it('should create a contact, send an email to the owner and one to the submitter', async () => {
-      expect(await service.create(expectedContact)).toEqual(expectedContact);
+      expect(await service.createContact(expectedContact)).toEqual(
+        expectedContact,
+      );
       expect(mockMailService.sendMail).toHaveBeenCalledTimes(2);
-      expect(mockRepository.create).toHaveBeenCalledWith(expectedContact);
+      expect(mockRepository.createContact).toHaveBeenCalledWith(
+        expectedContact,
+      );
     });
   });
   describe('update', () => {
     it('should update a contact', async () => {
-      expect(await service.update(expectedContact.id, expectedContact)).toEqual(
-        expectedContact,
-      );
-      expect(mockRepository.update).toHaveBeenCalledWith(
+      expect(
+        await service.updateContact(expectedContact.id, expectedContact),
+      ).toEqual(expectedContact);
+      expect(mockRepository.updateContact).toHaveBeenCalledWith(
         expectedContact.id,
         expectedContact,
       );
     });
     it('should throw an error if the contact does not exist', async () => {
-      mockRepository.update.mockRejectedValueOnce(new Error());
+      mockRepository.updateContact.mockRejectedValueOnce(new Error());
       await expect(
-        service.update(expectedContact.id, expectedContact),
+        service.updateContact(expectedContact.id, expectedContact),
       ).rejects.toThrow();
     });
   });
   describe('delete', () => {
     it('should delete a contact', async () => {
-      expect(await service.delete(expectedContact.id)).toEqual(
+      expect(await service.deleteContact(expectedContact.id)).toEqual(
         expectedContact.id,
       );
-      expect(mockRepository.delete).toHaveBeenCalledWith(expectedContact.id);
+      expect(mockRepository.deleteContact).toHaveBeenCalledWith(
+        expectedContact.id,
+      );
     });
     it('should throw an error if the contact does not exist', async () => {
-      mockRepository.delete.mockRejectedValueOnce(new Error());
-      await expect(service.delete(expectedContact.id)).rejects.toThrow();
+      mockRepository.deleteContact.mockRejectedValueOnce(new Error());
+      await expect(service.deleteContact(expectedContact.id)).rejects.toThrow();
     });
   });
 });

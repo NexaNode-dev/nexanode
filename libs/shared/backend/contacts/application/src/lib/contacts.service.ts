@@ -10,16 +10,16 @@ export class ContactsService {
     private mailerService: MailerService,
   ) {}
 
-  findAll(): Promise<IContact[]> {
-    return this.contactsRepository.findAll();
+  getContacts(): Promise<IContact[]> {
+    return this.contactsRepository.getContacts();
   }
 
-  findOne(id: string): Promise<IContact> {
-    return this.contactsRepository.findOne(id);
+  getContactById(id: string): Promise<IContact> {
+    return this.contactsRepository.getContact({ where: { id } });
   }
 
-  async create(contactData: Partial<IContact>): Promise<IContact> {
-    const contact = await this.contactsRepository.create(contactData);
+  async createContact(contactData: Partial<IContact>): Promise<IContact> {
+    const contact = await this.contactsRepository.createContact(contactData);
     //send mail to the submitter
     await this.mailerService.sendMail({
       to: `${contact.name} <${contact.email}>`,
@@ -35,11 +35,11 @@ export class ContactsService {
     return contact;
   }
 
-  update(id: string, contactData: Partial<IContact>): Promise<IContact> {
-    return this.contactsRepository.update(id, contactData);
+  updateContact(id: string, contactData: Partial<IContact>): Promise<IContact> {
+    return this.contactsRepository.updateContact(id, contactData);
   }
 
-  delete(id: string): Promise<string | null> {
-    return this.contactsRepository.delete(id);
+  deleteContact(id: string): Promise<string | null> {
+    return this.contactsRepository.deleteContact(id);
   }
 }
