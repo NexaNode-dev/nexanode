@@ -20,13 +20,13 @@ export class User implements IUser {
   email!: string;
 
   @Column({ nullable: true, select: false })
-  password?: string | undefined;
+  password?: string;
 
   @Column({ nullable: true })
-  accessToken?: string | undefined;
+  accessToken?: string;
 
   @Column({ nullable: true })
-  refreshToken?: string | undefined;
+  refreshToken?: string;
 
   @Column()
   loginExpires!: Date;

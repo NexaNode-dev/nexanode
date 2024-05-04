@@ -51,14 +51,16 @@ describe('RolesRepository', () => {
 
   describe('findAll', () => {
     it('should return an array of roles', async () => {
-      expect(await provider.findAll()).toEqual(expectedRoles);
+      expect(await provider.getRoles()).toEqual(expectedRoles);
       expect(mockRepository.find).toHaveBeenCalled();
     });
   });
 
   describe('findOne', () => {
     it('should return a role by id', async () => {
-      expect(await provider.findOne(expectedRole.id)).toEqual(expectedRole);
+      expect(
+        await provider.getRole({ where: { id: expectedRole.id } }),
+      ).toEqual(expectedRole);
       expect(mockRepository.findOne).toHaveBeenCalledWith({
         where: { id: expectedRole.id },
       });
@@ -68,7 +70,7 @@ describe('RolesRepository', () => {
         new NotFoundException('Role not found'),
       );
       try {
-        await provider.findOne(expectedRole.id);
+        await provider.getRole({ where: { id: expectedRole.id } });
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
@@ -77,7 +79,7 @@ describe('RolesRepository', () => {
 
   describe('create', () => {
     it('should create a role', async () => {
-      expect(await provider.create(roleData)).toEqual(expectedRole);
+      expect(await provider.createRole(roleData)).toEqual(expectedRole);
       expect(mockRepository.create).toHaveBeenCalledWith(roleData);
       expect(mockRepository.save).toHaveBeenCalledWith(expectedRole);
     });
@@ -85,7 +87,7 @@ describe('RolesRepository', () => {
 
   describe('update', () => {
     it('should update a role', async () => {
-      expect(await provider.update(expectedRole.id, roleData)).toEqual(
+      expect(await provider.updateRole(expectedRole.id, roleData)).toEqual(
         expectedRole,
       );
       expect(mockRepository.preload).toHaveBeenCalledWith({
@@ -99,7 +101,7 @@ describe('RolesRepository', () => {
         new NotFoundException('Role not found'),
       );
       try {
-        await provider.update(expectedRole.id, roleData);
+        await provider.updateRole(expectedRole.id, roleData);
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
@@ -108,7 +110,9 @@ describe('RolesRepository', () => {
 
   describe('delete', () => {
     it('should remove a role', async () => {
-      expect(await provider.delete(expectedRole.id)).toEqual(expectedRole.id);
+      expect(await provider.deleteRole(expectedRole.id)).toEqual(
+        expectedRole.id,
+      );
       expect(mockRepository.remove).toHaveBeenCalledWith(expectedRole);
     });
     it('should throw a NotFoundException if role not found', async () => {
@@ -116,7 +120,7 @@ describe('RolesRepository', () => {
         new NotFoundException('Role not found'),
       );
       try {
-        await provider.delete(expectedRole.id);
+        await provider.deleteRole(expectedRole.id);
       } catch (e) {
         expect(e).toBeInstanceOf(NotFoundException);
       }
