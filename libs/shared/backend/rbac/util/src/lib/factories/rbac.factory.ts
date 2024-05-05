@@ -1,14 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { IPermission } from '@nexanode/domain-interfaces';
-import { AbilityBuilder, Ability } from '@casl/ability';
+import { AbilityBuilder, createMongoAbility } from '@casl/ability';
 
 @Injectable()
 export class RbacFactory {
   createRbac(permissions: IPermission[]) {
-    const { can, build } = new AbilityBuilder(Ability);
+    const { can, build } = new AbilityBuilder(createMongoAbility);
 
     permissions.forEach((permission) => {
-      can(permission.action, permission.subject, permission.conditions);
+      const conditions = permission.conditions
+        ? JSON.parse(permission.conditions)
+        : {};
+      can(permission.action, permission.subject, undefined, conditions);
     });
     return build();
   }
