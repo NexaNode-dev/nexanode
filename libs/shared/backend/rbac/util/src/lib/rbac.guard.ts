@@ -28,9 +28,7 @@ export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
       context.getHandler(),
       context.getClass(),
     ]);
-    const { user } = context.switchToHttp().getRequest() as {
-      user: IUser | undefined;
-    };
+    const { user } = context.switchToHttp().getRequest();
     const permissions = await this.resolvePermissions(user);
     const ability = this.rbacFactory.createRbac(permissions);
     return rbac.some((rule) =>
@@ -42,20 +40,18 @@ export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
     user: IUser | undefined,
   ): Promise<IPermission[]> {
     if (!user) {
-      user = (
-        await this.usersRepository.findAll({
-          where: { name: 'Guest' },
-          take: 1,
-        })
-      )[0];
+      user = await this.usersRepository.getUser({
+        where: { name: 'Guest' },
+      });
     }
-    const userRoles = await this.usersRolesRepository.findAll({
+    const userRoles = await this.usersRolesRepository.getUserRoles({
       where: { userId: user.id },
     });
-    const rolePermissions = await this.rolesPermissionsRepository.findAll({
-      where: userRoles.map((ur) => ({ roleId: ur.roleId })),
-    });
-    const permissions = await this.permissionsRepository.findAll({
+    const rolePermissions =
+      await this.rolesPermissionsRepository.getRolePermissions({
+        where: userRoles.map((ur) => ({ roleId: ur.roleId })),
+      });
+    const permissions = await this.permissionsRepository.getPermissions({
       where: rolePermissions.map((rp) => ({ id: rp.permissionId })),
     });
     return permissions;
