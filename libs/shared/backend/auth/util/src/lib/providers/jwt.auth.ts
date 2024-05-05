@@ -16,27 +16,30 @@ export class JwtAuth implements AuthService {
     private readonly dataSource: DataSource,
     private readonly hashingService: HashingService,
     private readonly jwtService: JwtService,
+    private readonly usersRepository: UsersRepository,
+    private readonly rolesRepository: RolesRepository,
+    private readonly usersRolesRepository: UsersRolesRepository,
+    private readonly rolesPermissionsRepository: RolesPermissionsRepository,
+    private readonly permissionsRepository: PermissionsRepository,
   ) {}
   async register(register: IRegister): Promise<IUser> {
     if (register.password !== register.confirmPassword) {
       throw new BadRequestException('Passwords do not match');
     }
     return await this.dataSource.transaction(async (manager) => {
-      const usersRepository = manager.getCustomRepository(UsersRepository);
-      const rolesRepository = manager.getCustomRepository(RolesRepository);
-      const usersRolesRepository =
-        manager.getCustomRepository(UsersRolesRepository);
+      const usersRepository = manager.withRepository(this.usersRepository);
+      const rolesRepository = manager.withRepository(this.rolesRepository);
+      const usersRolesRepository = manager.withRepository(
+        this.usersRolesRepository,
+      );
       const pwd = await this.hashingService.hash(register.password);
       const user = await usersRepository.create({
         ...register,
         password: pwd,
       });
-      const role = (
-        await rolesRepository.findAll({
-          where: [{ name: 'user' }],
-          take: 1,
-        })
-      )[0];
+      const role = await rolesRepository.getRole({
+        where: [{ name: 'user' }],
+      });
       await usersRolesRepository.create({
         userId: user.id,
         roleId: role.id,
@@ -48,31 +51,29 @@ export class JwtAuth implements AuthService {
   }
   async login(login: ILogin): Promise<{ user: IUser }> {
     return await this.dataSource.transaction(async (manager) => {
-      const usersRepository = manager.getCustomRepository(UsersRepository);
-      const userRolesRepository =
-        manager.getCustomRepository(UsersRolesRepository);
-      const rolesPermissionsRepository = manager.getCustomRepository(
-        RolesPermissionsRepository,
+      const usersRepository = manager.withRepository(this.usersRepository);
+      const userRolesRepository = manager.withRepository(
+        this.usersRolesRepository,
       );
-      const permissionsRepository = manager.getCustomRepository(
-        PermissionsRepository,
+      const rolesPermissionsRepository = manager.withRepository(
+        this.rolesPermissionsRepository,
       );
-      const user = (
-        await usersRepository.findAll({
-          where: [{ name: login.credential, email: login.credential }],
-          select: [
-            'id',
-            'name',
-            'email',
-            'password',
-            'accessToken',
-            'loginExpires',
-            'createdAt',
-            'updatedAt',
-          ],
-          take: 1,
-        })
-      )[0]; //TODO: Repositories should have findOne method with find options and findOneById method
+      const permissionsRepository = manager.withRepository(
+        this.permissionsRepository,
+      );
+      const user = await usersRepository.getUser({
+        where: [{ name: login.credential, email: login.credential }],
+        select: [
+          'id',
+          'name',
+          'email',
+          'password',
+          'accessToken',
+          'loginExpires',
+          'createdAt',
+          'updatedAt',
+        ],
+      });
       if (!user) {
         throw new BadRequestException('Invalid credentials');
       }
@@ -83,14 +84,15 @@ export class JwtAuth implements AuthService {
       if (!isPasswordValid) {
         throw new BadRequestException('Invalid password');
       }
-      const userRoles = await userRolesRepository.findAll({
+      const userRoles = await userRolesRepository.getUserRoles({
         where: [{ userId: user.id }],
         select: ['roleId'],
       });
-      const rolePermissions = await rolesPermissionsRepository.findAll({
-        where: userRoles.map((r) => ({ roleId: r.roleId })),
-      });
-      const permissions = await permissionsRepository.findAll({
+      const rolePermissions =
+        await rolesPermissionsRepository.getRolePermissions({
+          where: userRoles.map((r) => ({ roleId: r.roleId })),
+        });
+      const permissions = await permissionsRepository.getPermissions({
         where: rolePermissions.map((rp) => ({ id: rp.permissionId })),
       });
       user.accessToken = await this.jwtService.signAsync({
@@ -108,18 +110,13 @@ export class JwtAuth implements AuthService {
   }
 
   async activate(userId: string, token: string): Promise<boolean> {
-    const usersRepository =
-      this.dataSource.getCustomRepository(UsersRepository);
-    const user = (
-      await usersRepository.findAll({
-        where: [{ id: userId, accessToken: token }],
-        take: 1,
-      })
-    ).pop();
+    const user = await this.usersRepository.getUser({
+      where: [{ id: userId, accessToken: token }],
+    });
     if (!user) {
       throw new BadRequestException('Invalid token');
     }
-    await usersRepository.update(user.id, { isActive: true });
+    await this.usersRepository.updateUser(user.id, { isActive: true });
     return true;
   }
 }
