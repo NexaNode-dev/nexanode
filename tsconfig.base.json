@@ -81,6 +81,9 @@
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
       ],
+      "@nexanode/pmspads-frontend-homepage-feature": [
+        "libs/pmspads/frontend/homepage/feature/src/index.ts"
+      ],
       "@nexanode/testing-data-mocks-utils": [
         "libs/shared/testing/data-mocks/utils/src/index.ts"
       ]
