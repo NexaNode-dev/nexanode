@@ -68,8 +68,7 @@ export function Homepage(props: HomepageProps) {
           <h2>State-of-the-Art Gaming Room</h2>
           <p>
             Our gaming room is equipped with the latest consoles and games,
-            ensuring a fun and competitive
-            gaming experience.
+            ensuring a fun and competitive gaming experience.
           </p>
           <img src={Gaming} alt="Gaming Room" />
         </div>
