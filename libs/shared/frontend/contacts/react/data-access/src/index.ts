@@ -1,1 +1,1 @@
-export * from './lib/contacts';
+export *from './lib/contacts';
