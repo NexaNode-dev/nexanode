@@ -52,15 +52,15 @@ describe('ContactsRepository', () => {
   });
   describe('findAll', () => {
     it('should return all contacts', async () => {
-      expect(await provider.findAll()).toEqual(expectedContacts);
+      expect(await provider.getContacts()).toEqual(expectedContacts);
       expect(mockRepository.find).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
     it('should return a contact by id', async () => {
-      expect(await provider.findOne(expectedContact.id)).toEqual(
-        expectedContact,
-      );
+      expect(
+        await provider.getContact({ where: { id: expectedContact.id } }),
+      ).toEqual(expectedContact);
       expect(mockRepository.findOne).toHaveBeenCalledWith({
         where: { id: expectedContact.id },
       });
@@ -68,7 +68,7 @@ describe('ContactsRepository', () => {
     it('should return a NotFoundException if the contact is not found', async () => {
       //mockRepository.findOne.mockResolvedValue(undefined);
       try {
-        await provider.findOne(expectedContact.id);
+        await provider.getContact({ where: { id: expectedContact.id } });
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -76,16 +76,18 @@ describe('ContactsRepository', () => {
   });
   describe('create', () => {
     it('should create a contact', async () => {
-      expect(await provider.create(contactData)).toEqual(expectedContact);
+      expect(await provider.createContact(contactData)).toEqual(
+        expectedContact,
+      );
       expect(mockRepository.create).toHaveBeenCalledWith(contactData);
       expect(mockRepository.save).toHaveBeenCalledWith(expectedContact);
     });
   });
   describe('update', () => {
     it('should update a contact', async () => {
-      expect(await provider.update(expectedContact.id, contactData)).toEqual(
-        expectedContact,
-      );
+      expect(
+        await provider.updateContact(expectedContact.id, contactData),
+      ).toEqual(expectedContact);
       expect(mockRepository.preload).toHaveBeenCalledWith({
         id: expectedContact.id,
         ...contactData,
@@ -95,7 +97,7 @@ describe('ContactsRepository', () => {
     it('should return a NotFoundException if the contact is not found', async () => {
       mockRepository.preload.mockResolvedValue(undefined);
       try {
-        await provider.update(expectedContact.id, contactData);
+        await provider.updateContact(expectedContact.id, contactData);
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -103,15 +105,15 @@ describe('ContactsRepository', () => {
   });
   describe('delete', () => {
     it('should remove a contact', async () => {
-      expect(await provider.delete(expectedContact.id)).toEqual(
+      expect(await provider.deleteContact(expectedContact.id)).toEqual(
         expectedContact.id,
       );
       expect(mockRepository.remove).toHaveBeenCalledWith(expectedContact);
     });
     it('should return a NotFoundException if the contact is not found', async () => {
-      mockRepository.remove.mockResolvedValue(undefined);
+      mockRepository.findOne.mockResolvedValue(undefined);
       try {
-        await provider.delete(expectedContact.id);
+        await provider.deleteContact(expectedContact.id);
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }

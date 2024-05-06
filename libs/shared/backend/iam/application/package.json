@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
-    "@nestjs/common": "10.3.7",
+    "@nestjs/common": "10.3.8",
     "@nexanode/backend-auth-util": "0.0.1",
     "@nexanode/domain-interfaces": "0.1.0"
   },

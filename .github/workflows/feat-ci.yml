@@ -1,17 +1,16 @@
-name: CI
+name: Feat Branch CI
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
+    branches:
+      - feat/*
 
 permissions:
   actions: read
   contents: read
 
 jobs:
-  main:
+  feat-branch-ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -31,5 +30,7 @@ jobs:
       - run: yarn install --immutable
       - uses: nrwl/nx-set-shas@v4
 
-      - run: yarn nx-cloud record -- nx format:check
-      - run: yarn nx affected -t lint test build
+      - run: git branch --track ${{ github.base_ref }} origin/${{ github.base_ref }}
+        if: ${{ github.event_name == 'pull_request' }}
+
+      - run: yarn nx affected -t test build e2e-ci

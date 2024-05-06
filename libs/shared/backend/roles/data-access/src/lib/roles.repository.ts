@@ -1,47 +1,51 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Repository } from 'typeorm';
+import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { Role } from './role.enity';
 import { IRole } from '@nexanode/domain-interfaces';
 
 @Injectable()
-export class RolesRepository {
+export class RolesRepository extends Repository<Role> {
   constructor(
     @InjectRepository(Role)
-    private roleRepository: Repository<Role>,
-  ) {}
-
-  async findAll(options?: FindManyOptions<Role>): Promise<Role[]> {
-    return this.roleRepository.find(options);
+    private rolesRepository: Repository<Role>,
+  ) {
+    super(Role, rolesRepository.manager, rolesRepository.queryRunner);
   }
 
-  async findOne(id: string): Promise<Role> {
-    const role = await this.roleRepository.findOne({ where: { id } });
+  async getRoles(options: FindManyOptions<Role> = {}): Promise<Role[]> {
+    return this.rolesRepository.find(options);
+  }
+
+  async getRole(options: FindOneOptions<Role> = {}): Promise<Role> {
+    const role = await this.rolesRepository.findOne(options);
     if (!role) {
-      throw new NotFoundException(`Role #${id} not found`);
+      throw new NotFoundException(
+        `Role with options ${JSON.stringify(options)} not found`,
+      );
     }
     return role;
   }
 
-  async create(role: Partial<IRole>): Promise<Role> {
-    const newRole = this.roleRepository.create(role);
-    return this.roleRepository.save(newRole);
+  async createRole(role: Partial<IRole>): Promise<Role> {
+    const newRole = this.rolesRepository.create(role);
+    return this.rolesRepository.save(newRole);
   }
 
-  async update(id: string, role: Partial<IRole>): Promise<Role> {
-    const updatedRole = await this.roleRepository.preload({
+  async updateRole(id: string, role: Partial<IRole>): Promise<Role> {
+    const updatedRole = await this.rolesRepository.preload({
       id,
       ...role,
     });
     if (!updatedRole) {
       throw new NotFoundException(`Role #${id} not found`);
     }
-    return this.roleRepository.save(updatedRole);
+    return this.rolesRepository.save(updatedRole);
   }
 
-  async delete(id: string): Promise<string> {
-    const role = await this.findOne(id);
-    await this.roleRepository.remove(role);
+  async deleteRole(id: string): Promise<string> {
+    const role = await this.getRole({ where: { id } });
+    await this.rolesRepository.remove(role);
     return id;
   }
 }

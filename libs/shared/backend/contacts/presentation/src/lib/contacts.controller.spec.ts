@@ -24,11 +24,11 @@ describe('ContactsController', () => {
   const expectedContacts: IContact[] = [expectedContact];
 
   const mockService = {
-    findAll: jest.fn().mockResolvedValue(expectedContacts),
-    findOne: jest.fn().mockResolvedValue(expectedContact),
-    create: jest.fn().mockResolvedValue(expectedContact),
-    update: jest.fn().mockResolvedValue(expectedContact),
-    delete: jest.fn().mockResolvedValue(expectedContact.id),
+    getContacts: jest.fn().mockResolvedValue(expectedContacts),
+    getContactById: jest.fn().mockResolvedValue(expectedContact),
+    createContact: jest.fn().mockResolvedValue(expectedContact),
+    updateContact: jest.fn().mockResolvedValue(expectedContact),
+    deleteContact: jest.fn().mockResolvedValue(expectedContact.id),
   };
 
   beforeEach(async () => {
@@ -51,7 +51,7 @@ describe('ContactsController', () => {
   describe('findAll', () => {
     it('should return an array of contacts', async () => {
       expect(await controller.findAll()).toEqual(expectedContacts);
-      expect(mockService.findAll).toHaveBeenCalled();
+      expect(mockService.getContacts).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
@@ -59,17 +59,19 @@ describe('ContactsController', () => {
       expect(await controller.findOne(expectedContact.id)).toEqual(
         expectedContact,
       );
-      expect(mockService.findOne).toHaveBeenCalledWith(expectedContact.id);
+      expect(mockService.getContactById).toHaveBeenCalledWith(
+        expectedContact.id,
+      );
     });
     it('should throw an error if contact not found', async () => {
-      mockService.findOne.mockRejectedValueOnce(new Error('Not found'));
+      mockService.getContactById.mockRejectedValueOnce(new Error('Not found'));
       await expect(controller.findOne(expectedContact.id)).rejects.toThrow();
     });
   });
   describe('create', () => {
     it('should create a contact', async () => {
       expect(await controller.create(contactData)).toEqual(expectedContact);
-      expect(mockService.create).toHaveBeenCalledWith(contactData);
+      expect(mockService.createContact).toHaveBeenCalledWith(contactData);
     });
   });
   describe('update', () => {
@@ -77,13 +79,13 @@ describe('ContactsController', () => {
       expect(await controller.update(expectedContact.id, contactData)).toEqual(
         expectedContact,
       );
-      expect(mockService.update).toHaveBeenCalledWith(
+      expect(mockService.updateContact).toHaveBeenCalledWith(
         expectedContact.id,
         contactData,
       );
     });
     it('should throw an error if contact not found', async () => {
-      mockService.update.mockRejectedValueOnce(new Error('Not found'));
+      mockService.updateContact.mockRejectedValueOnce(new Error('Not found'));
       await expect(
         controller.update(expectedContact.id, contactData),
       ).rejects.toThrow();
@@ -94,10 +96,12 @@ describe('ContactsController', () => {
       expect(await controller.delete(expectedContact.id)).toEqual(
         expectedContact.id,
       );
-      expect(mockService.delete).toHaveBeenCalledWith(expectedContact.id);
+      expect(mockService.deleteContact).toHaveBeenCalledWith(
+        expectedContact.id,
+      );
     });
     it('should throw an error if contact not found', async () => {
-      mockService.delete.mockRejectedValueOnce(new Error('Not found'));
+      mockService.deleteContact.mockRejectedValueOnce(new Error('Not found'));
       await expect(controller.delete(expectedContact.id)).rejects.toThrow();
     });
   });
