@@ -1,0 +1,14 @@
+{
+  "name": "frontend-contacts-react-data-access",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/frontend/contacts/react/data-access/src",
+  "projectType": "library",
+  "tags": [
+    "scope:frontend",
+    "type:data-access",
+    "tech:react",
+    "domain:contact"
+  ],
+  "// targets": "to see all targets run: nx show project frontend-contacts-react-data-access --web",
+  "targets": {}
+}
