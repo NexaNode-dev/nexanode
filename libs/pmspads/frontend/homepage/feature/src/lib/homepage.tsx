@@ -19,10 +19,7 @@ export function Homepage(props: HomepageProps) {
             <a href="#features">Features</a>
           </li>
           <li>
-            <a href="#features">Studios</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
+            <a href="#studios">Studios</a>
           </li>
           <li>
             <a href="#contact">Contact</a>
@@ -64,7 +61,7 @@ export function Homepage(props: HomepageProps) {
         your stay unforgettable. Welcome to your ultimate retreat.
       </p>
     </section>,
-    <section className={styles.features}>
+    <section className={styles.features} id="features">
       <h1>Our Features</h1>
       <div className={styles.featurelist}>
         <div className={styles.feature}>

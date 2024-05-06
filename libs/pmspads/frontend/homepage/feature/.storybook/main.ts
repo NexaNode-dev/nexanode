@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: ['../src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions', '@storybook/addon-a11y'],
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -14,10 +14,11 @@ const config: StorybookConfig = {
   previewHead: (head) => (`
     ${head}
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
       html, body {
         margin: 0;
         padding: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Rajdhani', sans-serif;
         background-color: #36454F;
       }
     </style>
