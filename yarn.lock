@@ -5189,6 +5189,7 @@ __metadata:
     "@nestjs/typeorm": "npm:10.0.2"
     "@ng-icons/bootstrap-icons": "npm:^27.2.0"
     "@ng-icons/core": "npm:^27.2.0"
+    "@ngrx/operators": "npm:^17.2.0"
     "@ngrx/signals": "npm:17.2.0"
     "@nx/angular": "npm:18.3.3"
     "@nx/devkit": "npm:18.3.3"
@@ -5299,6 +5300,17 @@ __metadata:
   dependencies:
     tslib: "npm:^2.2.0"
   checksum: 10c0/279166b03a78d4a880cf53c3d75920987d412f808826b7f84e18825d4dfe090d1d681bd04419aab492c349dfc6a9200474906f89aa3fa3b6aa80ef5063f48576
+  languageName: node
+  linkType: hard
+
+"@ngrx/operators@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "@ngrx/operators@npm:17.2.0"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    rxjs: ^6.5.3 || ^7.4.0
+  checksum: 10c0/bc3bc1fabf56570879c307104ee09b9188b4e076bf935f370f5cf3588b72aa837e952a5c0f66ff16472f3965c148017644edf2b22a866b7d776a3287e9e369e3
   languageName: node
   linkType: hard
 

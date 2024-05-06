@@ -66,7 +66,7 @@ describe('ContactsService', () => {
     });
 
     const req = httpController.expectOne(`/api/contacts/${mockContact.id}`);
-    expect(req.request.method).toBe('PUT');
+    expect(req.request.method).toBe('PATCH');
     req.flush(mockContact);
   });
 
