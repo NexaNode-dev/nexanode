@@ -57,6 +57,9 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-contacts-ng-data-access": [
+        "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
+      ],
       "@nexanode/frontend-contacts-react-data-access": [
         "libs/shared/frontend/contacts/react/data-access/src/index.ts"
       ],
