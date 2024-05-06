@@ -3,7 +3,7 @@ name: CI for Bug Fixes
 on:
   push:
     branches:
-      - 'fix-*'
+      - 'fix/*'
 
 permissions:
   actions: read
