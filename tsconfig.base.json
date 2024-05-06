@@ -60,6 +60,9 @@
       "@nexanode/frontend-contacts-react-data-access": [
         "libs/shared/frontend/contacts/react/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-contacts-react-feature": [
+        "libs/shared/frontend/contacts/react/feature/src/index.ts"
+      ],
       "@nexanode/frontend-markdown-util-pipe": [
         "libs/shared/frontend/markdown/util/pipe/src/index.ts"
       ],
