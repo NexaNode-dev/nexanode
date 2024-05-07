@@ -1,0 +1,26 @@
+<div class="contact">
+  <h2>Contact Us</h2>
+  @if (selectedContact()) {
+    <p class="success">Thanks for contacting us!</p>
+  } @else {
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-control">
+        <label for="name">Name</label>
+        <input type="text" id="name" formControlName="name" />
+      </div>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" />
+      </div>
+      <div class="form-control">
+        <label for="message">Message</label>
+        <textarea id="message" formControlName="message" rows="10"></textarea>
+      </div>
+      <div>
+        <button type="submit" [disabled]="contactForm.invalid">
+          {{ isLoading() ? 'Submitting...' : 'Submit' }}
+        </button>
+      </div>
+    </form>
+  }
+</div>

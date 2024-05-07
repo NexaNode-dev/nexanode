@@ -1,0 +1,84 @@
+{
+  "name": "frontend-contacts-ng-feature",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/frontend/contacts/ng/feature/src",
+  "prefix": "nexanode",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:feature", "tech:angular"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/frontend/contacts/ng/feature/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/frontend/contacts/ng/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/frontend/contacts/ng/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/frontend/contacts/ng/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/shared/frontend/contacts/ng/feature/.storybook",
+        "browserTarget": "frontend-contacts-ng-feature:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/frontend-contacts-ng-feature",
+        "configDir": "libs/shared/frontend/contacts/ng/feature/.storybook",
+        "browserTarget": "frontend-contacts-ng-feature:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/shared/frontend/contacts/ng/feature/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "frontend-contacts-ng-feature:build-storybook",
+        "staticFilePath": "dist/storybook/frontend-contacts-ng-feature",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "frontend-contacts-ng-feature:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
