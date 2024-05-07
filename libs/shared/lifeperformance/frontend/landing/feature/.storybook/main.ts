@@ -14,6 +14,10 @@ const config: StorybookConfig = {
         --color-primary: #2e6259;
         --color-secondary: #f1efe7;
       }
+      html, body, section {
+        margin: 0;
+        padding: 0;
+      }
     </style>
   `,
 };
