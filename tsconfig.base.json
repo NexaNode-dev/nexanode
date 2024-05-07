@@ -60,6 +60,9 @@
       "@nexanode/frontend-contacts-ng-data-access": [
         "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-contacts-ng-feature": [
+        "libs/shared/frontend/contacts/ng/feature/src/index.ts"
+      ],
       "@nexanode/frontend-contacts-ng-state": [
         "libs/shared/frontend/contacts/ng/state/src/index.ts"
       ],
