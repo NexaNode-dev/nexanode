@@ -26,7 +26,7 @@ const initialState: ContactsState = {
   error: null,
 };
 
-export const ContactsState = signalStore(
+export const ContactsStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withComputed((state) => ({
@@ -81,6 +81,7 @@ export const ContactsState = signalStore(
               next: (contact) =>
                 patchState(store, (state) => ({
                   contacts: [...state.contacts, contact],
+                  selectedId: contact.id,
                 })),
               error: (error) => patchState(store, { error }),
               finalize: () => patchState(store, { isLoading: false }),
