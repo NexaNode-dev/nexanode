@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { IntroComponent } from './intro/intro.component';
+import { AboutComponent } from './about/about.component';
 
 @Component({
   selector: 'lifeperformance-landing',
   standalone: true,
-  imports: [CommonModule],
+  imports: [IntroComponent, AboutComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
