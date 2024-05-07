@@ -3356,6 +3356,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/aileron@npm:^5.0.11":
+  version: 5.0.11
+  resolution: "@fontsource/aileron@npm:5.0.11"
+  checksum: 10c0/3b3808b35bbd5f09298a62af4184e1532ef544759a01a53823ce23907940f58370acd266528fb5cf633d437b1ed7bb00fc8eff7acb56a233cab8b7a6b8af6ead
+  languageName: node
+  linkType: hard
+
+"@fontsource/archivo-black@npm:^5.0.20":
+  version: 5.0.20
+  resolution: "@fontsource/archivo-black@npm:5.0.20"
+  checksum: 10c0/6efbdf470a444fec8af83d92508a8d581391e8e647b4b65d952b5aa519826a55853868cf1f26d7cca12c03f3bdfe0b2e9da1570c5e4d56d8a114a58945c871c9
+  languageName: node
+  linkType: hard
+
 "@fontsource/rajdhani@npm:^5.0.13":
   version: 5.0.13
   resolution: "@fontsource/rajdhani@npm:5.0.13"
@@ -5176,6 +5190,8 @@ __metadata:
     "@babel/preset-react": "npm:^7.14.5"
     "@casl/ability": "npm:^6.7.1"
     "@faker-js/faker": "npm:^8.4.1"
+    "@fontsource/aileron": "npm:^5.0.11"
+    "@fontsource/archivo-black": "npm:^5.0.20"
     "@fontsource/rajdhani": "npm:^5.0.13"
     "@nestjs-modules/mailer": "npm:1.11.2"
     "@nestjs/common": "npm:10.3.8"
