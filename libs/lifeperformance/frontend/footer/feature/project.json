@@ -1,0 +1,91 @@
+{
+  "name": "lifeperformance-frontend-footer-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/lifeperformance/frontend/footer/feature/src",
+  "prefix": "lifeperformance",
+  "projectType": "library",
+  "tags": [
+    "scope:frontend",
+    "type:feature",
+    "tech:angular",
+    "app:lifeperformance"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/lifeperformance/frontend/footer/feature/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/lifeperformance/frontend/footer/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/lifeperformance/frontend/footer/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/lifeperformance/frontend/footer/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/lifeperformance/frontend/footer/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-footer-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/lifeperformance-frontend-footer-feature",
+        "configDir": "libs/lifeperformance/frontend/footer/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-footer-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/lifeperformance/frontend/footer/feature/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "lifeperformance-frontend-footer-feature:build-storybook",
+        "staticFilePath": "dist/storybook/lifeperformance-frontend-footer-feature",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "lifeperformance-frontend-footer-feature:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
