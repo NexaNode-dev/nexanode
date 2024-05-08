@@ -1,0 +1,52 @@
+.container {
+  background-color: var(--color-secondary);
+  color: var(--color-quaternary);
+}
+
+.services {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.services h2 {
+  font-size: 4rem;
+}
+
+.services h3 {
+  font-size: 2rem;
+}
+
+.services h2,
+h3,
+h4, li {
+  margin-bottom: 1rem;
+  font-family: 'Archivo Black', sans-serif;
+  font-style: italic;
+  color: var(--color-tertiary);
+}
+
+.services p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Aileron', sans-serif;
+  color: var(--color-quaternary);
+  font-style: normal;
+}
+
+.services h4 {
+  font-size: 1.5rem;
+}
+
+ol li {
+  color: var(--color-tertiary);
+  font-size: 1.5rem;
+}
+
+.services .note {
+  font-size: 0.9rem;
+}
