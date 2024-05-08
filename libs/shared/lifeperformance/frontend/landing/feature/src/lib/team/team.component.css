@@ -8,20 +8,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  width: 80vw;
+  width: 95%;
   margin: 0 auto;
-  padding: 3rem;
 }
 
 .team h2 {
-  font-size: 4rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
   font-family: 'Archivo Black', sans-serif;
   font-style: italic;
 }
 
 .team p {
-  font-size: 1.5rem;
   margin-bottom: 2rem;
   font-family: 'Aileron', sans-serif;
 }
@@ -34,9 +32,28 @@
 }
 
 .team h5 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   font-family: 'Archivo Black', sans-serif;
   font-style: italic;
   color: var(--color-tertiary);
+}
+
+@media (min-width: 768px) {
+  .team {
+    width: 80vw;
+    padding: 2rem;
+  }
+
+  .team h2 {
+    font-size: 4rem;
+  }
+
+  .team p {
+    font-size: 1.5rem;
+  }
+
+  .team h5 {
+    font-size: 2rem;
+  }
 }

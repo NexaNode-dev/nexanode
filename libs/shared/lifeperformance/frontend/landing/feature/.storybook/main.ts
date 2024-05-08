@@ -16,6 +16,11 @@ const config: StorybookConfig = {
         --color-tertiary: #daa520;
         --color-quaternary: #404040;
       }
+      
+      * {
+        box-sizing: border-box;
+      }
+
       html, body, section {
         margin: 0;
         padding: 0;

@@ -4,26 +4,25 @@
 }
 
 .services {
-  width: 60vw;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .services h2 {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .services h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .services h2,
-h3,
-h4, li {
+.services h3,
+.services h4, li {
   margin-bottom: 1rem;
   font-family: 'Archivo Black', sans-serif;
   font-style: italic;
@@ -31,7 +30,6 @@ h4, li {
 }
 
 .services p {
-  font-size: 1.5rem;
   margin-bottom: 1rem;
   font-family: 'Aileron', sans-serif;
   color: var(--color-quaternary);
@@ -52,9 +50,37 @@ h4, li {
 
 ol li {
   color: var(--color-tertiary);
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .services .note {
   font-size: 0.9rem;
+}
+
+
+@media (min-width: 768px) {
+  .services {
+    width: 60vw;
+    padding: 2rem;
+  }
+
+  .services h2 {
+    font-size: 4rem;
+  }
+
+  .services h3 {
+    font-size: 2rem;
+  }
+
+  .services p {
+    font-size: 1.5rem;
+  }
+
+  ol li {
+    font-size: 1.5rem;
+  }
+
+  .services .note {
+    font-size: 1rem;
+  }
 }

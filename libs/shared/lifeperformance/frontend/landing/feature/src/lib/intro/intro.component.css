@@ -1,7 +1,6 @@
 .intro {
   background-color: var(--color-secondary);
   color: var(--color-primary);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +23,7 @@
 }
 
 .intro p {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-family: 'Aileron', sans-serif;
   margin-bottom: 1rem;
   text-align: justify;
@@ -44,6 +43,14 @@
 @media (min-width: 768px) {
   .container {
     width: 70vw; /* Half of the viewport width on larger screens */
+  }
+
+  .intro {
+    padding: 2rem;
+  }
+
+  .intro p {
+    font-size: 1.5rem; /* Larger font size for better readability */
   }
 
   .intro img {
