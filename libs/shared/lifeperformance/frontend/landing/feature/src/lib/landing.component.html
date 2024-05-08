@@ -1,4 +1,16 @@
 <lifeperformance-landing-intro />
-<lifeperformance-landing-about />
-<lifeperformance-landing-services />
-<lifeperformance-landing-team />
+@defer (on viewport) {
+  <lifeperformance-landing-about />
+} @placeholder {
+  <p>About...</p>
+}
+@defer (on viewport) {
+  <lifeperformance-landing-services />
+} @placeholder {
+  <p>Services...</p>
+}
+@defer (on viewport) {
+  <lifeperformance-landing-team />
+} @placeholder {
+  <p>Team...</p>
+}

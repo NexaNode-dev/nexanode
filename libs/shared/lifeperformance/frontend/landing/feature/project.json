@@ -15,7 +15,24 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/shared/lifeperformance/frontend/landing/feature/ng-package.json"
+        "project": "libs/shared/lifeperformance/frontend/landing/feature/ng-package.json",
+        "assets": [
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -47,6 +64,23 @@
         "styles": [
           "@fontsource/archivo-black",
           "@fontsource/aileron"
+        ],
+        "assets": [
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
         ]
       },
       "configurations": {
@@ -66,6 +100,23 @@
         "styles": [
           "@fontsource/archivo-black",
           "@fontsource/aileron"
+        ],
+        "assets": [
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "glob": "**/*",
+            "output": "assets"
+          },
+          {
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
         ]
       },
       "configurations": {

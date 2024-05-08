@@ -10,7 +10,9 @@
 }
 
 .container {
-  width: 70vw;
+  width: 100%; /* Default to full width on smaller screens */
+  position: relative; /* If you need any positioning relative styles */
+  overflow: auto; /* Ensures the float is contained within the container */
 }
 
 .intro h2 {
@@ -25,4 +27,49 @@
   font-size: 1.5rem;
   font-family: 'Aileron', sans-serif;
   margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.intro img {
+  width: 100%; /* Full width on mobile */
+  height: auto;
+  float: none; /* No float on mobile */
+  margin-top: 1rem; /* Space above the image on mobile */
+  margin-bottom: 1rem; /* Space below the image on mobile */
+  border: 0.5rem solid var(--color-tertiary);
+  border-radius: 0.25rem;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .container {
+    width: 70vw; /* Half of the viewport width on larger screens */
+  }
+
+  .intro img {
+    width: 40%; /* Adjusted for aesthetics on larger screens */
+    float: right; /* Float right on larger screens */
+    margin-left: 2rem; /* Space between text and image on larger screens */
+    margin-top: 0; /* Reset margin-top on larger screens */
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 60vw;  /* Example adjustment for medium desktops */
+  }
+
+  .intro img {
+    width: 35%; /* Adjusting image size for better layout */
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 50vw;  /* Narrower container for large desktops */
+  }
+
+  .intro img {
+    width: 30%; /* Smaller image proportion for wider screens */
+  }
 }

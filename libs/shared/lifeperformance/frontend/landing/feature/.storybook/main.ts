@@ -13,7 +13,7 @@ const config: StorybookConfig = {
       :root {
         --color-primary: #2e6259;
         --color-secondary: #f1efe7;
-        --color-tertiary: #e97451;
+        --color-tertiary: #daa520;
         --color-quaternary: #404040;
       }
       html, body, section {
