@@ -9,7 +9,7 @@
 }
 
 .container {
-  width: 100%; /* Default to full width on smaller screens */
+  width: 95%; /* Default to full width on smaller screens */
   position: relative; /* If you need any positioning relative styles */
   overflow: auto; /* Ensures the float is contained within the container */
 }
