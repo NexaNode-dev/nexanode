@@ -15,7 +15,14 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json"
+        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json",
+        "assets": [
+          {
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
       },
       "configurations": {
         "production": {
@@ -36,6 +43,76 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/lifeperformance/frontend/header/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "compodoc": false,
+        "styles": [
+          "@fontsource/archivo-black",
+          "@fontsource/aileron"
+        ],
+        "assets": [
+          {
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/lifeperformance-frontend-header-feature",
+        "configDir": "libs/lifeperformance/frontend/header/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "compodoc": false,
+        "styles": [
+          "@fontsource/archivo-black",
+          "@fontsource/aileron"
+        ],
+        "assets": [
+          {
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/lifeperformance/frontend/header/feature/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "staticFilePath": "dist/storybook/lifeperformance-frontend-header-feature",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "lifeperformance-frontend-header-feature:build-storybook:ci"
+        }
+      }
     }
   }
 }

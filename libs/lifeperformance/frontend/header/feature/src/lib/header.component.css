@@ -1,0 +1,34 @@
+header {
+  background: var(--color-primary);
+  display: flex;
+}
+
+nav {
+  width: 70%;
+  padding: 1rem 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  list-style: none;
+}
+
+nav ul li button {
+  font-size: 2rem;
+  background: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li button:hover {
+  border: 2px solid var(--color-quaternary);
+}
+
+nav ul li button a {
+  text-decoration: none;
+  color: var(--color-quaternary);
+  font-family: 'Archivo Black', sans-serif;
+}
