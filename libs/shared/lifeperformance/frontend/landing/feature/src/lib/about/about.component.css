@@ -43,7 +43,7 @@
   border-radius: 0.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .container {
     padding: 2rem;
   }
