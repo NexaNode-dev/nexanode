@@ -63,7 +63,7 @@
 
 @media (min-width: 992px) {
   .container {
-    width: 60vw;  /* Example adjustment for medium desktops */
+    width: 60vw; /* Example adjustment for medium desktops */
   }
 
   .intro img {
@@ -73,7 +73,7 @@
 
 @media (min-width: 1200px) {
   .container {
-    width: 50vw;  /* Narrower container for large desktops */
+    width: 50vw; /* Narrower container for large desktops */
   }
 
   .intro img {

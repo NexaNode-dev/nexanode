@@ -61,10 +61,7 @@
         "configDir": "libs/shared/lifeperformance/frontend/landing/feature/.storybook",
         "browserTarget": "lifeperformance-frontend-landing-feature:build-storybook",
         "compodoc": false,
-        "styles": [
-          "@fontsource/archivo-black",
-          "@fontsource/aileron"
-        ],
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
         "assets": [
           {
             "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
@@ -97,10 +94,7 @@
         "configDir": "libs/shared/lifeperformance/frontend/landing/feature/.storybook",
         "browserTarget": "lifeperformance-frontend-landing-feature:build-storybook",
         "compodoc": false,
-        "styles": [
-          "@fontsource/archivo-black",
-          "@fontsource/aileron"
-        ],
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
         "assets": [
           {
             "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",

@@ -1,0 +1,9 @@
+{
+  "name": "lifeperformance-frontend-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/lifeperformance/frontend-e2e/src",
+  "implicitDependencies": ["lifeperformance-frontend"],
+  "// targets": "to see all targets run: nx show project lifeperformance-frontend-e2e --web",
+  "targets": {}
+}

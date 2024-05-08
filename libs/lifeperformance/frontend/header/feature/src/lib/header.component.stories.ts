@@ -11,4 +11,3 @@ type Story = StoryObj<HeaderComponent>;
 export const Primary: Story = {
   args: {},
 };
-

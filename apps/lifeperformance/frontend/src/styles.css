@@ -1,0 +1,22 @@
+:root {
+  --color-primary: #2e6259;
+  --color-secondary: #f1efe7;
+  --color-tertiary: #daa520;
+  --color-quaternary: #404040;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-secondary);
+  color: var(--color-quaternary);
+}

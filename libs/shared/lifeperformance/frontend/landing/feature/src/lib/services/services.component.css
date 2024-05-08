@@ -22,7 +22,8 @@
 
 .services h2,
 .services h3,
-.services h4, li {
+.services h4,
+li {
   margin-bottom: 1rem;
   font-family: 'Archivo Black', sans-serif;
   font-style: italic;
@@ -56,7 +57,6 @@ ol li {
 .services .note {
   font-size: 0.9rem;
 }
-
 
 @media (min-width: 768px) {
   .services {

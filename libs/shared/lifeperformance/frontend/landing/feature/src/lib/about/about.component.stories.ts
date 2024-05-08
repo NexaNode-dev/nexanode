@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { AboutComponent } from './about.component'; 
+import { AboutComponent } from './about.component';
 
 const meta: Meta<AboutComponent> = {
   component: AboutComponent,
@@ -11,4 +11,3 @@ type Story = StoryObj<AboutComponent>;
 export const Primary: Story = {
   args: {},
 };
-
