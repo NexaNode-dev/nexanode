@@ -3,6 +3,37 @@ header {
   display: flex;
 }
 
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+}
+
+.hamburger {
+  width: 30px;
+  height: 3px;
+  background: var(--color-secondary);
+  display: block;
+  position: relative;
+}
+
+.hamburger::after,
+.hamburger::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--color-secondary);
+  transition: all 0.3s;
+}
+
+.hamburger::before {
+  top: -10px;
+}
+.hamburger::after {
+  top: 10px;
+}
+
 nav {
   width: 70%;
   padding: 1rem 2rem;
@@ -31,4 +62,39 @@ nav ul li button a {
   text-decoration: none;
   color: var(--color-quaternary);
   font-family: 'Archivo Black', sans-serif;
+}
+
+@media (max-width: 768px) {
+  header img {
+    width: 100%;
+  };
+
+  .nav-toggle {
+    display: block;
+    position: relative;
+    z-index: 1000;  /* Make sure it's above other elements */
+    cursor: pointer;
+  }
+
+  nav {
+    position: absolute;
+    background: var(--color-primary);
+    width: 100%;
+    top: 60px; /* Adjust based on header size */
+    right: 0;
+    display: none; /* Hide by default */
+  }
+
+  nav.active {
+    display: block; /* displayed when active class is added */
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-bottom: 1rem;
+  }
 }
