@@ -15,24 +15,7 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/shared/lifeperformance/frontend/landing/feature/ng-package.json",
-        "assets": [
-          {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
-            "glob": "**/*",
-            "output": "assets"
-          },
-          {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }
-        ]
+        "project": "libs/shared/lifeperformance/frontend/landing/feature/ng-package.json"
       },
       "configurations": {
         "production": {

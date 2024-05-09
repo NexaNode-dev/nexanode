@@ -15,14 +15,7 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json",
-        "assets": [
-          {
-            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
-            "glob": "**/*",
-            "output": "assets"
-          }
-        ]
+        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json"
       },
       "configurations": {
         "production": {
