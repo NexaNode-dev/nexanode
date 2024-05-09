@@ -12,7 +12,7 @@
       "options": {
         "outputPath": "dist/apps/lifeperformance/frontend",
         "index": "apps/lifeperformance/frontend/src/index.html",
-        "browser": "apps/lifeperformance/frontend/src/main.ts",
+        "main": "apps/lifeperformance/frontend/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/lifeperformance/frontend/tsconfig.app.json",
         "assets": [
