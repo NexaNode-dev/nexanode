@@ -7,7 +7,7 @@
   "tags": ["scope:frontend", "type:app", "tech:angular", "app:lifeperformance"],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:application",
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/lifeperformance/frontend",
