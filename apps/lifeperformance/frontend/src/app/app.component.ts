@@ -11,5 +11,5 @@ import { HeaderComponent } from '@nexanode/lifeperformance-frontend-header-featu
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'lifeperformance-frontend';
+  title = 'life. performance';
 }
