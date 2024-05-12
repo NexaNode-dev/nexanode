@@ -57,7 +57,7 @@ export function Landing(props: LandingProps) {
           need to make your stay comfortable and relaxing.
         </p>
       </div>
-      
+
       <div>
         <img
           src={Rooms2}
