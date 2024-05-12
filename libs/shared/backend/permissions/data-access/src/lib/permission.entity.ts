@@ -15,13 +15,13 @@ export class Permission implements IPermission {
   @Column({ unique: true })
   name!: string;
   @Column({ nullable: true })
-  description?: string | undefined;
+  description?: string;
   @Column()
   action!: string;
   @Column()
   subject!: string;
-  @Column('json', { nullable: true })
-  conditions?: object | undefined;
+  @Column('text', { nullable: true })
+  conditions?: string;
   @CreateDateColumn()
   createdAt!: Date;
   @UpdateDateColumn()

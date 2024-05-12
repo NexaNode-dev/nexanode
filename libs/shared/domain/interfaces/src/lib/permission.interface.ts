@@ -4,7 +4,7 @@ export interface IPermission {
   description?: string;
   action: string;
   subject: string;
-  conditions?: object;
+  conditions?: string;
   createdAt: Date;
   updatedAt: Date;
 }

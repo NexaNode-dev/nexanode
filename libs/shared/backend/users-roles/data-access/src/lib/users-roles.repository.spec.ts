@@ -54,14 +54,16 @@ describe('UsersRolesRepository', () => {
 
   describe('findAll', () => {
     it('should return an array of user roles', async () => {
-      const userRoles = await provider.findAll();
+      const userRoles = await provider.getUserRoles();
       expect(userRoles).toEqual(expectedUserRoles);
       expect(mockRepository.find).toHaveBeenCalled();
     });
   });
   describe('findOne', () => {
     it('should return a user role', async () => {
-      const userRole = await provider.findOne({ where: { userId, roleId } });
+      const userRole = await provider.getUserRole({
+        where: { userId, roleId },
+      });
       expect(userRole).toEqual(expectedUserRole);
       expect(mockRepository.findOne).toHaveBeenCalledWith({
         where: { userId, roleId },
@@ -70,7 +72,7 @@ describe('UsersRolesRepository', () => {
     it('should throw a NotFoundException', async () => {
       mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.findOne({ where: { userId, roleId } });
+        await provider.getUserRole({ where: { userId, roleId } });
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -78,7 +80,7 @@ describe('UsersRolesRepository', () => {
   });
   describe('create', () => {
     it('should create a user role', async () => {
-      const userRole = await provider.create(userRoleData);
+      const userRole = await provider.createUserRole(userRoleData);
       expect(userRole).toEqual(expectedUserRole);
       expect(mockRepository.create).toHaveBeenCalledWith(userRoleData);
       expect(mockRepository.save).toHaveBeenCalledWith(expectedUserRole);
@@ -86,9 +88,9 @@ describe('UsersRolesRepository', () => {
   });
   describe('update', () => {
     it('should update and return a user role', async () => {
-      expect(await provider.update({ userId, roleId }, userRoleData)).toEqual(
-        expectedUserRole,
-      );
+      expect(
+        await provider.updateUserRole({ userId, roleId }, userRoleData),
+      ).toEqual(expectedUserRole);
       const options = { userId, roleId };
       expect(mockRepository.preload).toHaveBeenCalledWith({
         ...options,
@@ -98,7 +100,7 @@ describe('UsersRolesRepository', () => {
     it('should throw a NotFoundException', async () => {
       mockRepository.preload.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.update({ userId, roleId }, userRoleData);
+        await provider.updateUserRole({ userId, roleId }, userRoleData);
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }
@@ -106,15 +108,15 @@ describe('UsersRolesRepository', () => {
   });
   describe('delete', () => {
     it('should delete a user role', async () => {
-      expect(await provider.delete({ where: { userId, roleId } })).toEqual(
-        expectedUserRole.id,
-      );
+      expect(
+        await provider.deleteUserRole({ where: { userId, roleId } }),
+      ).toEqual(expectedUserRole.id);
       expect(mockRepository.remove).toHaveBeenCalledWith(expectedUserRole);
     });
     it('should throw a NotFoundException', async () => {
       mockRepository.findOne.mockRejectedValueOnce(new NotFoundException());
       try {
-        await provider.delete({ where: { userId, roleId } });
+        await provider.deleteUserRole({ where: { userId, roleId } });
       } catch (error) {
         expect(error).toBeInstanceOf(NotFoundException);
       }

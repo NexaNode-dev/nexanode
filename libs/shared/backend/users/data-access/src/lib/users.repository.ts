@@ -1,45 +1,49 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FindManyOptions, Repository } from 'typeorm';
+import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { User } from './user.entity';
 
 @Injectable()
-export class UsersRepository {
+export class UsersRepository extends Repository<User> {
   constructor(
-    @InjectRepository(User) private readonly userRepository: Repository<User>,
-  ) {}
-
-  findAll(options?: FindManyOptions<User>): Promise<User[]> {
-    return this.userRepository.find(options);
+    @InjectRepository(User) private readonly usersRepository: Repository<User>,
+  ) {
+    super(User, usersRepository.manager, usersRepository.queryRunner);
   }
 
-  async findOne(id: string): Promise<User> {
-    const user = await this.userRepository.findOne({ where: { id } });
+  getUsers(options: FindManyOptions<User> = {}): Promise<User[]> {
+    return this.usersRepository.find(options);
+  }
+
+  async getUser(options: FindOneOptions = {}): Promise<User> {
+    const user = await this.usersRepository.findOne(options);
     if (!user) {
-      throw new NotFoundException(`User #${id} not found`);
+      throw new NotFoundException(
+        `User with options #${JSON.stringify(options)} not found`,
+      );
     }
     return user;
   }
 
-  async create(user: Partial<User>): Promise<User> {
-    const newUser = this.userRepository.create(user);
-    return this.userRepository.save(newUser);
+  async createUser(user: Partial<User>): Promise<User> {
+    const newUser = this.usersRepository.create(user);
+    return this.usersRepository.save(newUser);
   }
 
-  async update(id: string, user: Partial<User>): Promise<User> {
-    const existingUser = await this.userRepository.preload({
+  async updateUser(id: string, user: Partial<User>): Promise<User> {
+    const existingUser = await this.usersRepository.preload({
       id,
       ...user,
     });
     if (!existingUser) {
       throw new NotFoundException(`User #${id} not found`);
     }
-    return this.userRepository.save(existingUser);
+    return this.usersRepository.save(existingUser);
   }
 
-  async delete(id: string): Promise<string> {
-    const user = await this.findOne(id);
-    await this.userRepository.remove(user);
+  async deleteUser(id: string): Promise<string> {
+    const user = await this.getUser({ where: { id } });
+    await this.usersRepository.remove(user);
     return id;
   }
 }

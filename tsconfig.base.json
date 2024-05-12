@@ -57,11 +57,35 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-contacts-ng-data-access": [
+        "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-ng-feature": [
+        "libs/shared/frontend/contacts/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-ng-state": [
+        "libs/shared/frontend/contacts/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-react-data-access": [
+        "libs/shared/frontend/contacts/react/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-react-feature": [
+        "libs/shared/frontend/contacts/react/feature/src/index.ts"
+      ],
       "@nexanode/frontend-markdown-util-pipe": [
         "libs/shared/frontend/markdown/util/pipe/src/index.ts"
       ],
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-footer-feature": [
+        "libs/lifeperformance/frontend/footer/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-header-feature": [
+        "libs/lifeperformance/frontend/header/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-landing-feature": [
+        "libs/shared/lifeperformance/frontend/landing/feature/src/index.ts"
       ],
       "@nexanode/optimalist-frontend-about-feature": [
         "libs/optimalist/frontend/about/feature/src/index.ts"
@@ -80,6 +104,12 @@
       ],
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
+      "@nexanode/pmspads-frontend-homepage-feature": [
+        "libs/pmspads/frontend/homepage/feature/src/index.ts"
+      ],
+      "@nexanode/testing-data-mocks-utils": [
+        "libs/shared/testing/data-mocks/utils/src/index.ts"
       ],
       "@nexanode/zendens-frontend-landing-feature": [
         "libs/zendens/frontend/landing/feature/src/index.ts"
