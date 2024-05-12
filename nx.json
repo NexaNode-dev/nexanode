@@ -35,8 +35,21 @@
   },
   "generators": {
     "@nx/react": {
+      "application": {
+        "babel": false,
+        "style": "css",
+        "linter": "eslint",
+        "bundler": "vite",
+        "e2eTestRunner": "playwright"
+      },
       "library": {
-        "unitTestRunner": "jest"
+        "style": "css",
+        "linter": "eslint",
+        "unitTestRunner": "vitest",
+        "bundler": "vite"
+      },
+      "component": {
+        "style": "css"
       }
     },
     "@nx/angular": {
@@ -163,5 +176,12 @@
         "staticStorybookTargetName": "static-storybook"
       }
     }
-  ]
+  ],
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["build-storybook"]
+      }
+    }
+  }
 }

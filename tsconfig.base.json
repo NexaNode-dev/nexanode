@@ -110,6 +110,9 @@
       ],
       "@nexanode/testing-data-mocks-utils": [
         "libs/shared/testing/data-mocks/utils/src/index.ts"
+      ],
+      "@nexanode/zendens-frontend-landing-feature": [
+        "libs/zendens/frontend/landing/feature/src/index.ts"
       ]
     }
   },

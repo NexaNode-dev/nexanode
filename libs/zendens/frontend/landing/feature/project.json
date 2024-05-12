@@ -1,0 +1,9 @@
+{
+  "name": "zendens-frontend-landing-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/zendens/frontend/landing/feature/src",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:feature", "application:zendens"],
+  "// targets": "to see all targets run: nx show project zendens-frontend-landing-feature --web",
+  "targets": {}
+}

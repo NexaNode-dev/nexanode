@@ -1,0 +1,24 @@
+:root {
+  --color-primary: rgb(244, 232, 233);
+  --color-secondary: rgb(168, 213, 186);
+  --color-tertiary: rgb(249, 245, 246);
+  --color-text: rgb(90, 90, 90);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background: var(--color-primary);
+  color: var(--color-text);
+}
+
+h1,
+h2 {
+  font-family: 'Pinyon Script', cursive;
+}
