@@ -78,6 +78,15 @@
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
       ],
+      "@nexanode/lifeperformance-frontend-footer-feature": [
+        "libs/lifeperformance/frontend/footer/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-header-feature": [
+        "libs/lifeperformance/frontend/header/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-landing-feature": [
+        "libs/shared/lifeperformance/frontend/landing/feature/src/index.ts"
+      ],
       "@nexanode/optimalist-frontend-about-feature": [
         "libs/optimalist/frontend/about/feature/src/index.ts"
       ],

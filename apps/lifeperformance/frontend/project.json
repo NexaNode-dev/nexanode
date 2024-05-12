@@ -1,0 +1,102 @@
+{
+  "name": "lifeperformance-frontend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "liferperformance",
+  "sourceRoot": "apps/lifeperformance/frontend/src",
+  "tags": ["scope:frontend", "type:app", "tech:angular", "app:lifeperformance"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser-esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/lifeperformance/frontend",
+        "index": "apps/lifeperformance/frontend/src/index.html",
+        "main": "apps/lifeperformance/frontend/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/lifeperformance/frontend/tsconfig.app.json",
+        "assets": [
+          "apps/lifeperformance/frontend/src/favicon.ico",
+          "apps/lifeperformance/frontend/src/assets",
+          {
+            "glob": "**/*",
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "output": "/assets/"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "output": "/assets/"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "output": "/assets/"
+          },
+          {
+            "glob": "**/*",
+            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "output": "/assets/"
+          }
+        ],
+        "styles": [
+          "@fontsource/archivo-black/index.css",
+          "@fontsource/aileron/index.css",
+          "apps/lifeperformance/frontend/src/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "lifeperformance-frontend:build:production"
+        },
+        "development": {
+          "buildTarget": "lifeperformance-frontend:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "lifeperformance-frontend:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/lifeperformance/frontend/jest.config.ts"
+      }
+    }
+  }
+}

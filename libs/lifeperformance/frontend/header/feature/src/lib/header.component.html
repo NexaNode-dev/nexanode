@@ -1,0 +1,25 @@
+<header>
+  <img src="assets/logo.png" alt="Life Performance" />
+  <button class="nav-toggle" aria-label="toggle navigation" (click)="toggleNav()">
+    <span class="hamburger"></span>
+  </button>
+  <nav [class.active]="navOpen">
+    <ul>
+      <li>
+        <button>
+          <a href="#about">Over Ons</a>
+        </button>
+      </li>
+      <li>
+        <button>
+          <a href="#services" routerLinkActive="active">Aanbod</a>
+        </button>
+      </li>
+      <li>
+        <button>
+          <a href="#team" routerLinkActive="active">Team</a>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>

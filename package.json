@@ -63,6 +63,8 @@
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@faker-js/faker": "^8.4.1",
+    "@fontsource/aileron": "^5.0.11",
+    "@fontsource/archivo-black": "^5.0.20",
     "@nestjs-modules/mailer": "1.11.2",
     "@nestjs/schematics": "10.1.1",
     "@nestjs/testing": "10.3.8",

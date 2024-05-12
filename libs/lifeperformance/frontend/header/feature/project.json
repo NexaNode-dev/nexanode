@@ -1,0 +1,105 @@
+{
+  "name": "lifeperformance-frontend-header-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/lifeperformance/frontend/header/feature/src",
+  "prefix": "lifeperformance",
+  "projectType": "library",
+  "tags": [
+    "scope:frontend",
+    "type:feature",
+    "tech:angular",
+    "app:lifeperformance"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/lifeperformance/frontend/header/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/lifeperformance/frontend/header/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/lifeperformance/frontend/header/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/lifeperformance/frontend/header/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
+        "assets": [
+          {
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/lifeperformance-frontend-header-feature",
+        "configDir": "libs/lifeperformance/frontend/header/feature/.storybook",
+        "browserTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
+        "assets": [
+          {
+            "input": "libs/lifeperformance/frontend/header/feature/src/lib/assets",
+            "glob": "**/*",
+            "output": "assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/lifeperformance/frontend/header/feature/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "lifeperformance-frontend-header-feature:build-storybook",
+        "staticFilePath": "dist/storybook/lifeperformance-frontend-header-feature",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "lifeperformance-frontend-header-feature:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
