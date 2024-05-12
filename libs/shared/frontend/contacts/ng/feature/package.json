@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/core": "^17.3.0",
-    "@angular/forms": "17.3.5",
+    "@angular/forms": "17.3.8",
     "@nexanode/frontend-contacts-ng-state": "0.0.1"
   },
   "dependencies": {},
