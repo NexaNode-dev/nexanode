@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/core": "^17.1.0",
-    "@angular/router": "17.3.5",
-    "@nx/angular": "18.3.3",
+    "@angular/router": "17.3.8",
+    "@nx/angular": "19.0.2",
     "@ng-icons/core": "^27.2.0",
     "@ng-icons/bootstrap-icons": "^27.2.0",
-    "@angular/material": "17.3.5"
+    "@angular/material": "17.3.8"
   },
   "dependencies": {},
   "sideEffects": false
