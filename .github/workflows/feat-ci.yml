@@ -28,6 +28,7 @@ jobs:
           node-version: 20
           cache: 'yarn'
       - run: yarn install --immutable
+      - run: yarn install playwright
       - uses: nrwl/nx-set-shas@v4
 
       - run: git branch --track ${{ github.base_ref }} origin/${{ github.base_ref }}
