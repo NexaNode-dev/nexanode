@@ -1,0 +1,79 @@
+.about {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.container h2 {
+  font-size: 4rem;
+  font-style: italic;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: right;
+  width: 80vw;
+}
+
+.container p {
+  font-size: 1.1rem;
+  font-family: 'Aileron', sans-serif;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.about p {
+  font-family: 'Aileron', sans-serif;
+}
+
+.about img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 0.75rem solid var(--color-secondary);
+  border-radius: 0.25rem;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 2rem;
+  }
+  .about {
+    width: 60vw;
+    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
+    grid-auto-flow: dense; /* Helps fill in gaps in the grid */
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .about p,
+  .about img {
+    width: 25vw;
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .about p:nth-child(4n+1), /* 1st item in a set of four */
+  .about p:nth-child(4n+4) {
+    /* 4th item in a set of four */
+    grid-column: 1;
+  }
+
+  .about p:nth-child(4n+2), /* 2nd item in a set of four */
+  .about p:nth-child(4n+3) {
+    /* 3rd item in a set of four */
+    grid-column: 2;
+  }
+}

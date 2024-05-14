@@ -17,21 +17,21 @@ export class Contact implements IContact {
   @Column()
   email!: string;
   @Column({ nullable: true })
-  phone?: string | undefined;
+  phone?: string;
   @Column({ nullable: true })
-  url?: string | undefined;
+  url?: string;
   @Column({ nullable: true })
-  address?: string | undefined;
+  address?: string;
   @Column({ nullable: true })
-  city?: string | undefined;
+  city?: string;
   @Column({ nullable: true })
-  state?: string | undefined;
+  state?: string;
   @Column({ nullable: true })
-  zip?: string | undefined;
+  zip?: string;
   @Column({ nullable: true })
-  country?: string | undefined;
+  country?: string;
   @Column({ nullable: true })
-  subject?: string | undefined;
+  subject?: string;
   @Column('text')
   message!: string;
   @CreateDateColumn()

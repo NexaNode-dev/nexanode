@@ -1,0 +1,26 @@
+{
+  "name": "@nexanode/backend-auth-util",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "10.3.8",
+    "@nexanode/domain-interfaces": "0.1.0",
+    "@nexanode/backend-users-data-access": "0.0.1",
+    "@nexanode/backend-hashing-util": "0.0.1",
+    "@nexanode/backend-roles-data-access": "0.0.1",
+    "@nestjs/jwt": "^10.2.0",
+    "@nexanode/backend-users-roles-data-access": "0.0.1",
+    "@nexanode/backend-roles-permissions-data-access": "0.0.1",
+    "@nexanode/backend-permissions-data-access": "0.0.1",
+    "@nestjs/passport": "^10.0.3",
+    "passport-jwt": "^4.0.1",
+    "typeorm": "^0.3.20"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true,
+  "devDependencies": {
+    "@types/passport-jwt": "^4.0.1"
+  }
+}

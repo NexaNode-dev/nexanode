@@ -1,0 +1,9 @@
+{
+  "name": "zendens-frontend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/zendens/frontend/src",
+  "projectType": "application",
+  "tags": ["scope:frontend", "type:application", "application:zendens"],
+  "// targets": "to see all targets run: nx show project zendens-frontend --web",
+  "targets": {}
+}

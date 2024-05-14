@@ -4,8 +4,8 @@
   "peerDependencies": {
     "@angular/common": "^17.1.0",
     "@angular/core": "^17.1.0",
-    "@angular/router": "17.3.0",
-    "@nx/angular": "18.0.4",
+    "@angular/router": "17.3.8",
+    "@nx/angular": "19.0.2",
     "@nexanode/optimalist-frontend-services-state": "0.0.1",
     "@nexanode/frontend-markdown-util-pipe": "0.0.1"
   },

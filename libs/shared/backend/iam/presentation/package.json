@@ -1,0 +1,15 @@
+{
+  "name": "@nexanode/backend-iam-presentation",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "10.3.8",
+    "@nexanode/backend-iam-application": "0.0.1",
+    "@nexanode/domain-interfaces": "0.1.0",
+    "class-validator": "^0.14.1"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true
+}

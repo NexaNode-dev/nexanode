@@ -1,0 +1,20 @@
+{
+  "name": "backend-rbac-util",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/rbac/util/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/rbac/util",
+        "tsConfig": "libs/shared/backend/rbac/util/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/rbac/util/package.json",
+        "main": "libs/shared/backend/rbac/util/src/index.ts",
+        "assets": ["libs/shared/backend/rbac/util/*.md"]
+      }
+    }
+  },
+  "tags": ["scope:backend", "type:util", "domain:rbac"]
+}

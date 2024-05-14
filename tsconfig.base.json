@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/backend-auth-util": [
+        "libs/shared/backend/auth/util/src/index.ts"
+      ],
       "@nexanode/backend-contacts-application": [
         "libs/shared/backend/contacts/application/src/index.ts"
       ],
@@ -27,8 +30,17 @@
       "@nexanode/backend-hashing-util": [
         "libs/shared/backend/hashing/util/src/index.ts"
       ],
+      "@nexanode/backend-iam-application": [
+        "libs/shared/backend/iam/application/src/index.ts"
+      ],
+      "@nexanode/backend-iam-presentation": [
+        "libs/shared/backend/iam/presentation/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-rbac-util": [
+        "libs/shared/backend/rbac/util/src/index.ts"
       ],
       "@nexanode/backend-roles-data-access": [
         "libs/shared/backend/roles/data-access/src/index.ts"
@@ -45,6 +57,21 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-contacts-ng-data-access": [
+        "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-ng-feature": [
+        "libs/shared/frontend/contacts/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-ng-state": [
+        "libs/shared/frontend/contacts/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-react-data-access": [
+        "libs/shared/frontend/contacts/react/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-contacts-react-feature": [
+        "libs/shared/frontend/contacts/react/feature/src/index.ts"
+      ],
       "@nexanode/frontend-layout-util": ["dist/libs/shared/frontend/layout/util"],
       "@nexanode/frontend-layout-util/*": [
         "dist/libs/shared/frontend/layout/util/dist/components/*"
@@ -57,6 +84,15 @@
       ],
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-footer-feature": [
+        "libs/lifeperformance/frontend/footer/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-header-feature": [
+        "libs/lifeperformance/frontend/header/feature/src/index.ts"
+      ],
+      "@nexanode/lifeperformance-frontend-landing-feature": [
+        "libs/shared/lifeperformance/frontend/landing/feature/src/index.ts"
       ],
       "@nexanode/optimalist-frontend-about-feature": [
         "libs/optimalist/frontend/about/feature/src/index.ts"
@@ -75,6 +111,15 @@
       ],
       "@nexanode/optimalist-frontend-services-state": [
         "libs/optimalist/frontend/services/state/src/index.ts"
+      ],
+      "@nexanode/pmspads-frontend-homepage-feature": [
+        "libs/pmspads/frontend/homepage/feature/src/index.ts"
+      ],
+      "@nexanode/testing-data-mocks-utils": [
+        "libs/shared/testing/data-mocks/utils/src/index.ts"
+      ],
+      "@nexanode/zendens-frontend-landing-feature": [
+        "libs/zendens/frontend/landing/feature/src/index.ts"
       ],
       "@nexanode/stoic-frontend-about-feature": [
         "libs/stoic/frontend/about/feature/src/index.ts"

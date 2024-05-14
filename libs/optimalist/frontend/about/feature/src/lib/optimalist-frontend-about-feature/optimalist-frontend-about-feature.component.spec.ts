@@ -20,7 +20,7 @@ describe('OptimalistFrontendAboutFeatureComponent', () => {
   });
 
   it('should have a title', () => {
-    const title = fixture.nativeElement.querySelector('h2');
+    const title = fixture.nativeElement.querySelector('.text-4xl');
     expect(title.textContent).toContain('About Johan Vrolix');
   });
 });

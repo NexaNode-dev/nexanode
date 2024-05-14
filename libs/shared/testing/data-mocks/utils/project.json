@@ -1,0 +1,19 @@
+{
+  "name": "testing-data-mocks-utils",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/testing/data-mocks/utils/src",
+  "projectType": "library",
+  "tags": ["scope:testing", "type:utils"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/testing/data-mocks/utils",
+        "main": "libs/shared/testing/data-mocks/utils/src/index.ts",
+        "tsConfig": "libs/shared/testing/data-mocks/utils/tsconfig.lib.json",
+        "assets": ["libs/shared/testing/data-mocks/utils/*.md"]
+      }
+    }
+  }
+}

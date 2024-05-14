@@ -13,7 +13,7 @@ export class Role implements IRole {
   @Column({ unique: true })
   name!: string;
   @Column({ nullable: true })
-  description?: string | undefined;
+  description?: string;
   @CreateDateColumn()
   createdAt!: Date;
   @UpdateDateColumn()

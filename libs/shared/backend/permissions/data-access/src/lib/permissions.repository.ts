@@ -5,48 +5,60 @@ import { Permission } from './permission.entity';
 import { IPermission } from '@nexanode/domain-interfaces';
 
 @Injectable()
-export class PermissionsRepository {
+export class PermissionsRepository extends Repository<Permission> {
   constructor(
     @InjectRepository(Permission)
-    private permissionRepository: Repository<Permission>,
-  ) {}
-
-  async findAll(options?: FindManyOptions<Permission>): Promise<Permission[]> {
-    return this.permissionRepository.find(options);
+    private permissionsRepository: Repository<Permission>,
+  ) {
+    super(
+      Permission,
+      permissionsRepository.manager,
+      permissionsRepository.queryRunner,
+    );
   }
 
-  async findOne(id: string): Promise<Permission> {
-    const permission = await this.permissionRepository.findOne({
-      where: { id },
-    });
+  async getPermissions(
+    options: FindManyOptions<Permission> = {},
+  ): Promise<Permission[]> {
+    return this.permissionsRepository.find(options);
+  }
+
+  async getPermission(
+    options: FindManyOptions<Permission> = {},
+  ): Promise<Permission> {
+    const permission = await this.permissionsRepository.findOne(options);
     if (!permission) {
-      throw new NotFoundException(`Permission #${id} not found`);
+      throw new NotFoundException(
+        `Permission with options ${JSON.stringify(options)} not found`,
+      );
     }
     return permission;
   }
 
-  async create(permission: Partial<IPermission>): Promise<Permission> {
-    const newPermission = this.permissionRepository.create(permission);
-    return this.permissionRepository.save(newPermission);
+  async createPermission(
+    permission: Partial<IPermission>,
+  ): Promise<Permission> {
+    const newPermission = this.permissionsRepository.create(permission);
+    return this.permissionsRepository.save(newPermission);
   }
 
-  async update(
+  async updatePermission(
     id: string,
     permission: Partial<IPermission>,
   ): Promise<Permission> {
-    const updatedPermission = await this.permissionRepository.preload({
+    const updatedPermission = await this.permissionsRepository.preload({
       id,
       ...permission,
     });
     if (!updatedPermission) {
       throw new NotFoundException(`Permission #${id} not found`);
     }
-    return this.permissionRepository.save(updatedPermission);
+    return this.permissionsRepository.save(updatedPermission);
   }
 
-  async delete(id: string): Promise<string> {
-    const permission = await this.findOne(id);
-    await this.permissionRepository.remove(permission);
+  async deletePermission(id: string): Promise<string> {
+    const permission = await this.getPermission({ where: { id } });
+    await this.permissionsRepository.remove(permission);
     return id;
   }
 }
