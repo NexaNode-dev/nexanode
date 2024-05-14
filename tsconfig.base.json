@@ -111,6 +111,9 @@
       "@nexanode/testing-data-mocks-utils": [
         "libs/shared/testing/data-mocks/utils/src/index.ts"
       ],
+      "@nexanode/tijdenlangverhaald-frontend-header-feature": [
+        "libs/tijdenlangverhaald/frontend/header/feature/src/index.ts"
+      ],
       "@nexanode/zendens-frontend-landing-feature": [
         "libs/zendens/frontend/landing/feature/src/index.ts"
       ]

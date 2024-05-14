@@ -1,0 +1,11 @@
+{
+  "name": "@nexanode/tijdenlangverhaald-frontend-header-feature",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^17.3.0",
+    "@angular/router": "17.3.8",
+    "@nx/angular": "19.0.2"
+  },
+  "dependencies": {},
+  "sideEffects": false
+}
