@@ -1,0 +1,98 @@
+{
+  "name": "tijdenlangverhaald-frontend-header-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/tijdenlangverhaald/frontend/header/feature/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [
+    "scope:frontend",
+    "type:feature",
+    "tech:angular",
+    "app:tijdenlangverhaald"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/tijdenlangverhaald/frontend/header/feature/ng-package.json",
+        "tailwindConfig": "libs/tijdenlangverhaald/frontend/header/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/tijdenlangverhaald/frontend/header/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/tijdenlangverhaald/frontend/header/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/tijdenlangverhaald/frontend/header/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/tijdenlangverhaald/frontend/header/feature/.storybook",
+        "browserTarget": "tijdenlangverhaald-frontend-header-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["@fontsource/great-vibes"],
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "libs/tijdenlangverhaald/frontend/header/feature/src/assets",
+            "output": "/assets"
+          }
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/tijdenlangverhaald-frontend-header-feature",
+        "configDir": "libs/tijdenlangverhaald/frontend/header/feature/.storybook",
+        "browserTarget": "tijdenlangverhaald-frontend-header-feature:build-storybook",
+        "compodoc": false
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/tijdenlangverhaald/frontend/header/feature/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "tijdenlangverhaald-frontend-header-feature:build-storybook",
+        "staticFilePath": "dist/storybook/tijdenlangverhaald-frontend-header-feature",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "tijdenlangverhaald-frontend-header-feature:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
