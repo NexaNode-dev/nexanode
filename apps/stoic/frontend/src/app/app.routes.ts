@@ -14,5 +14,5 @@ export const appRoutes: Route[] = [
       import('@nexanode/stoic-frontend-about-feature').then(
         (m) => m.stoicFrontendAboutFeatureRoutes,
       ),
-  }
+  },
 ];

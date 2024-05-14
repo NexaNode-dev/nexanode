@@ -48,7 +48,7 @@ export class StoicFrontendAboutFeatureComponent {
     // Voeg meer personen toe zoals nodig
   ];
 
-  generateCardConfig(person: typeof this.people[0]) {
+  generateCardConfig(person: (typeof this.people)[0]) {
     return JSON.stringify({
       imageSrc: person.image,
       imageAlt: person.name,

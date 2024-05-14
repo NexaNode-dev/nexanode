@@ -23,7 +23,13 @@ export class NexanodeCard {
 
   renderImage(config: CardConfig) {
     if (!config.imageSrc) return null;
-    return <img src={config.imageSrc} alt={config.imageAlt || 'Card Image'} class='card-image' />;
+    return (
+      <img
+        src={config.imageSrc}
+        alt={config.imageAlt || 'Card Image'}
+        class="card-image"
+      />
+    );
   }
 
   render() {

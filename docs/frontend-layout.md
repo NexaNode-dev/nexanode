@@ -23,6 +23,7 @@ nx generate @nxext/stencil:library layout-lib
 Inside the newly created library, add a StencilJS component for the blog layout. This component accepts a `layoutConfig` prop, enabling dynamic configuration.
 
 **libs/layout-lib/src/components/blog-layout/blog-layout.tsx:**
+
 ```tsx
 import { Component, Prop, h } from '@stencil/core';
 
@@ -66,11 +67,12 @@ export class BlogLayout {
 ```
 
 **libs/layout-lib/src/components/blog-layout/blog-layout.css:**
+
 ```css
 article {
   max-width: 800px;
   margin: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 h1 {
   font-size: 24px;
@@ -109,12 +111,7 @@ export * from './components';
 The `blog-layout` component can be dynamically configured using the `layout-config` property:
 
 ```html
-<blog-layout
-  title="Welcome to Our Blog"
-  author="John Doe"
-  content="<p>This is a dynamically configured blog post layout.</p>"
-  layout-config='{"showAuthor": false, "titleAlignment": "center", "contentPadding": "30px"}'>
-</blog-layout>
+<blog-layout title="Welcome to Our Blog" author="John Doe" content="<p>This is a dynamically configured blog post layout.</p>" layout-config='{"showAuthor": false, "titleAlignment": "center", "contentPadding": "30px"}'> </blog-layout>
 ```
 
 ### Conclusion

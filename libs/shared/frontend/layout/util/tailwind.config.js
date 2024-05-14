@@ -5,6 +5,9 @@ const sharedTailwindConfig = require('../../../frontend/tailwind/util/preset/tai
 module.exports = {
   presets: [sharedTailwindConfig],
   content: [
-    join(__dirname, 'src/components/**/!(*.stories|*.spec|*.e2e).{ts,tsx,html}'),
+    join(
+      __dirname,
+      'src/components/**/!(*.stories|*.spec|*.e2e).{ts,tsx,html}',
+    ),
   ],
 };

@@ -4,24 +4,16 @@
   "projectType": "application",
   "prefix": "stoic",
   "sourceRoot": "apps/stoic/frontend/src",
-  "tags": [
-    "scope:frontend",
-    "type:app",
-    "domain:stoic"
-  ],
+  "tags": ["scope:frontend", "type:app", "domain:stoic"],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/stoic/frontend",
         "index": "apps/stoic/frontend/src/index.html",
         "browser": "apps/stoic/frontend/src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/stoic/frontend/tsconfig.app.json",
         "assets": [
           "apps/stoic/frontend/src/favicon.ico",
