@@ -1,0 +1,15 @@
+<section class="bg-primary-light py-8" id="beliefs">
+  <div class="max-w-screen-2xl mx-auto px-4">
+    <h2 class="text-5xl font-semibold text-center mb-4">
+      Kernovertuigingen van het Stoïcisme
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      @for (belief of coreBeliefs; track $index) {
+        <div class="mb-4 p-6 bg-white bg-opacity-50 rounded-lg shadow-lg">
+          <h3 class="text-xl font-medium mb-4">{{ belief.title }}</h3>
+          <p>{{ belief.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

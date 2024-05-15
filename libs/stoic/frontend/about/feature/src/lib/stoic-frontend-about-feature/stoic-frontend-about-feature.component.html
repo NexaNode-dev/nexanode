@@ -1,0 +1,26 @@
+<section class="mx-auto px-4 pt-16">
+  <div class="flex flex-col md:flex-row flex-wrap justify-around items-stretch">
+    @for (person of people; track $index) {
+      <!-- <mat-card>
+        <mat-card-header>
+          <mat-card-title-group>
+            <img
+              mat-card-xl-image
+              [src]="person.image"
+              alt="{{ person.name }}"
+              class="object-cover"
+            />
+            <mat-card-title>{{ person.name }}</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content [innerHTML]="person.description">
+        </mat-card-content>
+      </mat-card> -->
+      <nexanode-card
+        [header]="person.name"
+        [content]="person.description"
+        [config]="generateCardConfig(person)"
+      ></nexanode-card>
+    }
+  </div>
+</section>
