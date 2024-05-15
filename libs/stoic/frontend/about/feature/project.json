@@ -1,0 +1,27 @@
+{
+  "name": "stoic-frontend-about-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/stoic/frontend/about/feature/src",
+  "prefix": "nexanode",
+  "tags": ["scope:frontend", "type:feature", "app:stoic"],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/stoic/frontend/about/feature/ng-package.json",
+        "tailwindConfig": "libs/stoic/frontend/about/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/stoic/frontend/about/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/stoic/frontend/about/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
