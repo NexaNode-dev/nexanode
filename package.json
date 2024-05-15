@@ -31,7 +31,7 @@
     "@ng-icons/core": "^27.2.0",
     "@ngrx/operators": "^17.2.0",
     "@ngrx/signals": "17.1.1",
-    "@nxext/stencil": "^18.0.0",
+    "@nxext/stencil": "18.0.0",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",

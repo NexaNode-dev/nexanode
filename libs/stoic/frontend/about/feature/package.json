@@ -2,11 +2,12 @@
   "name": "@nexanode/stoic-frontend-about-feature",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@angular/core": "^17.3.0",
+    "@angular/router": "17.3.8",
+    "@angular/material": "17.3.8",
+    "@faker-js/faker": "^8.4.1",
+    "@nx/angular": "19.0.2"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
+  "dependencies": {},
   "sideEffects": false
 }

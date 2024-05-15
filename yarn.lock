@@ -5434,7 +5434,7 @@ __metadata:
     "@nx/vite": "npm:19.0.2"
     "@nx/web": "npm:19.0.2"
     "@nx/workspace": "npm:19.0.2"
-    "@nxext/stencil": "npm:^18.0.0"
+    "@nxext/stencil": "npm:18.0.0"
     "@playwright/test": "npm:^1.36.0"
     "@schematics/angular": "npm:17.3.7"
     "@stencil/core": "npm:^4.12.6"
@@ -6738,7 +6738,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nxext/stencil@npm:^18.0.0":
+"@nxext/stencil@npm:18.0.0":
   version: 18.0.0
   resolution: "@nxext/stencil@npm:18.0.0"
   dependencies:
