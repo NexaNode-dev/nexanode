@@ -1,0 +1,14 @@
+{
+  "name": "@nexanode/backend-mailer-util",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "@nestjs/common": "10.3.8",
+    "@nestjs-modules/mailer": "2.0.2",
+    "@nestjs/event-emitter": "^2.0.4"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true
+}
