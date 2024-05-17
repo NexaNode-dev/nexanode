@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { AuthGuard } from '@nestjs/passport';
@@ -55,5 +57,15 @@ export class RbacGuard extends AuthGuard('jwt') implements CanActivate {
       where: rolePermissions.map((rp) => ({ id: rp.permissionId })),
     });
     return permissions;
+  }
+
+  override handleRequest<TUser = any>(
+    err: any,
+    user: any,
+    info: any,
+    context: ExecutionContext,
+    status?: any,
+  ): TUser {
+    return user;
   }
 }
