@@ -5268,6 +5268,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nestjs/event-emitter@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@nestjs/event-emitter@npm:2.0.4"
+  dependencies:
+    eventemitter2: "npm:6.4.9"
+  peerDependencies:
+    "@nestjs/common": ^8.0.0 || ^9.0.0 || ^10.0.0
+    "@nestjs/core": ^8.0.0 || ^9.0.0 || ^10.0.0
+  checksum: 10c0/14fb3053a94870ff7931dbfcb47e1456860e846700ceaa88f6f2e932e7dddc0d77187019da4a51053d95a247f629faf3dba262754d24abb02a66414094fff6b9
+  languageName: node
+  linkType: hard
+
 "@nestjs/jwt@npm:10.2.0":
   version: 10.2.0
   resolution: "@nestjs/jwt@npm:10.2.0"
@@ -5424,6 +5436,7 @@ __metadata:
     "@nestjs-modules/mailer": "npm:2.0.2"
     "@nestjs/common": "npm:10.3.8"
     "@nestjs/core": "npm:10.3.8"
+    "@nestjs/event-emitter": "npm:^2.0.4"
     "@nestjs/jwt": "npm:10.2.0"
     "@nestjs/mapped-types": "npm:2.0.5"
     "@nestjs/passport": "npm:10.0.3"
@@ -16397,6 +16410,13 @@ __metadata:
   version: 1.8.1
   resolution: "etag@npm:1.8.1"
   checksum: 10c0/12be11ef62fb9817314d790089a0a49fae4e1b50594135dcb8076312b7d7e470884b5100d249b28c18581b7fd52f8b485689ffae22a11ed9ec17377a33a08f84
+  languageName: node
+  linkType: hard
+
+"eventemitter2@npm:6.4.9":
+  version: 6.4.9
+  resolution: "eventemitter2@npm:6.4.9"
+  checksum: 10c0/b2adf7d9f1544aa2d95ee271b0621acaf1e309d85ebcef1244fb0ebc7ab0afa6ffd5e371535d0981bc46195ad67fd6ff57a8d1db030584dee69aa5e371a27ea7
   languageName: node
   linkType: hard
 

@@ -36,6 +36,9 @@
       "@nexanode/backend-iam-presentation": [
         "libs/shared/backend/iam/presentation/src/index.ts"
       ],
+      "@nexanode/backend-mailer-util": [
+        "libs/shared/backend/mailer/util/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
