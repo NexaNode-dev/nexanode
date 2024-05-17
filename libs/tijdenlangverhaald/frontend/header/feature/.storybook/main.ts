@@ -5,6 +5,8 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
+    'storybook-addon-angular-router',
     '@chromatic-com/storybook'
   ],
 
@@ -12,27 +14,6 @@ const config: StorybookConfig = {
     name: '@storybook/angular',
     options: {},
   },
-
-  previewHead: (head) => `
-    ${head}
-    <style>
-      :root {
-        --color-primary: #2e6259;
-        --color-secondary: #f1efe7;
-        --color-tertiary: #daa520;
-        --color-quaternary: #404040;
-      }
-      
-      * {
-        box-sizing: border-box;
-      }
-
-      html, body, section {
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  `,
 
   docs: {}
 };

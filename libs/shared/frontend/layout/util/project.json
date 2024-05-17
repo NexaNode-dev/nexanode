@@ -57,11 +57,7 @@
       }
     },
     "lint": {
-      "executor": "@nx/eslint:eslint",
-      "outputs": ["{options.outputFile}"],
-      "options": {
-        "lintFilePatterns": "libs/shared/frontend/layout/util/**/*.{ts,tsx}"
-      }
+      "executor": "@nx/eslint:lint"
     }
   }
 }
