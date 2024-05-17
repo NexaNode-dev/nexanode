@@ -1,12 +1,15 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: ['../src/lib/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../src/lib/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-a11y',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/react-vite',
     options: {
@@ -15,6 +18,7 @@ const config: StorybookConfig = {
       },
     },
   },
+
   previewHead: (head) => `
     ${head}
     <style>
@@ -27,6 +31,12 @@ const config: StorybookConfig = {
       }
     </style>
   `,
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
 
 export default config;
