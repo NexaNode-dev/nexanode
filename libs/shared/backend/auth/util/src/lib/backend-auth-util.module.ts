@@ -22,7 +22,7 @@ import { BackendPermissionsDataAccessModule } from '@nexanode/backend-permission
     JwtModule.register({
       secret: process.env['JWT_SECRET'],
       signOptions: {
-        expiresIn: process.env['JWT_EXPIRES_IN'],
+        expiresIn: parseInt(process.env['JWT_EXPIRES_IN'] || '', 10),
         audience: process.env['JWT_AUDIENCE'],
         issuer: process.env['JWT_ISSUER'],
       },

@@ -33,14 +33,15 @@ export class JwtAuth implements AuthService {
         this.usersRolesRepository,
       );
       const pwd = await this.hashingService.hash(register.password);
-      const user = await usersRepository.create({
+      const user = await usersRepository.createUser({
         ...register,
         password: pwd,
+        accessToken: crypto.getRandomValues(new Uint32Array(1))[0].toString(),
       });
       const role = await rolesRepository.getRole({
         where: [{ name: 'user' }],
       });
-      await usersRolesRepository.create({
+      await usersRolesRepository.createUserRole({
         userId: user.id,
         roleId: role.id,
       });
