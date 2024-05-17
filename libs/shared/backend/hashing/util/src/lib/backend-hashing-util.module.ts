@@ -31,7 +31,6 @@ export class BackendHashingUtilModule extends ConfigurableModuleClass {
             },
           ],
         };
-        break;
       default:
         throw new Error('Unsupported hashing algorithm');
     }
