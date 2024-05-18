@@ -16,6 +16,7 @@ import { UsersRolesRepository } from '@nexanode/backend-users-roles-data-access'
 import { HashingService } from '@nexanode/backend-hashing-util';
 import { JwtService } from '@nestjs/jwt';
 import { DataSource } from 'typeorm';
+import { EventEmitter2 } from '@nestjs/event-emitter';
 
 describe('JwtAuth', () => {
   let provider: JwtAuth;
@@ -75,7 +76,7 @@ describe('JwtAuth', () => {
   ];
 
   const mockDataSource = {
-    getCustomRepository: jest.fn(),
+    withRepository: jest.fn(),
     transaction: jest.fn().mockResolvedValue(expectedUser),
   };
 
@@ -110,6 +111,10 @@ describe('JwtAuth', () => {
     signAsync: jest.fn().mockResolvedValue(expectedUser.accessToken),
   };
 
+  const mockEventEmitter = {
+    emit: jest.fn().mockReturnValue(true),
+  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [JwtAuth],
@@ -138,6 +143,9 @@ describe('JwtAuth', () => {
         }
         if (token === DataSource) {
           return mockDataSource;
+        }
+        if (token === EventEmitter2) {
+          return mockEventEmitter;
         }
         return;
       })
