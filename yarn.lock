@@ -5444,8 +5444,8 @@ __metadata:
     "@nestjs/schematics": "npm:10.1.1"
     "@nestjs/testing": "npm:10.3.8"
     "@nestjs/typeorm": "npm:10.0.2"
-    "@ng-icons/bootstrap-icons": "npm:^27.2.0"
-    "@ng-icons/core": "npm:^27.2.0"
+    "@ng-icons/bootstrap-icons": "npm:^27.4.0"
+    "@ng-icons/core": "npm:^27.4.0"
     "@ngrx/operators": "npm:^17.2.0"
     "@ngrx/signals": "npm:17.2.0"
     "@nx/angular": "npm:19.0.5"
@@ -5550,7 +5550,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@ng-icons/bootstrap-icons@npm:^27.2.0":
+"@ng-icons/bootstrap-icons@npm:^27.4.0":
   version: 27.4.0
   resolution: "@ng-icons/bootstrap-icons@npm:27.4.0"
   dependencies:
@@ -5559,7 +5559,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ng-icons/core@npm:^27.2.0":
+"@ng-icons/core@npm:^27.4.0":
   version: 27.4.0
   resolution: "@ng-icons/core@npm:27.4.0"
   dependencies:
