@@ -9,6 +9,7 @@ import { RolesPermissionsRepository } from '@nexanode/backend-roles-permissions-
 import { PermissionsRepository } from '@nexanode/backend-permissions-data-access';
 import { RolesRepository } from '@nexanode/backend-roles-data-access';
 import { DataSource } from 'typeorm';
+import { EventEmitter2 } from '@nestjs/event-emitter';
 
 @Injectable()
 export class JwtAuth implements AuthService {
@@ -21,6 +22,7 @@ export class JwtAuth implements AuthService {
     private readonly usersRolesRepository: UsersRolesRepository,
     private readonly rolesPermissionsRepository: RolesPermissionsRepository,
     private readonly permissionsRepository: PermissionsRepository,
+    private readonly eventEmitter: EventEmitter2,
   ) {}
   async register(register: IRegister): Promise<IUser> {
     if (register.password !== register.confirmPassword) {
@@ -33,19 +35,24 @@ export class JwtAuth implements AuthService {
         this.usersRolesRepository,
       );
       const pwd = await this.hashingService.hash(register.password);
-      const user = await usersRepository.create({
+      const user = await usersRepository.createUser({
         ...register,
         password: pwd,
+        accessToken: crypto.getRandomValues(new Uint32Array(1))[0].toString(),
       });
       const role = await rolesRepository.getRole({
         where: [{ name: 'user' }],
       });
-      await usersRolesRepository.create({
+      await usersRolesRepository.createUserRole({
         userId: user.id,
         roleId: role.id,
       });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...userWithoutPassword } = user;
+      this.eventEmitter.emit('user.registered', {
+        email: user.email,
+        name: user.name,
+      });
       return userWithoutPassword;
     });
   }
@@ -111,12 +118,16 @@ export class JwtAuth implements AuthService {
 
   async activate(userId: string, token: string): Promise<boolean> {
     const user = await this.usersRepository.getUser({
-      where: [{ id: userId, accessToken: token }],
+      where: { id: userId, accessToken: token },
     });
     if (!user) {
       throw new BadRequestException('Invalid token');
     }
     await this.usersRepository.updateUser(user.id, { isActive: true });
+    this.eventEmitter.emit('user.activated', {
+      email: user.email,
+      name: user.name,
+    });
     return true;
   }
 }

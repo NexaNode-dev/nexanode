@@ -36,6 +36,9 @@
       "@nexanode/backend-iam-presentation": [
         "libs/shared/backend/iam/presentation/src/index.ts"
       ],
+      "@nexanode/backend-mailer-util": [
+        "libs/shared/backend/mailer/util/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
@@ -71,6 +74,15 @@
       ],
       "@nexanode/frontend-contacts-react-feature": [
         "libs/shared/frontend/contacts/react/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-iam-ng-data-access": [
+        "libs/shared/frontend/iam/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-iam-ng-feature": [
+        "libs/shared/frontend/iam/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-iam-ng-state": [
+        "libs/shared/frontend/iam/ng/state/src/index.ts"
       ],
       "@nexanode/frontend-layout-util": [
         "dist/libs/shared/frontend/layout/util"

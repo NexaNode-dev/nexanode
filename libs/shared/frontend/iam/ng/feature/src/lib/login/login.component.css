@@ -1,0 +1,48 @@
+.container {
+  @apply flex flex-col justify-center items-center h-screen bg-secondary-light;
+}
+
+.container h2 {
+  @apply text-primary text-4xl mb-8;
+}
+
+form {
+  @apply border-2 border-secondary border-solid w-full p-8 rounded-md max-w-lg flex flex-col justify-center;
+}
+
+.form-group {
+  @apply flex flex-col mb-4;
+}
+
+.form-group label {
+  @apply text-primary text-xl mb-2;
+}
+
+.form-control {
+  @apply w-full p-2 text-primary border-2 border-secondary border-solid rounded-md;
+}
+
+button[type='submit'] {
+  @apply p-2 text-secondary text-xl bg-primary border-none rounded-md w-full;
+}
+
+button[type='submit']:hover {
+  @apply bg-primary-dark;
+}
+
+button[type='submit']:disabled {
+  @apply bg-neutral-400 cursor-not-allowed text-neutral-50;
+}
+
+label[required]::after {
+  @apply text-sm align-super;
+  content: ' *';
+}
+
+.error {
+  @apply text-red-500 text-sm mt-1;
+}
+
+section#logged-in {
+  @apply text-primary text-2xl text-center;
+}
