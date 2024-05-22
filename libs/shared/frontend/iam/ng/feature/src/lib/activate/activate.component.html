@@ -1,12 +1,14 @@
 <div class="container">
-  <h2>{{title()}}</h2>
+  <h2>{{ title() }}</h2>
   @if (isLoading()) {
-    <section id="loading">
-      Activating your account...
-    </section>
+    <section id="loading">Activating your account...</section>
   } @else if (isActivated()) {
     <section id="activated">
       <p>Your account has been activated.</p>
+    </section>
+  } @else if (error()) {
+    <section id="error">
+      <p>{{ error() }}</p>
     </section>
   }
 </div>

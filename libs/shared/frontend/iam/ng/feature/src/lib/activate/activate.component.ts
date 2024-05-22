@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  input,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { authStore } from '@nexanode/frontend-iam-ng-state';
 
@@ -20,6 +26,10 @@ export class ActivateComponent {
   token = input.required<string>();
 
   constructor() {
-    this.store.activate({id:this.id(), token: this.token()});
+    effect(() => {
+      this.id() &&
+        this.token() &&
+        this.store.activate({ id: this.id(), token: this.token() });
+    });
   }
 }

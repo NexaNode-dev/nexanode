@@ -38,7 +38,11 @@
         }
       </div>
       <div class="form-group">
-        <button type="submit" [disabled]="loginForm.invalid || isLoading()" (click)="onSubmit()">
+        <button
+          type="submit"
+          [disabled]="loginForm.invalid || isLoading()"
+          (click)="onSubmit()"
+        >
           Login
         </button>
       </div>

@@ -129,7 +129,9 @@ export const ValidateConfirmPassword: Story = {
       await confirmPw.focus();
       await confirmPw.blur();
     });
-    expect(await canvas.findByText('Confirm Password is required')).toBeInTheDocument();
+    expect(
+      await canvas.findByText('Confirm Password is required'),
+    ).toBeInTheDocument();
   },
 };
 
@@ -144,7 +146,9 @@ export const ValidatePasswordMatch: Story = {
       await userEvent.type(confirmPw, 'different-password');
       await confirmPw.blur();
     });
-    expect(await canvas.findByText('Passwords do not match')).toBeInTheDocument();
+    expect(
+      await canvas.findByText('Passwords do not match'),
+    ).toBeInTheDocument();
   },
 };
 
@@ -168,6 +172,8 @@ export const RegisterFlow: Story = {
       const submit = canvas.getByRole('button');
       await userEvent.click(submit);
     });
-    expect(await canvas.findByText('You have successfully registered.')).toBeInTheDocument();
-  }
+    expect(
+      await canvas.findByText('You have successfully registered.'),
+    ).toBeInTheDocument();
+  },
 };

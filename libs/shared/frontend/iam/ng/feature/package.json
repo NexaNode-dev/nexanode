@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@angular/core": "^17.3.0",
+    "@nexanode/frontend-iam-ng-state": "0.0.1",
+    "@angular/forms": "17.3.8",
+    "@nexanode/domain-interfaces": "0.1.0",
+    "@angular/router": "17.3.8",
+    "@nx/angular": "19.0.2"
   },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  },
+  "dependencies": {},
   "sideEffects": false
 }

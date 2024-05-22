@@ -30,9 +30,9 @@
           placeholder="Enter email"
         />
         @if (email?.invalid && (email?.dirty || email?.touched)) {
-          @if (email?.errors?.required) {
+          @if (email?.hasError('required')) {
             <div class="error">Email is required</div>
-          } @else if (email?.errors?.email) {
+          } @else if (email?.hasError('email')) {
             <div class="error">Email is invalid</div>
           }
         }

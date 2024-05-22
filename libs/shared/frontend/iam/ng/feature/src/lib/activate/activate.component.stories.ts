@@ -66,7 +66,8 @@ const meta: Meta<ActivateComponent> = {
     },
     mockData: [
       {
-        url: '/api/auth/activate',
+        url: `/api/auth/activate/id`,
+        body: { token: 'token' },
         method: 'PATCH',
         status: 200,
         response: true,
@@ -77,12 +78,7 @@ const meta: Meta<ActivateComponent> = {
 export default meta;
 type Story = StoryObj<ActivateComponent>;
 
-export const Primary: Story = {
-  args: {
-    id: 'test',
-    token: 'token',
-  },
-};
+export const Primary: Story = {};
 
 export const Heading: Story = {
   args: {
