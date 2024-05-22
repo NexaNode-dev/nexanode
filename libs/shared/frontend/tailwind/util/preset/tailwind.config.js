@@ -12,10 +12,15 @@ module.exports = {
           DEFAULT: 'var(--secondary)',
           dark: 'var(--secondary-dark)',
         },
-        warn: {
-          light: 'var(--secondary-light)',
-          DEFAULT: 'var(--secondary)',
-          dark: 'var(--secondary-dark)',
+        tertiary: {
+          light: 'var(--tertiary-light)',
+          DEFAULT: 'var(--tertiary)',
+          dark: 'var(--tertiary-dark)',
+        },
+        error: {
+          light: 'var(--error-light)',
+          DEFAULT: 'var(--error)',
+          dark: 'var(--error-dark)',
         },
         white: 'var(--white)',
         black: 'var(--black)',

@@ -78,6 +78,9 @@
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-iam-ng-feature": [
+        "libs/shared/frontend/iam/ng/feature/src/index.ts"
+      ],
       "@nexanode/frontend-iam-ng-state": [
         "libs/shared/frontend/iam/ng/state/src/index.ts"
       ],

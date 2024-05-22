@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>{{ title() }}</h2>
+  @if (isLoggedIn()) {
+    <section id="logged-in">
+      <p>You are logged in.</p>
+    </section>
+  } @else {
+    <form
+      [formGroup]="loginForm"
+      class="flex flex-col justify-center items-center mt-8 w-[70vw]"
+    >
+      <div class="form-group">
+        <label for="email">Credential</label>
+        <input
+          type="text"
+          formControlName="credential"
+          class="form-control"
+          id="email"
+          placeholder="Enter credential"
+        />
+        @if (
+          credential?.invalid && (credential?.dirty || credential?.touched)
+        ) {
+          <div class="error">Credential is required</div>
+        }
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="form-control"
+          id="password"
+          placeholder="Password"
+        />
+        @if (password?.invalid && (password?.dirty || password?.touched)) {
+          <div class="error">Password is required</div>
+        }
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="loginForm.invalid || isLoading()" (click)="onSubmit()">
+          Login
+        </button>
+      </div>
+    </form>
+  }
+</div>

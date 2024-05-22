@@ -34,7 +34,7 @@ export const authStore = signalStore(
   { providedIn: 'root' },
   withState(initialState),
   withComputed((state) => ({
-    isLoggedin: computed(() => !!state.user),
+    isLoggedin: computed(() => !!state.user()),
   })),
   withMethods((store, authService = inject(AuthService)) => ({
     register: rxMethod<IRegister>(
