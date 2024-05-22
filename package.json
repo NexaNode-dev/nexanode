@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.2.2",
   "dependencies": {
     "@angular/animations": "17.3.8",
     "@angular/cdk": "17.3.8",
