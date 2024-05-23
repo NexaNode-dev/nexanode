@@ -14,7 +14,7 @@ export class User implements IUser {
   id: string = uuidv7();
 
   @Column({ unique: true })
-  name!: string;
+  userName!: string;
 
   @Column({ unique: true })
   email!: string;

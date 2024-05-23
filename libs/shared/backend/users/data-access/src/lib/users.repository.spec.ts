@@ -11,7 +11,7 @@ describe('UsersRepository', () => {
 
   const userData: Partial<IUser> = {
     email: faker.internet.email(),
-    name: faker.internet.userName(),
+    userName: faker.internet.userName(),
     password: faker.internet.password(),
   };
 
