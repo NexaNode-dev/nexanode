@@ -14,7 +14,7 @@ describe('AuthService', () => {
   const password = faker.internet.password();
 
   const registerData = {
-    name: faker.internet.userName(),
+    userName: faker.internet.userName(),
     email: faker.internet.email(),
     password,
     confirmPassword: password,
