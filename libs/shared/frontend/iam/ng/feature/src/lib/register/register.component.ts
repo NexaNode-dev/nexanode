@@ -35,7 +35,7 @@ export class RegisterComponent {
   title = input<string>('Register');
   registerForm = this.fb.group<RegisterForm>(
     {
-      name: new FormControl(null),
+      userName: new FormControl(null),
       email: new FormControl(null, [Validators.email, Validators.required]),
       password: new FormControl(null, [Validators.required]),
       confirmPassword: new FormControl(null, [Validators.required]),
