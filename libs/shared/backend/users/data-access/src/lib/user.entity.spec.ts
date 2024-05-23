@@ -7,13 +7,13 @@ describe('UserEntity', () => {
   });
   it('should have the required properties', () => {
     const user = new User({
-      name: faker.internet.userName(),
+      userName: faker.internet.userName(),
       email: faker.internet.email(),
       password: faker.internet.password(),
       createdAt: faker.date.recent(),
       updatedAt: faker.date.recent(),
     });
-    expect(user.name).toBeDefined();
+    expect(user.userName).toBeDefined();
     expect(user.email).toBeDefined();
     expect(user.password).toBeDefined();
     expect(user.createdAt).toBeDefined();

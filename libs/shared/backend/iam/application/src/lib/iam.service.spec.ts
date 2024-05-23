@@ -12,7 +12,7 @@ describe('IamService', () => {
   const userData: IRegister = {
     email: faker.internet.email(),
     password,
-    name: faker.internet.userName(),
+    userName: faker.internet.userName(),
     confirmPassword: password,
   };
 

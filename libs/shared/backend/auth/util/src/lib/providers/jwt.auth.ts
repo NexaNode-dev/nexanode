@@ -41,7 +41,9 @@ export class JwtAuth implements AuthService {
         accessToken: crypto.getRandomValues(new Uint32Array(1))[0].toString(),
       });
       const role = await rolesRepository.getRole({
-        where: [{ name: 'user' }],
+        where: [
+          { name: register.roleName || process.env['DEFAULT_ROLE'] || 'user' },
+        ],
       });
       await usersRolesRepository.createUserRole({
         userId: user.id,
@@ -51,7 +53,7 @@ export class JwtAuth implements AuthService {
       const { password, ...userWithoutPassword } = user;
       this.eventEmitter.emit('user.registered', {
         email: user.email,
-        name: user.name,
+        name: user.userName,
       });
       return userWithoutPassword;
     });
@@ -126,7 +128,7 @@ export class JwtAuth implements AuthService {
     await this.usersRepository.updateUser(user.id, { isActive: true });
     this.eventEmitter.emit('user.activated', {
       email: user.email,
-      name: user.name,
+      name: user.userName,
     });
     return true;
   }

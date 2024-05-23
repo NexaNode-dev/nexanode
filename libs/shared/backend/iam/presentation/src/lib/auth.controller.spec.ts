@@ -13,7 +13,7 @@ describe('AuthController', () => {
   const userData: RegisterDto = {
     email: faker.internet.email(),
     password,
-    name: faker.internet.userName(),
+    userName: faker.internet.userName(),
     confirmPassword: password,
   };
 
