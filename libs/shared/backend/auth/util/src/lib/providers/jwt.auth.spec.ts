@@ -24,15 +24,16 @@ describe('JwtAuth', () => {
   const password = faker.internet.password();
 
   const userData: IRegister = {
-    name: faker.internet.userName(),
+    userName: faker.internet.userName(),
     email: faker.internet.email(),
     password,
     confirmPassword: password,
+    roleName: faker.commerce.department(),
   };
 
   const expectedUser: IUser = {
     id: faker.string.uuid(),
-    name: userData.name,
+    userName: userData.userName,
     email: userData.email,
     accessToken: faker.string.uuid(),
     createdAt: faker.date.recent(),
