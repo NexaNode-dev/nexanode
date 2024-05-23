@@ -10,7 +10,7 @@ import {
 export class RegisterDto implements IRegister {
   @IsOptional()
   @IsString()
-  name!: string;
+  userName!: string;
 
   @IsNotEmpty()
   @IsEmail()
@@ -24,4 +24,8 @@ export class RegisterDto implements IRegister {
   @IsString()
   @Equals('password')
   confirmPassword!: string;
+
+  @IsOptional()
+  @IsString()
+  roleName?: string;
 }
