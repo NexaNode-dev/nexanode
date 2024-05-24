@@ -108,6 +108,9 @@
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
       ],
+      "@nexanode/frontend-organisations-ng-data-access": [
+        "libs/shared/frontend/organisations/ng/data-access/src/index.ts"
+      ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
       ],
