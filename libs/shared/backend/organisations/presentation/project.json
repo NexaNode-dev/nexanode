@@ -1,0 +1,20 @@
+{
+  "name": "backend-organisations-presentation",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/organisations/presentation/src",
+  "projectType": "library",
+  "tags": ["scope:backend", "type:presentation", "domain:organisations"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/organisations/presentation",
+        "tsConfig": "libs/shared/backend/organisations/presentation/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/organisations/presentation/package.json",
+        "main": "libs/shared/backend/organisations/presentation/src/index.ts",
+        "assets": ["libs/shared/backend/organisations/presentation/*.md"]
+      }
+    }
+  }
+}

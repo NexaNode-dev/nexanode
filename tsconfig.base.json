@@ -45,6 +45,9 @@
       "@nexanode/backend-organisations-data-access": [
         "libs/shared/backend/organisations/data-access/src/index.ts"
       ],
+      "@nexanode/backend-organisations-presentation": [
+        "libs/shared/backend/organisations/presentation/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
