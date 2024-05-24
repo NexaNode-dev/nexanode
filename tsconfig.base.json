@@ -111,6 +111,9 @@
       "@nexanode/frontend-organisations-ng-data-access": [
         "libs/shared/frontend/organisations/ng/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-organisations-ng-state": [
+        "libs/shared/frontend/organisations/ng/state/src/index.ts"
+      ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
       ],
