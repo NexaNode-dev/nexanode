@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/core": "^17.1.0",
     "@angular/router": "17.3.8",
-    "@nx/angular": "19.0.2",
+    "@nx/angular": "19.0.5",
     "@nexanode/optimalist-frontend-services-feature": "0.0.1"
   },
   "dependencies": {},
