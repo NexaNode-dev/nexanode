@@ -1,0 +1,35 @@
+.container {
+  @apply h-screen flex flex-col justify-center items-center my-0 mx-auto;
+}
+
+.container h2 {
+  @apply text-5xl font-bold mb-4;
+}
+
+form {
+  @apply w-full flex flex-col items-center justify-center max-w-2xl;
+}
+
+.form-group {
+  @apply w-full flex flex-col items-start mb-4;
+}
+
+.form-control {
+  @apply w-full p-2 text-xl border border-gray-300 rounded;
+}
+
+.form-control label {
+  @apply text-lg mb-4;
+}
+
+button {
+  @apply w-full bg-blue-500 text-white font-bold py-2 px-4 rounded flex items-center justify-center;
+}
+
+button:disabled {
+  @apply bg-gray-300 text-gray-500 cursor-not-allowed;
+}
+
+.error {
+  @apply text-red-500 text-sm;
+}

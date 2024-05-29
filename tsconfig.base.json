@@ -39,6 +39,15 @@
       "@nexanode/backend-mailer-util": [
         "libs/shared/backend/mailer/util/src/index.ts"
       ],
+      "@nexanode/backend-organisations-application": [
+        "libs/shared/backend/organisations/application/src/index.ts"
+      ],
+      "@nexanode/backend-organisations-data-access": [
+        "libs/shared/backend/organisations/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-organisations-presentation": [
+        "libs/shared/backend/organisations/presentation/src/index.ts"
+      ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
@@ -98,6 +107,15 @@
       ],
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-organisations-ng-data-access": [
+        "libs/shared/frontend/organisations/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-organisations-ng-feature": [
+        "libs/shared/frontend/organisations/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-organisations-ng-state": [
+        "libs/shared/frontend/organisations/ng/state/src/index.ts"
       ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
