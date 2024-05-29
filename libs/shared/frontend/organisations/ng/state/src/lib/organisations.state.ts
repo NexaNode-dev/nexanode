@@ -10,6 +10,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
+import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { mergeMap, of, pipe, switchMap, tap } from 'rxjs';
 
 type OrganisationsState = {
@@ -30,8 +31,9 @@ const initialState: OrganisationsState = {
   error: null,
 };
 
-export const organisationsState = signalStore(
+export const organisationsStore = signalStore(
   { providedIn: 'root' },
+  withDevtools('organisations'),
   withState(initialState),
   withComputed((state) => ({
     selectedOrganisation: computed(() =>
@@ -41,9 +43,7 @@ export const organisationsState = signalStore(
       state.organisationTypes().find((ot) => ot.id === state.selectedTypeId()),
     ),
     selectedOrganisationTypeOrganisations: computed(() =>
-      state.organisations().filter(
-        (o) => o.typeId === state.selectedTypeId(),
-      ),
+      state.organisations().filter((o) => o.typeId === state.selectedTypeId()),
     ),
   })),
   withMethods((store, organisationsService = inject(OrganisationsService)) => ({
@@ -85,7 +85,7 @@ export const organisationsState = signalStore(
         }),
       ),
     ),
-    createOrganisation: rxMethod<IOrganisation>(
+    createOrganisation: rxMethod<Partial<IOrganisation>>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((organisation) =>
@@ -103,7 +103,7 @@ export const organisationsState = signalStore(
         ),
       ),
     ),
-    updateOrganisation: rxMethod<IOrganisation>(
+    updateOrganisation: rxMethod<Partial<IOrganisation>>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((organisation) =>

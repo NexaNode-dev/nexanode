@@ -29,6 +29,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@angular-architects/ngrx-toolkit@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@angular-architects/ngrx-toolkit@npm:0.3.1"
+  dependencies:
+    tslib: "npm:^2.3.0"
+  peerDependencies:
+    "@ngrx/signals": ^17.0.0
+  checksum: 10c0/dcd794fe600cc8e30c54c849f9efcf9867feadec4c5eddec3db895508782440ffa4426cd79e759416ec1587d45dce3e7cc310512a2e6410bf1ae5a9b4d427d5b
+  languageName: node
+  linkType: hard
+
 "@angular-devkit/architect@npm:0.1703.7":
   version: 0.1703.7
   resolution: "@angular-devkit/architect@npm:0.1703.7"
@@ -5402,6 +5413,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexanode/source@workspace:."
   dependencies:
+    "@angular-architects/ngrx-toolkit": "npm:^0.3.1"
     "@angular-devkit/build-angular": "npm:17.3.7"
     "@angular-devkit/core": "npm:17.3.7"
     "@angular-devkit/schematics": "npm:17.3.7"
@@ -5448,6 +5460,8 @@ __metadata:
     "@ng-icons/core": "npm:^27.4.0"
     "@ngrx/operators": "npm:^17.2.0"
     "@ngrx/signals": "npm:17.2.0"
+    "@ngrx/store": "npm:^17.2.0"
+    "@ngrx/store-devtools": "npm:^17.2.0"
     "@nx/angular": "npm:19.0.5"
     "@nx/devkit": "npm:19.0.5"
     "@nx/eslint": "npm:19.0.5"
@@ -5591,6 +5605,30 @@ __metadata:
     rxjs:
       optional: true
   checksum: 10c0/a20284ad4aeb45977814b26df0fa5888d472b718a795ae00691401a3c1337675dc214f54bca772251548ff32a10d46324c0305a91f124cfb1c79af5e15868f83
+  languageName: node
+  linkType: hard
+
+"@ngrx/store-devtools@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "@ngrx/store-devtools@npm:17.2.0"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  peerDependencies:
+    "@ngrx/store": 17.2.0
+    rxjs: ^6.5.3 || ^7.5.0
+  checksum: 10c0/76cc3671b6ea2ce9005d1f8666870e00184525815389d94ec6ec51051f359136e20f1a54b84c0f849c2a2016c6d6a7079fab47695fd41ac38c05ea80356dbd17
+  languageName: node
+  linkType: hard
+
+"@ngrx/store@npm:^17.2.0":
+  version: 17.2.0
+  resolution: "@ngrx/store@npm:17.2.0"
+  dependencies:
+    tslib: "npm:^2.0.0"
+  peerDependencies:
+    "@angular/core": ^17.0.0
+    rxjs: ^6.5.3 || ^7.5.0
+  checksum: 10c0/6c25e3f849123ea4947d5d6ec3b7ea795f57f60affaa8c26dd879135b0275ac515fc4ab9defa19b912fa44f1831dc56de965a4d3cf8d6685cdbb4a0195453c60
   languageName: node
   linkType: hard
 
