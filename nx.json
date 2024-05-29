@@ -192,6 +192,7 @@
         "cacheableOperations": [
           "build-storybook",
           "build-storybook",
+          "build-storybook",
           "build-storybook"
         ]
       }

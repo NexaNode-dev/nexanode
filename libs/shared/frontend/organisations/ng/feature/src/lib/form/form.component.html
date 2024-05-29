@@ -1,0 +1,75 @@
+<div class="container">
+  <h2>{{ mode }} {{ selectedOrganisationType() || 'organisation' }}</h2>
+  <form [formGroup]="organisationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+      />
+      @if (name?.hasError('required') && name?.touched) {
+        <div class="error">Name is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select class="form-control" id="type" formControlName="typeId">
+        @for (type of organisationTypes(); track type.id) {
+          <option [value]="type.id">{{ type.name }}</option>
+        }
+      </select>
+      @if (typeId?.hasError('required') && typeId?.touched) {
+        <div class="error">Type is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="registrationNumber">Registration Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="registrationNumber"
+        formControlName="registrationNumber"
+      />
+      @if (
+        registrationNumber?.hasError('required') && registrationNumber?.touched
+      ) {
+        <div class="error">Registration Number is required</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        class="form-control"
+        id="description"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <button type="submit" [disabled]="organisationForm.invalid || isLoading()">
+      @if (isLoading()) {
+        <svg
+          class="animate-spin h-5 w-5 mr-3"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          ></path>
+        </svg>
+      }
+      {{ mode }}
+    </button>
+  </form>
+</div>
