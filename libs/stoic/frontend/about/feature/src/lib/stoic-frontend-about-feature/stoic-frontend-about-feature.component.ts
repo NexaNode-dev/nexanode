@@ -45,7 +45,6 @@ export class StoicFrontendAboutFeatureComponent {
         <p>Mijn engagement met het Stoïcisme, dat zijn oorsprong vond bij mijn vriend en verdieping kreeg door de geschriften van Ryan Holiday, heeft me gevormd tot een persoon die streeft naar wijsheid, zelfbeheersing, rechtvaardigheid en moed. Deze website is een uitnodiging om samen de tijdloze lessen van het Stoïcisme te verkennen en te integreren in het complexe weefsel van ons moderne leven.</p>
       `,
     },
-    // Voeg meer personen toe zoals nodig
   ];
 
   generateCardConfig(person: (typeof this.people)[0]) {
