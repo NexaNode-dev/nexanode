@@ -44,6 +44,8 @@ export class FormComponent {
     typeId: new FormControl(null, [Validators.required]),
     description: new FormControl(null),
     registrationNumber: new FormControl(null, [Validators.required]),
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    phone: new FormControl(null, [Validators.required]),
   });
   id = input<string | undefined>(undefined);
   mode: 'Create ' | 'Update ' = 'Create ';
@@ -91,5 +93,13 @@ export class FormComponent {
 
   get registrationNumber() {
     return this.organisationForm.get('registrationNumber');
+  }
+
+  get email() {
+    return this.organisationForm.get('email');
+  }
+
+  get phone() {
+    return this.organisationForm.get('phone');
   }
 }
