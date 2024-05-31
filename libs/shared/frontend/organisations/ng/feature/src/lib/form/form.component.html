@@ -39,6 +39,33 @@
       }
     </div>
     <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+      @if (email?.hasError('required') && email?.touched) {
+        <div class="error">Email is required</div>
+      }
+      @if (email?.hasError('email') && email?.touched) {
+        <div class="error">Email is invalid</div>
+      }
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        formControlName="phone"
+      />
+      @if (phone?.hasError('required') && phone?.touched) {
+        <div class="error">Phone is required</div>
+      }
+    </div>
+    <div class="form-group">
       <label for="description">Description</label>
       <textarea
         class="form-control"
