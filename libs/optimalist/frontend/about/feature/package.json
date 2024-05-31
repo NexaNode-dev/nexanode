@@ -6,7 +6,7 @@
     "@angular/router": "17.3.8",
     "@ng-icons/bootstrap-icons": "^27.2.0",
     "@ng-icons/core": "^27.2.0",
-    "@nx/angular": "19.0.2"
+    "@nx/angular": "19.0.5"
   },
   "dependencies": {},
   "sideEffects": false

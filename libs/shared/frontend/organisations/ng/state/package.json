@@ -7,7 +7,8 @@
     "@nexanode/frontend-organisations-ng-data-access": "0.0.1",
     "@ngrx/operators": "^17.2.0",
     "@ngrx/signals": "17.2.0",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "@angular-architects/ngrx-toolkit": "^0.3.1"
   },
   "sideEffects": false
 }

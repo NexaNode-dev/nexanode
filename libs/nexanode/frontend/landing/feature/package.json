@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/core": "^17.1.0",
     "@angular/router": "17.3.8",
-    "@nx/angular": "19.0.2",
+    "@nx/angular": "19.0.5",
     "@ng-icons/core": "^27.2.0",
     "@ng-icons/bootstrap-icons": "^27.2.0",
     "@angular/material": "17.3.8"

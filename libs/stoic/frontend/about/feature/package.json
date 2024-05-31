@@ -6,7 +6,7 @@
     "@angular/router": "17.3.8",
     "@angular/material": "17.3.8",
     "@faker-js/faker": "^8.4.1",
-    "@nx/angular": "19.0.2"
+    "@nx/angular": "19.0.5"
   },
   "dependencies": {},
   "sideEffects": false

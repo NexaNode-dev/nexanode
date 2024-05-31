@@ -18,4 +18,15 @@ describe('StoicFrontendAboutFeatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should generate card config', () => {
+    const person = component.people[0];
+    const cardConfig = component.generateCardConfig(person);
+    expect(cardConfig).toEqual(
+      JSON.stringify({
+        imageSrc: person.image,
+        imageAlt: person.name,
+        imagePosition: 'top-right',
+      }),
+    );
+  });
 });
