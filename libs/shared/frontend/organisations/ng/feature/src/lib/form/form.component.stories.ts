@@ -108,6 +108,52 @@ export const ValidateRegistrationNumber: Story = {
   },
 };
 
+export const ValidateEmailRequired: Story = {
+  args: {},
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    step('Leave email empty', async () => {
+      const email = canvas.getByLabelText('Email', {
+        exact: true,
+      });
+      email.focus();
+      email.blur();
+    });
+    expect(canvas.getByText('Email is required')).toBeTruthy();
+  },
+};
+
+export const ValidateEmailInvalid: Story = {
+  args: {},
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    await step('Input invalid email', async () => {
+      const email = canvas.getByLabelText('Email', {
+        exact: true,
+      });
+      email.focus();
+      await userEvent.type(email, 'invalid-email');
+      email.blur();
+    });
+    expect(canvas.getByText('Email is invalid')).toBeTruthy();
+  },
+};
+
+export const ValidatePhoneNumber: Story = {
+  args: {},
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    step('Leave registration number empty', async () => {
+      const phone = canvas.getByLabelText('Phone', {
+        exact: true,
+      });
+      phone.focus();
+      phone.blur();
+    });
+    expect(canvas.getByText('Phone is required')).toBeTruthy();
+  },
+};
+
 export const CreateOrganisation: Story = {
   args: {},
   play: async ({ canvasElement, step }) => {

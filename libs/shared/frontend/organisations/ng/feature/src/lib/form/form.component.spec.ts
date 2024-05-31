@@ -32,6 +32,10 @@ describe('FormComponent', () => {
     expect(descriptionInput).toBeTruthy();
     const registrationNumberInput = fixture.elementRef.nativeElement.querySelector('input[id="registrationNumber"]');
     expect(registrationNumberInput).toBeTruthy();
+    const emailInput = fixture.elementRef.nativeElement.querySelector('input[id="email"]');
+    expect(emailInput).toBeTruthy();
+    const phoneInput = fixture.elementRef.nativeElement.querySelector('input[id="phone"]');
+    expect(phoneInput).toBeTruthy();
     const submitButton = fixture.elementRef.nativeElement.querySelector('button[type="submit"]');
     expect(submitButton).toBeTruthy();
   });
@@ -48,5 +52,17 @@ describe('FormComponent', () => {
     registrationNumberInput.nativeElement.focus();
     registrationNumberInput.nativeElement.blur();
     expect(component.registrationNumber?.touched && component.registrationNumber?.hasError('required')).toBeTruthy();
+    const emailInput = fixture.debugElement.query(By.css('input[id="email"]'));
+    emailInput.nativeElement.focus();
+    emailInput.nativeElement.blur();
+    expect(component.email?.touched && component.email?.hasError('required')).toBeTruthy();
+    emailInput.nativeElement.value = 'invalid-email';
+    emailInput.nativeElement.dispatchEvent(new Event('input'));
+    emailInput.nativeElement.blur();
+    expect(component.email?.touched && component.email?.hasError('email')).toBeTruthy();
+    const phoneInput = fixture.debugElement.query(By.css('input[id="phone"]'));
+    phoneInput.nativeElement.focus();
+    phoneInput.nativeElement.blur();
+    expect(component.phone?.touched && component.phone?.hasError('required')).toBeTruthy();
   });
 });

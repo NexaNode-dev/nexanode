@@ -25,6 +25,12 @@ export class Organisation implements IOrganisation {
   @Column({ nullable: true })
   registrationNumber?: string;
 
+  @Column({ nullable: true })
+  email?: string;
+
+  @Column({ nullable: true })
+  phone?: string;
+
   @CreateDateColumn()
   createdAt!: Date;
 
