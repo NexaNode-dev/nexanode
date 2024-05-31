@@ -15,11 +15,11 @@ describe('App', () => {
   });
 
   it('should have a greeting as the title', () => {
-    const { getByText } = render(
+    const { getAllByText } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>,
     );
-    expect(getByText(/Welcome zendens-frontend/gi)).toBeTruthy();
+    expect(getAllByText(/Zen Dens/gi)).toBeTruthy();
   });
 });
