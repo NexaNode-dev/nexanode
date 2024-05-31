@@ -1,27 +1,25 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import { RouterTestingModule } from '@angular/router/testing';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, NxWelcomeComponent, RouterTestingModule],
+      imports: [AppComponent],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
-  it('should render title', () => {
+  it('should render the navbar', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome stoic-frontend',
-    );
+    expect(compiled.querySelector('stoic-navbar')).toBeDefined();
   });
-
-  it(`should have as title 'stoic-frontend'`, () => {
+  it('should render the router outlet', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('stoic-frontend');
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('router-outlet')).toBeDefined();
   });
 });
