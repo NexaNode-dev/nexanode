@@ -28,27 +28,27 @@ const preview: Preview = {
         control: 'color',
       },
       'tertiary-light': {
-        value: '#467bb0',
+        value: '#5ec768',
         control: 'color',
       },
       'tertiary': {
-        value: '#1a5a91',
+        value: '#28a745',
         control: 'color',
       },
       'tertiary-dark': {
-        value: '#123d61',
+        value: '#1b6e30',
         control: 'color',
       },
       'quaternary-light': {
-        value: '#88c4f1',
+        value: '#ffa64d',
         control: 'color',
       },
       'quaternary': {
-        value: '#5da6e5',
+        value: '#ff8c00',
         control: 'color',
       },
       'quaternary-dark': {
-        value: '#3d7bb0',
+        value: '#cc6e00',
         control: 'color',
       },
     },

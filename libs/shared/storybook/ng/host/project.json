@@ -6,23 +6,6 @@
   "projectType": "library",
   "tags": ["scope:frontent", "type:storybook", "tech:angular"],
   "targets": {
-    "build": {
-      "executor": "@nx/angular:ng-packagr-lite",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "libs/shared/storybook/ng/host/ng-package.json",
-        "tailwindConfig": "libs/shared/storybook/ng/host/tailwind.config.js"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "libs/shared/storybook/ng/host/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "libs/shared/storybook/ng/host/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },
