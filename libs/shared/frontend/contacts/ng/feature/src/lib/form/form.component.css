@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 50vw;
-  background-color: #f1f1f1;
+  background-color: var(--secondary-light,#f1f1f1);
   margin: 1rem auto;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -13,6 +13,7 @@
 .contact h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
+  color: var(--primary,#333);
 }
 
 form {
@@ -29,6 +30,7 @@ form {
 .form-control label {
   margin-bottom: 0.75rem;
   font-size: 1.25rem;
+  color: var(--primary,#333);
 }
 
 .form-control input,
@@ -38,6 +40,15 @@ button[type='submit'] {
   font-size: 1rem;
   line-height: 1.2rem;
   border-radius: 0.25rem;
+  border: var(--primary,#333) 1px solid;
+}
+
+button[type='submit'] {
+  background-color: var(--primary,#333);
+  color: var(--secondary-light,#f1f1f1);
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .success {

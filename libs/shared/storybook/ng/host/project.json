@@ -1,0 +1,67 @@
+{
+  "name": "storybook-ng-host",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/storybook/ng/host/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:frontent", "type:storybook", "tech:angular"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/storybook/ng/host/ng-package.json",
+        "tailwindConfig": "libs/shared/storybook/ng/host/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/storybook/ng/host/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/storybook/ng/host/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/shared/storybook/ng/host/.storybook",
+        "browserTarget": "frontend-organisations-ng-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["libs/shared/storybook/ng/host/.storybook/styles.css"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/frontend-ng-host",
+        "configDir": "libs/shared/storybook/ng/host/.storybook",
+        "browserTarget": "frontend-organisations-ng-feature:build-storybook",
+        "compodoc": false,
+        "styles": ["libs/shared/storybook/ng/host/.storybook/styles.css"]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/shared/storybook/ng/host/.storybook --url=http://localhost:4400"
+      }
+    }
+  }
+}

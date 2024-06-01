@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true
+  },
+  "exclude": ["../**/*.spec.ts"],
+  "include": [
+    "../../../../../**/ng/feature/**/*.stories.ts",
+    "../../../../../**/ng/ui/**/*.stories.ts",
+    "*.ts"
+  ]
+}
