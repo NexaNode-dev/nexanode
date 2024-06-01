@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IOrganisation, IOrganisationType } from '@nexanode/domain-interfaces';
 
@@ -55,5 +55,16 @@ export class OrganisationsService {
 
   deleteOrganisationType(id: string) {
     return this.http.delete(`api/organisations/types/${id}`);
+  }
+
+  checkRegistrationCode(code: string) {
+    const headers = new HttpHeaders().set(
+      'apikey',
+      'l7xx1f2691f2520d487b902f4e0b57a0b197',
+    );
+    return this.http.get(
+      `https://api.kvk.nl/test/api/v1/zoeken?kvkNumber=${code}`,
+      { headers },
+    );
   }
 }
