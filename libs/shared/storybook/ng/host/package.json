@@ -2,8 +2,7 @@
   "name": "@nexanode/storybook-ng-host",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@nx/angular": "19.0.5"
   },
   "sideEffects": false
 }
