@@ -1,0 +1,8 @@
+{
+  "name": "@nexanode/storybook-ng-host",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@nx/angular": "19.0.5"
+  },
+  "sideEffects": false
+}

@@ -20,44 +20,6 @@ const meta: Meta<RegisterComponent> = {
     }),
   ],
   parameters: {
-    cssprops: {
-      'primary-light': {
-        control: 'color',
-      },
-      primary: {
-        control: 'color',
-      },
-      'primary-dark': {
-        control: 'color',
-      },
-      'secondary-light': {
-        control: 'color',
-      },
-      secondary: {
-        control: 'color',
-      },
-      'secondary-dark': {
-        control: 'color',
-      },
-      'tertiary-light': {
-        control: 'color',
-      },
-      tertiary: {
-        control: 'color',
-      },
-      'tertiary-dark': {
-        control: 'color',
-      },
-      'neutral-light': {
-        control: 'color',
-      },
-      neutral: {
-        control: 'color',
-      },
-      'neutral-dark': {
-        control: 'color',
-      },
-    },
     mockData: [
       {
         url: '/api/auth/register',
