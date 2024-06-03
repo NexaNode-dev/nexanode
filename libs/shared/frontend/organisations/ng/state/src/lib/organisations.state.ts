@@ -19,6 +19,7 @@ type OrganisationsState = {
   selectedId: string | null;
   selectedTypeId: string | null;
   isLoading: boolean;
+  registrationOK: boolean;
   error: unknown | null;
 };
 
@@ -28,6 +29,7 @@ const initialState: OrganisationsState = {
   selectedId: null,
   selectedTypeId: null,
   isLoading: false,
+  registrationOK: false,
   error: null,
 };
 
@@ -241,6 +243,21 @@ export const organisationsStore = signalStore(
                   ),
                   selectedTypeId: null,
                 })),
+              error: (error) => patchState(store, { error }),
+              finalize: () => patchState(store, { isLoading: false }),
+            }),
+          ),
+        ),
+      ),
+    ),
+    // Registration Code
+    checkRegistrationCode: rxMethod<string>(
+      pipe(
+        tap(() => patchState(store, { isLoading: true })),
+        switchMap((code) =>
+          organisationsService.checkRegistrationCode(code).pipe(
+            tapResponse({
+              next: () => patchState(store, { registrationOK: true }),
               error: (error) => patchState(store, { error }),
               finalize: () => patchState(store, { isLoading: false }),
             }),

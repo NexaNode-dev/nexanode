@@ -7,7 +7,7 @@ import {
 import { FormComponent } from './form.component';
 
 import { within, expect, userEvent } from '@storybook/test';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
@@ -16,7 +16,7 @@ const meta: Meta<FormComponent> = {
   title: 'FormComponent',
   decorators: [
     applicationConfig({
-      providers: [provideHttpClient(), provideStoreDevtools()],
+      providers: [provideHttpClient(withFetch()), provideStoreDevtools()],
     }),
     moduleMetadata({
       imports: [ReactiveFormsModule],
@@ -48,7 +48,7 @@ const meta: Meta<FormComponent> = {
           id: '1',
           name: 'Organisation Name',
           typeId: 1,
-          registrationNumber: '123456',
+          registrationNumber: '12345678',
         },
       },
     ],
@@ -93,7 +93,7 @@ export const ValidateType: Story = {
   },
 };
 
-export const ValidateRegistrationNumber: Story = {
+export const ValidateRegistrationNumberRequired: Story = {
   args: {},
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
@@ -105,6 +105,22 @@ export const ValidateRegistrationNumber: Story = {
       regno.blur();
     });
     expect(canvas.getByText('Registration Number is required')).toBeTruthy();
+  },
+};
+
+export const ValidateRegistrationNumberInvalid: Story = {
+  args: {},
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    await step('Input invalid registration number', async () => {
+      const regno = canvas.getByLabelText('Registration Number', {
+        exact: true,
+      });
+      regno.focus();
+      await userEvent.type(regno, '12345678');
+      regno.blur();
+    });
+    expect(canvas.getByText('Registration Number is invalid')).toBeTruthy();
   },
 };
 
@@ -166,7 +182,19 @@ export const CreateOrganisation: Story = {
       const regno = canvas.getByLabelText('Registration Number', {
         exact: true,
       });
-      await userEvent.type(regno, '123456');
+      await userEvent.type(regno, '69599084');
+      const email = canvas.getByLabelText('Email', {
+        exact: true,
+      });
+      await userEvent.type(email, 'test@example.com');
+      const phone = canvas.getByLabelText('Phone', {
+        exact: true,
+      });
+      await userEvent.type(phone, '1234567890');
+      const description = canvas.getByLabelText('Description', {
+        exact: true,
+      });
+      await userEvent.type(description, 'This is a test organisation');
     });
     await step('Submit the form', async () => {
       const submit = canvas.getByRole('button');
