@@ -9,11 +9,13 @@ import {
   FormBuilder,
   FormControl,
   ReactiveFormsModule,
+  ValidationErrors,
   Validators,
 } from '@angular/forms';
 import { IOrganisation } from '@nexanode/domain-interfaces';
 import { organisationsStore } from '@nexanode/frontend-organisations-ng-state';
 import { Router } from '@angular/router';
+import { JsonPipe } from '@angular/common';
 
 type OrganisationForm = {
   [field in keyof Omit<
@@ -25,7 +27,7 @@ type OrganisationForm = {
 @Component({
   selector: 'nexanode-form',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, JsonPipe],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -39,11 +41,12 @@ export class FormComponent {
   readonly selectedOrganisation = this.store.selectedOrganisation;
   readonly selectedOrganisationType = this.store.selectedOrganisationType;
   readonly organisationTypes = this.store.organisationTypes;
+  readonly registrationOK = this.store.registrationOK;
   readonly organisationForm = this.fb.group<OrganisationForm>({
     name: new FormControl(null, [Validators.required]),
     typeId: new FormControl(null, [Validators.required]),
     description: new FormControl(null),
-    registrationNumber: new FormControl(null, [Validators.required]),
+    registrationNumber: new FormControl(null, [Validators.required, this.validateRegistrationCode()]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     phone: new FormControl(null, [Validators.required]),
   });
@@ -77,6 +80,24 @@ export class FormComponent {
         ? this.store.updateOrganisation({ ...organisation, id: this.id() })
         : this.store.createOrganisation(organisation);
     }
+  }
+
+  onCheckRegistrationCode() {
+    if (this.organisationForm.get('registrationNumber')?.value) {
+      this.store.checkRegistrationCode(
+        this.organisationForm.get('registrationNumber')?.value || '',
+      );
+    }
+  }
+
+  private validateRegistrationCode() {
+    return (control: FormControl): ValidationErrors | null => {
+      if (control.value) {
+        this.store.checkRegistrationCode(control.value);
+        return this.registrationOK() ? null : { registrationCode: true };
+      }
+      return null;
+    };
   }
 
   get name() {

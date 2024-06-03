@@ -58,12 +58,16 @@ export class OrganisationsService {
   }
 
   checkRegistrationCode(code: string) {
-    const headers = new HttpHeaders().set(
+    const headers = new HttpHeaders().
+    set(
       'apikey',
       'l7xx1f2691f2520d487b902f4e0b57a0b197',
-    );
+    )
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    .set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
     return this.http.get(
-      `https://api.kvk.nl/test/api/v1/zoeken?kvkNumber=${code}`,
+      `https://api.kvk.nl/test/api/v2/zoeken?kvkNummer=${code}`,
       { headers },
     );
   }
