@@ -12,16 +12,16 @@ Angular data access libraries typically consist of services using the `HttpClien
 
 ```typescript
 // src/app/data-access/user.service.ts
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { User } from "./user.interface"; // Assume User interface is defined in a shared location
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { User } from './user.interface'; // Assume User interface is defined in a shared location
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = "https://api.example.com/users";
+  private apiUrl = 'https://api.example.com/users';
 
   constructor(private http: HttpClient) {}
 
@@ -59,10 +59,10 @@ In React, data access can be managed through custom hooks that encapsulate the l
 
 ```javascript
 // src/hooks/useUsers.js
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const useUsers = (url = "https://api.example.com/users") => {
+const useUsers = (url = 'https://api.example.com/users') => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

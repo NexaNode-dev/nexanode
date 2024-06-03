@@ -31,7 +31,7 @@ const preview: Preview = {
         value: '#5ec768',
         control: 'color',
       },
-      'tertiary': {
+      tertiary: {
         value: '#28a745',
         control: 'color',
       },
@@ -43,7 +43,7 @@ const preview: Preview = {
         value: '#ffa64d',
         control: 'color',
       },
-      'quaternary': {
+      quaternary: {
         value: '#ff8c00',
         control: 'color',
       },
@@ -52,7 +52,7 @@ const preview: Preview = {
         control: 'color',
       },
     },
-  }
+  },
 };
 
 export default preview;

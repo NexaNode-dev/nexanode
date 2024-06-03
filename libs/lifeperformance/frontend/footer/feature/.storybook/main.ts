@@ -5,7 +5,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
   ],
 
   framework: {
@@ -34,7 +34,7 @@ const config: StorybookConfig = {
     </style>
   `,
 
-  docs: {}
+  docs: {},
 };
 
 export default config;

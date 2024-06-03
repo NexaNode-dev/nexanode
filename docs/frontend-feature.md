@@ -12,16 +12,16 @@ In Angular, a feature library is typically a module that encapsulates all the co
 
 ```typescript
 // src/app/article-feature/article-list/article-list.component.ts
-import { Component, OnInit } from "@angular/core";
-import { ArticleService } from "../article.service";
-import { Article } from "../article.model";
+import { Component, OnInit } from '@angular/core';
+import { ArticleService } from '../article.service';
+import { Article } from '../article.model';
 
 @Component({
-  selector: "app-article-list",
+  selector: 'app-article-list',
   standalone: true,
   imports: [],
-  templateUrl: "./article-list.component.html",
-  styleUrls: ["./article-list.component.css"],
+  templateUrl: './article-list.component.html',
+  styleUrls: ['./article-list.component.css'],
 })
 export class ArticleListComponent implements OnInit {
   articles: Article[];
@@ -50,8 +50,8 @@ In React, a feature library is not defined by the framework itself but can be co
 
 ```javascript
 // src/features/article/ArticleList.js
-import React, { useState, useEffect } from "react";
-import { useArticles } from "./useArticles"; // Assuming useArticles is a custom hook for fetching articles
+import React, { useState, useEffect } from 'react';
+import { useArticles } from './useArticles'; // Assuming useArticles is a custom hook for fetching articles
 
 const ArticleList = () => {
   const { data: articles, loading, error } = useArticles();

@@ -12,18 +12,18 @@ Angular's introduction of Standalone Components in version 14 simplifies the cre
 
 ```typescript
 // src/app/ui-library/button/button.component.ts
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-button",
+  selector: 'app-button',
   template: `<button [type]="type" class="btn">{{ label }}</button>`,
   standalone: true,
   imports: [],
-  styleUrls: ["./button.component.css"],
+  styleUrls: ['./button.component.css'],
 })
 export class ButtonComponent {
-  @Input() label: string = "Default Label";
-  @Input() type: "button" | "submit" | "reset" = "button";
+  @Input() label: string = 'Default Label';
+  @Input() type: 'button' | 'submit' | 'reset' = 'button';
 }
 ```
 
@@ -35,11 +35,11 @@ To use the standalone component in your application, you can directly import it 
 
 ```typescript
 // src/app/app.component.ts
-import { Component } from "@angular/core";
-import { ButtonComponent } from "./ui-library/button/button.component";
+import { Component } from '@angular/core';
+import { ButtonComponent } from './ui-library/button/button.component';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   template: ` <app-button label="Click Me" type="submit"></app-button> `,
   standalone: true,
   imports: [ButtonComponent],

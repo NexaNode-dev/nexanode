@@ -57,11 +57,11 @@ Assuming you have a feature library `frontend-feature-user-management` that incl
 In your feature library, ensure the component is marked as standalone:
 
 ```typescript
-import { Component, NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { Component, NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "myorg-user-list",
+  selector: 'myorg-user-list',
   template: `<!-- User list template -->`,
   standalone: true,
   imports: [CommonModule],
@@ -76,18 +76,18 @@ With Angular's standalone component approach, you can directly import the `UserL
 In your main application, you can dynamically import the component for routes or directly use it in templates:
 
 ```typescript
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule, Routes } from "@angular/router";
-import { AppComponent } from "./app.component";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 // Assume UserListComponent is exported and can be imported directly
-import { UserListComponent } from "@myorg/frontend-feature-user-management";
+import { UserListComponent } from '@myorg/frontend-feature-user-management';
 
 const routes: Routes = [
   {
-    path: "users",
+    path: 'users',
     component: UserListComponent,
-    loadComponent: () => import("@myorg/frontend-feature-user-management").then((m) => m.UserListComponent),
+    loadComponent: () => import('@myorg/frontend-feature-user-management').then((m) => m.UserListComponent),
   },
 ];
 
@@ -118,7 +118,7 @@ Assuming you have a `UserList` component in your feature library, you would firs
 This is your `UserList` component in the feature library:
 
 ```javascript
-import React from "react";
+import React from 'react';
 
 const UserList = () => (
   <div>
@@ -136,8 +136,8 @@ export default UserList;
 Then, in your React application, you simply import and use the `UserList` component where needed:
 
 ```javascript
-import React from "react";
-import UserList from "@myorg/frontend-feature-user-management";
+import React from 'react';
+import UserList from '@myorg/frontend-feature-user-management';
 
 const App = () => (
   <div>
