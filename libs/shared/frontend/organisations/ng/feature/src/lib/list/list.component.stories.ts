@@ -5,8 +5,7 @@ import {
 } from '@storybook/angular';
 import { ListComponent } from './list.component';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, expect } from '@storybook/test';
 import { provideHttpClient } from '@angular/common/http';
 
 const meta: Meta<ListComponent> = {

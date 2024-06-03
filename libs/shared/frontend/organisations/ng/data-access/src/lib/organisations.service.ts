@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IOrganisation, IOrganisationType } from '@nexanode/domain-interfaces';
 
@@ -55,5 +55,20 @@ export class OrganisationsService {
 
   deleteOrganisationType(id: string) {
     return this.http.delete(`api/organisations/types/${id}`);
+  }
+
+  checkRegistrationCode(code: string) {
+    const headers = new HttpHeaders().
+    set(
+      'apikey',
+      'l7xx1f2691f2520d487b902f4e0b57a0b197',
+    )
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    .set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+    return this.http.get(
+      `https://api.kvk.nl/test/api/v2/zoeken?kvkNummer=${code}`,
+      { headers },
+    );
   }
 }

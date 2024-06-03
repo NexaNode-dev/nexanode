@@ -8,6 +8,7 @@
         class="form-control"
         id="name"
         formControlName="name"
+        placeholder="Enter name"
       />
       @if (name?.hasError('required') && name?.touched) {
         <div class="error">Name is required</div>
@@ -31,11 +32,15 @@
         class="form-control"
         id="registrationNumber"
         formControlName="registrationNumber"
+        placeholder="Enter registration number"
       />
       @if (
         registrationNumber?.hasError('required') && registrationNumber?.touched
       ) {
         <div class="error">Registration Number is required</div>
+      }
+      @if (registrationNumber?.hasError('registrationCode') && registrationNumber?.touched) {
+        <div class="error">Registration Number is invalid</div>
       }
     </div>
     <div class="form-group">
@@ -45,6 +50,7 @@
         class="form-control"
         id="email"
         formControlName="email"
+        placeholder="Enter email"
       />
       @if (email?.hasError('required') && email?.touched) {
         <div class="error">Email is required</div>
@@ -60,6 +66,7 @@
         class="form-control"
         id="phone"
         formControlName="phone"
+        placeholder="Enter phone"
       />
       @if (phone?.hasError('required') && phone?.touched) {
         <div class="error">Phone is required</div>
@@ -71,6 +78,7 @@
         class="form-control"
         id="description"
         formControlName="description"
+        placeholder="Enter description"
       ></textarea>
     </div>
     <button type="submit" [disabled]="organisationForm.invalid || isLoading()">
