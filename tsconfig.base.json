@@ -60,6 +60,9 @@
       "@nexanode/backend-roles-permissions-data-access": [
         "libs/shared/backend/roles-permissions/data-access/src/index.ts"
       ],
+      "@nexanode/backend-services-application": [
+        "libs/shared/backend/services/application/src/index.ts"
+      ],
       "@nexanode/backend-services-data-access": [
         "libs/shared/backend/services/data-access/src/index.ts"
       ],
