@@ -46,7 +46,10 @@ export class FormComponent {
     name: new FormControl(null, [Validators.required]),
     typeId: new FormControl(null, [Validators.required]),
     description: new FormControl(null),
-    registrationNumber: new FormControl(null, [Validators.required, this.validateRegistrationCode()]),
+    registrationNumber: new FormControl(null, [
+      Validators.required,
+      this.validateRegistrationCode(),
+    ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     phone: new FormControl(null, [Validators.required]),
   });

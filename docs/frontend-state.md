@@ -14,12 +14,12 @@ Define user-related actions for loading users.
 
 ```typescript
 // actions/user.actions.ts
-import { createAction, props } from "@ngrx/store";
-import { User } from "../models/user.model";
+import { createAction, props } from '@ngrx/store';
+import { User } from '../models/user.model';
 
-export const loadUsers = createAction("[User] Load Users");
-export const loadUsersSuccess = createAction("[User] Load Users Success", props<{ users: User[] }>());
-export const loadUsersFailure = createAction("[User] Load Users Failure", props<{ error: any }>());
+export const loadUsers = createAction('[User] Load Users');
+export const loadUsersSuccess = createAction('[User] Load Users Success', props<{ users: User[] }>());
+export const loadUsersFailure = createAction('[User] Load Users Failure', props<{ error: any }>());
 ```
 
 **Reducers**:
@@ -28,9 +28,9 @@ Implement a reducer to handle state changes based on actions.
 
 ```typescript
 // reducers/user.reducer.ts
-import { createReducer, on } from "@ngrx/store";
-import * as UserActions from "../actions/user.actions";
-import { User } from "../models/user.model";
+import { createReducer, on } from '@ngrx/store';
+import * as UserActions from '../actions/user.actions';
+import { User } from '../models/user.model';
 
 export interface State {
   users: User[];
@@ -55,12 +55,12 @@ Handle asynchronous operations such as API calls.
 
 ```typescript
 // effects/user.effects.ts
-import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { of } from "rxjs";
-import { catchError, map, mergeMap } from "rxjs/operators";
-import { UserService } from "../services/user.service";
-import * as UserActions from "../actions/user.actions";
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { of } from 'rxjs';
+import { catchError, map, mergeMap } from 'rxjs/operators';
+import { UserService } from '../services/user.service';
+import * as UserActions from '../actions/user.actions';
 
 @Injectable()
 export class UserEffects {
@@ -96,16 +96,16 @@ Define actions for managing users.
 ```javascript
 // actions/userActions.js
 export const loadUsers = () => ({
-  type: "LOAD_USERS",
+  type: 'LOAD_USERS',
 });
 
 export const loadUsersSuccess = (users) => ({
-  type: "LOAD_USERS_SUCCESS",
+  type: 'LOAD_USERS_SUCCESS',
   payload: users,
 });
 
 export const loadUsersFailure = (error) => ({
-  type: "LOAD_USERS_FAILURE",
+  type: 'LOAD_USERS_FAILURE',
   payload: error,
 });
 ```
@@ -123,9 +123,9 @@ const initialState = {
 
 export const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "LOAD_USERS_SUCCESS":
+    case 'LOAD_USERS_SUCCESS':
       return { ...state, users: action.payload };
-    case "LOAD_USERS_FAILURE":
+    case 'LOAD_USERS_FAILURE':
       return { ...state, error: action.payload };
     default:
       return state;
@@ -139,8 +139,8 @@ Configure the store to include the userReducer.
 
 ```javascript
 // store.js
-import { createStore, combineReducers } from "redux";
-import { userReducer } from "./reducers/userReducer";
+import { createStore, combineReducers } from 'redux';
+import { userReducer } from './reducers/userReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -155,9 +155,9 @@ Utilize `connect` from `react-redux` to access state and dispatch actions.
 
 ```javascript
 // components/UserComponent.js
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { loadUsers } from "../actions/userActions";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { loadUsers } from '../actions/userActions';
 
 const UserComponent = ({ users, loadUsers }) => {
   useEffect(() => {

@@ -39,7 +39,10 @@
       ) {
         <div class="error">Registration Number is required</div>
       }
-      @if (registrationNumber?.hasError('registrationCode') && registrationNumber?.touched) {
+      @if (
+        registrationNumber?.hasError('registrationCode') &&
+        registrationNumber?.touched
+      ) {
         <div class="error">Registration Number is invalid</div>
       }
     </div>

@@ -31,7 +31,7 @@ interface IUser {
   password: string;
 }
 
-class createUserDTO implements Pick<IUser, "username" | "email" | "password"> {
+class createUserDTO implements Pick<IUser, 'username' | 'email' | 'password'> {
   username: string;
   email: string;
   password: string;

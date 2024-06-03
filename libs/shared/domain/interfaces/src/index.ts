@@ -8,3 +8,4 @@ export * from './lib/register.interface';
 export * from './lib/query-params.interface';
 export * from './lib/organisation.interface';
 export * from './lib/organisation-type.interface';
+export * from './lib/service.interface';

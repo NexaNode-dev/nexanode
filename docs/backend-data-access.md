@@ -19,7 +19,7 @@ This guide outlines best practices for structuring the data access layer in Nexa
 Define models to represent the data entities in your application. Models should mirror your database schema but also be designed to cater to the needs of your application's business logic.
 
 ```typescript
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
 export class User implements IUser {
@@ -39,10 +39,10 @@ export class User implements IUser {
 Repositories act as the bridge between your models and the rest of your application. They should contain all the logic needed to query and manipulate data for a single entity.
 
 ```typescript
-import { Injectable } from "@nestjs/common";
-import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { User } from "./user.entity";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from './user.entity';
 
 @Injectable()
 export class UserRepository {
