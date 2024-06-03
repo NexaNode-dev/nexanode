@@ -11,11 +11,11 @@ Controllers are responsible for handling incoming HTTP requests and returning re
 Below is an example of a `UserController` that demonstrates basic CRUD operations for user data within an application:
 
 ```typescript
-import { Controller, Get, Post, Put, Delete, Body, Param } from "@nestjs/common";
-import { UserService } from "../application/user.service";
-import { CreateUserDto, UpdateUserDto } from "../domain/dtos";
+import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { UserService } from '../application/user.service';
+import { CreateUserDto, UpdateUserDto } from '../domain/dtos';
 
-@Controller("users")
+@Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -24,8 +24,8 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get(":id")
-  async getUserById(@Param("id") id: string) {
+  @Get(':id')
+  async getUserById(@Param('id') id: string) {
     return this.userService.findById(id);
   }
 
@@ -34,13 +34,13 @@ export class UserController {
     return this.userService.create(createUserDto);
   }
 
-  @Put(":id")
-  async updateUser(@Param("id") id: string, @Body() updateUserDto: UpdateUserDto) {
+  @Put(':id')
+  async updateUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(id, updateUserDto);
   }
 
-  @Delete(":id")
-  async deleteUser(@Param("id") id: string) {
+  @Delete(':id')
+  async deleteUser(@Param('id') id: string) {
     return this.userService.delete(id);
   }
 }

@@ -35,9 +35,9 @@ Consider you have a library named `user-feature`, which includes a NestJS module
 **UserFeatureModule (within `user-feature` library):**
 
 ```typescript
-import { Module } from "@nestjs/common";
-import { UserController } from "./user.controller";
-import { UserService } from "./user.service";
+import { Module } from '@nestjs/common';
+import { UserController } from './user.controller';
+import { UserService } from './user.service';
 
 @Module({
   controllers: [UserController],
@@ -49,8 +49,8 @@ export class UserFeatureModule {}
 **AppModule (app.module.ts):**
 
 ```typescript
-import { Module } from "@nestjs/common";
-import { UserFeatureModule } from "@myorg/user-feature";
+import { Module } from '@nestjs/common';
+import { UserFeatureModule } from '@myorg/user-feature';
 
 @Module({
   imports: [UserFeatureModule],

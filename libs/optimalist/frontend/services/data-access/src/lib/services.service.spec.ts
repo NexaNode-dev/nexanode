@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { ServicesService } from './services.service';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 
 describe('ServicesService', () => {
   let service: ServicesService;
@@ -9,7 +12,7 @@ describe('ServicesService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ServicesService]
+      providers: [ServicesService],
     });
     service = TestBed.inject(ServicesService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -22,5 +25,4 @@ describe('ServicesService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
 });

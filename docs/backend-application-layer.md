@@ -15,8 +15,8 @@ Services within the application layer handle the business logic. They interact w
 The following is an example of a service that manages user data. This service utilizes a repository to interact with the database, abstracting the complexity of direct data management.
 
 ```typescript
-import { Injectable } from "@nestjs/common";
-import { UserRepository } from "@nexanode/user-data-access"; // data-access-layer
+import { Injectable } from '@nestjs/common';
+import { UserRepository } from '@nexanode/user-data-access'; // data-access-layer
 
 @Injectable()
 export class UserService {

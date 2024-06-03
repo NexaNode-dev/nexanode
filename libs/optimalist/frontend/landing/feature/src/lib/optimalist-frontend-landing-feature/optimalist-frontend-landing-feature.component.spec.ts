@@ -9,7 +9,10 @@ describe('OptimalistFrontendLandingFeatureComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [OptimalistFrontendLandingFeatureComponent, MockComponent(ListComponent)],
+      imports: [
+        OptimalistFrontendLandingFeatureComponent,
+        MockComponent(ListComponent),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(
@@ -22,7 +25,7 @@ describe('OptimalistFrontendLandingFeatureComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
+
   it('should render the services', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('a').textContent).toContain('Our Services');
