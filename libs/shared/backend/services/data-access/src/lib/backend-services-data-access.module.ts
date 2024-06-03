@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { ServicesRepository } from './services.repository';
+import { Service } from './service.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  controllers: [],
+  imports: [TypeOrmModule.forFeature([Service])],
   providers: [ServicesRepository],
-  exports: [],
+  exports: [ServicesRepository, TypeOrmModule],
 })
 export class BackendServicesDataAccessModule {}
