@@ -60,6 +60,15 @@
       "@nexanode/backend-roles-permissions-data-access": [
         "libs/shared/backend/roles-permissions/data-access/src/index.ts"
       ],
+      "@nexanode/backend-services-application": [
+        "libs/shared/backend/services/application/src/index.ts"
+      ],
+      "@nexanode/backend-services-data-access": [
+        "libs/shared/backend/services/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-services-presentation": [
+        "libs/shared/backend/services/presentation/src/index.ts"
+      ],
       "@nexanode/backend-users-data-access": [
         "libs/shared/backend/users/data-access/src/index.ts"
       ],
@@ -116,6 +125,15 @@
       ],
       "@nexanode/frontend-organisations-ng-state": [
         "libs/shared/frontend/organisations/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-services-ng-data-access": [
+        "libs/shared/frontend/services/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-services-ng-feature": [
+        "libs/shared/frontend/services/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-services-ng-state": [
+        "libs/shared/frontend/services/ng/state/src/index.ts"
       ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"

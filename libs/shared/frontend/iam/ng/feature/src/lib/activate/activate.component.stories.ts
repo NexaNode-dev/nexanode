@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { ActivateComponent } from './activate.component';
 import { applicationConfig, moduleMetadata } from '@storybook/angular';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within, expect } from '@storybook/test';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 

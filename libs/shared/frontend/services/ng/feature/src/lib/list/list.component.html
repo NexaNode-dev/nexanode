@@ -1,0 +1,22 @@
+<div class="container">
+  <h2>{{ title() }}</h2>
+  <section class="services">
+    @if (isLoading()) {
+      <p>Loading...</p>
+    } @else if (error()) {
+      <p>Error: {{ error() }}</p>
+    } @else if (services().length === 0) {
+      <p>No services found</p>
+    } @else if (services().length > 0) {
+      @for (service of services(); track service.id) {
+        <div class="service">
+          <h3>{{ service.name }}</h3>
+          <p>{{ service.summary }}</p>
+          @if (service.price) {
+            <p>Price: {{ service.price }}</p>
+          }
+        </div>
+      }
+    }
+  </section>
+</div>

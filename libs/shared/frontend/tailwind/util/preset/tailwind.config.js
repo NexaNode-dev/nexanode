@@ -17,6 +17,11 @@ module.exports = {
           DEFAULT: 'var(--tertiary)',
           dark: 'var(--tertiary-dark)',
         },
+        quaternary: {
+          light: 'var(--quaternary-light)',
+          DEFAULT: 'var(--quaternary)',
+          dark: 'var(--quaternary-dark)',
+        },
         error: {
           light: 'var(--error-light)',
           DEFAULT: 'var(--error)',
