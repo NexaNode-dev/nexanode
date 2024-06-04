@@ -36,12 +36,14 @@ describe('ServicesController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [ServicesController],
-    }).useMocker((token) => {
-      if (token === ServicesService) {
-        return mockServicesService;
-      }
-      return;
-    }).compile();
+    })
+      .useMocker((token) => {
+        if (token === ServicesService) {
+          return mockServicesService;
+        }
+        return;
+      })
+      .compile();
 
     controller = module.get<ServicesController>(ServicesController);
   });
@@ -56,22 +58,30 @@ describe('ServicesController', () => {
   });
   describe('findOneById', () => {
     it('should return a service', async () => {
-      expect(await controller.findOneById(expectedService.id)).toEqual(expectedService);
+      expect(await controller.findOneById(expectedService.id)).toEqual(
+        expectedService,
+      );
     });
   });
   describe('create', () => {
     it('should return a service', async () => {
-      expect(await controller.create(createServiceDto)).toEqual(expectedService);
+      expect(await controller.create(createServiceDto)).toEqual(
+        expectedService,
+      );
     });
   });
   describe('update', () => {
     it('should return a service', async () => {
-      expect(await controller.update(expectedService.id, updateServiceDto)).toEqual(expectedService);
+      expect(
+        await controller.update(expectedService.id, updateServiceDto),
+      ).toEqual(expectedService);
     });
   });
   describe('remove', () => {
     it('should return a string', async () => {
-      expect(await controller.remove(expectedService.id)).toEqual(expectedService.id);
+      expect(await controller.remove(expectedService.id)).toEqual(
+        expectedService.id,
+      );
     });
   });
 });
