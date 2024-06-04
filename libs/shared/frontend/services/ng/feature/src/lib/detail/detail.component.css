@@ -1,0 +1,11 @@
+.container {
+  @apply bg-secondary-light text-quaternary w-full h-full h-screen flex flex-col items-center justify-start p-8;
+}
+
+.service {
+  @apply flex flex-col items-center justify-center;
+}
+
+.service h2 {
+  @apply text-primary-dark text-4xl font-bold mb-8;
+}
