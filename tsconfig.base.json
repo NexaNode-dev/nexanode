@@ -66,6 +66,9 @@
       "@nexanode/backend-services-data-access": [
         "libs/shared/backend/services/data-access/src/index.ts"
       ],
+      "@nexanode/backend-services-presentation": [
+        "libs/shared/backend/services/presentation/src/index.ts"
+      ],
       "@nexanode/backend-users-data-access": [
         "libs/shared/backend/users/data-access/src/index.ts"
       ],

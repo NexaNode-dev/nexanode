@@ -1,0 +1,20 @@
+{
+  "name": "backend-services-presentation",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/services/presentation/src",
+  "projectType": "library",
+  "tags": ["scope:backend", "type:presentation", "domain:services"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/services/presentation",
+        "tsConfig": "libs/shared/backend/services/presentation/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/services/presentation/package.json",
+        "main": "libs/shared/backend/services/presentation/src/index.ts",
+        "assets": ["libs/shared/backend/services/presentation/*.md"]
+      }
+    }
+  }
+}
