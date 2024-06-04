@@ -7,6 +7,7 @@ import {
   patchState,
   signalStore,
   withComputed,
+  withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
@@ -133,4 +134,9 @@ export const servicesStore = signalStore(
       ),
     ),
   })),
+  withHooks({
+    onInit(store) {
+      store.getServices();
+    },
+  }),
 );

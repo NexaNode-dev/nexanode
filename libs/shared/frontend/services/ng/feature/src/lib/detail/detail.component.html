@@ -1,0 +1,15 @@
+<div class="container">
+  @if (isLoading()) {
+    <p>Loading...</p>
+  } @else if (error()) {
+    <p>Error: {{ error() }}</p>
+  } @else {
+    <div class="service">
+      <h2>{{ service()?.name }}</h2>
+      <p>{{ service()?.description }}</p>
+      @if (service()?.price) {
+        <p>Price: {{ service()?.price | currency: 'EUR' }}</p>
+      }
+    </div>
+  }
+</div>
