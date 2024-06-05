@@ -18,6 +18,9 @@
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
       ],
+      "@nexanode/backend-categories-data-access": [
+        "libs/shared/backend/categories/data-access/src/index.ts"
+      ],
       "@nexanode/backend-contacts-application": [
         "libs/shared/backend/contacts/application/src/index.ts"
       ],
