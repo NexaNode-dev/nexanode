@@ -8,7 +8,7 @@ export const serviceFactory = (options?: Partial<IService>): IService => {
     summary: faker.lorem.sentence(),
     description: faker.lorem.paragraph(),
     price: faker.number.float({ min: 1, max: 100 }),
-    category: faker.commerce.department(),
+    categoryId: faker.string.uuid(),
     createdAt: faker.date.recent(),
     updatedAt: faker.date.recent(),
   };
