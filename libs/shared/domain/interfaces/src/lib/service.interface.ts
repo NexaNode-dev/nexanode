@@ -4,7 +4,7 @@ export interface IService {
   summary: string;
   description?: string;
   price?: number;
-  category?: string;
+  categoryId?: string;
   createdAt: Date;
   updatedAt: Date;
 }
