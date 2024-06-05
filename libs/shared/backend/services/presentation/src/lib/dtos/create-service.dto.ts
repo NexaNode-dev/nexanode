@@ -3,7 +3,7 @@ import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateServiceDto
   implements
-    Pick<IService, 'name' | 'description' | 'summary' | 'price' | 'category'>
+    Pick<IService, 'name' | 'description' | 'summary' | 'price' | 'categoryId'>
 {
   @IsNotEmpty()
   @IsString()
@@ -23,5 +23,5 @@ export class CreateServiceDto
 
   @IsOptional()
   @IsString()
-  category?: string;
+  categoryId?: string;
 }
