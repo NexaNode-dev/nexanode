@@ -1,7 +1,11 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ServicesService } from './services.service';
-import { servicesFactory } from '@nexanode/testing-data-mocks-utils';
+import {
+  categoriesFactory,
+  servicesFactory,
+} from '@nexanode/testing-data-mocks-utils';
 import { ServicesRepository } from '@nexanode/backend-services-data-access';
+import { CategoriesRepository } from '@nexanode/backend-categories-data-access';
 
 describe('ServicesService', () => {
   let service: ServicesService;
@@ -10,12 +14,24 @@ describe('ServicesService', () => {
 
   const expectedService = expectedServices[0];
 
-  const mockRepository = {
+  const expectedCategories = categoriesFactory();
+
+  const expectedCategory = expectedCategories[0];
+
+  const mockServicesRepository = {
     getServices: jest.fn().mockResolvedValue(expectedServices),
     getService: jest.fn().mockResolvedValue(expectedService),
     createService: jest.fn().mockResolvedValue(expectedService),
     updateService: jest.fn().mockResolvedValue(expectedService),
     deleteService: jest.fn().mockResolvedValue(expectedService.id),
+  };
+
+  const mockCategoriesRepository = {
+    getCategories: jest.fn().mockResolvedValue(expectedCategories),
+    getCategory: jest.fn().mockResolvedValue(expectedCategory),
+    createCategory: jest.fn().mockResolvedValue(expectedCategory),
+    updateCategory: jest.fn().mockResolvedValue(expectedCategory),
+    deleteCategory: jest.fn().mockResolvedValue(expectedCategory.id),
   };
 
   beforeEach(async () => {
@@ -24,7 +40,10 @@ describe('ServicesService', () => {
     })
       .useMocker((token) => {
         if (token === ServicesRepository) {
-          return mockRepository;
+          return mockServicesRepository;
+        }
+        if (token === CategoriesRepository) {
+          return mockCategoriesRepository;
         }
         return;
       })
@@ -75,6 +94,53 @@ describe('ServicesService', () => {
     it('should delete a service', async () => {
       const result = await service.deleteService(expectedService.id);
       expect(result).toEqual(expectedService.id);
+    });
+  });
+  describe('getServicesByCategory', () => {
+    it('should return services by category', async () => {
+      const result = await service.getServicesByCategory(expectedCategory.id);
+      expect(result).toEqual(expectedServices);
+    });
+  });
+  describe('getCategories', () => {
+    it('should return all categories', async () => {
+      const result = await service.getCategories();
+      expect(result).toEqual(expectedCategories);
+    });
+  });
+  describe('getCategory', () => {
+    it('should return a category', async () => {
+      const result = await service.getCategory({
+        where: { id: expectedCategory.id },
+      });
+      expect(result).toEqual(expectedCategory);
+    });
+  });
+  describe('getCategoryById', () => {
+    it('should return a category by id', async () => {
+      const result = await service.getCategoryById(expectedCategory.id);
+      expect(result).toEqual(expectedCategory);
+    });
+  });
+  describe('createCategory', () => {
+    it('should create a category', async () => {
+      const result = await service.createCategory(expectedCategory);
+      expect(result).toEqual(expectedCategory);
+    });
+  });
+  describe('updateCategory', () => {
+    it('should update a category', async () => {
+      const result = await service.updateCategory(
+        expectedCategory.id,
+        expectedCategory,
+      );
+      expect(result).toEqual(expectedCategory);
+    });
+  });
+  describe('deleteCategory', () => {
+    it('should delete a category', async () => {
+      const result = await service.deleteCategory(expectedCategory.id);
+      expect(result).toEqual(expectedCategory.id);
     });
   });
 });
