@@ -1,0 +1,19 @@
+{
+  "name": "frontend-services-layouts",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/frontend/services/layouts/src",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:layout", "scope:services"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/frontend/services/layouts",
+        "main": "libs/shared/frontend/services/layouts/src/index.ts",
+        "tsConfig": "libs/shared/frontend/services/layouts/tsconfig.lib.json",
+        "assets": ["libs/shared/frontend/services/layouts/*.md"]
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@
     } @else if (services().length === 0) {
       <p>No services found</p>
     } @else if (services().length > 0) {
-      @for (item of servicesByCategory(); track item.category.id) {
+      <!-- @for (item of servicesByCategory(); track item.category.id) {
         <h2>{{ item.category.name }}</h2>
         <p>{{ item.category.description }}</p>
         @for (service of item.services; track service.categoryId) {
@@ -20,7 +20,8 @@
             }
           </div>
         }
-      }
-    }
+      } -->
+      <one-layout [servicesByCategory]="servicesByCategory()"></one-layout>
+    } 
   </section>
 </div>
