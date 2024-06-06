@@ -1,5 +1,5 @@
 .container {
-  @apply bg-secondary-light text-quaternary w-full h-full flex flex-col justify-start items-center p-4;
+  @apply bg-secondary-light text-quaternary w-full h-full h-screen flex flex-col justify-start items-center p-4;
 }
 
 .container h2 {

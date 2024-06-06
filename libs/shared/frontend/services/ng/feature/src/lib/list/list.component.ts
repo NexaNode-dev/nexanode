@@ -1,4 +1,5 @@
 import {
+  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -6,6 +7,7 @@ import {
   input,
 } from '@angular/core';
 import { servicesStore } from '@nexanode/frontend-services-ng-state';
+import '@nexanode/frontend-services-layouts';
 
 @Component({
   selector: 'nexanode-services-list',
@@ -14,6 +16,7 @@ import { servicesStore } from '@nexanode/frontend-services-ng-state';
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class NexaNodeServicesListComponent {
   private readonly store = inject(servicesStore);
