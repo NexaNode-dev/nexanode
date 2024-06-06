@@ -1,100 +1,56 @@
 header {
-  background: var(--color-primary);
-  display: flex;
+  @apply bg-primary flex;
+}
+
+header img {
+  @apply w-full md:w-1/4;
 }
 
 .nav-toggle {
-  display: none;
-  background: none;
-  border: none;
+  @apply block relative z-10 cursor-pointer sm:hidden sm:border-none sm:bg-none;
 }
 
 .hamburger {
-  width: 30px;
-  height: 3px;
-  background: var(--color-secondary);
-  display: block;
-  position: relative;
+  @apply block relative w-8 h-1 bg-secondary -top-28 right-12;
 }
 
 .hamburger::after,
 .hamburger::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--color-secondary);
-  transition: all 0.3s;
+  @apply block absolute w-full h-full bg-secondary transition-all content-[''];
 }
 
 .hamburger::before {
-  top: -10px;
+  @apply -top-4;
 }
 .hamburger::after {
-  top: 10px;
+  @apply top-4;
 }
 
 nav {
-  width: 70%;
-  padding: 1rem 2rem;
+  @apply absolute top-8 right-0 bg-primary w-full hidden md:w-[70%] md:px-8 md:py-4 md:block md:static;
+}
+
+nav.active {
+  @apply block;
 }
 
 nav ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  list-style: none;
+  @apply flex flex-col items-center justify-between md:items-end md:flex-row list-none;
+}
+
+nav ul li {
+  @apply mb-4 md:mb-0;
 }
 
 nav ul li button {
-  font-size: 2rem;
-  background: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
-  border-radius: 0.3rem;
-  padding: 0.5rem 1rem;
+  @apply bg-secondary text-xl lg:text-4xl border-2 border-secondary border-solid rounded-md px-4 py-2;
 }
 
 nav ul li button:hover {
-  border: 2px solid var(--color-quaternary);
+  @apply border-quaternary;
 }
 
 nav ul li button a {
-  text-decoration: none;
-  color: var(--color-quaternary);
+  @apply text-quaternary no-underline;
   font-family: 'Archivo Black', sans-serif;
-}
-
-@media (max-width: 768px) {
-  header img {
-    width: 100%;
-  }
-
-  .nav-toggle {
-    display: block;
-    position: relative;
-    z-index: 1000; /* Make sure it's above other elements */
-    cursor: pointer;
-  }
-
-  nav {
-    position: absolute;
-    background: var(--color-primary);
-    width: 100%;
-    top: 60px; /* Adjust based on header size */
-    right: 0;
-    display: none; /* Hide by default */
-  }
-
-  nav.active {
-    display: block; /* displayed when active class is added */
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin-bottom: 1rem;
-  }
 }

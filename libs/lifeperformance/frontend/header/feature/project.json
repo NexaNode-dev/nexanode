@@ -15,7 +15,8 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json"
+        "project": "libs/lifeperformance/frontend/header/feature/ng-package.json",
+        "tailwindConfig": "libs/lifeperformance/frontend/header/feature/tailwind.config.js"
       },
       "configurations": {
         "production": {
