@@ -1,7 +1,10 @@
 {
   "name": "@nexanode/frontend-services-layouts",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "lit": "^3.1.4",
+    "@nexanode/domain-interfaces": "0.1.0"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts",
