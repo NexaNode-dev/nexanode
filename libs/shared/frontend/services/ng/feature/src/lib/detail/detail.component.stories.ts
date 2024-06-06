@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { NexaNodeServicesDetailComponent } from './detail.component';
 
 import { within, expect } from '@storybook/test';
-import { serviceFactory } from '@nexanode/testing-data-mocks-utils';
+import { categoriesFactory, serviceFactory } from '@nexanode/testing-data-mocks-utils';
 
 const service = serviceFactory();
+
+const categories = categoriesFactory(1, { id: service.categoryId });
 
 const meta: Meta<NexaNodeServicesDetailComponent> = {
   component: NexaNodeServicesDetailComponent,
@@ -28,6 +30,13 @@ const meta: Meta<NexaNodeServicesDetailComponent> = {
         response: service,
         delay: 1000,
       },
+      {
+        url: '/api/services/categories',
+        method: 'GET',
+        status: 200,
+        response: categories,
+        delay: 1000,
+      }
     ],
   },
 };
