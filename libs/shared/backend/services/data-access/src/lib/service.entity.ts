@@ -26,7 +26,7 @@ export class Service implements IService {
   price?: number;
 
   @Column({ nullable: true })
-  category?: string;
+  categoryId?: string;
 
   @CreateDateColumn()
   createdAt!: Date;

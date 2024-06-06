@@ -18,6 +18,7 @@ import { servicesStore } from '@nexanode/frontend-services-ng-state';
 export class NexaNodeServicesDetailComponent {
   private readonly store = inject(servicesStore);
   readonly service = this.store.selectedService;
+  readonly categories = this.store.categories;
   readonly isLoading = this.store.isLoading;
   readonly error = this.store.error;
   id = input.required<string>();

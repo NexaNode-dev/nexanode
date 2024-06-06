@@ -4243,6 +4243,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lit-labs/ssr-dom-shim@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@lit-labs/ssr-dom-shim@npm:1.2.0"
+  checksum: 10c0/016168cf6901ab343462c13fb168dda6d549f8b42680aa394e6b7cd0af7cce51271e00dbfa5bbbe388912bf89cbb8f941a21cc3ec9bf95d6a84b6241aa9e5a72
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^2.0.4":
+  version: 2.0.4
+  resolution: "@lit/reactive-element@npm:2.0.4"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
+  checksum: 10c0/359cc19ea9ee8b65e1417eb9c12f40dddba8f0a5ab32f0e5facaecee6060629e44eb4ca27d9af945fe6eda8c033aa636abaa5f0c4e6a529b224d78674acf47ba
+  languageName: node
+  linkType: hard
+
 "@ljcl/storybook-addon-cssprops@npm:^4.0.0":
   version: 4.0.0
   resolution: "@ljcl/storybook-addon-cssprops@npm:4.0.0"
@@ -5507,6 +5523,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^4.2.0"
     "@vitest/coverage-v8": "npm:1.4.0"
     "@vitest/ui": "npm:1.4.0"
+    "@webcomponents/webcomponentsjs": "npm:^2.8.0"
     autoprefixer: "npm:10.4.13"
     babel-jest: "npm:^29.4.1"
     bcrypt: "npm:^5.1.1"
@@ -5525,6 +5542,7 @@ __metadata:
     jest-preset-angular: "npm:14.0.3"
     jsdom: "npm:~22.1.0"
     jsonc-eslint-parser: "npm:^2.1.0"
+    lit: "npm:^3.1.4"
     marked: "npm:^12.0.1"
     ng-mocks: "npm:^14.12.1"
     ng-packagr: "npm:17.3.0"
@@ -11543,6 +11561,13 @@ __metadata:
     "@webassemblyjs/ast": "npm:1.12.1"
     "@xtuc/long": "npm:4.2.2"
   checksum: 10c0/39bf746eb7a79aa69953f194943bbc43bebae98bd7cadd4d8bc8c0df470ca6bf9d2b789effaa180e900fab4e2691983c1f7d41571458bd2a26267f2f0c73705a
+  languageName: node
+  linkType: hard
+
+"@webcomponents/webcomponentsjs@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "@webcomponents/webcomponentsjs@npm:2.8.0"
+  checksum: 10c0/f3634dea123572ce86d22e86a863771f805edc535b9656256d855412d4800dd2d219eeee3e40f003885e008f8fc80a4a8dcc15e0bade3246ac25639e48c34294
   languageName: node
   linkType: hard
 
@@ -21734,6 +21759,37 @@ __metadata:
     liquid: bin/liquid.js
     liquidjs: bin/liquid.js
   checksum: 10c0/65dc2415aa5048a64dc107c254546c69950b26fa447bd3632e69953093cd29ecb766f4a8e858fd8777b6191f70f81846fb053e6aa8aab415d667e4a0216f456c
+  languageName: node
+  linkType: hard
+
+"lit-element@npm:^4.0.4":
+  version: 4.0.6
+  resolution: "lit-element@npm:4.0.6"
+  dependencies:
+    "@lit-labs/ssr-dom-shim": "npm:^1.2.0"
+    "@lit/reactive-element": "npm:^2.0.4"
+    lit-html: "npm:^3.1.2"
+  checksum: 10c0/f96c0ac66eeb06d15b734f6eaf5ea2ff51356f88bde4d7058c29b1f60f542b092e579240082a3363c41e25b7a296d7d5f2a64165672b2adef5a413f49710b1f9
+  languageName: node
+  linkType: hard
+
+"lit-html@npm:^3.1.2":
+  version: 3.1.4
+  resolution: "lit-html@npm:3.1.4"
+  dependencies:
+    "@types/trusted-types": "npm:^2.0.2"
+  checksum: 10c0/538c084ab1d39b59c5c094f7ad7a8bc5c41a17b46f375bb841b304263c1f2546065eeace6e330c20f1f15f2c285b66b46d140e2be618de2e65610c58b53a5af3
+  languageName: node
+  linkType: hard
+
+"lit@npm:^3.1.4":
+  version: 3.1.4
+  resolution: "lit@npm:3.1.4"
+  dependencies:
+    "@lit/reactive-element": "npm:^2.0.4"
+    lit-element: "npm:^4.0.4"
+    lit-html: "npm:^3.1.2"
+  checksum: 10c0/afa4954638e80f627c60bcbd2d800af710b9b3394a36cee9865b5ea5de95b4ec6d33de43ac0bf256b5b7c981d45c7c8ac0c7ddba6fcbd0c67d65986b0279b960
   languageName: node
   linkType: hard
 

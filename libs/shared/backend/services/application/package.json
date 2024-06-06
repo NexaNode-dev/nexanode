@@ -5,7 +5,8 @@
     "tslib": "^2.3.0",
     "@nestjs/common": "10.3.8",
     "@nexanode/backend-services-data-access": "0.0.1",
-    "@nexanode/domain-interfaces": "0.1.0"
+    "@nexanode/domain-interfaces": "0.1.0",
+    "@nexanode/backend-categories-data-access": "0.0.1"
   },
   "type": "commonjs",
   "main": "./src/index.js",

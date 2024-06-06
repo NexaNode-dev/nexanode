@@ -129,6 +129,9 @@
       "@nexanode/frontend-organisations-ng-state": [
         "libs/shared/frontend/organisations/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-services-layouts": [
+        "libs/shared/frontend/services/layouts/src/index.ts"
+      ],
       "@nexanode/frontend-services-ng-data-access": [
         "libs/shared/frontend/services/ng/data-access/src/index.ts"
       ],

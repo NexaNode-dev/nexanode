@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IService } from '@nexanode/domain-interfaces';
+import { ICategory, IService } from '@nexanode/domain-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +26,32 @@ export class ServicesService {
 
   deleteService(id: string) {
     return this.http.delete(`api/services/${id}`);
+  }
+
+  getServicesByCategory(categoryId: string) {
+    return this.http.get<IService[]>(`api/services/category/${categoryId}`);
+  }
+
+  getCategories() {
+    return this.http.get<ICategory[]>('api/services/categories');
+  }
+
+  getCategory(id: string) {
+    return this.http.get<ICategory>(`api/services/categories/${id}`);
+  }
+
+  createCategory(category: Partial<ICategory>) {
+    return this.http.post<ICategory>('api/services/categories', category);
+  }
+
+  updateCategory(category: Partial<ICategory>) {
+    return this.http.put<ICategory>(
+      `api/services/categories/${category.id}`,
+      category,
+    );
+  }
+
+  deleteCategory(id: string) {
+    return this.http.delete(`api/services/categories/${id}`);
   }
 }
