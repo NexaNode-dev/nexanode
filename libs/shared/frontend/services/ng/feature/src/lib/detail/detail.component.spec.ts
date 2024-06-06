@@ -17,12 +17,11 @@ describe('DetailComponent', () => {
     fixture = TestBed.createComponent(NexaNodeServicesDetailComponent);
     component = fixture.componentInstance;
     componentRef = fixture.componentRef;
-    //fixture.detectChanges();
+    componentRef.setInput('id', '1');
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-    componentRef.setInput('id', '1');
-    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });
