@@ -1,7 +1,7 @@
 {
   "name": "lifeperformance-frontend-landing-feature",
-  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/shared/lifeperformance/frontend/landing/feature/src",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/lifeperformance/frontend/landing/feature/src",
   "prefix": "lifeperformance",
   "projectType": "library",
   "tags": [
@@ -15,14 +15,15 @@
       "executor": "@nx/angular:ng-packagr-lite",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
-        "project": "libs/shared/lifeperformance/frontend/landing/feature/ng-package.json"
+        "project": "libs/lifeperformance/frontend/landing/feature/ng-package.json",
+        "tailwindConfig": "libs/lifeperformance/frontend/landing/feature/tailwind.config.js"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/shared/lifeperformance/frontend/landing/feature/tsconfig.lib.prod.json"
+          "tsConfig": "libs/lifeperformance/frontend/landing/feature/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/shared/lifeperformance/frontend/landing/feature/tsconfig.lib.json"
+          "tsConfig": "libs/lifeperformance/frontend/landing/feature/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
@@ -31,7 +32,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/lifeperformance/frontend/landing/feature/jest.config.ts"
+        "jestConfig": "libs/lifeperformance/frontend/landing/feature/jest.config.ts"
       }
     },
     "lint": {
@@ -41,23 +42,23 @@
       "executor": "@storybook/angular:start-storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/shared/lifeperformance/frontend/landing/feature/.storybook",
+        "configDir": "libs/lifeperformance/frontend/landing/feature/.storybook",
         "browserTarget": "lifeperformance-frontend-landing-feature:build-storybook",
         "compodoc": false,
         "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
         "assets": [
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/services/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/about/assets",
             "glob": "**/*",
             "output": "assets"
           }
@@ -74,23 +75,23 @@
       "outputs": ["{options.outputDir}"],
       "options": {
         "outputDir": "dist/storybook/lifeperformance-frontend-landing-feature",
-        "configDir": "libs/shared/lifeperformance/frontend/landing/feature/.storybook",
+        "configDir": "libs/lifeperformance/frontend/landing/feature/.storybook",
         "browserTarget": "lifeperformance-frontend-landing-feature:build-storybook",
         "compodoc": false,
         "styles": ["@fontsource/archivo-black", "@fontsource/aileron"],
         "assets": [
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/services/assets",
             "glob": "**/*",
             "output": "assets"
           },
           {
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/about/assets",
             "glob": "**/*",
             "output": "assets"
           }
@@ -105,7 +106,7 @@
     "test-storybook": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "test-storybook -c libs/shared/lifeperformance/frontend/landing/feature/.storybook --url=http://localhost:4400"
+        "command": "test-storybook -c libs/lifeperformance/frontend/landing/feature/.storybook --url=http://localhost:4400"
       }
     },
     "static-storybook": {

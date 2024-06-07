@@ -1,0 +1,44 @@
+.about {
+  @apply w-[80vw] lg:w-[60vw] grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-dense lg:items-center lg:justify-center gap-4 lg:gap-6 lg:p-8 my-0 mx-auto;
+}
+
+.about p,
+.about img {
+  @apply w-full lg:w-[25vw];
+}
+
+.container {
+  @apply bg-primary text-secondary m-0 lg:p-8;
+}
+
+.container h2 {
+  @apply text-6xl font-black italic uppercase text-right w-[80vw] m-0 mb-4;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.container p {
+  @apply text-lg lg:text-2xl m-0 mb-4 text-center p-4;
+  font-family: 'Aileron', sans-serif;
+}
+
+.about p {
+  font-family: 'Aileron', sans-serif;
+}
+
+.about img {
+  @apply mb-4 border-solid border-8 lg:border-[0.75rem] border-secondary rounded-md;
+}
+
+@media (min-width: 992px) {
+  .about p:nth-child(4n+1), /* 1st item in a set of four */
+  .about p:nth-child(4n+4) {
+    /* 4th item in a set of four */
+    grid-column: 1;
+  }
+
+  .about p:nth-child(4n+2), /* 2nd item in a set of four */
+  .about p:nth-child(4n+3) {
+    /* 3rd item in a set of four */
+    grid-column: 2;
+  }
+}

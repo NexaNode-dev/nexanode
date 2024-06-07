@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
   displayName: 'lifeperformance-frontend-landing-feature',
-  preset: '../../../../../../jest.preset.js',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../../coverage/libs/shared/lifeperformance/frontend/landing/feature',
+    '../../../../../coverage/libs/lifeperformance/frontend/landing/feature',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
