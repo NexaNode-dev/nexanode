@@ -21,6 +21,10 @@ const config: StorybookConfig = {
         --color-secondary: #f1efe7;
         --color-tertiary: #daa520;
         --color-quaternary: #404040;
+        --primary: #2e6259;
+        --secondary: #f1efe7;
+        --tertiary: #daa520;
+        --quaternary: #404040;
       }
       
       * {

@@ -1,35 +1,24 @@
 .about {
-  width: 80vw;
-  display: grid;
-  grid-template-columns: 100%;
-  gap: 1rem;
-  margin: 0 auto;
+  @apply w-[80vw] lg:w-[60vw] grid grid-cols-1 lg:grid-cols-2 lg:grid-flow-dense lg:items-center lg:justify-center gap-4 lg:gap-6 lg:p-8 my-0 mx-auto;
+}
+
+.about p,
+.about img {
+  @apply w-full lg:w-[25vw];
 }
 
 .container {
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
-  margin: 0;
+  @apply bg-primary text-secondary m-0 lg:p-8;
 }
 
 .container h2 {
-  font-size: 4rem;
-  font-style: italic;
+  @apply text-6xl font-black italic uppercase text-right w-[80vw] m-0 mb-4;
   font-family: 'Archivo Black', sans-serif;
-  text-transform: uppercase;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  text-align: right;
-  width: 80vw;
 }
 
 .container p {
-  font-size: 1.1rem;
+  @apply text-lg lg:text-2xl m-0 mb-4 text-center p-4;
   font-family: 'Aileron', sans-serif;
-  margin-bottom: 1rem;
-  text-align: center;
-  margin: 0;
-  padding: 1rem;
 }
 
 .about p {
@@ -37,34 +26,10 @@
 }
 
 .about img {
-  width: 100%;
-  margin-bottom: 1rem;
-  border: 0.75rem solid var(--color-secondary);
-  border-radius: 0.25rem;
+  @apply mb-4 border-solid border-8 lg:border-[0.75rem] border-secondary rounded-md;
 }
 
 @media (min-width: 992px) {
-  .container {
-    padding: 2rem;
-  }
-  .about {
-    width: 60vw;
-    grid-template-columns: repeat(2, 1fr); /* Creates two columns */
-    grid-auto-flow: dense; /* Helps fill in gaps in the grid */
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .about p,
-  .about img {
-    width: 25vw;
-    margin: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
   .about p:nth-child(4n+1), /* 1st item in a set of four */
   .about p:nth-child(4n+4) {
     /* 4th item in a set of four */
