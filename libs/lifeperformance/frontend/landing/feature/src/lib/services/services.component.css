@@ -1,86 +1,45 @@
 .container {
-  background-color: var(--color-secondary);
-  color: var(--color-quaternary);
+  @apply bg-secondary text-quaternary;
 }
 
 .services {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  @apply w-[90%] md:w-[60vw] md:p-8 flex flex-col justify-center items-center mx-auto;
 }
 
 .services h2 {
-  font-size: 2.5rem;
+  @apply text-4xl md:text-6xl;
 }
 
 .services h3 {
-  font-size: 1.5rem;
+  @apply text-2xl md:text-3xl;
 }
 
 .services h2,
 .services h3,
 .services h4,
 li {
-  margin-bottom: 1rem;
+  @apply mb-4 italic text-tertiary;
   font-family: 'Archivo Black', sans-serif;
-  font-style: italic;
-  color: var(--color-tertiary);
 }
 
 .services p {
-  margin-bottom: 1rem;
+  @apply mb-4 text-quaternary md:text-2xl;
   font-family: 'Aileron', sans-serif;
-  color: var(--color-quaternary);
   font-style: normal;
 }
 
 .services h4 {
-  font-size: 1.5rem;
+  @apply text-xl;
 }
 
 .services img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  border: 0.75rem solid var(--color-tertiary);
-  border-radius: 2rem;
+  @apply w-full h-auto mb-4 border-solid border-4 md:border-8 border-tertiary rounded-2xl;
 }
 
 ol li {
-  color: var(--color-tertiary);
-  font-size: 1rem;
+  @apply text-tertiary md:text-2xl;
 }
 
 .services .note {
-  font-size: 0.9rem;
-}
-
-@media (min-width: 768px) {
-  .services {
-    width: 60vw;
-    padding: 2rem;
-  }
-
-  .services h2 {
-    font-size: 4rem;
-  }
-
-  .services h3 {
-    font-size: 2rem;
-  }
-
-  .services p {
-    font-size: 1.5rem;
-  }
-
-  ol li {
-    font-size: 1.5rem;
-  }
-
-  .services .note {
-    font-size: 1rem;
-  }
+  @apply text-sm md:text-xl;
 }
