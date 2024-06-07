@@ -7,16 +7,16 @@
   @apply w-full lg:w-[25vw];
 }
 
-.container {
+.wrapper {
   @apply bg-primary text-secondary m-0 lg:p-8;
 }
 
-.container h2 {
+.wrapper h2 {
   @apply text-6xl font-black italic uppercase text-right w-[80vw] m-0 mb-4;
   font-family: 'Archivo Black', sans-serif;
 }
 
-.container p {
+.wrapper p {
   @apply text-lg lg:text-2xl m-0 mb-4 text-center p-4;
   font-family: 'Aileron', sans-serif;
 }

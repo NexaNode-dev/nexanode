@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   @apply bg-secondary text-quaternary;
 }
 

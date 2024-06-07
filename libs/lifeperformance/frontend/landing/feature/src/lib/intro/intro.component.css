@@ -2,7 +2,7 @@
   @apply bg-secondary text-primary flex flex-col justify-center items-center m-0 md:p-8;
 }
 
-.container {
+.wrapper {
   @apply w-[95%] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] relative overflow-auto;
 }
 
