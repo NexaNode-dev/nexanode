@@ -1,0 +1,21 @@
+.intro {
+  @apply bg-secondary text-primary flex flex-col justify-center items-center m-0 md:p-8;
+}
+
+.wrapper {
+  @apply w-[95%] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] relative overflow-auto;
+}
+
+.intro h2 {
+  @apply text-7xl uppercase italic mb-4;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.intro p {
+  @apply text-sm md:text-2xl mb-4 text-justify;
+  font-family: 'Aileron', sans-serif;
+}
+
+.intro img {
+  @apply w-full md:w-[40%] lg:w-[35%] xl:w-[30%] h-auto float-none md:float-right mt-4 mb-4 md:ml-8 md:mt-0 border-solid border-[0.5rem] border-tertiary rounded-md;
+}

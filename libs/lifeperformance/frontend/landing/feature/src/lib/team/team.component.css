@@ -1,0 +1,26 @@
+.wrapper {
+  @apply bg-primary text-secondary;
+}
+
+.team {
+  @apply flex flex-col justify-center items-start w-[95%] md:w-[70vw] mx-auto;
+}
+
+.team h2 {
+  @apply text-xl md:text-6xl lg:text-8xl italic mb-4;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.team p {
+  @apply mb-8 md:text-2xl;
+  font-family: 'Aileron', sans-serif;
+}
+
+.team ul {
+  @apply list-none flex flex-wrap justify-between;
+}
+
+.team h5 {
+  @apply text-2xl md:text-4xl lg:text-6xl text-tertiary italic mb-4;
+  font-family: 'Archivo Black', sans-serif;
+}
