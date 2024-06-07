@@ -1,4 +1,4 @@
-.container {
+.wrapper {
   @apply bg-primary text-secondary;
 }
 

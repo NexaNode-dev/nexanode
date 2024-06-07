@@ -25,17 +25,17 @@
           },
           {
             "glob": "**/*",
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/about/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/about/assets",
             "output": "/assets/"
           },
           {
             "glob": "**/*",
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/intro/assets",
             "output": "/assets/"
           },
           {
             "glob": "**/*",
-            "input": "libs/shared/lifeperformance/frontend/landing/feature/src/lib/services/assets",
+            "input": "libs/lifeperformance/frontend/landing/feature/src/lib/services/assets",
             "output": "/assets/"
           }
         ],
