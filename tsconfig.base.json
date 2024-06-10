@@ -81,6 +81,9 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-about-layout": [
+        "libs/shared/frontend/about/layout/src/index.ts"
+      ],
       "@nexanode/frontend-contacts-ng-data-access": [
         "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
       ],
