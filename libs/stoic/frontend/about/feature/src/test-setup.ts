@@ -6,3 +6,5 @@ globalThis.ngJest = {
   },
 };
 import 'jest-preset-angular/setup-jest';
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import '../../../../../shared/testing/lit-mocks/utils/src/test-setup';
