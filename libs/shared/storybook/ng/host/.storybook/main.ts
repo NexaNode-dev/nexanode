@@ -4,6 +4,7 @@ const config: StorybookConfig = {
   stories: [
     '../../../../../**/ng/feature/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../../../../../**/ng/ui/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../../../../../{stoic,lifeperformance}/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [
     '@storybook/addon-essentials',

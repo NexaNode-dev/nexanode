@@ -23,6 +23,5 @@
       },
       "defaultConfiguration": "production"
     }
-  },
-  "implicitDependencies": ["frontend-layout-util"]
+  }
 }
