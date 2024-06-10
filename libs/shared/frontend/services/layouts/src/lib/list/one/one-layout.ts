@@ -2,7 +2,7 @@ import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { ICategory, IService } from '@nexanode/domain-interfaces';
 
-@customElement('one-layout')
+@customElement('nexanode-services-list-one-layout')
 export class OneServicesLayout extends LitElement {
   @property({ type: String }) override title = 'One Layout';
   @property() services: IService[] = [];
