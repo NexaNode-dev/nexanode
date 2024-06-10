@@ -38,8 +38,8 @@ export class OneServicesLayout extends LitElement {
             )}
           </ol>
           <p class="note">
-            (All onze ${item.category.name}s worden op maat gemaakt van jouw bedrijf of
-            organisatie na een grondige intake)
+            (All onze ${item.category.name}s worden op maat gemaakt van jouw
+            bedrijf of organisatie na een grondige intake)
           </p> `,
     )}`;
   }
