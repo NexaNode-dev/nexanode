@@ -6,3 +6,4 @@ export * from './lib/user-profiles/user-profiles.factory';
 export * from './lib/organisations/organisations.factory';
 export * from './lib/services/services.factory';
 export * from './lib/categories/categories.factory';
+export * from './lib/events/events.factory';

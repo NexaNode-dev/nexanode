@@ -30,6 +30,9 @@
       "@nexanode/backend-contacts-presentation": [
         "libs/shared/backend/contacts/presentation/src/index.ts"
       ],
+      "@nexanode/backend-events-data-access": [
+        "libs/shared/backend/events/data-access/src/index.ts"
+      ],
       "@nexanode/backend-hashing-util": [
         "libs/shared/backend/hashing/util/src/index.ts"
       ],
