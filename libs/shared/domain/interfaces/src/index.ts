@@ -10,3 +10,4 @@ export * from './lib/organisation.interface';
 export * from './lib/organisation-type.interface';
 export * from './lib/service.interface';
 export * from './lib/category.interface';
+export * from './lib/event.interface';
