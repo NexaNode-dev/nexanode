@@ -1,0 +1,19 @@
+{
+  "name": "frontend-about-layout",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/frontend/about/layout/src",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:layout", "domain:about"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/frontend/about/layout",
+        "main": "libs/shared/frontend/about/layout/src/index.ts",
+        "tsConfig": "libs/shared/frontend/about/layout/tsconfig.lib.json",
+        "assets": ["libs/shared/frontend/about/layout/*.md"]
+      }
+    }
+  }
+}

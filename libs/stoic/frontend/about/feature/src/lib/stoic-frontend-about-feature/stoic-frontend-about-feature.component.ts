@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import '@nexanode/frontend-layout-util/loader';
 import { faker } from '@faker-js/faker';
+import '@nexanode/frontend-about-layout';
 
 @Component({
   selector: 'nexanode-stoic-frontend-about-feature',

@@ -81,6 +81,9 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/frontend-about-layout": [
+        "libs/shared/frontend/about/layout/src/index.ts"
+      ],
       "@nexanode/frontend-contacts-ng-data-access": [
         "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
       ],
@@ -185,6 +188,9 @@
       ],
       "@nexanode/testing-data-mocks-utils": [
         "libs/shared/testing/data-mocks/utils/src/index.ts"
+      ],
+      "@nexanode/testing-lit-mocks-utils": [
+        "libs/shared/testing/lit-mocks/utils/src/index.ts"
       ],
       "@nexanode/tijdenlangverhaald-frontend-header-feature": [
         "libs/tijdenlangverhaald/frontend/header/feature/src/index.ts"
