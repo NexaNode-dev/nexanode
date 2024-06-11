@@ -8,13 +8,13 @@ export const eventFactory = (options: Partial<IEvent> = {}): IEvent => {
     description: faker.lorem.sentence(),
     from: faker.date.recent(),
     to: faker.date.future(),
-    location: faker.address.city(),
-    units: faker.datatype.number(),
+    location: faker.location.city(),
+    units: faker.number.int(),
     unitType: faker.lorem.word(),
-    unitCapacity: faker.datatype.number(),
-    serviceId: faker.datatype.uuid(),
+    unitCapacity: faker.number.int(),
+    serviceId: faker.string.uuid(),
     recurring: faker.datatype.boolean(),
-    interval: faker.datatype.number(),
+    interval: faker.number.int(),
     intervalUnit: faker.helpers.arrayElement([
       'day',
       'week',
@@ -29,7 +29,7 @@ export const eventFactory = (options: Partial<IEvent> = {}): IEvent => {
 };
 
 export const eventsFactory = (
-  count: number,
+  count = 5,
   options: Partial<IEvent> = {},
 ): IEvent[] => {
   return Array.from({ length: count }, () => eventFactory(options));
