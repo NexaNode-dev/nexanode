@@ -108,6 +108,9 @@
       "@nexanode/frontend-contacts-react-feature": [
         "libs/shared/frontend/contacts/react/feature/src/index.ts"
       ],
+      "@nexanode/frontend-events-ng-data-access": [
+        "libs/shared/frontend/events/ng/data-access/src/index.ts"
+      ],
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
       ],
