@@ -1,0 +1,13 @@
+{
+  "name": "@nexanode/backend-query-params-util",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nexanode/domain-interfaces": "0.1.0",
+    "class-validator": "^0.14.1",
+    "typeorm": "^0.3.20"
+  },
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "typings": "./index.d.ts",
+  "private": true
+}
