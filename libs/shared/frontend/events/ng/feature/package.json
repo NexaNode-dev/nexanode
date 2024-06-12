@@ -1,0 +1,10 @@
+{
+  "name": "@nexanode/frontend-events-ng-feature ",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^17.3.0",
+    "@nexanode/frontend-events-ng-state": "0.0.1",
+    "@nx/angular": "19.0.5"
+  },
+  "sideEffects": false
+}
