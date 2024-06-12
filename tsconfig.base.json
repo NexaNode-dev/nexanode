@@ -30,6 +30,15 @@
       "@nexanode/backend-contacts-presentation": [
         "libs/shared/backend/contacts/presentation/src/index.ts"
       ],
+      "@nexanode/backend-events-application": [
+        "libs/shared/backend/events/application/src/index.ts"
+      ],
+      "@nexanode/backend-events-data-access": [
+        "libs/shared/backend/events/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-events-presentation": [
+        "libs/shared/backend/events/presentation/src/index.ts"
+      ],
       "@nexanode/backend-hashing-util": [
         "libs/shared/backend/hashing/util/src/index.ts"
       ],
@@ -98,6 +107,15 @@
       ],
       "@nexanode/frontend-contacts-react-feature": [
         "libs/shared/frontend/contacts/react/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-events-ng-data-access": [
+        "libs/shared/frontend/events/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-events-ng-feature ": [
+        "libs/shared/frontend/events/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-events-ng-state": [
+        "libs/shared/frontend/events/ng/state/src/index.ts"
       ],
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
