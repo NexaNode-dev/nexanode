@@ -14,6 +14,10 @@ export class EventsService {
     return this.eventsRepository.getEvent(options);
   }
 
+  async getEventById(id: string): Promise<IEvent> {
+    return this.eventsRepository.getEvent({ where: { id } });
+  }
+
   async createEvent(event: Partial<IEvent>): Promise<IEvent> {
     return this.eventsRepository.createEvent(event);
   }
