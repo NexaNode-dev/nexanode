@@ -1,24 +1,25 @@
-type RelationKeys<T> = {
+export type RelationKeys<T> = {
   [K in keyof T]: T[K] extends Array<never> | object ? K : never;
 }[keyof T];
 
-type AnyFunction = (...args: never[]) => never;
+export type AnyFunction = (...args: never[]) => never;
 
-type ScalarKeys<T> = {
+export type ScalarKeys<T> = {
   [K in keyof T]: T[K] extends Array<never> | AnyFunction | object ? never : K;
 }[keyof T];
 
-type ConditionOperators = 'gt' | 'lt' | 'like'; // Extend as needed
+export type ConditionOperators = 'gt' | 'lt' | 'like'; // Extend as needed
 
-type WhereCondition<T> = {
+export type WhereCondition<T> = {
   [K in keyof T]?: T[K] | { [op in ConditionOperators]?: T[K] }; // Support direct value or operators
 };
 
-type OrderDirection = 'ASC' | 'DESC';
+export type OrderDirection = 'ASC' | 'DESC';
 
-type OrderCondition<T> = {
-  [K in keyof T]?: OrderDirection;
+export type OrderCondition<T> = {
+  [K in keyof T]?: 'ASC' | 'DESC' | OrderCondition<T[K]>;
 };
+
 
 export interface IQueryParams<T> {
   select?: ScalarKeys<T>[];
