@@ -63,6 +63,9 @@
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
       ],
+      "@nexanode/backend-query-params-util": [
+        "libs/shared/backend/query-params/util/src/index.ts"
+      ],
       "@nexanode/backend-rbac-util": [
         "libs/shared/backend/rbac/util/src/index.ts"
       ],

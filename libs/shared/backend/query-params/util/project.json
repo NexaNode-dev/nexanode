@@ -1,0 +1,19 @@
+{
+  "name": "backend-query-params-util",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/query-params/util/src",
+  "projectType": "library",
+  "tags": ["scope:backend", "type:util", "domain:query-params"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/query-params/util",
+        "main": "libs/shared/backend/query-params/util/src/index.ts",
+        "tsConfig": "libs/shared/backend/query-params/util/tsconfig.lib.json",
+        "assets": ["libs/shared/backend/query-params/util/*.md"]
+      }
+    }
+  }
+}
