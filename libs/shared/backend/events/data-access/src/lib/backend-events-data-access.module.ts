@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { EventsRepository } from './events.repository';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Event } from './event.entity';
 
 @Module({
-  controllers: [],
+  imports: [TypeOrmModule.forFeature([Event])],
   providers: [EventsRepository],
-  exports: [],
+  exports: [EventsRepository, TypeOrmModule],
 })
 export class BackendEventsDataAccessModule {}
