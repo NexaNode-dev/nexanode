@@ -1,0 +1,19 @@
+{
+  "name": "storybook-lit-host",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/storybook/lit/host/src",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:storybook"],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/storybook/lit/host",
+        "main": "libs/shared/storybook/lit/host/src/index.ts",
+        "tsConfig": "libs/shared/storybook/lit/host/tsconfig.lib.json",
+        "assets": ["libs/shared/storybook/lit/host/*.md"]
+      }
+    }
+  }
+}
