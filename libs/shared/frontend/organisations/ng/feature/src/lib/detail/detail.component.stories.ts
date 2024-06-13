@@ -5,7 +5,7 @@ import { within, expect } from '@storybook/test';
 
 const meta: Meta<DetailComponent> = {
   component: DetailComponent,
-  title: 'DetailComponent',
+  title: 'OrganisationsDetailComponent',
 };
 export default meta;
 type Story = StoryObj<DetailComponent>;
