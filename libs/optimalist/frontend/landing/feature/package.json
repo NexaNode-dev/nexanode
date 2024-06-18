@@ -2,9 +2,9 @@
   "name": "@nexanode/optimalist-frontend-landing-feature",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^17.1.0",
-    "@angular/router": "17.3.8",
-    "@nx/angular": "19.0.5",
+    "@angular/core": "18.0.3",
+    "@angular/router": "18.0.3",
+    "@nx/angular": "19.3.0",
     "@nexanode/optimalist-frontend-services-feature": "0.0.1"
   },
   "dependencies": {},
