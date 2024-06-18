@@ -11,8 +11,6 @@ describe('MolliePaymentsProvider', () => {
     },
   };
 
-  const apiKey = 'test';
-
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [MolliePaymentsProvider],
@@ -20,9 +18,6 @@ describe('MolliePaymentsProvider', () => {
       .useMocker((token) => {
         if (token === 'MOLLIE_CLIENT') {
           return mockMollieClient;
-        }
-        if (token === 'MOLLIE_API_KEY') {
-          return apiKey;
         }
         return;
       })
