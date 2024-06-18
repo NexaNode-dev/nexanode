@@ -18,6 +18,9 @@
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
       ],
+      "@nexanode/backend-bookings-application": [
+        "libs/shared/backend/bookings/application/src/index.ts"
+      ],
       "@nexanode/backend-bookings-data-access": [
         "libs/shared/backend/bookings/data-access/src/index.ts"
       ],
