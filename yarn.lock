@@ -5193,6 +5193,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mollie/api-client@npm:^3.7.0":
+  version: 3.7.0
+  resolution: "@mollie/api-client@npm:3.7.0"
+  dependencies:
+    axios: "npm:^0.27.2"
+  checksum: 10c0/106e6e265bd9423f43404f056648d511a13a3209310cd8062cb53c80999e69338e7098f64fc65221e2bd5d3870f236d7e8467ed6941b130e04d09e80cd58ef28
+  languageName: node
+  linkType: hard
+
 "@ndelangen/get-tarball@npm:^3.0.7":
   version: 3.0.9
   resolution: "@ndelangen/get-tarball@npm:3.0.9"
@@ -5470,6 +5479,7 @@ __metadata:
     "@fontsource/great-vibes": "npm:^5.0.21"
     "@fontsource/rajdhani": "npm:^5.0.13"
     "@ljcl/storybook-addon-cssprops": "npm:^4.0.0"
+    "@mollie/api-client": "npm:^3.7.0"
     "@nestjs-modules/mailer": "npm:2.0.2"
     "@nestjs/common": "npm:10.3.8"
     "@nestjs/core": "npm:10.3.8"
@@ -11945,6 +11955,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.27.2":
+  version: 0.27.2
+  resolution: "axios@npm:0.27.2"
+  dependencies:
+    follow-redirects: "npm:^1.14.9"
+    form-data: "npm:^4.0.0"
+  checksum: 10c0/76d673d2a90629944b44d6f345f01e58e9174690f635115d5ffd4aca495d99bcd8f95c590d5ccb473513f5ebc1d1a6e8934580d0c57cdd0498c3a101313ef771
+  languageName: node
+  linkType: hard
+
 "axios@npm:^1.6.0, axios@npm:^1.6.1":
   version: 1.6.8
   resolution: "axios@npm:1.6.8"
@@ -16966,7 +16986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.15.6":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.9, follow-redirects@npm:^1.15.6":
   version: 1.15.6
   resolution: "follow-redirects@npm:1.15.6"
   peerDependenciesMeta:
