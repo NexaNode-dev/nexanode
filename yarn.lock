@@ -417,7 +417,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/cli@npm:~18.0.0":
+"@angular/cli@npm:18.0.4":
   version: 18.0.4
   resolution: "@angular/cli@npm:18.0.4"
   dependencies:
@@ -5621,7 +5621,7 @@ __metadata:
     "@angular-eslint/template-parser": "npm:18.0.1"
     "@angular/animations": "npm:18.0.3"
     "@angular/cdk": "npm:18.0.3"
-    "@angular/cli": "npm:~18.0.0"
+    "@angular/cli": "npm:18.0.4"
     "@angular/common": "npm:18.0.3"
     "@angular/compiler": "npm:18.0.3"
     "@angular/compiler-cli": "npm:18.0.3"
@@ -5657,10 +5657,10 @@ __metadata:
     "@nestjs/typeorm": "npm:10.0.2"
     "@ng-icons/bootstrap-icons": "npm:^27.4.0"
     "@ng-icons/core": "npm:^27.4.0"
-    "@ngrx/operators": "npm:^17.2.0"
-    "@ngrx/signals": "npm:17.2.0"
-    "@ngrx/store": "npm:^17.2.0"
-    "@ngrx/store-devtools": "npm:^17.2.0"
+    "@ngrx/operators": "npm:18.0.0-rc.1"
+    "@ngrx/signals": "npm:18.0.0-rc.1"
+    "@ngrx/store": "npm:18.0.0-rc.1"
+    "@ngrx/store-devtools": "npm:18.0.0-rc.1"
     "@nx/angular": "npm:19.3.0"
     "@nx/devkit": "npm:19.3.0"
     "@nx/eslint": "npm:19.3.0"
@@ -5782,53 +5782,53 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ngrx/operators@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "@ngrx/operators@npm:17.2.0"
+"@ngrx/operators@npm:18.0.0-rc.1":
+  version: 18.0.0-rc.1
+  resolution: "@ngrx/operators@npm:18.0.0-rc.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
     rxjs: ^6.5.3 || ^7.4.0
-  checksum: 10c0/bc3bc1fabf56570879c307104ee09b9188b4e076bf935f370f5cf3588b72aa837e952a5c0f66ff16472f3965c148017644edf2b22a866b7d776a3287e9e369e3
+  checksum: 10c0/7bb0a0b2652a1a0a99d295e65d296a2ce8c32e53876e3475a5d94c2261ca9b2bf25deba71ee51b707e15daf954975dadf7820f41588936ad488295559122ade8
   languageName: node
   linkType: hard
 
-"@ngrx/signals@npm:17.2.0":
-  version: 17.2.0
-  resolution: "@ngrx/signals@npm:17.2.0"
+"@ngrx/signals@npm:18.0.0-rc.1":
+  version: 18.0.0-rc.1
+  resolution: "@ngrx/signals@npm:18.0.0-rc.1"
   dependencies:
     tslib: "npm:^2.3.0"
   peerDependencies:
-    "@angular/core": ^17.0.0
+    "@angular/core": ^18.0.0
     rxjs: ^6.5.3 || ^7.4.0
   peerDependenciesMeta:
     rxjs:
       optional: true
-  checksum: 10c0/a20284ad4aeb45977814b26df0fa5888d472b718a795ae00691401a3c1337675dc214f54bca772251548ff32a10d46324c0305a91f124cfb1c79af5e15868f83
+  checksum: 10c0/954029d0aa7c1908a1872bebfa7882803f6cdc47b2613bd2ef44bce7fdb110c694744d1ffb4cbb92782667e19e24f1d17242153db783749f54c09e812a58de96
   languageName: node
   linkType: hard
 
-"@ngrx/store-devtools@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "@ngrx/store-devtools@npm:17.2.0"
+"@ngrx/store-devtools@npm:18.0.0-rc.1":
+  version: 18.0.0-rc.1
+  resolution: "@ngrx/store-devtools@npm:18.0.0-rc.1"
   dependencies:
     tslib: "npm:^2.0.0"
   peerDependencies:
-    "@ngrx/store": 17.2.0
+    "@ngrx/store": 18.0.0-rc.1
     rxjs: ^6.5.3 || ^7.5.0
-  checksum: 10c0/76cc3671b6ea2ce9005d1f8666870e00184525815389d94ec6ec51051f359136e20f1a54b84c0f849c2a2016c6d6a7079fab47695fd41ac38c05ea80356dbd17
+  checksum: 10c0/7f01709346bc9d21028a81554978fd201e13cf599ecefc6015dc8cbe9ab639b62f1d034011740b9a8e0c2884c7abf515a9013a022c81b5226992dd78cfd70817
   languageName: node
   linkType: hard
 
-"@ngrx/store@npm:^17.2.0":
-  version: 17.2.0
-  resolution: "@ngrx/store@npm:17.2.0"
+"@ngrx/store@npm:18.0.0-rc.1":
+  version: 18.0.0-rc.1
+  resolution: "@ngrx/store@npm:18.0.0-rc.1"
   dependencies:
     tslib: "npm:^2.0.0"
   peerDependencies:
-    "@angular/core": ^17.0.0
+    "@angular/core": ^18.0.0
     rxjs: ^6.5.3 || ^7.5.0
-  checksum: 10c0/6c25e3f849123ea4947d5d6ec3b7ea795f57f60affaa8c26dd879135b0275ac515fc4ab9defa19b912fa44f1831dc56de965a4d3cf8d6685cdbb4a0195453c60
+  checksum: 10c0/2c902cfe7add835586a40481f9b5b0a5c4e798ad8ec0157cd2cce070465da01d3cf14616e6bb0614a8ad1e550ba6ab1075c311ec70a272106ae0bf3aea0b0320
   languageName: node
   linkType: hard
 
