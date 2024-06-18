@@ -2,10 +2,10 @@
   "name": "@nexanode/lifeperformance-frontend-footer-feature",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^17.3.0",
+    "@angular/core": "18.0.3",
     "@ng-icons/bootstrap-icons": "^27.4.0",
     "@ng-icons/core": "^27.4.0",
-    "@nx/angular": "19.0.5"
+    "@nx/angular": "19.3.0"
   },
   "dependencies": {},
   "sideEffects": false
