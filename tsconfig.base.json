@@ -24,6 +24,9 @@
       "@nexanode/backend-bookings-data-access": [
         "libs/shared/backend/bookings/data-access/src/index.ts"
       ],
+      "@nexanode/backend-bookings-presentation": [
+        "libs/shared/backend/bookings/presentation/src/index.ts"
+      ],
       "@nexanode/backend-categories-data-access": [
         "libs/shared/backend/categories/data-access/src/index.ts"
       ],

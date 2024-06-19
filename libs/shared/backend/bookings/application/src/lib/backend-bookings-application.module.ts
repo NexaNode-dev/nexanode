@@ -7,7 +7,7 @@ import { BackendPaymentsUtilModule } from '@nexanode/backend-payments-util';
   imports: [
     BackendBookingsDataAccessModule,
     BackendPaymentsUtilModule.register({
-      paymentProvider: process.env['PAYMENT_PROVIDER'] || 'stripe',
+      paymentProvider: process.env['PAYMENT_PROVIDER'] || 'mollie',
     }),
   ],
   providers: [BookingsService],

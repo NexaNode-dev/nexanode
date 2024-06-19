@@ -6,7 +6,7 @@ import {
   PAYMENT_MODULE_OPTIONS,
 } from './backend-payments-util.module.definition';
 import { MolliePaymentsProvider } from './providers/mollie.payments.provider';
-import { createMollieClient, MollieClient } from '@mollie/api-client';
+import createMollieClient, { MollieClient, MollieOptions } from '@mollie/api-client';
 
 @Module({})
 export class BackendPaymentsUtilModule extends ConfigurableModuleClass {
@@ -20,7 +20,7 @@ export class BackendPaymentsUtilModule extends ConfigurableModuleClass {
     if (options.paymentProvider === 'mollie') {
       const mollieClient: MollieClient = createMollieClient({
         apiKey: process.env['MOLLIE_API_KEY'] || '',
-      });
+      } as MollieOptions);
       return {
         ...super.register(options),
         providers: [
