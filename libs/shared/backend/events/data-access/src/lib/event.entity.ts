@@ -38,6 +38,9 @@ export class Event implements IEvent {
   unitCapacity!: number;
 
   @Column({ nullable: true })
+  price?: number;
+
+  @Column({ nullable: true })
   serviceId?: string;
 
   @Column({ default: false })

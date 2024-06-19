@@ -18,6 +18,15 @@
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
       ],
+      "@nexanode/backend-bookings-application": [
+        "libs/shared/backend/bookings/application/src/index.ts"
+      ],
+      "@nexanode/backend-bookings-data-access": [
+        "libs/shared/backend/bookings/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-bookings-presentation": [
+        "libs/shared/backend/bookings/presentation/src/index.ts"
+      ],
       "@nexanode/backend-categories-data-access": [
         "libs/shared/backend/categories/data-access/src/index.ts"
       ],
@@ -59,6 +68,9 @@
       ],
       "@nexanode/backend-organisations-presentation": [
         "libs/shared/backend/organisations/presentation/src/index.ts"
+      ],
+      "@nexanode/backend-payments-util": [
+        "libs/shared/backend/payments/util/src/index.ts"
       ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
