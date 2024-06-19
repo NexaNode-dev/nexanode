@@ -18,8 +18,12 @@ export class BackendPaymentsUtilModule extends ConfigurableModuleClass {
 
   static register(options: typeof OPTIONS_TYPE) {
     if (options.paymentProvider === 'mollie') {
+      const apiKey = options.paymentApiKey;
+      if (!apiKey) {
+        throw new Error('Mollie API key is required');
+      }
       const mollieClient: MollieClient = createMollieClient({
-        apiKey: process.env['MOLLIE_API_KEY'] || '',
+        apiKey,
       } as MollieOptions);
       return {
         ...super.register(options),

@@ -7,6 +7,7 @@ export const {
   ASYNC_OPTIONS_TYPE,
 } = new ConfigurableModuleBuilder<{
   paymentProvider: string;
+  paymentApiKey: string;
 }>()
   .setExtras<{ isGlobal?: boolean }>(
     {
