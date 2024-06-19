@@ -12,6 +12,7 @@ export const eventFactory = (options: Partial<IEvent> = {}): IEvent => {
     units: faker.number.int(),
     unitType: faker.lorem.word(),
     unitCapacity: faker.number.int(),
+    price: faker.number.float(),
     serviceId: faker.string.uuid(),
     recurring: faker.datatype.boolean(),
     interval: faker.number.int(),
