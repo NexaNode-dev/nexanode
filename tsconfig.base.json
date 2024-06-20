@@ -217,6 +217,9 @@
       "@nexanode/stoic-frontend-navbar-feature": [
         "libs/stoic/frontend/navbar/feature/src/index.ts"
       ],
+      "@nexanode/storybook-admin-host": [
+        "libs/shared/storybook/admin/host/src/index.ts"
+      ],
       "@nexanode/storybook-ng-host": [
         "libs/shared/storybook/ng/host/src/index.ts"
       ],
