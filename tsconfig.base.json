@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/admin-ui-util": ["libs/shared/admin/ui/util/src/index.ts"],
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
       ],
