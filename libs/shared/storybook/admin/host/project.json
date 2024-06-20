@@ -6,22 +6,6 @@
   "projectType": "library",
   "tags": ["scope:admin", "type:storybook"],
   "targets": {
-    "build": {
-      "executor": "@nx/angular:ng-packagr-lite",
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "options": {
-        "project": "libs/shared/storybook/admin/host/ng-package.json"
-      },
-      "configurations": {
-        "production": {
-          "tsConfig": "libs/shared/storybook/admin/host/tsconfig.lib.prod.json"
-        },
-        "development": {
-          "tsConfig": "libs/shared/storybook/admin/host/tsconfig.lib.json"
-        }
-      },
-      "defaultConfiguration": "production"
-    },
     "lint": {
       "executor": "@nx/eslint:lint"
     },
