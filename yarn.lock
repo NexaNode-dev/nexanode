@@ -2571,6 +2571,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@casl/angular@npm:^8.2.3":
+  version: 8.2.3
+  resolution: "@casl/angular@npm:8.2.3"
+  peerDependencies:
+    "@angular/core": ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    "@casl/ability": ^3.0.0 || ^4.0.0 || ^5.1.0 || ^6.0.0
+    rxjs: ^7.5.5
+    tslib: ^2.0.0
+  checksum: 10c0/c2df71aa319094d5730130ae062a2a27ceaac473d72fb2ffa7dc48bd18948300a99abb471c8361812cea8cfb7ad2060c8f70792e68fe9b7f6e03b4a0341bfa8b
+  languageName: node
+  linkType: hard
+
 "@chromatic-com/storybook@npm:^1":
   version: 1.5.0
   resolution: "@chromatic-com/storybook@npm:1.5.0"
@@ -5466,6 +5478,7 @@ __metadata:
     "@babel/core": "npm:^7.14.5"
     "@babel/preset-react": "npm:^7.14.5"
     "@casl/ability": "npm:^6.7.1"
+    "@casl/angular": "npm:^8.2.3"
     "@chromatic-com/storybook": "npm:^1"
     "@faker-js/faker": "npm:^8.4.1"
     "@fontsource/aileron": "npm:^5.0.11"
