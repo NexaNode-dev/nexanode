@@ -114,7 +114,7 @@ export class JwtAuth implements AuthService {
       await usersRepository.update(user.id, { ...user });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...userWithoutPassword } = user;
-      return { user: userWithoutPassword };
+      return { user: userWithoutPassword, permissions };
     });
   }
 

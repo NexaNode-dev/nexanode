@@ -1,5 +1,11 @@
 import { computed, inject } from '@angular/core';
-import { ILogin, IRegister, IUser } from '@nexanode/domain-interfaces';
+import { AbilityBuilder, PureAbility, createMongoAbility } from '@casl/ability';
+import {
+  ILogin,
+  IPermission,
+  IRegister,
+  IUser,
+} from '@nexanode/domain-interfaces';
 import { AuthService } from '@nexanode/frontend-iam-ng-data-access';
 import { tapResponse } from '@ngrx/operators';
 import {
@@ -19,6 +25,7 @@ type AuthState = {
   isActivated: boolean;
   selectedId: string | null;
   error: unknown | null;
+  ability: PureAbility | null;
 };
 
 const initialState: AuthState = {
@@ -28,6 +35,7 @@ const initialState: AuthState = {
   isActivated: false,
   selectedId: null,
   error: null,
+  ability: null,
 };
 
 export const authStore = signalStore(
@@ -58,7 +66,11 @@ export const authStore = signalStore(
           authService.login(loginData).pipe(
             tapResponse({
               next: (loginResponse) => {
-                patchState(store, { user: loginResponse.user });
+                const { user, permissions } = loginResponse;
+                patchState(store, {
+                  user,
+                  ability: updateAbility(permissions),
+                });
                 localStorage.setItem(
                   'user',
                   JSON.stringify(loginResponse.user),
@@ -91,3 +103,17 @@ export const authStore = signalStore(
     ),
   })),
 );
+
+const updateAbility = (permissions: IPermission[]): PureAbility => {
+  const { can, rules } = new AbilityBuilder(createMongoAbility);
+  const ability: PureAbility = new PureAbility();
+  permissions.forEach((permission) => {
+    const conditions = permission.conditions
+      ? JSON.parse(permission.conditions)
+      : {};
+    can(permission.action, permission.subject, undefined, conditions);
+  });
+  ability.update(rules);
+
+  return ability;
+};
