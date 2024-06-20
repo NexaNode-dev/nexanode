@@ -6,7 +6,8 @@
     "@angular/material": "18.0.3",
     "@angular/router": "18.0.3",
     "@angular/cdk": "18.0.3",
-    "@nx/angular": "19.3.0"
+    "@nx/angular": "19.3.0",
+    "@angular/common": "18.0.3"
   },
   "sideEffects": false
 }

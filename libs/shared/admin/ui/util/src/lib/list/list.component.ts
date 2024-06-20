@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   effect,
   inject,
   input,
@@ -20,6 +21,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
+import { TitleCasePipe } from '@angular/common';
 
 interface IGenericElement {
   id: string;
@@ -38,6 +41,8 @@ interface IGenericElement {
     MatInputModule,
     MatFormFieldModule,
     MatCheckboxModule,
+    MatButtonModule,
+    TitleCasePipe,
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.css',
@@ -45,7 +50,7 @@ interface IGenericElement {
 })
 export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   data = input.required<T[]>();
-  columns: string[] = [];
+  columns = input.required<string[]>();
   type = input.required<string>();
   paginator = viewChild.required(MatPaginator);
   sort = viewChild.required(MatSort);
@@ -55,15 +60,14 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   deleted = output<string[]>();
   router = inject(Router);
   route = inject(ActivatedRoute);
+  displayedColumns = computed(() => ['select', ...this.columns()]);
 
   constructor() {
     effect(() => {
       this.dataSource.data = this.data();
       this.dataSource.paginator = this.paginator();
       this.dataSource.sort = this.sort();
-      this.columns = Object.keys(this.data()[0]);
       this.table().dataSource = this.dataSource;
-      console.log(this.columns);
     });
   }
 
@@ -88,7 +92,7 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   }
 
   onAdd() {
-    this.router.navigate([this.type, 'new'], { relativeTo: this.route });
+    this.router.navigate([this.type(), 'new'], { relativeTo: this.route });
   }
 
   onDelete() {
@@ -98,7 +102,7 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   }
 
   onEdit() {
-    this.router.navigate([this.type, this.selectedRows.selected[0].id], {
+    this.router.navigate([this.type(), this.selectedRows.selected[0].id], {
       relativeTo: this.route,
     });
   }
