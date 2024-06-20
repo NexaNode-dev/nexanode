@@ -62,6 +62,8 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
       this.dataSource.paginator = this.paginator();
       this.dataSource.sort = this.sort();
       this.columns = Object.keys(this.data()[0]);
+      this.table().dataSource = this.dataSource;
+      console.log(this.columns);
     });
   }
 

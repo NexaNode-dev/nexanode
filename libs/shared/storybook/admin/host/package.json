@@ -1,0 +1,6 @@
+{
+  "name": "@nexanode/storybook-admin-host",
+  "version": "0.0.1",
+  "peerDependencies": {},
+  "sideEffects": false
+}
