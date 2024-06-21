@@ -133,6 +133,9 @@
       "@nexanode/frontend-events-ng-state": [
         "libs/shared/frontend/events/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-http-params-util": [
+        "libs/shared/frontend/http-params/util/src/index.ts"
+      ],
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
       ],
@@ -177,6 +180,12 @@
       ],
       "@nexanode/frontend-services-ng-state": [
         "libs/shared/frontend/services/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-users-ng-data-access": [
+        "libs/shared/frontend/users/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-users-ng-state": [
+        "libs/shared/frontend/users/ng/state/src/index.ts"
       ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
