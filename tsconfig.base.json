@@ -184,6 +184,9 @@
       "@nexanode/frontend-users-ng-data-access": [
         "libs/shared/frontend/users/ng/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-users-ng-state": [
+        "libs/shared/frontend/users/ng/state/src/index.ts"
+      ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
       ],

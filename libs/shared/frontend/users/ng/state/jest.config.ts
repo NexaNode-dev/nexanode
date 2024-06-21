@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: 'frontend-http-params-util',
-  preset: '../../../../../jest.preset.js',
+  displayName: 'frontend-users-ng-state',
+  preset: '../../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory:
-    '../../../../../coverage/libs/shared/frontend/http-params/util',
+    '../../../../../../coverage/libs/shared/frontend/users/ng/state',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',
