@@ -1,0 +1,19 @@
+mat-spinner {
+  display: block;
+  margin: 4rem auto;
+}
+
+button.mdc-button {
+  margin-right: 0.5rem;
+}
+
+.error {
+  color: red;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.error p {
+  margin: 0 auto;
+  max-width: 50vw;
+}

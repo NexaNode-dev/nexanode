@@ -7,6 +7,7 @@ import {
   patchState,
   signalStore,
   withComputed,
+  withHooks,
   withMethods,
   withState,
 } from '@ngrx/signals';
@@ -18,6 +19,7 @@ type UsersState = {
   selectedId: string | null;
   isLoading: boolean;
   error: unknown | null;
+  query: IQueryParams<IUser>;
 };
 
 const initialState: UsersState = {
@@ -25,6 +27,7 @@ const initialState: UsersState = {
   selectedId: null,
   isLoading: false,
   error: null,
+  query: {},
 };
 
 export const usersStore = signalStore(
@@ -57,7 +60,7 @@ export const usersStore = signalStore(
         mergeMap((id) => {
           const user = store.users().find((u) => u.id === id);
           if (user) {
-            return of(patchState(store, { selectedId: id }));
+            return of(patchState(store, { selectedId: id, isLoading: false }));
           } else {
             return usersService.getUser(id).pipe(
               tapResponse({
@@ -101,6 +104,7 @@ export const usersStore = signalStore(
               next: (user) =>
                 patchState(store, (state) => ({
                   users: state.users.map((u) => (u.id === user.id ? user : u)),
+                  selectedId: user.id,
                 })),
               error: (error) => patchState(store, { error }),
               finalize: () => patchState(store, { isLoading: false }),
@@ -118,6 +122,7 @@ export const usersStore = signalStore(
               next: (id) =>
                 patchState(store, (state) => ({
                   users: state.users.filter((u) => u.id !== id),
+                  selectedId: null,
                 })),
               error: (error) => patchState(store, { error }),
               finalize: () => patchState(store, { isLoading: false }),
@@ -127,5 +132,12 @@ export const usersStore = signalStore(
       ),
     ),
     clearSelectedUser: () => patchState(store, { selectedId: null }),
+    updateQuery: (query: IQueryParams<IUser>) =>
+      patchState(store, { query: { ...store.query(), ...query } }),
   })),
+  withHooks({
+    onInit({ getUsers, query }) {
+      getUsers(query());
+    },
+  }),
 );
