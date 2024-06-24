@@ -7,7 +7,8 @@
     "@nexanode/frontend-iam-ng-data-access": "0.0.1",
     "@ngrx/operators": "18.0.0-rc.1",
     "@ngrx/signals": "18.0.0-rc.1",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "@casl/ability": "^6.7.1"
   },
   "dependencies": {},
   "sideEffects": false

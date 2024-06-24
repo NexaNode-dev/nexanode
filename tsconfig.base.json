@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/admin-ui-util": ["libs/shared/admin/ui/util/src/index.ts"],
+      "@nexanode/admin-users-feature": [
+        "libs/shared/admin/users/feature/src/index.ts"
+      ],
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
       ],
@@ -132,6 +136,9 @@
       "@nexanode/frontend-events-ng-state": [
         "libs/shared/frontend/events/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-http-params-util": [
+        "libs/shared/frontend/http-params/util/src/index.ts"
+      ],
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
       ],
@@ -177,6 +184,12 @@
       "@nexanode/frontend-services-ng-state": [
         "libs/shared/frontend/services/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-users-ng-data-access": [
+        "libs/shared/frontend/users/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-users-ng-state": [
+        "libs/shared/frontend/users/ng/state/src/index.ts"
+      ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
       ],
@@ -215,6 +228,9 @@
       ],
       "@nexanode/stoic-frontend-navbar-feature": [
         "libs/stoic/frontend/navbar/feature/src/index.ts"
+      ],
+      "@nexanode/storybook-admin-host": [
+        "libs/shared/storybook/admin/host/src/index.ts"
       ],
       "@nexanode/storybook-ng-host": [
         "libs/shared/storybook/ng/host/src/index.ts"

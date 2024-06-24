@@ -1,6 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ILogin, IRegister, IUser } from '@nexanode/domain-interfaces';
+import {
+  ILogin,
+  IPermission,
+  IRegister,
+  IUser,
+} from '@nexanode/domain-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +18,10 @@ export class AuthService {
   }
 
   login(login: ILogin) {
-    return this.http.post<{ user: IUser }>('/api/auth/login', login);
+    return this.http.post<{ user: IUser; permissions: IPermission[] }>(
+      '/api/auth/login',
+      login,
+    );
   }
 
   activate(id: string, token: string) {

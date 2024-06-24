@@ -1,0 +1,75 @@
+{
+  "name": "storybook-admin-host",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/storybook/admin/host/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:admin", "type:storybook"],
+  "targets": {
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "storybook": {
+      "executor": "@storybook/angular:start-storybook",
+      "options": {
+        "port": 4400,
+        "configDir": "libs/shared/storybook/admin/host/.storybook",
+        "browserTarget": "storybook-admin-host:build-storybook",
+        "compodoc": false,
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "@fontsource/roboto/300.css",
+          "@fontsource/roboto/400.css",
+          "@fontsource/roboto/500.css",
+          "@fontsource/roboto/700.css"
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "build-storybook": {
+      "executor": "@storybook/angular:build-storybook",
+      "outputs": ["{options.outputDir}"],
+      "options": {
+        "outputDir": "dist/storybook/storybook-admin-host",
+        "configDir": "libs/shared/storybook/admin/host/.storybook",
+        "browserTarget": "storybook-admin-host:build-storybook",
+        "compodoc": false,
+        "styles": [
+          "@angular/material/prebuilt-themes/azure-blue.css",
+          "@fontsource/roboto/300.css",
+          "@fontsource/roboto/400.css",
+          "@fontsource/roboto/500.css",
+          "@fontsource/roboto/700.css"
+        ]
+      },
+      "configurations": {
+        "ci": {
+          "quiet": true
+        }
+      }
+    },
+    "test-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "test-storybook -c libs/shared/storybook/admin/host/.storybook --url=http://localhost:4400"
+      }
+    },
+    "static-storybook": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "storybook-admin-host:build-storybook",
+        "staticFilePath": "dist/storybook/storybook-admin-host",
+        "spa": true
+      },
+      "configurations": {
+        "ci": {
+          "buildTarget": "storybook-admin-host:build-storybook:ci"
+        }
+      }
+    }
+  }
+}
