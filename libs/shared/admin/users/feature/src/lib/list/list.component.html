@@ -1,0 +1,15 @@
+@if (isLoading()) {
+  <mat-spinner></mat-spinner>
+} @else if (error()) {
+  <div class="error">
+    <h2>Error loading users:</h2>
+    <p>{{ error() | json }}</p>
+  </div>
+} @else {
+  <nexanode-admin-ui-list
+    [data]="users()"
+    [columns]="columns()"
+    [type]="'user'"
+    (deleted)="onDelete($event)"
+  ></nexanode-admin-ui-list>
+}
