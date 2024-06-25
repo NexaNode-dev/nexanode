@@ -1,0 +1,37 @@
+{
+  "name": "admin-services-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/admin/services/feature/src",
+  "prefix": "nexanode",
+  "projectType": "library",
+  "tags": ["scope:admin", "type:feature", "domain:services"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/admin/services/feature/ng-package.json",
+        "tailwindConfig": "libs/shared/admin/services/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/admin/services/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/admin/services/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/admin/services/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
