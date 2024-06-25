@@ -28,7 +28,6 @@ jobs:
           cache: 'yarn'
       - run: yarn install --immutable
       - run: yarn nx-cloud start-ci-run --distribute-on=".nx/workflows/dynamic-changesets.yaml" --stop-agents-after="build"
-      - run: yarn playwright install --with-deps
       - uses: nrwl/nx-set-shas@v4
 
       - run: git branch --track ${{ github.base_ref }} origin/${{ github.base_ref }}
