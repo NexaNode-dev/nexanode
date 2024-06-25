@@ -1,0 +1,15 @@
+@if (isLoading()) {
+  <mat-spinner />
+} @else if (error()) {
+  <div class="error">
+    <h2>Error loading services:</h2>
+    <p>{{ error() | json }}</p>
+  </div>
+} @else {
+  <nexanode-admin-ui-list
+    [data]="services()"
+    [columns]="columns()"
+    [type]="type"
+    (deleted)="onDelete($event)"
+  ></nexanode-admin-ui-list>
+}
