@@ -1,0 +1,27 @@
+<mat-card>
+  @if (isLoading()) {
+    <mat-spinner />
+  } @else if (error()) {
+    <div class="error">
+      <h2>Error loading service</h2>
+      <p>{{ error() | json }}</p>
+    </div>
+  } @else {
+    <mat-card-header>
+      <mat-card-title>{{ service()?.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Summary: {{ service()?.summary }}</p>
+      <p>Description: {{ service()?.description }}</p>
+      <p>Price: {{ service()?.price | currency }}</p>
+      <p>Category: {{ serviceCategory()?.name }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="onBack()">Back</button>
+      <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">
+        Delete
+      </button>
+    </mat-card-actions>
+  }
+</mat-card>
