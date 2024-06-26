@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/admin-auth-util": ["libs/shared/admin/auth/util/src/index.ts"],
       "@nexanode/admin-services-feature": [
         "libs/shared/admin/services/feature/src/index.ts"
       ],
