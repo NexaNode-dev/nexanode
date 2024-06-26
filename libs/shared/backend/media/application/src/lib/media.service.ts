@@ -37,7 +37,9 @@ export class MediaService {
         uploadDate: new Date(),
       },
       url: file.path,
-      ...media,
+      storageType: media.storageType,
+      userId: media.userId,
+      name: media.name || file.filename,
     };
     return this.mediaRepository.createMedia(mediaItem);
   }
