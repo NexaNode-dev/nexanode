@@ -126,6 +126,18 @@
     },
     "build-storybook": {
       "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    },
+    "e2e-ci": {
+      "cache": true
     }
   },
   "plugins": [
