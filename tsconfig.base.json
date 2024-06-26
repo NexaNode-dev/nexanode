@@ -67,6 +67,9 @@
       "@nexanode/backend-mailer-util": [
         "libs/shared/backend/mailer/util/src/index.ts"
       ],
+      "@nexanode/backend-media-application": [
+        "libs/shared/backend/media/application/src/index.ts"
+      ],
       "@nexanode/backend-media-data-access": [
         "libs/shared/backend/media/data-access/src/index.ts"
       ],
