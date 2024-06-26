@@ -8,3 +8,4 @@ export * from './lib/services/services.factory';
 export * from './lib/categories/categories.factory';
 export * from './lib/events/events.factory';
 export * from './lib/bookings/bookings.factory';
+export * from './lib/media/media.factory';

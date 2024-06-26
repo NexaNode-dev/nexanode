@@ -12,3 +12,4 @@ export * from './lib/service.interface';
 export * from './lib/category.interface';
 export * from './lib/event.interface';
 export * from './lib/booking.interface';
+export * from './lib/media.interface';
