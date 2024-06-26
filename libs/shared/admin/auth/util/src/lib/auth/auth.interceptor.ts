@@ -1,0 +1,35 @@
+import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { authStore } from '@nexanode/frontend-iam-ng-state';
+import { catchError, throwError } from 'rxjs';
+
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const store = inject(authStore);
+  if (store.isLoggedin()) {
+    const token = store.user()?.accessToken;
+    req = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  return next(req).pipe(
+    catchError((err: HttpErrorResponse) => {
+      const router = inject(Router);
+      if (err.status === 401) {
+        if (store.isLoggedin()) {
+          store.logout();
+        }
+        router.navigate(['/admin/auth/login']);
+      } else if (err.status === 403) {
+        if (store.isLoggedin()) {
+          router.navigate(['/forbidden']);
+        } else {
+          router.navigate(['/admin/auth/login']);
+        }
+      }
+      return throwError(() => err);
+    }),
+  );
+};
