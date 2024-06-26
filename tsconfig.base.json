@@ -73,6 +73,9 @@
       "@nexanode/backend-media-data-access": [
         "libs/shared/backend/media/data-access/src/index.ts"
       ],
+      "@nexanode/backend-media-presentation": [
+        "libs/shared/backend/media/presentation/src/index.ts"
+      ],
       "@nexanode/backend-organisations-application": [
         "libs/shared/backend/organisations/application/src/index.ts"
       ],
