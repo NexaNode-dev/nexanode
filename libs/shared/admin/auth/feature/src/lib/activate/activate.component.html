@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Activate Account</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @if (isActivated()) {
+      <p>
+        <ng-icon name="bootstrapCheckCircle"></ng-icon>Your account has been
+        activated.
+      </p>
+      <p>You can now <a routerLink="/admin/auth/login">login</a>.</p>
+    } @else if (error()) {
+      <p>{{ error() | json }}</p>
+    } @else if (isLoading()) {
+      <p>Activating your account...</p>
+    }
+  </mat-card-content>
+</mat-card>

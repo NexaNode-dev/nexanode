@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Forgot Password</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @if (isForgot()) {
+      <div>
+        <p>
+          If you have an account using the provided credentials, a reset
+          password link was sent to your email!
+        </p>
+        <p>Redirecting...</p>
+      </div>
+    } @else if (error()) {
+      <div>
+        <p>{{ error() }}</p>
+      </div>
+    } @else {
+      <form [formGroup]="forgotForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Username/Email</mat-label>
+          <input matInput formControlName="credential" />
+        </mat-form-field>
+        @if (credential?.errors && (credential?.dirty || credential?.touched)) {
+          @if (credential?.hasError('required')) {
+            <mat-error>Username/Email is required</mat-error>
+          }
+        }
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="forgotForm.invalid || isLoading()"
+        >
+          @if (isLoading()) {
+            <mat-spinner diameter="30"></mat-spinner>
+          } @else {
+            Forgot Password
+          }
+        </button>
+      </form>
+    }
+  </mat-card-content>
+</mat-card>

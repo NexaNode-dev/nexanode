@@ -25,6 +25,14 @@ export class AuthService {
   }
 
   activate(id: string, token: string) {
-    return this.http.patch<boolean>(`/api/auth/activate/${id}/`, token);
+    return this.http.patch<boolean>(`/api/auth/activate/${id}`, token);
+  }
+
+  forgotPassword(credential: string) {
+    return this.http.post<boolean>('/api/auth/forgot', credential);
+  }
+
+  resetPassword(token: string, password: string) {
+    return this.http.patch<boolean>('/api/auth/reset', { token, password });
   }
 }
