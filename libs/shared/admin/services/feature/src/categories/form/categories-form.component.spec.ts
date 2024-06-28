@@ -1,18 +1,34 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CategoriesFormComponent } from './categories-form.component';
+import { NexanodeAdminServicesCategoriesFormComponent } from './categories-form.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
+import { servicesStore } from '@nexanode/frontend-services-ng-state';
+import { MockServicesStore } from '@nexanode/testing-store-mocks-ng-util';
 
-describe('CategoriesFormComponent', () => {
-  let component: CategoriesFormComponent;
-  let fixture: ComponentFixture<CategoriesFormComponent>;
+describe('NexanodeAdminServicesCategoriesFormComponent', () => {
+  let component: NexanodeAdminServicesCategoriesFormComponent;
+  let fixture: ComponentFixture<NexanodeAdminServicesCategoriesFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CategoriesFormComponent],
+      imports: [NexanodeAdminServicesCategoriesFormComponent],
+      providers: [
+        {
+          provide: servicesStore,
+          useClass: MockServicesStore,
+        },
+        provideRouter([]),
+        provideAnimations(),
+      ],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CategoriesFormComponent);
+    fixture = TestBed.createComponent(
+      NexanodeAdminServicesCategoriesFormComponent,
+    );
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+    });
   });
 
   it('should create', () => {
