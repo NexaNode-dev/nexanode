@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Login</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    @if (isLoggedIn()) {
+      <div>
+        <p>Logged in successfully!</p>
+        <p>Redirecting...</p>
+      </div>
+    } @else if (error()) {
+      <div>
+        <p>{{ error() }}</p>
+      </div>
+    } @else {
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Credential</mat-label>
+          <input matInput formControlName="credential" />
+        </mat-form-field>
+        @if (credential?.errors && (credential?.dirty || credential?.touched)) {
+          @if (credential?.hasError('required')) {
+            <mat-error>Credential is required</mat-error>
+          }
+        }
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            [type]="showPassword ? 'text' : 'password'"
+          />
+          <ng-icon
+            matSuffix
+            [name]="showPassword ? 'bootstrapEye' : 'bootstrapEyeSlash'"
+            (click)="toggleShowPassword()"
+            size="1.25rem"
+          ></ng-icon>
+        </mat-form-field>
+        @if (password?.errors && (password?.dirty || password?.touched)) {
+          @if (password?.hasError('required')) {
+            <mat-error>Password is required</mat-error>
+          }
+        }
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="loginForm.invalid || isLoading()"
+        >
+          @if (isLoading()) {
+            <mat-spinner diameter="30"></mat-spinner>
+          } @else {
+            Login
+          }
+        </button>
+      </form>
+    }
+  </mat-card-content>
+</mat-card>

@@ -30,6 +30,8 @@ describe('AuthController', () => {
     register: jest.fn().mockResolvedValue(expectedUser),
     login: jest.fn().mockResolvedValue({ user: expectedUser }),
     activate: jest.fn().mockResolvedValue(true),
+    forgotPassword: jest.fn().mockResolvedValue(true),
+    resetPassword: jest.fn().mockResolvedValue(true),
   };
 
   beforeEach(async () => {
@@ -76,6 +78,18 @@ describe('AuthController', () => {
     it('should activate a user', async () => {
       expect(
         await controller.activate(expectedUser.id, faker.string.alphanumeric()),
+      ).toBe(true);
+    });
+  });
+  describe('forgotPassword', () => {
+    it('should send a password reset email', async () => {
+      expect(await controller.forgotPassword(userData.email)).toBe(true);
+    });
+  });
+  describe('resetPassword', () => {
+    it('should reset a user password', async () => {
+      expect(
+        await controller.resetPassword(faker.string.alphanumeric(), password),
       ).toBe(true);
     });
   });
