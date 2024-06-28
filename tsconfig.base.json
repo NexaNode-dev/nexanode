@@ -257,6 +257,9 @@
       "@nexanode/testing-lit-mocks-utils": [
         "libs/shared/testing/lit-mocks/utils/src/index.ts"
       ],
+      "@nexanode/testing-store-mocks-ng-util": [
+        "libs/shared/testing/store-mocks/ng/util/src/index.ts"
+      ],
       "@nexanode/tijdenlangverhaald-frontend-header-feature": [
         "libs/tijdenlangverhaald/frontend/header/feature/src/index.ts"
       ],

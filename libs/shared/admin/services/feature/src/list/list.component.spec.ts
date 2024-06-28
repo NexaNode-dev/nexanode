@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NexanodeAdminServicesListComponent } from './list.component';
-import { provideHttpClient } from '@angular/common/http';
+import { servicesStore } from '@nexanode/frontend-services-ng-state';
+import { MockServicesStore } from '@nexanode/testing-store-mocks-ng-util';
+import { provideRouter } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 describe('NexanodeAdminServicesListComponent', () => {
   let component: NexanodeAdminServicesListComponent;
@@ -9,12 +12,18 @@ describe('NexanodeAdminServicesListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NexanodeAdminServicesListComponent],
-      providers: [provideHttpClient()],
+      providers: [
+        { provide: servicesStore, useClass: MockServicesStore },
+        provideRouter([]),
+        provideAnimations(),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NexanodeAdminServicesListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      fixture.detectChanges();
+    });
   });
 
   it('should create', () => {

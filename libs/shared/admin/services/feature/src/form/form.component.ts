@@ -94,7 +94,6 @@ export class NexanodeAdminServicesFormComponent {
   }
 
   compareCategory(a: string, b: string) {
-    console.log(a, b);
     return a === b;
   }
 }
