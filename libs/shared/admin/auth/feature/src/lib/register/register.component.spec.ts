@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NexaNodeAdminAuthRegisterComponent } from './register.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 describe('NexaNodeAdminAuthRegisterComponent', () => {
   let component: NexaNodeAdminAuthRegisterComponent;
@@ -8,6 +10,7 @@ describe('NexaNodeAdminAuthRegisterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [NexaNodeAdminAuthRegisterComponent],
+      providers: [provideAnimations(), provideHttpClient()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NexaNodeAdminAuthRegisterComponent);
