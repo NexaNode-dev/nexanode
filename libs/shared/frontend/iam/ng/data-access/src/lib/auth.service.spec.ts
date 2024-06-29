@@ -58,7 +58,7 @@ describe('AuthService', () => {
     service.activate(mockUser.id, faker.string.nanoid()).subscribe((res) => {
       expect(res).toBeTruthy();
     });
-    const req = httpController.expectOne(`/api/auth/activate/${mockUser.id}/`);
+    const req = httpController.expectOne(`/api/auth/activate/${mockUser.id}`);
     expect(req.request.method).toBe('PATCH');
     req.flush(true);
   });

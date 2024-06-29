@@ -31,7 +31,7 @@ export class LoginComponent {
   private readonly store = inject(authStore);
   private readonly fb = inject(FormBuilder);
   private readonly router = inject(Router);
-  readonly isLoggedIn = this.store.isLoggedin;
+  readonly isLoggedIn = this.store.isLoggedIn;
   readonly isLoading = this.store.isLoading;
   readonly error = this.store.error;
   title = input<string>('Login');
