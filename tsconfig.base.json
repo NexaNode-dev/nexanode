@@ -74,6 +74,9 @@
       "@nexanode/backend-job-offers-data-access ": [
         "libs/shared/backend/job-offers/data-access/src/index.ts"
       ],
+      "@nexanode/backend-job-offers-presentation": [
+        "libs/shared/backend/job-offers/presentation/src/index.ts"
+      ],
       "@nexanode/backend-mailer-util": [
         "libs/shared/backend/mailer/util/src/index.ts"
       ],
