@@ -13,3 +13,4 @@ export * from './lib/category.interface';
 export * from './lib/event.interface';
 export * from './lib/booking.interface';
 export * from './lib/media.interface';
+export * from './lib/job-offer.interface';
