@@ -68,6 +68,9 @@
       "@nexanode/backend-iam-presentation": [
         "libs/shared/backend/iam/presentation/src/index.ts"
       ],
+      "@nexanode/backend-job-offers-application": [
+        "libs/shared/backend/job-offers/application/src/index.ts"
+      ],
       "@nexanode/backend-job-offers-data-access ": [
         "libs/shared/backend/job-offers/data-access/src/index.ts"
       ],
