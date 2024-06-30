@@ -1,0 +1,20 @@
+{
+  "name": "backend-job-offers-application",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/backend/job-offers/application/src",
+  "projectType": "library",
+  "tags": ["scope:backend", "type:application-layer", "domain:job-offers"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared/backend/job-offers/application",
+        "tsConfig": "libs/shared/backend/job-offers/application/tsconfig.lib.json",
+        "packageJson": "libs/shared/backend/job-offers/application/package.json",
+        "main": "libs/shared/backend/job-offers/application/src/index.ts",
+        "assets": ["libs/shared/backend/job-offers/application/*.md"]
+      }
+    }
+  }
+}
