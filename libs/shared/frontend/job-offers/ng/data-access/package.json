@@ -1,0 +1,11 @@
+{
+  "name": "@nexanode/frontend-job-offers-ng-data-access",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@nexanode/domain-interfaces": "0.1.0",
+    "@nexanode/frontend-http-params-util": "0.0.1"
+  },
+  "sideEffects": false
+}

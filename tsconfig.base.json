@@ -173,6 +173,9 @@
       "@nexanode/frontend-iam-ng-state": [
         "libs/shared/frontend/iam/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-job-offers-ng-data-access": [
+        "libs/shared/frontend/job-offers/ng/data-access/src/index.ts"
+      ],
       "@nexanode/frontend-layout-util": [
         "dist/libs/shared/frontend/layout/util"
       ],
