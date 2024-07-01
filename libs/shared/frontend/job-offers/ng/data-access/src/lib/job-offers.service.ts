@@ -13,22 +13,22 @@ export class JobOffersService {
 
   getJobOffers(query?: IQueryParams<IJobOffer>) {
     const queryParams = convertToHttpParams(query || {});
-    return this.http.get(this.apiUrl, { params: queryParams });
+    return this.http.get<IJobOffer[]>(this.apiUrl, { params: queryParams });
   }
 
   getJobOffer(id: string) {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get<IJobOffer>(`${this.apiUrl}/${id}`);
   }
 
   createJobOffer(jobOffer: Partial<IJobOffer>) {
-    return this.http.post(this.apiUrl, jobOffer);
+    return this.http.post<IJobOffer>(this.apiUrl, jobOffer);
   }
 
   updateJobOffer(id: string, jobOffer: Partial<IJobOffer>) {
-    return this.http.put(`${this.apiUrl}/${id}`, jobOffer);
+    return this.http.put<IJobOffer>(`${this.apiUrl}/${id}`, jobOffer);
   }
 
   deleteJobOffer(id: string) {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete<string>(`${this.apiUrl}/${id}`);
   }
 }
