@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
+    "@angular/core": "^18.0.0",
+    "@angular/router": "18.0.3",
+    "@nexanode/frontend-job-offers-ng-state": "0.0.1",
+    "@nexanode/frontend-organisations-ng-state": "0.0.1",
+    "@ng-icons/bootstrap-icons": "^27.4.0",
+    "@ng-icons/core": "^27.4.0",
+    "@nx/angular": "19.3.0"
   },
   "sideEffects": false
 }
