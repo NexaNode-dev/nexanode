@@ -6,7 +6,7 @@ export const organisationFactory = (
 ): IOrganisation => {
   const organisation: IOrganisation = {
     id: faker.string.uuid(),
-    name: faker.lorem.word(),
+    name: faker.company.name(),
     description: faker.lorem.sentence(),
     createdAt: faker.date.recent(),
     updatedAt: faker.date.recent(),

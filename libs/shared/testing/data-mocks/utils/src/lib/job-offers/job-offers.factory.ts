@@ -5,11 +5,11 @@ export const jobOfferFactory = (options?: Partial<IJobOffer>): IJobOffer => {
   const jobOffer: IJobOffer = {
     id: faker.string.uuid(),
     companyId: faker.string.uuid(),
-    title: faker.lorem.words(),
+    title: faker.person.jobTitle(),
     description: faker.lorem.paragraphs(),
-    location: faker.location.city(),
-    salaryLow: faker.number.float(),
-    salaryHigh: faker.number.float(),
+    location: `${faker.location.city()}, ${faker.location.country()}`,
+    salaryLow: faker.number.float({ min: 1250, max: 8000 }),
+    salaryHigh: faker.number.float({ min: 1250, max: 8000 }),
     employmentType: faker.helpers.arrayElement(['permanent', 'contract']),
     workTime: faker.helpers.arrayElement(['full-time', 'part-time']),
     jobLevel: faker.helpers.arrayElement([
