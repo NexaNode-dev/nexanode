@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <h2>Job Offers</h2>
+  <section class="joboffers">
+    @for (jobOffer of jobOffers(); track jobOffer.jobOffer.id) {
+      <div class="joboffer">
+        <div class="joboffer__header">
+          <h3>{{ jobOffer.jobOffer.title }}</h3>
+          <div class="joboffer__info">
+            <span><ng-icon name="bootstrapBuilding" />{{ jobOffer.company?.name }}</span>
+            <span><ng-icon name="bootstrapGeoAlt" /> {{ jobOffer.jobOffer.location }}</span>
+            <span><ng-icon name="bootstrapCashStack" /> {{ jobOffer.jobOffer.salaryLow | currency: 'EUR' }}</span>
+            <span><ng-icon name="bootstrapPersonBadgeFill" />{{ jobOffer.jobOffer.jobLevel }}</span>
+            <span><ng-icon name="bootstrapTags" />{{ jobOffer.jobOffer.employmentType }}</span>
+            <span><ng-icon name="bootstrapClockHistory" />{{ jobOffer.jobOffer.workTime }}</span>
+          </div>
+        </div>
+        <p class="joboffer__detail">{{ jobOffer.jobOffer.description }}</p>
+      </div>
+    }
+  </section>
+</div>
