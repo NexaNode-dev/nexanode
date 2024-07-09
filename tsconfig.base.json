@@ -19,6 +19,9 @@
         "libs/shared/admin/auth/feature/src/index.ts"
       ],
       "@nexanode/admin-auth-util": ["libs/shared/admin/auth/util/src/index.ts"],
+      "@nexanode/admin-job-offers-feature": [
+        "libs/shared/admin/job-offers/feature/src/index.ts"
+      ],
       "@nexanode/admin-services-feature": [
         "libs/shared/admin/services/feature/src/index.ts"
       ],
