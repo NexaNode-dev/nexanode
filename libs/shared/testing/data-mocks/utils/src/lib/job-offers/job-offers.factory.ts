@@ -10,7 +10,12 @@ export const jobOfferFactory = (options?: Partial<IJobOffer>): IJobOffer => {
     location: `${faker.location.city()}, ${faker.location.country()}`,
     salaryLow: faker.number.float({ min: 1250, max: 8000 }),
     salaryHigh: faker.number.float({ min: 1250, max: 8000 }),
-    employmentType: faker.helpers.arrayElement(['permanent', 'contract']),
+    employmentType: faker.helpers.arrayElement([
+      'permanent',
+      'contract',
+      'temporary',
+      'internship',
+    ]),
     workTime: faker.helpers.arrayElement(['full-time', 'part-time']),
     jobLevel: faker.helpers.arrayElement([
       'junior',
@@ -20,6 +25,8 @@ export const jobOfferFactory = (options?: Partial<IJobOffer>): IJobOffer => {
     ]),
     status: faker.helpers.arrayElement(['open', 'closed']),
     requirements: faker.lorem.paragraphs(),
+    hoursPerWeek: faker.number.int({ min: 12, max: 30 }),
+    benefits: faker.lorem.paragraphs(),
     createdAt: faker.date.recent(),
     updatedAt: faker.date.recent(),
   };

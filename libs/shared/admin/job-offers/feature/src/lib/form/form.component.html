@@ -1,0 +1,97 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>{{ mode }} job offer</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="jobOfferForm">
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Requirements</mat-label>
+        <textarea matInput formControlName="requirements"></textarea>
+      </mat-form-field>
+      <div class="salary">
+        <mat-form-field>
+          <mat-label>Salary Low</mat-label>
+          <input matInput formControlName="salaryLow" type="number" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Salary High</mat-label>
+          <input matInput formControlName="salaryHigh" type="number" />
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Employment Type</mat-label>
+        <mat-select formControlName="employmentType">
+          <mat-option value="contract">Contract</mat-option>
+          <mat-option value="permanent">Permanent</mat-option>
+          <mat-option value="temporary">Temporary</mat-option>
+          <mat-option value="internship">Internship</mat-option>
+        </mat-select>
+      </mat-form-field>
+      @if (employmentType?.value === 'contract') {
+        <mat-form-field>
+          <mat-label>Contract Duration</mat-label>
+          <input matInput formControlName="contractDuration" type="number" />
+        </mat-form-field>
+      }
+      @if (employmentType?.value === 'permanent') {
+        <mat-form-field>
+          <mat-label>Benefits</mat-label>
+          <textarea matInput formControlName="benefits"></textarea>
+        </mat-form-field>
+      }
+      <mat-form-field>
+        <mat-label>Work Time</mat-label>
+        <mat-select formControlName="workTime">
+          <mat-option value="full-time">Full Time</mat-option>
+          <mat-option value="part-time">Part Time</mat-option>
+        </mat-select>
+      </mat-form-field>
+      @if (workTime?.value === 'part-time') {
+        <mat-form-field>
+          <mat-label>Weekly Working Hours</mat-label>
+          <input matInput formControlName="hoursPerWeek" type="number" />
+        </mat-form-field>
+      }
+      <mat-form-field>
+        <mat-label>Job Level</mat-label>
+        <mat-select formControlName="jobLevel">
+          <mat-option value="junior">Junior</mat-option>
+          <mat-option value="medior">Medior</mat-option>
+          <mat-option value="senior">Senior</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option value="open">Open</mat-option>
+          <mat-option value="closed">Closed</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onSubmit()"
+          [disabled]="jobOfferForm.invalid"
+        >
+          Save
+        </button>
+        <button mat-raised-button color="warn" (click)="onBack()">Back</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

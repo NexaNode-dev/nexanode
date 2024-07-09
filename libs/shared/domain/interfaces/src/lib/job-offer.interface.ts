@@ -7,7 +7,7 @@ export interface IJobOffer {
   location: string;
   salaryLow: number;
   salaryHigh?: number;
-  employmentType: 'permanent' | 'contract';
+  employmentType: 'permanent' | 'contract' | 'temporary' | 'internship';
   workTime: 'full-time' | 'part-time';
   contractDuration?: string; // Only for contract jobs
   hoursPerWeek?: number; // Only for part-time jobs
