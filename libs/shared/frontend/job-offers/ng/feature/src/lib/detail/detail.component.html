@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <section class="joboffer">
+    <h2>{{ jobOffer().jobOffer?.title }}</h2>
+    <h3>About the job</h3>
+    <p>{{ jobOffer().jobOffer?.description }}</p>
+    <h3>Requirements</h3>
+    <p>{{ jobOffer().jobOffer?.requirements }}</p>
+    <div class="actions">
+      <button (click)="onBack()">Back</button>
+      <button (click)="onApply()">Apply here</button>
+    </div>
+  </section>
+</div>
