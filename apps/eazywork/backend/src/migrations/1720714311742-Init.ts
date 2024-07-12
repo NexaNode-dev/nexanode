@@ -12,7 +12,7 @@ export class Init1720714311742 implements MigrationInterface {
                 "password" character varying,
                 "access_token" character varying,
                 "refresh_token" character varying,
-                "login_expires" TIMESTAMP NOT NULL,
+                "login_expires" TIMESTAMP,
                 "is_active" boolean NOT NULL DEFAULT false,
                 "created_at" TIMESTAMP NOT NULL DEFAULT now(),
                 "updated_at" TIMESTAMP NOT NULL DEFAULT now(),
