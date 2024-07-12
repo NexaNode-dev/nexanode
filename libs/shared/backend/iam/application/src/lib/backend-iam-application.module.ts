@@ -3,7 +3,7 @@ import { IamService } from './iam.service';
 import { BackendAuthUtilModule } from '@nexanode/backend-auth-util';
 
 @Module({
-  imports: [BackendAuthUtilModule],
+  imports: [BackendAuthUtilModule.register({ authStrategies: ['jwt'] })],
   providers: [IamService],
   exports: [IamService],
 })

@@ -3,10 +3,14 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryColumn,
+  Relation,
   UpdateDateColumn,
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
+import { OrganisationType } from './organisation-type.entity';
 
 @Entity('organisations')
 export class Organisation implements IOrganisation {
@@ -30,6 +34,10 @@ export class Organisation implements IOrganisation {
 
   @Column({ nullable: true })
   phone?: string;
+
+  @OneToOne(() => OrganisationType)
+  @JoinColumn()
+  type!: Relation<OrganisationType>;
 
   @CreateDateColumn()
   createdAt!: Date;

@@ -78,10 +78,10 @@ export class JwtAuth implements AuthService {
         this.permissionsRepository,
       );
       const user = await usersRepository.getUser({
-        where: [{ name: login.credential, email: login.credential }],
+        where: [{ userName: login.credential }, { email: login.credential }],
         select: [
           'id',
-          'name',
+          'userName',
           'email',
           'password',
           'accessToken',
@@ -118,7 +118,7 @@ export class JwtAuth implements AuthService {
       user.loginExpires = new Date(
         Date.now() + parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10),
       );
-      await usersRepository.update(user.id, { ...user });
+      await usersRepository.updateUser(user.id, { ...user });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...userWithoutPassword } = user;
       return { user: userWithoutPassword, permissions };
