@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #2374ab;
+  --primary-light: #4a8ec3;
+  --primary-dark: #1b5c85;
+
+  --secondary: #ffaa00;
+  --secondary-light: #ffbf33;
+  --secondary-dark: #cc8800;
+
+  --tertiary: #f1f3f5;
+  --tertiary-light: #ffffff;
+  --tertiary-dark: #dde1e5;
+
+  --quaternary: #1e3a5f;
+  --quaternary-light: #3a5278;
+  --quaternary-dark: #142641;
+
+  --white: #ffffff;
+  --black: #000000;
+}

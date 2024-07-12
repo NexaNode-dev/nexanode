@@ -1,5 +1,5 @@
 .wrapper {
-  @apply bg-neutral-100 text-primary w-full flex flex-col items-center justify-center p-8;
+  @apply bg-secondary-light text-primary w-full flex flex-col items-center justify-center p-8;
 }
 
 .wrapper h2 {
