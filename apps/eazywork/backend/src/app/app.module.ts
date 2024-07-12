@@ -8,7 +8,6 @@ import { BackendJobOffersPresentationModule } from '@nexanode/backend-job-offers
 import { BackendMediaPresentationModule } from '@nexanode/backend-media-presentation';
 import { BackendOrganisationsPresentationModule } from '@nexanode/backend-organisations-presentation';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({

@@ -1,10 +1,10 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class Init1720714311742 implements MigrationInterface {
-    name = 'Init1720714311742'
+  name = 'Init1720714311742';
 
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
             CREATE TABLE "users" (
                 "id" uuid NOT NULL,
                 "user_name" character varying NOT NULL,
@@ -21,7 +21,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_a3ffb1c0c8416b9fc6f907b7433" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "roles" (
                 "id" uuid NOT NULL,
                 "name" character varying NOT NULL,
@@ -32,7 +32,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_c1433d71a4838793a49dcad46ab" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "user_roles" (
                 "id" uuid NOT NULL,
                 "user_id" character varying NOT NULL,
@@ -42,7 +42,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_8acd5cf26ebd158416f477de799" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "role_permissions" (
                 "id" uuid NOT NULL,
                 "role_id" uuid NOT NULL,
@@ -52,13 +52,13 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_84059017c90bfcb701b8fa42297" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE INDEX "IDX_178199805b901ccd220ab7740e" ON "role_permissions" ("role_id")
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE INDEX "IDX_17022daf3f885f7d35423e9971" ON "role_permissions" ("permission_id")
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "permissions" (
                 "id" uuid NOT NULL,
                 "name" character varying NOT NULL,
@@ -72,7 +72,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_920331560282b8bd21bb02290df" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "media" (
                 "id" uuid NOT NULL,
                 "name" character varying NOT NULL,
@@ -87,7 +87,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_f4e0fcac36e050de337b670d8bd" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "organisations" (
                 "id" uuid NOT NULL,
                 "name" character varying NOT NULL,
@@ -102,7 +102,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_7bf54cba378d5b2f1d4c10ef4df" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "organisation_types" (
                 "id" uuid NOT NULL,
                 "name" character varying NOT NULL,
@@ -113,7 +113,7 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_ec400c0a7fceca740ca495f1186" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TYPE "public"."job_offers_employment_type_enum" AS ENUM(
                 'permanent',
                 'contract',
@@ -121,16 +121,16 @@ export class Init1720714311742 implements MigrationInterface {
                 'internship'
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TYPE "public"."job_offers_work_time_enum" AS ENUM('full-time', 'part-time')
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TYPE "public"."job_offers_job_level_enum" AS ENUM('junior', 'medior', 'senior', 'principal')
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TYPE "public"."job_offers_status_enum" AS ENUM('open', 'closed')
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             CREATE TABLE "job_offers" (
                 "id" uuid NOT NULL,
                 "company_id" uuid NOT NULL,
@@ -152,61 +152,60 @@ export class Init1720714311742 implements MigrationInterface {
                 CONSTRAINT "PK_9a54d36bd6829979f945defdeb5" PRIMARY KEY ("id")
             )
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             ALTER TABLE "organisations"
             ADD CONSTRAINT "FK_033784b1ceef587c675e0bf93ee" FOREIGN KEY ("type_id") REFERENCES "organisation_types"("id") ON DELETE NO ACTION ON UPDATE NO ACTION
         `);
-    }
+  }
 
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
             ALTER TABLE "organisations" DROP CONSTRAINT "FK_033784b1ceef587c675e0bf93ee"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "job_offers"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TYPE "public"."job_offers_status_enum"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TYPE "public"."job_offers_job_level_enum"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TYPE "public"."job_offers_work_time_enum"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TYPE "public"."job_offers_employment_type_enum"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "organisation_types"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "organisations"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "media"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "permissions"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP INDEX "public"."IDX_17022daf3f885f7d35423e9971"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP INDEX "public"."IDX_178199805b901ccd220ab7740e"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "role_permissions"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "user_roles"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "roles"
         `);
-        await queryRunner.query(`
+    await queryRunner.query(`
             DROP TABLE "users"
         `);
-    }
-
+  }
 }
