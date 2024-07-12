@@ -1,3 +1,4 @@
+import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
 import { Ability, AbilityBuilder, createMongoAbility } from '@casl/ability';
 import {
@@ -44,6 +45,7 @@ const initialState: AuthState = {
 
 export const authStore = signalStore(
   { providedIn: 'root' },
+  withDevtools('Auth'),
   withState(initialState),
   withComputed((state) => ({
     isLoggedIn: computed(() => !!state.user()),

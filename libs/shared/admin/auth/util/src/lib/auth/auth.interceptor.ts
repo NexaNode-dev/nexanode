@@ -6,6 +6,7 @@ import { catchError, throwError } from 'rxjs';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const store = inject(authStore);
+  const router = inject(Router);
   if (store.isLoggedIn()) {
     const token = store.user()?.accessToken;
     req = req.clone({
@@ -16,7 +17,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   }
   return next(req).pipe(
     catchError((err: HttpErrorResponse) => {
-      const router = inject(Router);
       if (err.status === 401) {
         if (store.isLoggedIn()) {
           store.logout();
