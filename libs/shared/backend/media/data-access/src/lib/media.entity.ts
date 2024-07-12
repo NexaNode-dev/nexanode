@@ -13,7 +13,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('media')
 export class Media implements IMedia {
   @PrimaryColumn('uuid')
   id: string = uuidv7();
@@ -24,10 +24,10 @@ export class Media implements IMedia {
   @Column()
   originalName!: string;
 
-  @Column(['enum', { enum: IMediaType }])
+  @Column('jsonb')
   type!: IMediaType;
 
-  @Column(['enum', { enum: IMediaStorageType }])
+  @Column('jsonb')
   storageType!: IMediaStorageType;
 
   @Column('jsonb')

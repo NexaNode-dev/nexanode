@@ -44,3 +44,11 @@ Thumbs.db
 
 
 storybook-static
+
+/**/.env.local
+/**/.env
+/**/.local.env
+.angular
+/**/ormconfig.local.ts
+/**/*.sql
+/**/docker-compose.yml

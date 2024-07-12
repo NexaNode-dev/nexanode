@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('permissions')
 export class Permission implements IPermission {
   @PrimaryColumn('uuid')
   id: string = uuidv7();

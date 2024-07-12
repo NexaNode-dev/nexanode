@@ -2,11 +2,13 @@ import { IRole } from '@nexanode/domain-interfaces';
 import {
   Column,
   CreateDateColumn,
+  Entity,
   PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
+@Entity('roles')
 export class Role implements IRole {
   @PrimaryColumn('uuid')
   id: string = uuidv7();

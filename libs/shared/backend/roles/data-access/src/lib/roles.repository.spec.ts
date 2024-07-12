@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { RolesRepository } from './roles.repository';
 import { IRole } from '@nexanode/domain-interfaces';
-import { Role } from './role.enity';
+import { Role } from './role.entity';
 import { faker } from '@faker-js/faker';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { NotFoundException } from '@nestjs/common';

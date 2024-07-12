@@ -10,13 +10,13 @@ export class AuthController {
 
   @Post('login')
   async login(
-    loginDto: LoginDto,
+    @Body() loginDto: LoginDto,
   ): Promise<{ user: IUser; permissions: IPermission[] }> {
     return this.iamService.login(loginDto);
   }
 
   @Post('register')
-  async register(registerDto: RegisterDto): Promise<IUser> {
+  async register(@Body() registerDto: RegisterDto): Promise<IUser> {
     return this.iamService.register(registerDto);
   }
 

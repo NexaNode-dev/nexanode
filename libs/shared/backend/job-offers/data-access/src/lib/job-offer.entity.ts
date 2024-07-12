@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('job_offers')
 export class JobOffer implements IJobOffer {
   @PrimaryColumn('uuid')
   id: string = uuidv7();
@@ -31,8 +31,11 @@ export class JobOffer implements IJobOffer {
   @Column('float', { nullable: true })
   salaryHigh?: number;
 
-  @Column({ type: 'enum', enum: ['permanent', 'contract'] })
-  employmentType!: 'permanent' | 'contract';
+  @Column({
+    type: 'enum',
+    enum: ['permanent', 'contract', 'temporary', 'internship'],
+  })
+  employmentType!: 'permanent' | 'contract' | 'temporary' | 'internship';
 
   @Column({ type: 'enum', enum: ['full-time', 'part-time'] })
   workTime!: 'full-time' | 'part-time';

@@ -1,0 +1,64 @@
+{
+  "name": "eazywork-backend",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/eazywork/backend/src",
+  "projectType": "application",
+  "tags": ["scope:backend", "type:application", "app:eazywork"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "eazywork-backend:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "eazywork-backend:build:development"
+        },
+        "production": {
+          "buildTarget": "eazywork-backend:build:production"
+        }
+      }
+    },
+    "migration-generate": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register --project tsconfig.app.json ../../../node_modules/.bin/typeorm migration:generate --pretty -d ormconfig.local.ts ./src/migrations/{args.name}",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "migration-create": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register --project tsconfig.app.json ../../../node_modules/.bin/typeorm migration:create ./src/migrations/{args.name}",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "migration-run": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register --project tsconfig.app.json ../../../node_modules/.bin/typeorm migration:run -d ormconfig.local.ts",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "migration-revert": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register --project tsconfig.app.json ../../../node_modules/.bin/typeorm migration:revert -d ormconfig.local.ts",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "schema-log": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "ts-node -r tsconfig-paths/register --project tsconfig.app.json ../../../node_modules/.bin/typeorm schema:log -d ormconfig.local.ts",
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}
