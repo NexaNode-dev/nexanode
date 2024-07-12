@@ -4,22 +4,22 @@
 
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --primary: #2374AB;
-  --primary-light: #4A8EC3;
-  --primary-dark: #1B5C85;
+  --primary: #2374ab;
+  --primary-light: #4a8ec3;
+  --primary-dark: #1b5c85;
 
-  --secondary: #FFAA00;
-  --secondary-light: #FFBF33;
-  --secondary-dark: #CC8800;
+  --secondary: #ffaa00;
+  --secondary-light: #ffbf33;
+  --secondary-dark: #cc8800;
 
-  --tertiary: #F1F3F5;
-  --tertiary-light: #FFFFFF;
-  --tertiary-dark: #DDE1E5;
+  --tertiary: #f1f3f5;
+  --tertiary-light: #ffffff;
+  --tertiary-dark: #dde1e5;
 
-  --quaternary: #1E3A5F;
-  --quaternary-light: #3A5278;
+  --quaternary: #1e3a5f;
+  --quaternary-light: #3a5278;
   --quaternary-dark: #142641;
 
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #000000;
 }

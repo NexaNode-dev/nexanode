@@ -14,13 +14,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome eazywork-frontend',
+      'Welkom bij EazyWork',
     );
   });
 
   it(`should have as title 'eazywork-frontend'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('eazywork-frontend');
+    expect(app.title).toEqual('EazyWork');
   });
 });
