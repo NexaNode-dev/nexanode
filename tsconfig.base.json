@@ -137,6 +137,9 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/eazywork-frontend-header-feature": [
+        "libs/eazywork/frontend/header/feature/src/index.ts"
+      ],
       "@nexanode/frontend-about-layout": [
         "libs/shared/frontend/about/layout/src/index.ts"
       ],
