@@ -45,7 +45,7 @@ export class NexaNodeAdminAuthForgotComponent {
     if (this.forgotForm.valid) {
       this.store.forgotPassword(this.forgotForm.value.credential || '');
       setTimeout(() => {
-        this.router.navigate(['/admin/auth/login']);
+        this.router.navigate(['/auth/login']);
       }, 2500);
     }
   }

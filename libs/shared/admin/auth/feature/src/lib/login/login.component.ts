@@ -56,7 +56,7 @@ export class NexaNodeAdminAuthLoginComponent {
       this.store.login(login);
       setTimeout(() => {
         if (this.isLoggedIn()) {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/']);
         }
       }, 3000);
     }

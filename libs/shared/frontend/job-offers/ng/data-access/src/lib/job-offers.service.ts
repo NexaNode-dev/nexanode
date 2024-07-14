@@ -7,7 +7,7 @@ import { convertToHttpParams } from '@nexanode/frontend-http-params-util';
   providedIn: 'root',
 })
 export class JobOffersService {
-  private apiUrl = 'api/job-offers';
+  private apiUrl = '/api/job-offers';
 
   constructor(private readonly http: HttpClient) {}
 

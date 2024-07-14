@@ -25,7 +25,8 @@
           "apps/eazywork/admin/src/custom-theme.scss",
           "apps/eazywork/admin/src/styles.css"
         ],
-        "scripts": []
+        "scripts": [],
+        "baseHref": "/admin/"
       },
       "configurations": {
         "production": {
@@ -63,7 +64,8 @@
       },
       "defaultConfiguration": "development",
       "options": {
-        "proxyConfig": "apps/eazywork/admin/proxy.conf.json"
+        "proxyConfig": "apps/eazywork/admin/proxy.conf.json",
+        "port": 4201
       }
     },
     "extract-i18n": {

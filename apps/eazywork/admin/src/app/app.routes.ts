@@ -14,5 +14,6 @@ export const appRoutes: Route[] = [
       import('@nexanode/admin-job-offers-feature').then(
         (m) => m.adminJobOffersFeatureRoutes,
       ),
+    data: { nav: { label: 'Job Offers', icon: 'work', path: 'job-offers' } },
   },
 ];
