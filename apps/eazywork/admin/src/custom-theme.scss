@@ -23,7 +23,7 @@ $eazywork-admin-theme: mat.define-theme(
 
 @include mat.core();
 
-@mixin theme($theme) {
+@mixin nexatheme($theme) {
   nexanode-admin-navigation {
     color: mat.get-theme-color($theme, primary);
 
@@ -43,7 +43,7 @@ $eazywork-admin-theme: mat.define-theme(
 // that you are using.
 :root {
   @include mat.all-component-themes($eazywork-admin-theme);
-  @include theme($eazywork-admin-theme);
+  @include nexatheme($eazywork-admin-theme);
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.
