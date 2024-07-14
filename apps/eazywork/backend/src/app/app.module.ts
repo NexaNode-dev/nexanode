@@ -34,7 +34,7 @@ import { join } from 'path';
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'frontend', 'browser'),
-      exclude: [ '/admin*' ],
+      exclude: ['/admin*'],
     }),
     EventEmitterModule.forRoot(),
     BackendIamPresentationModule,

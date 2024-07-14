@@ -8,7 +8,7 @@
         <ng-icon name="bootstrapCheckCircle"></ng-icon>Your account has been
         activated.
       </p>
-      <p>You can now <a routerLink="/admin/auth/login">login</a>.</p>
+      <p>You can now <a routerLink="/auth/login">login</a>.</p>
     } @else if (error()) {
       <p>{{ error() | json }}</p>
     } @else if (isLoading()) {

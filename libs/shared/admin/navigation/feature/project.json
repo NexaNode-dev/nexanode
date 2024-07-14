@@ -1,0 +1,36 @@
+{
+  "name": "admin-navigation-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/admin/navigation/feature/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:admin", "type:feature", "domain:navigation"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/admin/navigation/feature/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/admin/navigation/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/admin/navigation/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/admin/navigation/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

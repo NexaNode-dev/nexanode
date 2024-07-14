@@ -22,6 +22,9 @@
       "@nexanode/admin-job-offers-feature": [
         "libs/shared/admin/job-offers/feature/src/index.ts"
       ],
+      "@nexanode/admin-navigation-feature": [
+        "libs/shared/admin/navigation/feature/src/index.ts"
+      ],
       "@nexanode/admin-services-feature": [
         "libs/shared/admin/services/feature/src/index.ts"
       ],
