@@ -10,7 +10,12 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Open Sans', 'sans-serif'],
+        header: ['Montserrat', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 };

@@ -21,7 +21,11 @@
             "input": "apps/eazywork/frontend/public"
           }
         ],
-        "styles": ["apps/eazywork/frontend/src/styles.css"],
+        "styles": [
+          "@fontsource/montserrat/index.css",
+          "@fontsource/open-sans/index.css",
+          "apps/eazywork/frontend/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
