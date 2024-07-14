@@ -38,7 +38,7 @@ describe('JobOffersService', () => {
       service.getJobOffers().subscribe((jobOffers) => {
         expect(jobOffers).toEqual(expectedJobOffers);
       });
-      const req = httpController.expectOne('api/job-offers');
+      const req = httpController.expectOne('/api/job-offers');
       expect(req.request.method).toBe('GET');
       req.flush(expectedJobOffers);
     });
@@ -49,7 +49,7 @@ describe('JobOffersService', () => {
         expect(jobOffer).toEqual(expectedJobOffer);
       });
       const req = httpController.expectOne(
-        `api/job-offers/${expectedJobOffer.id}`,
+        `/api/job-offers/${expectedJobOffer.id}`,
       );
       expect(req.request.method).toBe('GET');
       req.flush(expectedJobOffer);
@@ -60,7 +60,7 @@ describe('JobOffersService', () => {
       service.createJobOffer(expectedJobOffer).subscribe((jobOffer) => {
         expect(jobOffer).toEqual(expectedJobOffer);
       });
-      const req = httpController.expectOne('api/job-offers');
+      const req = httpController.expectOne('/api/job-offers');
       expect(req.request.method).toBe('POST');
       req.flush(expectedJobOffer);
     });
@@ -73,7 +73,7 @@ describe('JobOffersService', () => {
           expect(jobOffer).toEqual(expectedJobOffer);
         });
       const req = httpController.expectOne(
-        `api/job-offers/${expectedJobOffer.id}`,
+        `/api/job-offers/${expectedJobOffer.id}`,
       );
       expect(req.request.method).toBe('PUT');
       req.flush(expectedJobOffer);
@@ -85,7 +85,7 @@ describe('JobOffersService', () => {
         expect(id).toEqual(expectedJobOffer.id);
       });
       const req = httpController.expectOne(
-        `api/job-offers/${expectedJobOffer.id}`,
+        `/api/job-offers/${expectedJobOffer.id}`,
       );
       expect(req.request.method).toBe('DELETE');
       req.flush(expectedJobOffer.id);
