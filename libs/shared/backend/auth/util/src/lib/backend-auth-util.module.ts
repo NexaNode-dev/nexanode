@@ -13,6 +13,8 @@ import { BackendUsersDataAccessModule } from '@nexanode/backend-users-data-acces
 import { BackendUsersRolesDataAccessModule } from '@nexanode/backend-users-roles-data-access';
 import { BackendRolesPermissionsDataAccessModule } from '@nexanode/backend-roles-permissions-data-access';
 import { BackendPermissionsDataAccessModule } from '@nexanode/backend-permissions-data-access';
+import { BackendHashingUtilModule } from '@nexanode/backend-hashing-util';
+import { BackendRolesDataAccessModule } from '@nexanode/backend-roles-data-access';
 
 @Module({
   imports: [
@@ -29,8 +31,10 @@ import { BackendPermissionsDataAccessModule } from '@nexanode/backend-permission
     }),
     BackendUsersDataAccessModule,
     BackendUsersRolesDataAccessModule,
+    BackendRolesDataAccessModule,
     BackendRolesPermissionsDataAccessModule,
     BackendPermissionsDataAccessModule,
+    BackendHashingUtilModule.register({ algorithm: 'bcrypt' }),
   ],
 })
 export class BackendAuthUtilModule extends ConfigurableModuleClass {
@@ -52,6 +56,7 @@ export class BackendAuthUtilModule extends ConfigurableModuleClass {
             JwtAuth,
             JwtStrategy,
           ],
+          exports: [AuthService, JwtAuth],
         };
         break;
       default:

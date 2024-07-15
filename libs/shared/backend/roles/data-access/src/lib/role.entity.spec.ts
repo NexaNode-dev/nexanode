@@ -1,4 +1,4 @@
-import { Role } from './role.enity';
+import { Role } from './role.entity';
 
 describe('RoleEnity', () => {
   it('should be defined', () => {

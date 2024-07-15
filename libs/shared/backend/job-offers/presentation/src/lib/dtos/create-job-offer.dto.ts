@@ -37,7 +37,7 @@ export class CreateJobOfferDto
 
   @IsNotEmpty()
   @IsString()
-  employmentType!: 'permanent' | 'contract';
+  employmentType!: 'permanent' | 'contract' | 'internship' | 'temporary';
 
   @IsNotEmpty()
   @IsString()

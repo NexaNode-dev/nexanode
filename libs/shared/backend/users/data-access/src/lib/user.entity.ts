@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('users')
 export class User implements IUser {
   @PrimaryColumn('uuid')
   id: string = uuidv7();
@@ -28,8 +28,8 @@ export class User implements IUser {
   @Column({ nullable: true })
   refreshToken?: string;
 
-  @Column()
-  loginExpires!: Date;
+  @Column({ nullable: true })
+  loginExpires?: Date;
 
   @Column({ default: false })
   isActive!: boolean;

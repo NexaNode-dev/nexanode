@@ -1,0 +1,45 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list (click)="sidenav.close()">
+      <a
+        mat-list-item
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+      @for (item of navItems(); track $index) {
+        <a mat-list-item routerLink="{{ item.path }}" routerLinkActive="active">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-toolbar color="primary">
+    <span>
+      <button mat-icon-button (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a routerLink="/"
+        ><span>{{ title() }}</span></a
+      >
+    </span>
+    <span class="flex"></span>
+    <span>
+      @if (isLoggedIn()) {
+        <span><mat-icon>person</mat-icon>{{ user()?.userName }}</span>
+        <button mat-button (click)="onLogout()">
+          <mat-icon>logout</mat-icon>Logout
+        </button>
+      } @else {
+        <button mat-button routerLink="/auth/login">
+          <mat-icon>login</mat-icon>Login
+        </button>
+      }
+    </span>
+  </mat-toolbar>
+  <ng-content></ng-content>
+</mat-sidenav-container>
