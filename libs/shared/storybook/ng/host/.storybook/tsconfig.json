@@ -9,6 +9,7 @@
     "../../../../../**/ng/ui/**/*.stories.ts",
     "../../../../../stoic/**/*.stories.ts",
     "../../../../../lifeperformance/**/*.stories.ts",
+    "../../../../../tijdenlangverhaald/**/*.stories.ts",
     "*.ts"
   ]
 }

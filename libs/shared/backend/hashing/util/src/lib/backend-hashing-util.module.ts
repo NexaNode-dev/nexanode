@@ -30,6 +30,7 @@ export class BackendHashingUtilModule extends ConfigurableModuleClass {
               useClass: BcryptService,
             },
           ],
+          exports: [HashingService],
         };
       default:
         throw new Error('Unsupported hashing algorithm');

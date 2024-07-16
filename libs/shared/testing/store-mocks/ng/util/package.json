@@ -1,0 +1,10 @@
+{
+  "name": "@nexanode/testing-store-mocks-ng-util",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/core": "^18.0.0",
+    "@nexanode/domain-interfaces": "0.1.0",
+    "@nexanode/testing-data-mocks-utils": "0.0.1"
+  },
+  "sideEffects": false
+}

@@ -2,12 +2,14 @@
   "name": "@nexanode/frontend-iam-ng-state",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "^17.3.0",
+    "@angular/core": "18.0.3",
     "@nexanode/domain-interfaces": "0.1.0",
     "@nexanode/frontend-iam-ng-data-access": "0.0.1",
-    "@ngrx/operators": "^17.2.0",
-    "@ngrx/signals": "17.2.0",
-    "rxjs": "^7.8.0"
+    "@ngrx/operators": "18.0.0-rc.1",
+    "@ngrx/signals": "18.0.0-rc.1",
+    "rxjs": "^7.8.0",
+    "@casl/ability": "^6.7.1",
+    "@angular-architects/ngrx-toolkit": "^0.3.1"
   },
   "dependencies": {},
   "sideEffects": false

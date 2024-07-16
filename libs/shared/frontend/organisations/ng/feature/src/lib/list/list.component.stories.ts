@@ -10,7 +10,7 @@ import { provideHttpClient } from '@angular/common/http';
 
 const meta: Meta<ListComponent> = {
   component: ListComponent,
-  title: 'ListComponent',
+  title: 'OrganisationsListComponent',
   decorators: [
     applicationConfig({
       providers: [provideHttpClient()],

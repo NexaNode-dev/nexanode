@@ -1,5 +1,12 @@
+import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
-import { ILogin, IRegister, IUser } from '@nexanode/domain-interfaces';
+import { Ability, AbilityBuilder, createMongoAbility } from '@casl/ability';
+import {
+  ILogin,
+  IPermission,
+  IRegister,
+  IUser,
+} from '@nexanode/domain-interfaces';
 import { AuthService } from '@nexanode/frontend-iam-ng-data-access';
 import { tapResponse } from '@ngrx/operators';
 import {
@@ -17,8 +24,11 @@ type AuthState = {
   isLoading: boolean;
   isRegistered: boolean;
   isActivated: boolean;
+  isForgot: boolean;
+  isReset: boolean;
   selectedId: string | null;
   error: unknown | null;
+  ability: Ability | null;
 };
 
 const initialState: AuthState = {
@@ -26,15 +36,19 @@ const initialState: AuthState = {
   isLoading: false,
   isRegistered: false,
   isActivated: false,
+  isForgot: false,
+  isReset: false,
   selectedId: null,
   error: null,
+  ability: null,
 };
 
 export const authStore = signalStore(
   { providedIn: 'root' },
+  withDevtools('Auth'),
   withState(initialState),
   withComputed((state) => ({
-    isLoggedin: computed(() => !!state.user()),
+    isLoggedIn: computed(() => !!state.user()),
   })),
   withMethods((store, authService = inject(AuthService)) => ({
     register: rxMethod<IRegister>(
@@ -58,7 +72,11 @@ export const authStore = signalStore(
           authService.login(loginData).pipe(
             tapResponse({
               next: (loginResponse) => {
-                patchState(store, { user: loginResponse.user });
+                const { user, permissions } = loginResponse;
+                patchState(store, {
+                  user,
+                  ability: updateAbility(permissions),
+                });
                 localStorage.setItem(
                   'user',
                   JSON.stringify(loginResponse.user),
@@ -89,5 +107,47 @@ export const authStore = signalStore(
         ),
       ),
     ),
+    forgotPassword: rxMethod<string>(
+      pipe(
+        tap(() => patchState(store, { isLoading: true })),
+        switchMap((credential) =>
+          authService.forgotPassword(credential).pipe(
+            tapResponse({
+              next: (isForgot) => patchState(store, { isForgot }),
+              error: (error) => patchState(store, { error }),
+              finalize: () => patchState(store, { isLoading: false }),
+            }),
+          ),
+        ),
+      ),
+    ),
+    resetPassword: rxMethod<{ token: string; password: string }>(
+      pipe(
+        tap(() => patchState(store, { isLoading: true })),
+        switchMap(({ token, password }) =>
+          authService.resetPassword(token, password).pipe(
+            tapResponse({
+              next: (isReset) => patchState(store, { isReset }),
+              error: (error) => patchState(store, { error }),
+              finalize: () => patchState(store, { isLoading: false }),
+            }),
+          ),
+        ),
+      ),
+    ),
   })),
 );
+
+const updateAbility = (permissions: IPermission[]): Ability => {
+  const { can, rules } = new AbilityBuilder(createMongoAbility);
+  const ability = createMongoAbility();
+  permissions.forEach((permission) => {
+    const conditions = permission.conditions
+      ? JSON.parse(permission.conditions)
+      : undefined;
+    can(permission.action, permission.subject, undefined, conditions);
+  });
+  ability.update(rules);
+
+  return ability;
+};

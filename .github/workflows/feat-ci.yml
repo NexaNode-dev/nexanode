@@ -19,7 +19,6 @@ jobs:
 
       # Connect your workspace on nx.app and uncomment this to enable task distribution.
       # The "--stop-agents-after" is optional, but allows idle agents to shut down once the "build" targets have been requested
-      # - run: yarn nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="build"
 
       # Cache node_modules
       - run: corepack enable
@@ -28,7 +27,7 @@ jobs:
           node-version: 20
           cache: 'yarn'
       - run: yarn install --immutable
-      - run: yarn playwright install --with-deps
+      - run: yarn nx-cloud start-ci-run --distribute-on=".nx/workflows/dynamic-changesets.yaml" --stop-agents-after="build"
       - uses: nrwl/nx-set-shas@v4
 
       - run: git branch --track ${{ github.base_ref }} origin/${{ github.base_ref }}

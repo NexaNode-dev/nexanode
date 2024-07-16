@@ -1,0 +1,31 @@
+.wrapper {
+  @apply bg-secondary-light text-primary w-full flex flex-col items-center justify-center p-8;
+}
+
+.wrapper h2 {
+  @apply text-4xl font-bold mb-8;
+}
+
+.joboffers {
+  @apply flex flex-col items-center justify-center w-3/4 mx-auto;
+}
+
+.joboffer {
+  @apply bg-secondary-light text-primary-dark rounded w-full p-4 mb-4;
+}
+
+.joboffer__header {
+  @apply flex justify-between mb-2;
+}
+
+.joboffer__header h3 {
+  @apply text-2xl font-bold;
+}
+
+.joboffer__info span {
+  @apply mr-4;
+}
+
+.joboffer__info span ng-icon {
+  @apply mr-1;
+}

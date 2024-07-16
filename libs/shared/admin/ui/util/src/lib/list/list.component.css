@@ -1,0 +1,9 @@
+mat-card {
+  margin: 2rem auto;
+  width: 90vw;
+  max-width: 100rem;
+}
+
+button.mdc-button {
+  margin-right: 0.5rem;
+}

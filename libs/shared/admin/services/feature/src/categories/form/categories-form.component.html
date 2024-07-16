@@ -1,0 +1,45 @@
+<mat-card>
+  @if (isLoading()) {
+    <mat-spinner />
+  } @else if (error()) {
+    <div class="error">
+      <h2>Error loading category:</h2>
+      <p>{{ error() | json }}</p>
+    </div>
+  } @else {
+    <mat-card-header>
+      <mat-card-title>{{ mode }} category</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="categoryForm.invalid || isLoading()"
+          >
+            {{ mode }}
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            (click)="onBack()"
+            [disabled]="isLoading()"
+          >
+            Back
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  }
+</mat-card>

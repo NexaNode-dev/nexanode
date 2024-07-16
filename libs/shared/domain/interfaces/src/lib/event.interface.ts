@@ -8,6 +8,7 @@ export interface IEvent {
   units: number;
   unitType: string;
   unitCapacity: number;
+  price?: number;
   serviceId?: string;
   recurring: boolean;
   interval?: number;

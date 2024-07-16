@@ -1,6 +1,11 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { AuthService } from '../auth.service';
-import { ILogin, IRegister, IUser } from '@nexanode/domain-interfaces';
+import {
+  ILogin,
+  IPermission,
+  IRegister,
+  IUser,
+} from '@nexanode/domain-interfaces';
 import { UsersRepository } from '@nexanode/backend-users-data-access';
 import { HashingService } from '@nexanode/backend-hashing-util';
 import { JwtService } from '@nestjs/jwt';
@@ -58,7 +63,9 @@ export class JwtAuth implements AuthService {
       return userWithoutPassword;
     });
   }
-  async login(login: ILogin): Promise<{ user: IUser }> {
+  async login(
+    login: ILogin,
+  ): Promise<{ user: IUser; permissions: IPermission[] }> {
     return await this.dataSource.transaction(async (manager) => {
       const usersRepository = manager.withRepository(this.usersRepository);
       const userRolesRepository = manager.withRepository(
@@ -71,10 +78,10 @@ export class JwtAuth implements AuthService {
         this.permissionsRepository,
       );
       const user = await usersRepository.getUser({
-        where: [{ name: login.credential, email: login.credential }],
+        where: [{ userName: login.credential }, { email: login.credential }],
         select: [
           'id',
-          'name',
+          'userName',
           'email',
           'password',
           'accessToken',
@@ -111,10 +118,10 @@ export class JwtAuth implements AuthService {
       user.loginExpires = new Date(
         Date.now() + parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10),
       );
-      await usersRepository.update(user.id, { ...user });
+      await usersRepository.updateUser(user.id, { ...user });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { password, ...userWithoutPassword } = user;
-      return { user: userWithoutPassword };
+      return { user: userWithoutPassword, permissions };
     });
   }
 
@@ -127,6 +134,39 @@ export class JwtAuth implements AuthService {
     }
     await this.usersRepository.updateUser(user.id, { isActive: true });
     this.eventEmitter.emit('user.activated', {
+      email: user.email,
+      name: user.userName,
+    });
+    return true;
+  }
+
+  async forgotPassword(credential: string): Promise<boolean> {
+    const user = await this.usersRepository.getUser({
+      where: [{ email: credential, name: credential }],
+    });
+    if (!user) {
+      throw new BadRequestException('Invalid credentials');
+    }
+    user.accessToken = crypto.getRandomValues(new Uint32Array(1))[0].toString();
+    await this.usersRepository.updateUser(user.id, { ...user });
+    this.eventEmitter.emit('user.forgot', {
+      email: user.email,
+      name: user.userName,
+    });
+    return true;
+  }
+
+  async resetPassword(token: string, password: string): Promise<boolean> {
+    const user = await this.usersRepository.getUser({
+      where: { accessToken: token },
+    });
+    if (!user) {
+      throw new BadRequestException('Invalid token');
+    }
+    user.password = await this.hashingService.hash(password);
+    user.accessToken = undefined;
+    await this.usersRepository.updateUser(user.id, { ...user });
+    this.eventEmitter.emit('user.reset', {
       email: user.email,
       name: user.userName,
     });

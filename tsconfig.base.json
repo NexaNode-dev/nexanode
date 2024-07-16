@@ -15,8 +15,34 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nexanode/admin-auth-feature": [
+        "libs/shared/admin/auth/feature/src/index.ts"
+      ],
+      "@nexanode/admin-auth-util": ["libs/shared/admin/auth/util/src/index.ts"],
+      "@nexanode/admin-job-offers-feature": [
+        "libs/shared/admin/job-offers/feature/src/index.ts"
+      ],
+      "@nexanode/admin-navigation-feature": [
+        "libs/shared/admin/navigation/feature/src/index.ts"
+      ],
+      "@nexanode/admin-services-feature": [
+        "libs/shared/admin/services/feature/src/index.ts"
+      ],
+      "@nexanode/admin-ui-util": ["libs/shared/admin/ui/util/src/index.ts"],
+      "@nexanode/admin-users-feature": [
+        "libs/shared/admin/users/feature/src/index.ts"
+      ],
       "@nexanode/backend-auth-util": [
         "libs/shared/backend/auth/util/src/index.ts"
+      ],
+      "@nexanode/backend-bookings-application": [
+        "libs/shared/backend/bookings/application/src/index.ts"
+      ],
+      "@nexanode/backend-bookings-data-access": [
+        "libs/shared/backend/bookings/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-bookings-presentation": [
+        "libs/shared/backend/bookings/presentation/src/index.ts"
       ],
       "@nexanode/backend-categories-data-access": [
         "libs/shared/backend/categories/data-access/src/index.ts"
@@ -48,8 +74,26 @@
       "@nexanode/backend-iam-presentation": [
         "libs/shared/backend/iam/presentation/src/index.ts"
       ],
+      "@nexanode/backend-job-offers-application": [
+        "libs/shared/backend/job-offers/application/src/index.ts"
+      ],
+      "@nexanode/backend-job-offers-data-access ": [
+        "libs/shared/backend/job-offers/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-job-offers-presentation": [
+        "libs/shared/backend/job-offers/presentation/src/index.ts"
+      ],
       "@nexanode/backend-mailer-util": [
         "libs/shared/backend/mailer/util/src/index.ts"
+      ],
+      "@nexanode/backend-media-application": [
+        "libs/shared/backend/media/application/src/index.ts"
+      ],
+      "@nexanode/backend-media-data-access": [
+        "libs/shared/backend/media/data-access/src/index.ts"
+      ],
+      "@nexanode/backend-media-presentation": [
+        "libs/shared/backend/media/presentation/src/index.ts"
       ],
       "@nexanode/backend-organisations-application": [
         "libs/shared/backend/organisations/application/src/index.ts"
@@ -59,6 +103,9 @@
       ],
       "@nexanode/backend-organisations-presentation": [
         "libs/shared/backend/organisations/presentation/src/index.ts"
+      ],
+      "@nexanode/backend-payments-util": [
+        "libs/shared/backend/payments/util/src/index.ts"
       ],
       "@nexanode/backend-permissions-data-access": [
         "libs/shared/backend/permissions/data-access/src/index.ts"
@@ -93,6 +140,9 @@
       "@nexanode/domain-interfaces": [
         "libs/shared/domain/interfaces/src/index.ts"
       ],
+      "@nexanode/eazywork-frontend-header-feature": [
+        "libs/eazywork/frontend/header/feature/src/index.ts"
+      ],
       "@nexanode/frontend-about-layout": [
         "libs/shared/frontend/about/layout/src/index.ts"
       ],
@@ -120,6 +170,9 @@
       "@nexanode/frontend-events-ng-state": [
         "libs/shared/frontend/events/ng/state/src/index.ts"
       ],
+      "@nexanode/frontend-http-params-util": [
+        "libs/shared/frontend/http-params/util/src/index.ts"
+      ],
       "@nexanode/frontend-iam-ng-data-access": [
         "libs/shared/frontend/iam/ng/data-access/src/index.ts"
       ],
@@ -128,6 +181,15 @@
       ],
       "@nexanode/frontend-iam-ng-state": [
         "libs/shared/frontend/iam/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-job-offers-ng-data-access": [
+        "libs/shared/frontend/job-offers/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-job-offers-ng-feature": [
+        "libs/shared/frontend/job-offers/ng/feature/src/index.ts"
+      ],
+      "@nexanode/frontend-job-offers-ng-state": [
+        "libs/shared/frontend/job-offers/ng/state/src/index.ts"
       ],
       "@nexanode/frontend-layout-util": [
         "dist/libs/shared/frontend/layout/util"
@@ -164,6 +226,12 @@
       ],
       "@nexanode/frontend-services-ng-state": [
         "libs/shared/frontend/services/ng/state/src/index.ts"
+      ],
+      "@nexanode/frontend-users-ng-data-access": [
+        "libs/shared/frontend/users/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-users-ng-state": [
+        "libs/shared/frontend/users/ng/state/src/index.ts"
       ],
       "@nexanode/lifeperformance-frontend-footer-feature": [
         "libs/lifeperformance/frontend/footer/feature/src/index.ts"
@@ -204,6 +272,9 @@
       "@nexanode/stoic-frontend-navbar-feature": [
         "libs/stoic/frontend/navbar/feature/src/index.ts"
       ],
+      "@nexanode/storybook-admin-host": [
+        "libs/shared/storybook/admin/host/src/index.ts"
+      ],
       "@nexanode/storybook-lit-host": [
         "libs/shared/storybook/lit/host/src/index.ts"
       ],
@@ -215,6 +286,9 @@
       ],
       "@nexanode/testing-lit-mocks-utils": [
         "libs/shared/testing/lit-mocks/utils/src/index.ts"
+      ],
+      "@nexanode/testing-store-mocks-ng-util": [
+        "libs/shared/testing/store-mocks/ng/util/src/index.ts"
       ],
       "@nexanode/tijdenlangverhaald-frontend-header-feature": [
         "libs/tijdenlangverhaald/frontend/header/feature/src/index.ts"

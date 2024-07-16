@@ -29,6 +29,8 @@ describe('IamService', () => {
     login: jest.fn().mockResolvedValue({ user: expectedUser }),
     register: jest.fn().mockResolvedValue(expectedUser),
     activate: jest.fn().mockResolvedValue(true),
+    forgotPassword: jest.fn().mockResolvedValue(true),
+    resetPassword: jest.fn().mockResolvedValue(true),
   };
 
   beforeEach(async () => {
@@ -63,6 +65,18 @@ describe('IamService', () => {
     it('should activate a user', async () => {
       expect(
         await service.activate(expectedUser.id, faker.string.alphanumeric()),
+      ).toBe(true);
+    });
+  });
+  describe('forgotPassword', () => {
+    it('should send a password reset email', async () => {
+      expect(await service.forgotPassword(userData.email)).toBe(true);
+    });
+  });
+  describe('resetPassword', () => {
+    it('should reset a user password', async () => {
+      expect(
+        await service.resetPassword(faker.string.alphanumeric(), password),
       ).toBe(true);
     });
   });

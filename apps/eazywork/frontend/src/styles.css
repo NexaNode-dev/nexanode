@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #1d4e89; /* Blue */
+  --primary-light: #3c6eab;
+  --primary-dark: #123764;
+
+  --secondary: #f1f1f1; /* Light Gray */
+  --secondary-light: #ffffff;
+  --secondary-dark: #d9d9d9;
+
+  --tertiary: #333333; /* Gold */
+  --tertiary-light: #4f4f4f;
+  --tertiary-dark: #1a1a1a;
+
+  --quaternary: #008080; /* Dark Gray */
+  --quaternary-light: #40a3a3;
+  --quaternary-dark: #006666;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --font-header: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+body {
+  @apply font-body text-quaternary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-header font-bold;
+}

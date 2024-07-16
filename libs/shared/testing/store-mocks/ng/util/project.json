@@ -1,0 +1,36 @@
+{
+  "name": "testing-store-mocks-ng-util",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared/testing/store-mocks/ng/util/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:testing", "type:util", "domain:store-mocks", "tech:angular"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared/testing/store-mocks/ng/util/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared/testing/store-mocks/ng/util/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared/testing/store-mocks/ng/util/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/shared/testing/store-mocks/ng/util/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

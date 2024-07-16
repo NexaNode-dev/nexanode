@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
-import { Role } from './role.enity';
+import { Role } from './role.entity';
 import { IRole } from '@nexanode/domain-interfaces';
 
 @Injectable()

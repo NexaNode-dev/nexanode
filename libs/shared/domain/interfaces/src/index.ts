@@ -11,3 +11,6 @@ export * from './lib/organisation-type.interface';
 export * from './lib/service.interface';
 export * from './lib/category.interface';
 export * from './lib/event.interface';
+export * from './lib/booking.interface';
+export * from './lib/media.interface';
+export * from './lib/job-offer.interface';

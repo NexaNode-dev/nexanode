@@ -1,0 +1,88 @@
+{
+  "name": "eazywork-admin",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "eazywork-admin",
+  "sourceRoot": "apps/eazywork/admin/src",
+  "tags": ["scope:admin", "type:app", "app:eazywork"],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/eazywork/admin",
+        "index": "apps/eazywork/admin/src/index.html",
+        "browser": "apps/eazywork/admin/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/eazywork/admin/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/eazywork/admin/public"
+          }
+        ],
+        "styles": [
+          "apps/eazywork/admin/src/custom-theme.scss",
+          "apps/eazywork/admin/src/styles.css"
+        ],
+        "scripts": [],
+        "baseHref": "/admin/"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "eazywork-admin:build:production"
+        },
+        "development": {
+          "buildTarget": "eazywork-admin:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/eazywork/admin/proxy.conf.json",
+        "port": 4201
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "eazywork-admin:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/eazywork/admin/jest.config.ts"
+      }
+    }
+  }
+}

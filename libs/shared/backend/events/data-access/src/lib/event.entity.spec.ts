@@ -13,6 +13,7 @@ describe('Event', () => {
       units: faker.number.int(),
       unitType: faker.lorem.word(),
       unitCapacity: faker.number.int(),
+      price: faker.number.float(),
       recurring: faker.datatype.boolean(),
     });
     expect(event.id).toBeDefined();
@@ -22,6 +23,7 @@ describe('Event', () => {
     expect(event.units).toBeDefined();
     expect(event.unitType).toBeDefined();
     expect(event.unitCapacity).toBeDefined();
+    expect(event.price).toBeDefined();
     expect(event.recurring).toBeDefined();
   });
 });

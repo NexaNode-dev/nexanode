@@ -1,0 +1,27 @@
+.wrapper {
+  @apply bg-neutral-100 text-primary w-full flex flex-col items-center justify-center p-8;
+}
+
+.joboffer {
+  @apply bg-secondary-light w-full max-w-4xl p-4 rounded shadow-md shadow-secondary-dark;
+}
+
+.joboffer h2 {
+  @apply text-4xl font-bold mb-6;
+}
+
+.joboffer h3 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.joboffer p {
+  @apply text-lg mb-4;
+}
+
+.actions {
+  @apply flex flex-col justify-center;
+}
+
+.actions button {
+  @apply bg-primary text-neutral-50 px-4 py-2 rounded-md mb-3;
+}

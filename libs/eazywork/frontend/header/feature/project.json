@@ -1,0 +1,37 @@
+{
+  "name": "eazywork-frontend-header-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/eazywork/frontend/header/feature/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:feature", "tech:angular", "app:eazywork"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/eazywork/frontend/header/feature/ng-package.json",
+        "tailwindConfig": "libs/eazywork/frontend/header/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/eazywork/frontend/header/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/eazywork/frontend/header/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/eazywork/frontend/header/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
