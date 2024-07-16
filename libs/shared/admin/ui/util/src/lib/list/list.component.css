@@ -4,6 +4,10 @@ mat-card {
   max-width: 100rem;
 }
 
+mat-card-content {
+  overflow-x: scroll;
+}
+
 button.mdc-button {
   margin-right: 0.5rem;
 }

@@ -92,7 +92,7 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   }
 
   onAdd() {
-    this.router.navigate([this.type(), 'new'], { relativeTo: this.route });
+    this.router.navigate(['create'], { relativeTo: this.route });
   }
 
   onDelete() {
@@ -102,7 +102,7 @@ export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   }
 
   onEdit() {
-    this.router.navigate([this.type(), this.selectedRows.selected[0].id], {
+    this.router.navigate(['update', this.selectedRows.selected[0].id], {
       relativeTo: this.route,
     });
   }
