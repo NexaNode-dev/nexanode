@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { NexanodeAdminEventsFormComponent } from './form.component';
+import { eventsFactory } from '@nexanode/testing-data-mocks-utils';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+const events = eventsFactory();
+const event = events[0];
 
 const meta: Meta<NexanodeAdminEventsFormComponent> = {
   component: NexanodeAdminEventsFormComponent,
@@ -15,10 +16,25 @@ export const Primary: Story = {
   args: {},
 };
 
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/form works!/gi)).toBeTruthy();
+export const Updating: Story = {
+  args: {
+    id: event.id,
   },
+  parameters: {
+    mockData: [
+      {
+        url: '/api/events',
+        method: 'GET',
+        response: events,
+        status: 200,
+      },
+      {
+        url: `/api/events/${event.id}`,
+        method: 'GET',
+        response: event,
+        status: 200,
+        delay: 1000,
+      }
+    ]
+  }
 };

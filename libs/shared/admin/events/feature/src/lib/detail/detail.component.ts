@@ -35,7 +35,7 @@ export class NexanodeAdminEventsDetailComponent {
   readonly event = this.store.selectedEvent;
   readonly isLoading = this.store.isLoading;
   readonly error = this.store.error;
-  readonly totalCapacity = computed(() => (this.event()?.units || 0) * (this.event()?.unitCapacity || 0));
+  readonly totalCapacity = this.store.selectedEventCapacity;
   id = input.required<string>();
 
   constructor() {
