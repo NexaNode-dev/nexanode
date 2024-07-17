@@ -36,6 +36,10 @@ export const eventsStore = signalStore(
     selectedEvent: computed(() =>
       state.events().find((e) => e.id === state.selectedId()),
     ),
+    selectedEventCapacity: computed(() => {
+      const event = state.events().find((e) => e.id === state.selectedId());
+      return event ? event.units * event.unitCapacity : 0;
+    }),
   })),
   withMethods((store, eventsService = inject(EventsService)) => ({
     getEvents: rxMethod<void>(
