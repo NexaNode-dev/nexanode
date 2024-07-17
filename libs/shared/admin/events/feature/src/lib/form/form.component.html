@@ -1,0 +1,101 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>{{ mode }} event</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Location</mat-label>
+        <input matInput formControlName="location" />
+      </mat-form-field>
+      <div class="dates">
+        <mat-form-field>
+          <mat-label>Start Date</mat-label>
+          <input
+            matInput
+            formControlName="from"
+            [matDatepicker]="from"
+            [min]="now"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="from"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #from></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>End Date</mat-label>
+          <input
+            matInput
+            formControlName="to"
+            [matDatepicker]="to"
+            [min]="now"
+          />
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="to"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #to></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-label>Price</mat-label>
+        <input matInput formControlName="price" type="number" />
+      </mat-form-field>
+      <div class="capacity">
+        <mat-form-field>
+          <mat-label>Units</mat-label>
+          <input matInput formControlName="units" type="number" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Unit Type</mat-label>
+          <input matInput formControlName="unitType" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Capacity per unit</mat-label>
+          <input matInput formControlName="unitCapacity" type="number" />
+        </mat-form-field>
+      </div>
+      <h4>Total capacity: {{ totalCapacity() }}</h4>
+      <div class="recurring">
+        <mat-checkbox formControlName="recurring">Recurring event</mat-checkbox>
+        @if (recurring?.value) {
+          <mat-form-field>
+            <mat-label>Interval</mat-label>
+            <input matInput formControlName="interval" type="number" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Interval Unit</mat-label>
+            <mat-select formControlName="intervalUnit">
+              <mat-option value="day">Day</mat-option>
+              <mat-option value="week">Week</mat-option>
+              <mat-option value="month">Month</mat-option>
+              <mat-option value="year">Year</mat-option>
+            </mat-select>
+          </mat-form-field>
+        }
+      </div>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="onSubmit()"
+          [disabled]="eventForm.invalid || isLoading()"
+        >
+          Save
+        </button>
+        <button mat-raised-button color="warn" (click)="onBack()">Back</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

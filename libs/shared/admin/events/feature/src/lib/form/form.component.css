@@ -1,0 +1,56 @@
+mat-card {
+  width: 100%;
+  max-width: 70rem;
+  margin: 1rem auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 50rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+mat-card-actions button {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.error {
+  margin: 2rem auto;
+  color: red;
+  text-align: center;
+}
+
+.error p {
+  margin: 0 auto;
+  max-width: 65%;
+}
+
+.dates,
+.capacity,
+.recurring {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.dates mat-form-field:first-child,
+.capacity mat-form-field:not(:last-child),
+.recurring mat-form-field:not(:last-child),
+.recurring mat-checkbox {
+  margin-right: 1rem;
+}

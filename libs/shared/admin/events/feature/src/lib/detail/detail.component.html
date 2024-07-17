@@ -1,0 +1,46 @@
+<mat-card>
+  @if (isLoading()) {
+    <mat-spinner />
+  } @else if (error()) {
+    <div class="error">
+      <h2>Error loading job offer</h2>
+      <p>{{ error() | json }}</p>
+    </div>
+  } @else {
+    <mat-card-header>
+      <mat-card-title>{{ event()?.name }}</mat-card-title>
+      <mat-card-subtitle>
+        <p>Location: {{ event()?.location }}</p>
+        @if (event()?.to) {
+          <p>Duration: {{ event()?.from | date }} - {{ event()?.to | date }}</p>
+        } @else {
+          <p>Date: {{ event()?.from | date }}</p>
+        }
+        @if (event()?.recurring) {
+          <p>
+            Recurring: every {{ event()?.interval }} {{ event()?.intervalUnit }}(s)
+          </p>
+        }
+        <p>Price: {{ event()?.price | currency: 'EUR' }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <h3>Description:</h3>
+      <p>{{ event()?.description }}</p>
+      <h3>Units:</h3>
+      <p>
+        {{ event()?.units }} {{ event()?.unitType }}(s) with
+        {{ event()?.unitCapacity }} capacity per unit.
+      </p>
+      <p>Total capacity: {{ totalCapacity() }}</p>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="onBack()">Back</button>
+      <button mat-raised-button color="primary" (click)="onEdit()">Edit</button>
+      <button mat-raised-button color="warn" (click)="onDelete()">
+        Delete
+      </button>
+    </mat-card-actions>
+  }
+</mat-card>
