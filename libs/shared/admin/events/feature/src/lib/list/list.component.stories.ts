@@ -15,9 +15,9 @@ const meta: Meta<NexanodeAdminEventsListComponent> = {
         response: events,
         status: 200,
         delay: 1000,
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 export default meta;
 type Story = StoryObj<NexanodeAdminEventsListComponent>;
@@ -25,4 +25,3 @@ type Story = StoryObj<NexanodeAdminEventsListComponent>;
 export const Primary: Story = {
   args: {},
 };
-

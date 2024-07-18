@@ -6,8 +6,8 @@ import {
   userFactory,
 } from '@nexanode/testing-data-mocks-utils';
 
-import { userEvent, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/test';
+import { expect } from '@storybook/test';
 
 const user = userFactory();
 const permissions = permissionsFactory();
