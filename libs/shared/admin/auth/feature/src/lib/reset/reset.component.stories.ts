@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { NexaNodeAdminAuthResetComponent } from './reset.component';
 
-import { userEvent, within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { userEvent, within } from '@storybook/test';
+import { expect } from '@storybook/test';
 import { userFactory } from '@nexanode/testing-data-mocks-utils';
 
 const user = userFactory();

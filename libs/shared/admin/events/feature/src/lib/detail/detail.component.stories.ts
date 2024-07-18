@@ -24,8 +24,8 @@ const meta: Meta<NexanodeAdminEventsDetailComponent> = {
         status: 200,
         delay: 1000,
       },
-    ]
-  }
+    ],
+  },
 };
 export default meta;
 type Story = StoryObj<NexanodeAdminEventsDetailComponent>;
@@ -35,4 +35,3 @@ export const Primary: Story = {
     id: event.id,
   },
 };
-

@@ -34,7 +34,7 @@ export const Updating: Story = {
         response: event,
         status: 200,
         delay: 1000,
-      }
-    ]
-  }
+      },
+    ],
+  },
 };

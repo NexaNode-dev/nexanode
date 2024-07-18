@@ -5,8 +5,8 @@ const categories = categoriesFactory();
 const services = servicesFactory();
 const category = categories[0];
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { within } from '@storybook/test';
+import { expect } from '@storybook/test';
 import {
   categoriesFactory,
   servicesFactory,
