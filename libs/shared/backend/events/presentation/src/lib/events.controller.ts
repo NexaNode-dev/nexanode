@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Query,
 } from '@nestjs/common';
@@ -35,7 +36,7 @@ export class EventsController {
   }
 
   @Rbac({ action: 'update', subject: 'Event' })
-  @Post('id')
+  @Patch('id')
   async updateEvent(
     @Param('id') id: string,
     @Body() UpdateEventDto: UpdateEventDto,
