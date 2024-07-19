@@ -47,7 +47,7 @@ export class JwtAuth implements AuthService {
       });
       const role = await rolesRepository.getRole({
         where: [
-          { name: register.roleName || process.env['DEFAULT_ROLE'] || 'user' },
+          { name: register.roleName || process.env['DEFAULT_ROLE'] || 'User' },
         ],
       });
       await usersRolesRepository.createUserRole({

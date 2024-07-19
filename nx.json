@@ -155,7 +155,10 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/eazywork/backend-e2e/**/*"]
+      "exclude": [
+        "apps/eazywork/backend-e2e/**/*",
+        "apps/lifeperformance/backend-e2e/**/*"
+      ]
     },
     {
       "plugin": "@nx/vite/plugin",
