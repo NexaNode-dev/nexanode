@@ -1,0 +1,10 @@
+{
+  "name": "@nexanode/eazywork-frontend-landing-feature",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0",
+    "@nx/angular": "19.3.0"
+  },
+  "sideEffects": false
+}

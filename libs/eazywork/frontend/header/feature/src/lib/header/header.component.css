@@ -1,31 +1,3 @@
-.banner {
-  @apply relative h-[40dvh] overflow-hidden;
-}
-
-.banner .video {
-  @apply absolute inset-0 w-full h-full object-cover;
-}
-
-.banner .overlay {
-  @apply absolute inset-0 bg-primary opacity-50;
-}
-
-.banner .content {
-  @apply absolute inset-0 flex items-center justify-center;
-}
-
-.banner .content div {
-  @apply text-center text-secondary-light;
-}
-
-.banner .content h1 {
-  @apply text-6xl font-bold;
-}
-
-.banner .content p {
-  @apply mt-4 text-2xl;
-}
-
 .header {
   @apply flex justify-between items-center bg-secondary-light p-4 text-primary border-b-4 border-quaternary-light border-solid;
 }
