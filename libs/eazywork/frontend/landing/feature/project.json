@@ -1,0 +1,37 @@
+{
+  "name": "eazywork-frontend-landing-feature",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/eazywork/frontend/landing/feature/src",
+  "prefix": "nexanode",
+  "projectType": "library",
+  "tags": ["scope:frontend", "type:feature", "app:eazywork"],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/eazywork/frontend/landing/feature/ng-package.json",
+        "tailwindConfig": "libs/eazywork/frontend/landing/feature/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/eazywork/frontend/landing/feature/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/eazywork/frontend/landing/feature/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/eazywork/frontend/landing/feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

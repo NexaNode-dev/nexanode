@@ -3,8 +3,10 @@ import { Route } from '@angular/router';
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'job-offers',
-    pathMatch: 'full',
+    loadComponent: () =>
+      import('@nexanode/eazywork-frontend-landing-feature').then(
+        (m) => m.EazyWorkLandingComponent,
+      ),
   },
   {
     path: 'job-offers',
