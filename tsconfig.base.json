@@ -146,6 +146,9 @@
       "@nexanode/eazywork-frontend-header-feature": [
         "libs/eazywork/frontend/header/feature/src/index.ts"
       ],
+      "@nexanode/eazywork-frontend-landing-feature": [
+        "libs/eazywork/frontend/landing/feature/src/index.ts"
+      ],
       "@nexanode/frontend-about-layout": [
         "libs/shared/frontend/about/layout/src/index.ts"
       ],

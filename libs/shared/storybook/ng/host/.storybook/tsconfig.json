@@ -10,6 +10,7 @@
     "../../../../../stoic/**/*.stories.ts",
     "../../../../../lifeperformance/**/*.stories.ts",
     "../../../../../tijdenlangverhaald/**/*.stories.ts",
+    "../../../../../eazywork/**/*.stories.ts",
     "*.ts"
   ]
 }
