@@ -135,6 +135,9 @@ export const authStore = signalStore(
         ),
       ),
     ),
+    canActivate(action: string, subject: string ): boolean | undefined {
+      return store.ability()?.can(action, subject);
+    }
   })),
 );
 
