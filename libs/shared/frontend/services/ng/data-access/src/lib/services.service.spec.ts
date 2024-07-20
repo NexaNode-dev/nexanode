@@ -43,7 +43,7 @@ describe('ServicesService', () => {
         expect(services).toEqual(expectedServices);
       });
 
-      const req = httpController.expectOne('api/services');
+      const req = httpController.expectOne('/api/services');
       expect(req.request.method).toEqual('GET');
       req.flush(expectedServices);
     });
@@ -55,7 +55,7 @@ describe('ServicesService', () => {
       });
 
       const req = httpController.expectOne(
-        `api/services/${expectedService.id}`,
+        `/api/services/${expectedService.id}`,
       );
       expect(req.request.method).toEqual('GET');
       req.flush(expectedService);
@@ -67,7 +67,7 @@ describe('ServicesService', () => {
         expect(service).toEqual(expectedService);
       });
 
-      const req = httpController.expectOne('api/services');
+      const req = httpController.expectOne('/api/services');
       expect(req.request.method).toEqual('POST');
       req.flush(expectedService);
     });
@@ -79,9 +79,9 @@ describe('ServicesService', () => {
       });
 
       const req = httpController.expectOne(
-        `api/services/${expectedService.id}`,
+        `/api/services/${expectedService.id}`,
       );
-      expect(req.request.method).toEqual('PUT');
+      expect(req.request.method).toEqual('PATCH');
       req.flush(expectedService);
     });
   });
@@ -90,7 +90,7 @@ describe('ServicesService', () => {
       service.deleteService(expectedService.id).subscribe();
 
       const req = httpController.expectOne(
-        `api/services/${expectedService.id}`,
+        `/api/services/${expectedService.id}`,
       );
       expect(req.request.method).toEqual('DELETE');
       req.flush(null);
@@ -105,7 +105,7 @@ describe('ServicesService', () => {
         });
 
       const req = httpController.expectOne(
-        `api/services/category/${expectedCategory.id}`,
+        `/api/services/category/${expectedCategory.id}`,
       );
       expect(req.request.method).toEqual('GET');
       req.flush(expectedServices);
@@ -117,7 +117,7 @@ describe('ServicesService', () => {
         expect(categories).toEqual(expectedCategories);
       });
 
-      const req = httpController.expectOne('api/services/categories');
+      const req = httpController.expectOne('/api/services/categories');
       expect(req.request.method).toEqual('GET');
       req.flush(expectedCategories);
     });
@@ -129,7 +129,7 @@ describe('ServicesService', () => {
       });
 
       const req = httpController.expectOne(
-        `api/services/categories/${expectedCategory.id}`,
+        `/api/services/categories/${expectedCategory.id}`,
       );
       expect(req.request.method).toEqual('GET');
       req.flush(expectedCategory);
@@ -141,7 +141,7 @@ describe('ServicesService', () => {
         expect(category).toEqual(expectedCategory);
       });
 
-      const req = httpController.expectOne('api/services/categories');
+      const req = httpController.expectOne('/api/services/categories');
       expect(req.request.method).toEqual('POST');
       req.flush(expectedCategory);
     });
@@ -153,9 +153,9 @@ describe('ServicesService', () => {
       });
 
       const req = httpController.expectOne(
-        `api/services/categories/${expectedCategory.id}`,
+        `/api/services/categories/${expectedCategory.id}`,
       );
-      expect(req.request.method).toEqual('PUT');
+      expect(req.request.method).toEqual('PATCH');
       req.flush(expectedCategory);
     });
   });
@@ -164,7 +164,7 @@ describe('ServicesService', () => {
       service.deleteCategory(expectedCategory.id).subscribe();
 
       const req = httpController.expectOne(
-        `api/services/categories/${expectedCategory.id}`,
+        `/api/services/categories/${expectedCategory.id}`,
       );
       expect(req.request.method).toEqual('DELETE');
       req.flush(null);

@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('categories')
 export class Category implements ICategory {
   @PrimaryColumn('uuid')
   id: string = uuidv7();
@@ -27,10 +27,5 @@ export class Category implements ICategory {
 
   constructor(partial: Partial<ICategory>) {
     Object.assign(this, partial);
-  }
-
-  static setTableName(prefix: string) {
-    const tableName = `${prefix}_categories`;
-    Reflect.defineMetadata('tableName', tableName, Category);
   }
 }

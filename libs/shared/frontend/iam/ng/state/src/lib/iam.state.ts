@@ -1,5 +1,6 @@
 import { withDevtools } from '@angular-architects/ngrx-toolkit';
 import { computed, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Ability, AbilityBuilder, createMongoAbility } from '@casl/ability';
 import {
   ILogin,
@@ -50,7 +51,7 @@ export const authStore = signalStore(
   withComputed((state) => ({
     isLoggedIn: computed(() => !!state.user()),
   })),
-  withMethods((store, authService = inject(AuthService)) => ({
+  withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
     register: rxMethod<IRegister>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
@@ -80,6 +81,10 @@ export const authStore = signalStore(
                 localStorage.setItem(
                   'user',
                   JSON.stringify(loginResponse.user),
+                );
+                localStorage.setItem(
+                  'permissions',
+                  JSON.stringify(loginResponse.permissions),
                 );
               },
               error: (error) => patchState(store, { error }),
@@ -135,9 +140,24 @@ export const authStore = signalStore(
         ),
       ),
     ),
-    canActivate(action: string, subject: string ): boolean | undefined {
+    canActivate(action: string, subject: string): boolean | undefined {
       return store.ability()?.can(action, subject);
-    }
+    },
+    autoLogin: () => {
+      if (localStorage.getItem('user')) {
+        const user: IUser = JSON.parse(localStorage.getItem('user') || '');
+        console.log('user', user.loginExpires ? new Date(user.loginExpires) : null, new Date());
+        if (user.loginExpires && new Date(user.loginExpires) > new Date()) {
+          const permissions: IPermission[] = JSON.parse(localStorage.getItem('permissions') || '');
+          patchState(store, { user, ability: updateAbility(permissions) });
+        } else {
+          localStorage.removeItem('user');
+          router.navigate(['/auth/login']);
+        }
+      } else {
+        router.navigate(['/auth/login']);
+      }
+    },
   })),
 );
 

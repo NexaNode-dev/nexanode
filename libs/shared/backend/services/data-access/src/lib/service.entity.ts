@@ -8,7 +8,7 @@ import {
 } from 'typeorm';
 import { uuidv7 } from 'uuidv7';
 
-@Entity()
+@Entity('services')
 export class Service implements IService {
   @PrimaryColumn()
   id: string = uuidv7();
