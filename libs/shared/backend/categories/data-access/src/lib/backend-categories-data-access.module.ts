@@ -17,7 +17,6 @@ export class BackendCategoriesDataAccessModule extends ConfigurableModuleClass {
   }
 
   static register(options: typeof OPTIONS_TYPE) {
-    Category.setTableName(options.prefix);
     return {
       ...super.register(options),
       imports: [TypeOrmModule.forFeature([Category])],

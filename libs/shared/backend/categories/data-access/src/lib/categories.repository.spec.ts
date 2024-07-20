@@ -4,6 +4,7 @@ import { categoriesFactory } from '@nexanode/testing-data-mocks-utils';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Category } from './category.entity';
 import { NotFoundException } from '@nestjs/common';
+import { CATEGORY_MODULE_OPTIONS } from './backend-categories-data-access.module.definition';
 
 describe('CategoriesRepository', () => {
   let provider: CategoriesRepository;
@@ -19,6 +20,7 @@ describe('CategoriesRepository', () => {
     save: jest.fn().mockResolvedValue(expectedCategory),
     preload: jest.fn().mockResolvedValue(expectedCategory),
     remove: jest.fn().mockResolvedValue(expectedCategory),
+    metadata: { tablePath: '', connection: {} },
   };
 
   beforeEach(async () => {
@@ -28,6 +30,8 @@ describe('CategoriesRepository', () => {
       .useMocker((token) => {
         if (token === getRepositoryToken(Category)) {
           return mockRepository;
+        } else if (token === CATEGORY_MODULE_OPTIONS) {
+          return { prefix: 'test' };
         }
         return;
       })

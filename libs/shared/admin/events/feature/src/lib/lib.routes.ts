@@ -1,6 +1,6 @@
 import { Route } from "@angular/router";
 
-export const adminEventRoutes: Route[] = [
+export const adminEventsFeatureRoutes: Route[] = [
   {
     path: '',
     loadComponent: () => import('./list/list.component').then(m => m.NexanodeAdminEventsListComponent),

@@ -73,7 +73,7 @@ export class Init1721393113528 implements MigrationInterface {
             )
         `);
     await queryRunner.query(`
-            CREATE TABLE "service" (
+            CREATE TABLE "services" (
                 "id" character varying NOT NULL,
                 "name" character varying NOT NULL,
                 "summary" character varying NOT NULL,
@@ -84,6 +84,18 @@ export class Init1721393113528 implements MigrationInterface {
                 "updated_at" TIMESTAMP NOT NULL DEFAULT now(),
                 CONSTRAINT "UQ_7806a14d42c3244064b4a1706ca" UNIQUE ("name"),
                 CONSTRAINT "PK_85a21558c006647cd76fdce044b" PRIMARY KEY ("id")
+            )
+        `);
+
+        await queryRunner.query(`
+            CREATE TABLE "service_categories" (
+                "id" uuid NOT NULL,
+                "name" character varying NOT NULL,
+                "description" character varying,
+                "created_at" TIMESTAMP NOT NULL DEFAULT now(),
+                "updated_at" TIMESTAMP NOT NULL DEFAULT now(),
+                CONSTRAINT "UQ_8b0be371d28245da6e4f4b61878" UNIQUE ("name"),
+                CONSTRAINT "PK_24dbc6126a28ff948da33e97d3b" PRIMARY KEY ("id")
             )
         `);
     await queryRunner.query(`
