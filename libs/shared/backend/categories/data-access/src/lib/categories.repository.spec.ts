@@ -19,6 +19,7 @@ describe('CategoriesRepository', () => {
     save: jest.fn().mockResolvedValue(expectedCategory),
     preload: jest.fn().mockResolvedValue(expectedCategory),
     remove: jest.fn().mockResolvedValue(expectedCategory),
+    metdata: { tablePath: '' },
   };
 
   beforeEach(async () => {
@@ -28,6 +29,8 @@ describe('CategoriesRepository', () => {
       .useMocker((token) => {
         if (token === getRepositoryToken(Category)) {
           return mockRepository;
+        } else if (token?.toString().includes('CONFIGURABLE_MODULE_OPTIONS')) {
+          return { options: { prefix: 'test' } };
         }
         return;
       })

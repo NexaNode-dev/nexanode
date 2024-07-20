@@ -5,12 +5,6 @@ describe('Category', () => {
   it('should be defined', () => {
     expect(new Category({})).toBeDefined();
   });
-  it('should set table name', () => {
-    Category.setTableName('prefix');
-    expect(Reflect.getMetadata('tableName', Category)).toBe(
-      'prefix_categories',
-    );
-  });
   it('should have the required properties', () => {
     const category = new Category({
       name: faker.lorem.word(),
