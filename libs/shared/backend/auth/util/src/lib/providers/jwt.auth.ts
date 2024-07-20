@@ -47,7 +47,7 @@ export class JwtAuth implements AuthService {
       });
       const role = await rolesRepository.getRole({
         where: [
-          { name: register.roleName || process.env['DEFAULT_ROLE'] || 'user' },
+          { name: register.roleName || process.env['DEFAULT_ROLE'] || 'User' },
         ],
       });
       await usersRolesRepository.createUserRole({
@@ -116,7 +116,7 @@ export class JwtAuth implements AuthService {
         permissions,
       });
       user.loginExpires = new Date(
-        Date.now() + parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10),
+        Date.now() + parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10) * 1000,
       );
       await usersRepository.updateUser(user.id, { ...user });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

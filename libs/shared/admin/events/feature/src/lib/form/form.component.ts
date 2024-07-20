@@ -97,7 +97,7 @@ export class NexanodeAdminEventsFormComponent {
         });
       } else {
         this.store.createEvent(event);
-        this.router.navigate(['..', event.id], { relativeTo: this.route });
+        this.router.navigate(['..', this.event()?.id], { relativeTo: this.route });
       }
     }
   }

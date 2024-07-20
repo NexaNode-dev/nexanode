@@ -1,0 +1,98 @@
+{
+  "name": "lifeperformance-admin",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "lifeperformance-admin",
+  "sourceRoot": "apps/lifeperformance/admin/src",
+  "tags": [
+    "scope:admin",
+    "type:app",
+    "app:lifeperformance"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/lifeperformance/admin",
+        "index": "apps/lifeperformance/admin/src/index.html",
+        "browser": "apps/lifeperformance/admin/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/lifeperformance/admin/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/lifeperformance/admin/public"
+          }
+        ],
+        "styles": [
+          "apps/lifeperformance/admin/src/custom-theme.scss",
+          "apps/lifeperformance/admin/src/styles.css"
+        ],
+        "scripts": [],
+        "baseHref": "/admin/"
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "port": 4201,
+        "proxyConfig": "apps/lifeperformance/admin/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "lifeperformance-admin:build:production"
+        },
+        "development": {
+          "buildTarget": "lifeperformance-admin:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "lifeperformance-admin:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/lifeperformance/admin/jest.config.ts"
+      }
+    }
+  }
+}

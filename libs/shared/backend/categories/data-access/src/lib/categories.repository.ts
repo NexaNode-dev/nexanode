@@ -1,19 +1,22 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { FindManyOptions, FindOneOptions, Repository } from 'typeorm';
 import { Category } from './category.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { CATEGORY_MODULE_OPTIONS, OPTIONS_TYPE } from './backend-categories-data-access.module.definition';
 
 @Injectable()
 export class CategoriesRepository extends Repository<Category> {
   constructor(
     @InjectRepository(Category)
     private categoriesRepository: Repository<Category>,
+    @Inject(CATEGORY_MODULE_OPTIONS) private options: typeof OPTIONS_TYPE,
   ) {
     super(
       Category,
       categoriesRepository.manager,
       categoriesRepository.queryRunner,
     );
+    categoriesRepository.metadata.tablePath = `${options.prefix}_categories`;
   }
 
   getCategories(options: FindManyOptions<Category> = {}): Promise<Category[]> {

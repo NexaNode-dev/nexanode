@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Query,
 } from '@nestjs/common';
@@ -23,7 +24,7 @@ export class EventsController {
   }
 
   @Rbac({ action: 'read', subject: 'Event' })
-  @Get('id')
+  @Get(':id')
   async getEventById(@Param('id') id: string) {
     return this.eventsService.getEventById(id);
   }
@@ -35,7 +36,7 @@ export class EventsController {
   }
 
   @Rbac({ action: 'update', subject: 'Event' })
-  @Post('id')
+  @Patch(':id')
   async updateEvent(
     @Param('id') id: string,
     @Body() UpdateEventDto: UpdateEventDto,
@@ -44,7 +45,7 @@ export class EventsController {
   }
 
   @Rbac({ action: 'delete', subject: 'Event' })
-  @Delete('id')
+  @Delete(':id')
   async deleteEvent(@Param('id') id: string) {
     return this.eventsService.deleteEvent(id);
   }

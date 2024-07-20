@@ -6,52 +6,53 @@ import { ICategory, IService } from '@nexanode/domain-interfaces';
   providedIn: 'root',
 })
 export class ServicesService {
+  private readonly apiUrl = '/api/services';
   constructor(private readonly http: HttpClient) {}
 
   getServices() {
-    return this.http.get<IService[]>('api/services');
+    return this.http.get<IService[]>(this.apiUrl);
   }
 
   getService(id: string) {
-    return this.http.get<IService>(`api/services/${id}`);
+    return this.http.get<IService>(`${this.apiUrl}/${id}`);
   }
 
   createService(service: Partial<IService>) {
-    return this.http.post<IService>('api/services', service);
+    return this.http.post<IService>(this.apiUrl, service);
   }
 
   updateService(service: Partial<IService>) {
-    return this.http.put<IService>(`api/services/${service.id}`, service);
+    return this.http.patch<IService>(`${this.apiUrl}/${service.id}`, service);
   }
 
   deleteService(id: string) {
-    return this.http.delete(`api/services/${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
   getServicesByCategory(categoryId: string) {
-    return this.http.get<IService[]>(`api/services/category/${categoryId}`);
+    return this.http.get<IService[]>(`${this.apiUrl}/category/${categoryId}`);
   }
 
   getCategories() {
-    return this.http.get<ICategory[]>('api/services/categories');
+    return this.http.get<ICategory[]>(`${this.apiUrl}/categories`);
   }
 
   getCategory(id: string) {
-    return this.http.get<ICategory>(`api/services/categories/${id}`);
+    return this.http.get<ICategory>(`${this.apiUrl}/categories/${id}`);
   }
 
   createCategory(category: Partial<ICategory>) {
-    return this.http.post<ICategory>('api/services/categories', category);
+    return this.http.post<ICategory>(`${this.apiUrl}/categories`, category);
   }
 
   updateCategory(category: Partial<ICategory>) {
-    return this.http.put<ICategory>(
-      `api/services/categories/${category.id}`,
+    return this.http.patch<ICategory>(
+      `${this.apiUrl}/categories/${category.id}`,
       category,
     );
   }
 
   deleteCategory(id: string) {
-    return this.http.delete(`api/services/categories/${id}`);
+    return this.http.delete(`${this.apiUrl}/categories/${id}`);
   }
 }
