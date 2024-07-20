@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NexanodeAdminNavigationComponent } from '@nexanode/admin-navigation-feature';
+import { authStore } from '@nexanode/frontend-iam-ng-state';
 
 @Component({
   standalone: true,
@@ -11,4 +12,9 @@ import { NexanodeAdminNavigationComponent } from '@nexanode/admin-navigation-fea
 })
 export class AppComponent {
   title = 'Eazywork Admin';
+  private readonly store = inject(authStore);
+
+  constructor() {
+    this.store.autoLogin();
+  }
 }

@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { authGuard } from '@nexanode/admin-auth-util';
 
 export const appRoutes: Route[] = [
   {
@@ -15,5 +16,6 @@ export const appRoutes: Route[] = [
         (m) => m.adminJobOffersFeatureRoutes,
       ),
     data: { nav: { label: 'Job Offers', icon: 'work', path: 'job-offers' } },
+    canActivateChild: [authGuard],
   },
 ];
