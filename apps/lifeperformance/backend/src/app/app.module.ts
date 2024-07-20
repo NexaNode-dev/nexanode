@@ -3,6 +3,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ServeStaticModule } from '@nestjs/serve-static';
 import { BackendBookingsPresentationModule } from '@nexanode/backend-bookings-presentation';
 import { BackendEventsPresentationModule } from '@nexanode/backend-events-presentation';
 import { BackendIamPresentationModule } from '@nexanode/backend-iam-presentation';
@@ -10,6 +11,7 @@ import { BackendMailerUtilModule } from '@nexanode/backend-mailer-util';
 import { BackendMediaPresentationModule } from '@nexanode/backend-media-presentation';
 import { BackendServicesPresentationModule } from '@nexanode/backend-services-presentation';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -46,6 +48,14 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
         to: process.env.MAIL_DEFAULT,
       },
     }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'admin', 'browser'),
+      serveRoot: '/admin',
+    }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(__dirname, '..', 'frontend'),
+    //   exclude: ['/admin*'],
+    // }),
     BackendIamPresentationModule,
     BackendServicesPresentationModule,
     BackendEventsPresentationModule,
