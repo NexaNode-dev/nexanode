@@ -128,6 +128,7 @@ export const mediaStore = signalStore(
         ),
       ),
     ),
+    updateQuery: (query: IQueryParams<IMedia>) => patchState(store, { query }),
   })),
   withHooks({
     onInit({ getMedia, query }) {
