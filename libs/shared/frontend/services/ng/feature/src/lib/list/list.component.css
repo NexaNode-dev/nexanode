@@ -8,5 +8,5 @@
 
 .services h2 {
   @apply text-4xl md:text-6xl mb-4 italic text-tertiary uppercase;
-  font-family: 'Archivo Black', sans-serif;;
+  font-family: 'Archivo Black', sans-serif;
 }

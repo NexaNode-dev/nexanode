@@ -8,7 +8,9 @@
     } @else if (services().length === 0) {
       <p>No services found</p>
     } @else if (services().length > 0) {
-      <nexanode-services-list-one-layout [servicesByCategory]="servicesByCategory()" />
-    } 
+      <nexanode-services-list-one-layout
+        [servicesByCategory]="servicesByCategory()"
+      />
+    }
   </section>
 </div>

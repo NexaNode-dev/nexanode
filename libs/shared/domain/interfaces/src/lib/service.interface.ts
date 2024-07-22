@@ -5,6 +5,7 @@ export interface IService {
   description?: string;
   price?: number;
   categoryId?: string;
+  featuredImage?: string;
   createdAt: Date;
   updatedAt: Date;
 }

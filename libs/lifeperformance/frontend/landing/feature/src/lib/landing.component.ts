@@ -8,7 +8,13 @@ import { NexaNodeServicesListComponent } from '@nexanode/frontend-services-ng-fe
 @Component({
   selector: 'lifeperformance-landing',
   standalone: true,
-  imports: [IntroComponent, AboutComponent, ServicesComponent, TeamComponent, NexaNodeServicesListComponent],
+  imports: [
+    IntroComponent,
+    AboutComponent,
+    ServicesComponent,
+    TeamComponent,
+    NexaNodeServicesListComponent,
+  ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
