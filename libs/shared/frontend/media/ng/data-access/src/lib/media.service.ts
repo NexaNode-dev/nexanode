@@ -13,22 +13,22 @@ export class MediaService {
 
   getMedia(query?: IQueryParams<IMedia>) {
     const queryParams = convertToHttpParams(query || {});
-    return this.http.get(this.apiUrl, { params: queryParams });
+    return this.http.get<IMedia[]>(this.apiUrl, { params: queryParams });
   }
 
   getMediaItem(id: string) {
-    return this.http.get(`${this.apiUrl}/${id}`);
+    return this.http.get<IMedia>(`${this.apiUrl}/${id}`);
   }
 
   createMedia(media: Partial<IMedia>) {
-    return this.http.post(this.apiUrl, media);
+    return this.http.post<IMedia>(this.apiUrl, media);
   }
 
   updateMedia(id: string, media: Partial<IMedia>) {
-    return this.http.put(`${this.apiUrl}/${id}`, media);
+    return this.http.patch<IMedia>(`${this.apiUrl}/${id}`, media);
   }
 
   deleteMedia(id: string) {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete<string>(`${this.apiUrl}/${id}`);
   }
 }
