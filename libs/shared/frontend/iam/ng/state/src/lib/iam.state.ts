@@ -97,6 +97,7 @@ export const authStore = signalStore(
     logout: () => {
       patchState(store, { user: null });
       localStorage.removeItem('user');
+      router.navigate(['/auth/login']);
     },
     activate: rxMethod<{ id: string; token: string }>(
       pipe(
