@@ -27,6 +27,10 @@
           {
             "glob": "**/*",
             "input": "apps/lifeperformance/admin/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/lifeperformance/frontend/src/assets"
           }
         ],
         "styles": [
