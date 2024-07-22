@@ -1,19 +1,12 @@
-.container {
+.wrapper {
   @apply bg-secondary-light text-quaternary w-full h-full flex flex-col justify-start items-center p-4;
 }
 
-.container h2 {
-  @apply text-primary-dark text-4xl font-semibold;
-}
-
 .services {
-  @apply w-full flex flex-col justify-between items-center mt-8;
+  @apply w-[90%] md:w-[60vw] md:p-8 flex flex-col justify-center items-center mx-auto;
 }
 
-.service {
-  @apply w-full flex flex-col justify-between items-center p-4;
-}
-
-.service h3 {
-  @apply text-primary-dark text-2xl font-semibold mb-4;
+.services h2 {
+  @apply text-4xl md:text-6xl mb-4 italic text-tertiary uppercase;
+  font-family: 'Archivo Black', sans-serif;;
 }

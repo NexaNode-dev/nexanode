@@ -13,7 +13,7 @@ const services = [...servicesFirst, ...servicesSecond];
 
 const meta: Meta<NexaNodeServicesListComponent> = {
   component: NexaNodeServicesListComponent,
-  title: 'ServicesListComponent',
+  title: 'NexaNodeServicesListComponent',
   parameters: {
     mockData: [
       {
