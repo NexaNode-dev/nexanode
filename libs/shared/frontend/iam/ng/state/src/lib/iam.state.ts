@@ -51,115 +51,123 @@ export const authStore = signalStore(
   withComputed((state) => ({
     isLoggedIn: computed(() => !!state.user()),
   })),
-  withMethods((store, authService = inject(AuthService), router = inject(Router)) => ({
-    register: rxMethod<IRegister>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap((registerData) =>
-          authService.register(registerData).pipe(
-            tapResponse({
-              next: (user) => patchState(store, { isRegistered: !!user }),
-              error: (error) => patchState(store, { error }),
-              finalize: () => patchState(store, { isLoading: false }),
-            }),
+  withMethods(
+    (store, authService = inject(AuthService), router = inject(Router)) => ({
+      register: rxMethod<IRegister>(
+        pipe(
+          tap(() => patchState(store, { isLoading: true })),
+          switchMap((registerData) =>
+            authService.register(registerData).pipe(
+              tapResponse({
+                next: (user) => patchState(store, { isRegistered: !!user }),
+                error: (error) => patchState(store, { error }),
+                finalize: () => patchState(store, { isLoading: false }),
+              }),
+            ),
           ),
         ),
       ),
-    ),
-    login: rxMethod<ILogin>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap((loginData) =>
-          authService.login(loginData).pipe(
-            tapResponse({
-              next: (loginResponse) => {
-                const { user, permissions } = loginResponse;
-                patchState(store, {
-                  user,
-                  ability: updateAbility(permissions),
-                });
-                localStorage.setItem(
-                  'user',
-                  JSON.stringify(loginResponse.user),
-                );
-                localStorage.setItem(
-                  'permissions',
-                  JSON.stringify(loginResponse.permissions),
-                );
-              },
-              error: (error) => patchState(store, { error }),
-              finalize: () => patchState(store, { isLoading: false }),
-            }),
+      login: rxMethod<ILogin>(
+        pipe(
+          tap(() => patchState(store, { isLoading: true })),
+          switchMap((loginData) =>
+            authService.login(loginData).pipe(
+              tapResponse({
+                next: (loginResponse) => {
+                  const { user, permissions } = loginResponse;
+                  patchState(store, {
+                    user,
+                    ability: updateAbility(permissions),
+                  });
+                  localStorage.setItem(
+                    'user',
+                    JSON.stringify(loginResponse.user),
+                  );
+                  localStorage.setItem(
+                    'permissions',
+                    JSON.stringify(loginResponse.permissions),
+                  );
+                },
+                error: (error) => patchState(store, { error }),
+                finalize: () => patchState(store, { isLoading: false }),
+              }),
+            ),
           ),
         ),
       ),
-    ),
-    logout: () => {
-      patchState(store, { user: null });
-      localStorage.removeItem('user');
-      router.navigate(['/auth/login']);
-    },
-    activate: rxMethod<{ id: string; token: string }>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap(({ id, token }) =>
-          authService.activate(id, token).pipe(
-            tapResponse({
-              next: (isActivated) => patchState(store, { isActivated }),
-              error: (error) => patchState(store, { error }),
-              finalize: () => patchState(store, { isLoading: false }),
-            }),
+      logout: () => {
+        patchState(store, { user: null });
+        localStorage.removeItem('user');
+        router.navigate(['/auth/login']);
+      },
+      activate: rxMethod<{ id: string; token: string }>(
+        pipe(
+          tap(() => patchState(store, { isLoading: true })),
+          switchMap(({ id, token }) =>
+            authService.activate(id, token).pipe(
+              tapResponse({
+                next: (isActivated) => patchState(store, { isActivated }),
+                error: (error) => patchState(store, { error }),
+                finalize: () => patchState(store, { isLoading: false }),
+              }),
+            ),
           ),
         ),
       ),
-    ),
-    forgotPassword: rxMethod<string>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap((credential) =>
-          authService.forgotPassword(credential).pipe(
-            tapResponse({
-              next: (isForgot) => patchState(store, { isForgot }),
-              error: (error) => patchState(store, { error }),
-              finalize: () => patchState(store, { isLoading: false }),
-            }),
+      forgotPassword: rxMethod<string>(
+        pipe(
+          tap(() => patchState(store, { isLoading: true })),
+          switchMap((credential) =>
+            authService.forgotPassword(credential).pipe(
+              tapResponse({
+                next: (isForgot) => patchState(store, { isForgot }),
+                error: (error) => patchState(store, { error }),
+                finalize: () => patchState(store, { isLoading: false }),
+              }),
+            ),
           ),
         ),
       ),
-    ),
-    resetPassword: rxMethod<{ token: string; password: string }>(
-      pipe(
-        tap(() => patchState(store, { isLoading: true })),
-        switchMap(({ token, password }) =>
-          authService.resetPassword(token, password).pipe(
-            tapResponse({
-              next: (isReset) => patchState(store, { isReset }),
-              error: (error) => patchState(store, { error }),
-              finalize: () => patchState(store, { isLoading: false }),
-            }),
+      resetPassword: rxMethod<{ token: string; password: string }>(
+        pipe(
+          tap(() => patchState(store, { isLoading: true })),
+          switchMap(({ token, password }) =>
+            authService.resetPassword(token, password).pipe(
+              tapResponse({
+                next: (isReset) => patchState(store, { isReset }),
+                error: (error) => patchState(store, { error }),
+                finalize: () => patchState(store, { isLoading: false }),
+              }),
+            ),
           ),
         ),
       ),
-    ),
-    canActivate(action: string, subject: string): boolean | undefined {
-      return store.ability()?.can(action, subject);
-    },
-    autoLogin: () => {
-      if (localStorage.getItem('user')) {
-        const user: IUser = JSON.parse(localStorage.getItem('user') || '');
-        console.log('user', user.loginExpires ? new Date(user.loginExpires) : null, new Date());
-        if (user.loginExpires && new Date(user.loginExpires) > new Date()) {
-          const permissions: IPermission[] = JSON.parse(localStorage.getItem('permissions') || '');
-          patchState(store, { user, ability: updateAbility(permissions) });
+      canActivate(action: string, subject: string): boolean | undefined {
+        return store.ability()?.can(action, subject);
+      },
+      autoLogin: () => {
+        if (localStorage.getItem('user')) {
+          const user: IUser = JSON.parse(localStorage.getItem('user') || '');
+          console.log(
+            'user',
+            user.loginExpires ? new Date(user.loginExpires) : null,
+            new Date(),
+          );
+          if (user.loginExpires && new Date(user.loginExpires) > new Date()) {
+            const permissions: IPermission[] = JSON.parse(
+              localStorage.getItem('permissions') || '',
+            );
+            patchState(store, { user, ability: updateAbility(permissions) });
+          } else {
+            localStorage.removeItem('user');
+            router.navigate(['/auth/login']);
+          }
         } else {
-          localStorage.removeItem('user');
           router.navigate(['/auth/login']);
         }
-      } else {
-        router.navigate(['/auth/login']);
-      }
-    },
-  })),
+      },
+    }),
+  ),
 );
 
 const updateAbility = (permissions: IPermission[]): Ability => {
