@@ -16,20 +16,45 @@ export function convertToHttpParams<T>(
   }
 
   if (queryParams.where) {
-    for (const key in queryParams.where) {
-      if (Object.prototype.hasOwnProperty.call(queryParams.where, key)) {
-        const condition = queryParams.where[key as keyof WhereCondition<T>];
-        if (typeof condition === 'object') {
-          for (const op in condition) {
-            if (Object.prototype.hasOwnProperty.call(condition, op)) {
+    if (Array.isArray(queryParams.where)) {
+      queryParams.where.forEach((whereClause, index) => {
+        for (const key in whereClause) {
+          if (Object.prototype.hasOwnProperty.call(whereClause, key)) {
+            const condition = whereClause[key as keyof WhereCondition<T>];
+            if (typeof condition === 'object') {
+              for (const op in condition) {
+                if (Object.prototype.hasOwnProperty.call(condition, op)) {
+                  httpParams = httpParams.set(
+                    `where[${index}][${key}][${op}]`,
+                    (condition as any)[op],
+                  );
+                }
+              }
+            } else {
               httpParams = httpParams.set(
-                `where[${key}][${op}]`,
-                (condition as any)[op],
+                `where[${index}][${key}]`,
+                condition as any,
               );
             }
           }
-        } else {
-          httpParams = httpParams.set(`where[${key}]`, condition as any);
+        }
+      });
+    } else {
+      for (const key in queryParams.where) {
+        if (Object.prototype.hasOwnProperty.call(queryParams.where, key)) {
+          const condition = queryParams.where[key as keyof WhereCondition<T>];
+          if (typeof condition === 'object') {
+            for (const op in condition) {
+              if (Object.prototype.hasOwnProperty.call(condition, op)) {
+                httpParams = httpParams.set(
+                  `where[${key}][${op}]`,
+                  (condition as any)[op],
+                );
+              }
+            }
+          } else {
+            httpParams = httpParams.set(`where[${key}]`, condition as any);
+          }
         }
       }
     }

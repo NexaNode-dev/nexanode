@@ -12,7 +12,7 @@ import {
   withState,
 } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { mergeMap, of, pipe, switchMap, tap } from 'rxjs';
+import { debounceTime, distinctUntilChanged, mergeMap, of, pipe, switchMap, tap } from 'rxjs';
 
 type MediaState = {
   media: IMedia[];
@@ -128,7 +128,13 @@ export const mediaStore = signalStore(
         ),
       ),
     ),
-    updateQuery: (query: IQueryParams<IMedia>) => patchState(store, { query }),
+    updateQuery: rxMethod<IQueryParams<IMedia>>(
+      pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        tap((query) => patchState(store, { query })),
+      )
+    )
   })),
   withHooks({
     onInit({ getMedia, query }) {

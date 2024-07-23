@@ -63,6 +63,7 @@ export class JwtAuth implements AuthService {
       return userWithoutPassword;
     });
   }
+  
   async login(
     login: ILogin,
   ): Promise<{ user: IUser; permissions: IPermission[] }> {

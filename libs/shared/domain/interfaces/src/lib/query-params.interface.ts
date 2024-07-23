@@ -23,7 +23,7 @@ export type OrderCondition<T> = {
 
 export interface IQueryParams<T> {
   select?: ScalarKeys<T>[];
-  where?: WhereCondition<T>;
+  where?: WhereCondition<T>[] | WhereCondition<T>;
   relations?: RelationKeys<T>[];
   order?: OrderCondition<T>;
   withDeleted?: boolean;
