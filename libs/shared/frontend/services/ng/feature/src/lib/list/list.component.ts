@@ -33,8 +33,10 @@ export class NexaNodeServicesListComponent {
       category,
       services: this.services().filter(
         (service) => service.categoryId === category.id,
-      ),
-      media: this.media(),
+      ).map((service) => ({
+        ...service,
+        media: this.media().find((media) => media.id === service.featuredImage),
+      })),
     }));
   });
   title = input<string>('Services');
