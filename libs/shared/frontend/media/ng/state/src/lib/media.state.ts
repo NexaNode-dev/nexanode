@@ -50,6 +50,8 @@ export const mediaStore = signalStore(
   withMethods((store, mediaService = inject(MediaService)) => ({
     getMedia: rxMethod<IQueryParams<IMedia>>(
       pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
         tap(() => patchState(store, { isLoading: true })),
         switchMap((query) =>
           mediaService.getMedia(query).pipe(
@@ -136,13 +138,7 @@ export const mediaStore = signalStore(
         ),
       ),
     ),
-    updateQuery: rxMethod<IQueryParams<IMedia>>(
-      pipe(
-        debounceTime(300),
-        distinctUntilChanged(),
-        tap((query) => patchState(store, { query })),
-      ),
-    ),
+    updateQuery: (query: IQueryParams<IMedia>) => patchState(store, { query }),
   })),
   withHooks({
     onInit({ getMedia, query }) {
