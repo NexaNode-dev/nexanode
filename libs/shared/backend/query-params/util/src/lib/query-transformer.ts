@@ -38,7 +38,9 @@ export function transformQueryParamsToFindOptions<T>(
   return findOptions;
 }
 
-function transformWhereCondition<T>(where: WhereCondition<T>[] | WhereCondition<T>): any {
+function transformWhereCondition<T>(
+  where: WhereCondition<T>[] | WhereCondition<T>,
+): any {
   if (Array.isArray(where)) {
     return where.map((condition) => transformSingleWhereCondition(condition));
   } else {

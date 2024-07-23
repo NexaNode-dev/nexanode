@@ -31,24 +31,27 @@ export class NexaNodeServicesListComponent {
   readonly servicesByCategory = computed(() => {
     return this.categories().map((category) => ({
       category,
-      services: this.services().filter(
-        (service) => service.categoryId === category.id,
-      ).map((service) => ({
-        ...service,
-        media: this.media().find((media) => media.id === service.featuredImage),
-      })),
+      services: this.services()
+        .filter((service) => service.categoryId === category.id)
+        .map((service) => ({
+          ...service,
+          media: this.media().find(
+            (media) => media.id === service.featuredImage,
+          ),
+        })),
     }));
   });
   title = input<string>('Services');
 
   constructor() {
-    effect(() =>
-      this.mediaStore.updateQuery({
-        where: this.services().map((service) => ({
-          id: service.featuredImage,
-        })),
-      }),
-      { allowSignalWrites: true }
+    effect(
+      () =>
+        this.mediaStore.updateQuery({
+          where: this.services().map((service) => ({
+            id: service.featuredImage,
+          })),
+        }),
+      { allowSignalWrites: true },
     );
   }
 }

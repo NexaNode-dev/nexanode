@@ -20,7 +20,6 @@ export type OrderCondition<T> = {
   [K in keyof T]?: 'ASC' | 'DESC' | OrderCondition<T[K]>;
 };
 
-
 export interface IQueryParams<T> {
   select?: ScalarKeys<T>[];
   where?: WhereCondition<T>[] | WhereCondition<T>;

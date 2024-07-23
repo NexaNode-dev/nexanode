@@ -10,7 +10,7 @@ import { uuidv7 } from 'uuidv7';
 
 @Entity('services')
 export class Service implements IService {
-  @PrimaryColumn()
+  @PrimaryColumn('uuid')
   id: string = uuidv7();
 
   @Column({ unique: true })
@@ -27,6 +27,9 @@ export class Service implements IService {
 
   @Column({ nullable: true })
   categoryId?: string;
+
+  @Column({ nullable: true })
+  featuredImage?: string;
 
   @CreateDateColumn()
   createdAt!: Date;

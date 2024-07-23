@@ -1,5 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { IMedia, IMediaStorageType, IMediaType, IPermission, IRole, IService, IUser } from '@nexanode/domain-interfaces';
+import {
+  IMedia,
+  IMediaStorageType,
+  IMediaType,
+  IPermission,
+  IRole,
+  IService,
+  IUser,
+} from '@nexanode/domain-interfaces';
 import { genSalt, hash } from 'bcrypt';
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
@@ -672,7 +680,8 @@ export class InitSeed1721393165106 implements MigrationInterface {
     );
 
     // Seed services
-    const servicesRepository = queryRunner.manager.getRepository<IService>('Service');
+    const servicesRepository =
+      queryRunner.manager.getRepository<IService>('Service');
 
     const mindBodyMasterclass = await servicesRepository.save(
       await servicesRepository.create({
@@ -700,7 +709,7 @@ export class InitSeed1721393165106 implements MigrationInterface {
         summary:
           'Sterke teams zijn de ruggengraat van succesvolle organisaties. In onze Team Dynamics Masterclass leer je hoe je een cultuur van samenwerking en synergie kunt creëren binnen je team door gebruik te maken van intermitterende prikkels zoals ademhaling, koude, warmte en voeding. Ontdek hoe je effectief kunt communiceren, conflicten kunt oplossen en elkaar kunt ondersteunen om gezamenlijke doelen te bereiken. Tijdens deze masterclass wordt er ook gekookt voor de deelnemers, zodat je een lunch krijgt die aansluit bij wat je leert, wat zorgt voor een complete ervaring. Deze masterclass biedt hands-on oefeningen en teambuildingactiviteiten om de banden te versterken en de prestaties van je team te verbeteren, zowel op de werkvloer als daarbuiten.',
         categoryId: masterclasses.id,
-        featuredImage: masterclass3.id
+        featuredImage: masterclass3.id,
       }),
     );
 
@@ -710,7 +719,7 @@ export class InitSeed1721393165106 implements MigrationInterface {
         summary:
           'Duik in een halve dag vol avontuurlijke uitdagingen en verrijkende activiteiten om de samenwerking en teamgeest te versterken. Deze sessie omvat een ademhalingssessie voor focus en verbinding, spannende sportieve teamuitdagingen en een gezonde lunch. Maak je klaar om te groeien als team terwijl je jezelf uitdaagt en nieuwe hoogten bereikt.',
         categoryId: teambuildings.id,
-        featuredImage: teambuilding1.id
+        featuredImage: teambuilding1.id,
       }),
     );
 
@@ -720,7 +729,7 @@ export class InitSeed1721393165106 implements MigrationInterface {
         summary:
           'Neem deel aan een volledige dag vol avontuur en teamwork, met alles wat de Adventure Boost biedt, plus extra individuele uitdagingen. Naast de ademhalingssessie, sportieve teamuitdagingen en gezonde lunch, zullen individuele uitdagingen met intermitterende prikkels zoals koude en warmte je team tot het uiterste testen. Ontdek nieuwe grenzen, bouw vertrouwen op en versterk de banden die je team onverslaanbaar maken.',
         categoryId: teambuildings.id,
-        featuredImage: teambuilding2.id
+        featuredImage: teambuilding2.id,
       }),
     );
   }
@@ -735,5 +744,3 @@ export class InitSeed1721393165106 implements MigrationInterface {
       .delete({});
   }
 }
-
-
