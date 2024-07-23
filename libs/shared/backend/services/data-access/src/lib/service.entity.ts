@@ -29,7 +29,7 @@ export class Service implements IService {
   categoryId?: string;
 
   @Column({ nullable: true })
-  featuredImage?: string;
+  featuredImageId?: string;
 
   @CreateDateColumn()
   createdAt!: Date;

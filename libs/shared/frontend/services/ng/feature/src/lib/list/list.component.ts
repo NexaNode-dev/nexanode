@@ -35,8 +35,8 @@ export class NexaNodeServicesListComponent {
         .filter((service) => service.categoryId === category.id)
         .map((service) => ({
           ...service,
-          media: this.media().find(
-            (media) => media.id === service.featuredImage,
+          featuredImage: this.media().find(
+            (media) => media.id === service.featuredImageId,
           ),
         })),
     }));
@@ -48,7 +48,7 @@ export class NexaNodeServicesListComponent {
       () =>
         this.mediaStore.updateQuery({
           where: this.services().map((service) => ({
-            id: service.featuredImage,
+            id: service.featuredImageId,
           })),
         }),
       { allowSignalWrites: true },

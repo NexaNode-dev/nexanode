@@ -80,7 +80,7 @@ export class Init1721393113528 implements MigrationInterface {
                 "description" character varying,
                 "price" integer,
                 "category_id" character varying,
-                "featured_image" character varying,
+                "featured_image_id" character varying,
                 "created_at" TIMESTAMP NOT NULL DEFAULT now(),
                 "updated_at" TIMESTAMP NOT NULL DEFAULT now(),
                 CONSTRAINT "UQ_7806a14d42c3244064b4a1706ca" UNIQUE ("name"),

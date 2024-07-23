@@ -1,3 +1,5 @@
+import { IMedia } from "./media.interface";
+
 export interface IService {
   id: string;
   name: string;
@@ -5,7 +7,8 @@ export interface IService {
   description?: string;
   price?: number;
   categoryId?: string;
-  featuredImage?: string;
+  featuredImageId?: string;
+  featuredImage?: IMedia;
   createdAt: Date;
   updatedAt: Date;
 }
