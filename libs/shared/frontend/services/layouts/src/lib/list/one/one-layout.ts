@@ -98,6 +98,12 @@ export class OneServicesLayout extends LitElement {
                 html`<li>
                   <h4>${service.name}</h4>
                   <p>${service.summary}</p>
+                  ${service.featuredImage
+                    ? html`<img
+                        src="${service.featuredImage.url}"
+                        alt="${service.featuredImage.name}"
+                      />`
+                    : ''}
                 </li>`,
             )}
           </ul>
