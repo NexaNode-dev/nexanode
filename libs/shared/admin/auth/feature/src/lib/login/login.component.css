@@ -4,6 +4,10 @@ mat-card {
   margin: 2rem auto;
 }
 
+img {
+  margin: 0 auto;
+}
+
 form {
   display: flex;
   flex-direction: column;

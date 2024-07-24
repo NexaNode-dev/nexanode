@@ -63,6 +63,7 @@ export class JwtAuth implements AuthService {
       return userWithoutPassword;
     });
   }
+
   async login(
     login: ILogin,
   ): Promise<{ user: IUser; permissions: IPermission[] }> {
@@ -116,7 +117,8 @@ export class JwtAuth implements AuthService {
         permissions,
       });
       user.loginExpires = new Date(
-        Date.now() + parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10) * 1000,
+        Date.now() +
+          parseInt(process.env['JWT_EXPIRES_IN'] || '6000', 10) * 1000,
       );
       await usersRepository.updateUser(user.id, { ...user });
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
