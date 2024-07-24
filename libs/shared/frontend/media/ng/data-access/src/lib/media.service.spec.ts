@@ -76,7 +76,7 @@ describe('MediaService', () => {
       const req = httpController.expectOne(
         `/api/media/${expectedMediaItem.id}`,
       );
-      expect(req.request.method).toBe('PUT');
+      expect(req.request.method).toBe('PATCH');
       req.flush(expectedMediaItem);
     });
   });
