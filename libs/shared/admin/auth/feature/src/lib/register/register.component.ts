@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+} from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -10,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
 import { IRegister } from '@nexanode/domain-interfaces';
 import { authStore } from '@nexanode/frontend-iam-ng-state';
 import { bootstrapEye, bootstrapEyeSlash } from '@ng-icons/bootstrap-icons';
@@ -39,6 +45,7 @@ type RegisterForm = {
 export class NexaNodeAdminAuthRegisterComponent {
   private readonly store = inject(authStore);
   private readonly fb = inject(FormBuilder);
+  private readonly router = inject(Router);
   readonly isLoading = this.store.isLoading;
   readonly error = this.store.error;
   readonly isRegistered = this.store.isRegistered;
@@ -62,6 +69,10 @@ export class NexaNodeAdminAuthRegisterComponent {
       ],
     },
   );
+
+  constructor() {
+    effect(() => this.store.isLoggedIn() && this.router.navigate(['/']));
+  }
 
   onSubmit() {
     if (this.registerForm.valid) {

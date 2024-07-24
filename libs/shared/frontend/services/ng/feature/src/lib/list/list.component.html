@@ -1,6 +1,6 @@
-<div class="container">
-  <h2>{{ title() }}</h2>
+<div class="wrapper">
   <section class="services">
+    <h2>{{ title() }}</h2>
     @if (isLoading()) {
       <p>Loading...</p>
     } @else if (error()) {
@@ -8,20 +8,9 @@
     } @else if (services().length === 0) {
       <p>No services found</p>
     } @else if (services().length > 0) {
-      <!-- @for (item of servicesByCategory(); track item.category.id) {
-        <h2>{{ item.category.name }}</h2>
-        <p>{{ item.category.description }}</p>
-        @for (service of item.services; track service.categoryId) {
-          <div class="service">
-            <h3>{{ service.name }}</h3>
-            <p>{{ service.summary }}</p>
-            @if (service.price) {
-              <p>Price: {{ service.price }}</p>
-            }
-          </div>
-        }
-      } -->
-      <one-layout [servicesByCategory]="servicesByCategory()"></one-layout>
-    } 
+      <nexanode-services-list-one-layout
+        [servicesByCategory]="servicesByCategory()"
+      />
+    }
   </section>
 </div>

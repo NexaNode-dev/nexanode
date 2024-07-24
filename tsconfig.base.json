@@ -209,6 +209,12 @@
       "@nexanode/frontend-markdown-util-pipe": [
         "libs/shared/frontend/markdown/util/pipe/src/index.ts"
       ],
+      "@nexanode/frontend-media-ng-data-access": [
+        "libs/shared/frontend/media/ng/data-access/src/index.ts"
+      ],
+      "@nexanode/frontend-media-ng-state": [
+        "libs/shared/frontend/media/ng/state/src/index.ts"
+      ],
       "@nexanode/frontend-nexanode-landing-feature": [
         "libs/nexanode/frontend/landing/feature/src/index.ts"
       ],

@@ -3,11 +3,13 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   input,
 } from '@angular/core';
 import { servicesStore } from '@nexanode/frontend-services-ng-state';
 import '@nexanode/frontend-services-layouts';
+import { mediaStore } from '@nexanode/frontend-media-ng-state';
 
 @Component({
   selector: 'nexanode-services-list',
@@ -20,17 +22,36 @@ import '@nexanode/frontend-services-layouts';
 })
 export class NexaNodeServicesListComponent {
   private readonly store = inject(servicesStore);
+  private readonly mediaStore = inject(mediaStore);
   readonly services = this.store.services;
   readonly categories = this.store.categories;
   readonly isLoading = this.store.isLoading;
   readonly error = this.store.error;
+  readonly media = this.mediaStore.media;
   readonly servicesByCategory = computed(() => {
     return this.categories().map((category) => ({
       category,
-      services: this.services().filter(
-        (service) => service.categoryId === category.id,
-      ),
+      services: this.services()
+        .filter((service) => service.categoryId === category.id)
+        .map((service) => ({
+          ...service,
+          featuredImage: this.media().find(
+            (media) => media.id === service.featuredImageId,
+          ),
+        })),
     }));
   });
   title = input<string>('Services');
+
+  constructor() {
+    effect(
+      () =>
+        this.mediaStore.updateQuery({
+          where: this.services().map((service) => ({
+            id: service.featuredImageId,
+          })),
+        }),
+      { allowSignalWrites: true },
+    );
+  }
 }

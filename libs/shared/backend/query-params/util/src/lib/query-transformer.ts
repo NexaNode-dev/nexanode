@@ -38,7 +38,17 @@ export function transformQueryParamsToFindOptions<T>(
   return findOptions;
 }
 
-function transformWhereCondition<T>(where: WhereCondition<T>): any {
+function transformWhereCondition<T>(
+  where: WhereCondition<T>[] | WhereCondition<T>,
+): any {
+  if (Array.isArray(where)) {
+    return where.map((condition) => transformSingleWhereCondition(condition));
+  } else {
+    return transformSingleWhereCondition(where);
+  }
+}
+
+function transformSingleWhereCondition<T>(where: WhereCondition<T>): any {
   const transformedWhere: any = {};
 
   for (const key in where) {
