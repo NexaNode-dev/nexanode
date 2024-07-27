@@ -17,7 +17,7 @@ export type WhereCondition<T> = {
 export type OrderDirection = 'ASC' | 'DESC';
 
 export type OrderCondition<T> = {
-  [K in keyof T]?: 'ASC' | 'DESC' | OrderCondition<T[K]>;
+  [K in keyof T]?: OrderDirection | OrderCondition<T[K]>;
 };
 
 export interface IQueryParams<T> {
