@@ -18,6 +18,7 @@ export interface IBooking {
   country?: string;
   units: number;
   notes?: string;
+  paymentId?: string;
   createdAt: Date;
   updatedAt: Date;
 }
