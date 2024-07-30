@@ -102,6 +102,9 @@ describe('BookingsService', () => {
   });
   describe('initBookingPayment', () => {
     it('should return payment', async () => {
+      if (!mockEvent.price) {
+        mockEvent.price = 100;
+      }
       const payment = await service.initBookingPayment(expectedBooking.id);
       expect(payment).toBeDefined();
     });
