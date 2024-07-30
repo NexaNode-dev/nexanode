@@ -1,24 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { ListComponent } from './list.component';
+import { NexanodeEventsListComponent } from './list.component';
 
-import { within } from '@storybook/test';
-import { expect } from '@storybook/test';
+const events = eventsFactory();
 
-const meta: Meta<ListComponent> = {
-  component: ListComponent,
-  title: 'ListComponent',
+import { eventsFactory } from '@nexanode/testing-data-mocks-utils';
+
+const meta: Meta<NexanodeEventsListComponent> = {
+  component: NexanodeEventsListComponent,
+  title: 'NexanodeEventsListComponent',
+  parameters: {
+    mockData: [
+      {
+        url: '/api/events',
+        method: 'GET',
+        response: events,
+        status: 200,
+        delay: 1000,
+      },
+    ],
+  },
 };
 export default meta;
-type Story = StoryObj<ListComponent>;
+type Story = StoryObj<NexanodeEventsListComponent>;
 
 export const Primary: Story = {
   args: {},
 };
 
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/list works!/gi)).toBeTruthy();
+export const CustomTitle: Story = {
+  args: {
+    title: 'Aankomende Evenementen',
   },
 };

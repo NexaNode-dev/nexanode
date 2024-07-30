@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DetailComponent } from './detail.component';
+import { NexanodeEventsDetailComponent } from './detail.component';
 import { provideHttpClient } from '@angular/common/http';
 import { ComponentRef } from '@angular/core';
 
-describe('DetailComponent', () => {
-  let component: DetailComponent;
-  let fixture: ComponentFixture<DetailComponent>;
-  let componentRef: ComponentRef<DetailComponent>;
+describe('NexanodeEventsDetailComponent', () => {
+  let component: NexanodeEventsDetailComponent;
+  let fixture: ComponentFixture<NexanodeEventsDetailComponent>;
+  let componentRef: ComponentRef<NexanodeEventsDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DetailComponent],
+      imports: [NexanodeEventsDetailComponent],
       providers: [provideHttpClient()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DetailComponent);
+    fixture = TestBed.createComponent(NexanodeEventsDetailComponent);
     component = fixture.componentInstance;
     componentRef = fixture.componentRef;
     componentRef.setInput('id', '1');

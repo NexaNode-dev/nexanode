@@ -1,1 +1,47 @@
-<p>list works!</p>
+<div class="wrapper">
+  <section class="events">
+    @if (isLoading()) {
+      <p>Loading...</p>
+    } @else if (error()) {
+      <p>Error: {{ error() }}</p>
+    } @else {
+      <h2>{{ title() }}</h2>
+      @for (event of events(); track event.id) {
+        <article class="event">
+          <div class="header">
+            <h3>{{ event.name }}</h3>
+            <p>
+              @if (event.to) {
+                <span
+                  ><ng-icon name="bootstrapCalendarEvent" />{{
+                    event.from | date: 'yyyy-mm-dd HH:MM'
+                  }}
+                  - {{ event.to | date: 'yyyy-mm-dd HH:MM' }}</span
+                >
+              } @else {
+                <span
+                  ><ng-icon name="bootstrapCalendarEvent" />{{
+                    event.from | date: 'yyyy-mm-dd HH:MM'
+                  }}</span
+                >
+              }
+              <span><ng-icon name="bootstrapMap" />{{ event.location }}</span>
+              @if (event.price) {
+                <span
+                  ><ng-icon name="bootstrapCashStack" />{{
+                    event.price | currency: 'EUR'
+                  }}</span
+                >
+              }
+            </p>
+          </div>
+          <p>{{ event.description }}</p>
+          <button [routerLink]="event.id">Learn more...</button>
+          <button>Book tickets</button>
+        </article>
+      } @empty {
+        <p>No upcoming events found</p>
+      }
+    }
+  </section>
+</div>

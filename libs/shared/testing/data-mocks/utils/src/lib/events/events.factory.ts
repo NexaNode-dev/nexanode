@@ -5,18 +5,20 @@ export const eventFactory = (options: Partial<IEvent> = {}): IEvent => {
   const recurring = faker.datatype.boolean();
   const event = {
     id: faker.string.uuid(),
-    name: faker.lorem.words(),
-    description: faker.lorem.sentence(),
+    name: faker.lorem.sentence(),
+    description: faker.lorem.paragraphs(),
     from: faker.date.soon(),
     to: faker.datatype.boolean() ? faker.date.future() : undefined,
-    location: faker.location.city(),
+    location: `${faker.location.city()}, ${faker.location.country()}`,
     units: faker.number.int({ min: 1, max: 20 }),
     unitType: faker.helpers.arrayElement(['table', 'seat', 'person']) as
       | 'table'
       | 'seat'
       | 'person',
     unitCapacity: faker.number.int({ min: 1, max: 10 }),
-    price: faker.number.float({ min: 5, max: 500 }),
+    price: faker.datatype.boolean()
+      ? faker.number.float({ min: 5, max: 500 })
+      : undefined,
     serviceId: faker.string.uuid(),
     recurring,
     interval: recurring ? faker.number.int({ min: 1, max: 5 }) : undefined,
