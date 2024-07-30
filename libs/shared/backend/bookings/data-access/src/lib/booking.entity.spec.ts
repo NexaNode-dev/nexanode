@@ -11,11 +11,15 @@ describe('Booking', () => {
       eventId: faker.string.uuid(),
       status: 'pending',
       userId: faker.string.uuid(),
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
     });
     expect(booking).toHaveProperty('id');
     expect(booking).toHaveProperty('reference');
     expect(booking).toHaveProperty('eventId');
     expect(booking).toHaveProperty('status');
     expect(booking).toHaveProperty('userId');
+    expect(booking).toHaveProperty('name');
+    expect(booking).toHaveProperty('email');
   });
 });

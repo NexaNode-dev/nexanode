@@ -25,6 +25,51 @@ export class Booking implements IBooking {
   @Column({ nullable: true })
   userId?: string;
 
+  @Column()
+  name!: string;
+
+  @Column()
+  email!: string;
+
+  @Column({ nullable: true })
+  phone?: string;
+
+  @Column({ nullable: true })
+  contactName?: string;
+
+  @Column({ nullable: true })
+  contactEmail?: string;
+
+  @Column({ nullable: true })
+  contactPhone?: string;
+
+  @Column({ nullable: true })
+  addressLine1?: string;
+
+  @Column({ nullable: true })
+  addressLine2?: string;
+
+  @Column({ nullable: true })
+  city?: string;
+
+  @Column({ nullable: true })
+  state?: string;
+
+  @Column({ nullable: true })
+  postalCode?: string;
+
+  @Column({ nullable: true })
+  country?: string;
+
+  @Column()
+  units!: number;
+
+  @Column({ type: 'text', nullable: true })
+  notes?: string | undefined;
+
+  @Column({ nullable: true })
+  paymentId?: string | undefined;
+
   @CreateDateColumn()
   createdAt!: Date;
 
