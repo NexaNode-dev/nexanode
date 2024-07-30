@@ -17,9 +17,6 @@
     },
     {
       "path": "./tsconfig.spec.json"
-    },
-    {
-      "path": "./.storybook/tsconfig.base.json"
     }
   ],
   "extends": "../../../../../tsconfig.base.json",

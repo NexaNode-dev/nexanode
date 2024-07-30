@@ -10,51 +10,51 @@ const preview: Preview = {
   parameters: {
     cssprops: {
       'primary-light': {
-        value: '#5da6e5',
+        value: '#4a8ec3',
         control: 'color',
       },
       primary: {
-        value: '#2c82c9',
+        value: '#2374ab',
         control: 'color',
       },
       'primary-dark': {
-        value: '#1a5d9c',
+        value: '#b5c85',
         control: 'color',
       },
       'secondary-light': {
-        value: '#e5c8e5',
+        value: '#ffbf33',
         control: 'color',
       },
       secondary: {
-        value: '#c8a2c8',
+        value: '#ffaa00',
         control: 'color',
       },
       'secondary-dark': {
-        value: '#a078a0',
+        value: '#cc8800',
         control: 'color',
       },
       'tertiary-light': {
-        value: '#5ec768',
+        value: '#ffffff',
         control: 'color',
       },
       tertiary: {
-        value: '#28a745',
+        value: '#f1f3f5',
         control: 'color',
       },
       'tertiary-dark': {
-        value: '#1b6e30',
+        value: '#dde1e5',
         control: 'color',
       },
       'quaternary-light': {
-        value: '#ffa64d',
+        value: '#3a5278',
         control: 'color',
       },
       quaternary: {
-        value: '#ff8c00',
+        value: '#1e3a5f',
         control: 'color',
       },
       'quaternary-dark': {
-        value: '#cc6e00',
+        value: '#142641',
         control: 'color',
       },
     },

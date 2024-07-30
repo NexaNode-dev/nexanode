@@ -1,0 +1,26 @@
+.wrapper {
+  @apply bg-secondary py-52 flex items-center justify-center;
+}
+
+.event {
+  @apply w-[70vw] md:w-1/2 mx-auto p-4 md:p-8 my-4 bg-primary text-tertiary-dark rounded shadow-md shadow-quaternary-light;
+}
+.event h2 {
+  @apply text-3xl md:text-5xl text-center mb-12;
+}
+
+.event .header {
+  @apply flex justify-end items-center mb-8;
+}
+
+.event .header span:not(:last-child) {
+  @apply mr-2;
+}
+
+.event button {
+  @apply bg-tertiary text-primary p-2 rounded mt-4 mx-1;
+}
+
+ng-icon {
+  @apply mr-1;
+}
