@@ -170,7 +170,7 @@
       "@nexanode/frontend-events-ng-data-access": [
         "libs/shared/frontend/events/ng/data-access/src/index.ts"
       ],
-      "@nexanode/frontend-events-ng-feature ": [
+      "@nexanode/frontend-events-ng-feature": [
         "libs/shared/frontend/events/ng/feature/src/index.ts"
       ],
       "@nexanode/frontend-events-ng-state": [

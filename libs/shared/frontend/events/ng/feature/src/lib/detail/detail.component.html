@@ -1,1 +1,38 @@
-<p>detail works!</p>
+<div class="wrapper">
+  <section class="event">
+    @if (isLoading()) {
+      <p>Loading...</p>
+    } @else if (error()) {
+      <p>Error: {{ error() }}</p>
+    } @else {
+      <h2>{{ event()?.name }}</h2>
+      <div class="header">
+        @if (event()?.to) {
+          <span
+            ><ng-icon name="bootstrapCalendarEvent" />{{
+              event()?.from | date: 'yyyy-mm-dd HH:MM'
+            }}
+            - {{ event()?.to | date: 'yyyy-mm-dd HH:MM' }}</span
+          >
+        } @else {
+          <span
+            ><ng-icon name="bootstrapCalendarEvent" />{{
+              event()?.from | date: 'yyyy-mm-dd HH:MM'
+            }}</span
+          >
+        }
+        <span><ng-icon name="bootstrapMap" />{{ event()?.location }}</span>
+        @if (event()?.price) {
+          <span
+            ><ng-icon name="bootstrapCashStack" />{{
+              event()?.price | currency: 'EUR'
+            }}</span
+          >
+        }
+        <span><ng-icon name="bootstrapPeople" />{{ capacity() }}</span>
+      </div>
+      <p>{{ event()?.description }}</p>
+      <button>Book tickets</button>
+    }
+  </section>
+</div>
