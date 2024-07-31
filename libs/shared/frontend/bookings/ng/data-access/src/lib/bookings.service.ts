@@ -8,7 +8,7 @@ import { convertToHttpParams } from '@nexanode/frontend-http-params-util';
   providedIn: 'root',
 })
 export class BookingsService {
-  private apiUrl = 'api/bookings';
+  private apiUrl = '/api/bookings';
 
   constructor(private readonly http: HttpClient) {}
 
