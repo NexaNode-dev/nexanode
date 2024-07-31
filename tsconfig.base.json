@@ -155,6 +155,9 @@
       "@nexanode/frontend-bookings-ng-data-access": [
         "libs/shared/frontend/bookings/ng/data-access/src/index.ts"
       ],
+      "@nexanode/frontend-bookings-ng-state": [
+        "libs/shared/frontend/bookings/ng/state/src/index.ts"
+      ],
       "@nexanode/frontend-contacts-ng-data-access": [
         "libs/shared/frontend/contacts/ng/data-access/src/index.ts"
       ],

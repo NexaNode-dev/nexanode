@@ -21,11 +21,11 @@ export class BookingsService {
     return this.http.get<IBooking>(`${this.apiUrl}/${id}`);
   }
 
-  createBooking(booking: IBooking) {
+  createBooking(booking: Partial<IBooking>) {
     return this.http.post<IBooking>(this.apiUrl, booking);
   }
 
-  updateBooking(id: string, booking: IBooking) {
+  updateBooking(id: string, booking: Partial<IBooking>) {
     return this.http.patch<IBooking>(`${this.apiUrl}/${id}`, booking);
   }
 
