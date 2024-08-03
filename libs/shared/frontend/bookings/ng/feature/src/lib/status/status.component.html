@@ -1,0 +1,35 @@
+<div class="wrapper">
+  @if (isLoading()) {
+    <span class="badge badge-secondary">Loading...</span>
+  } @else {
+    @switch (booking()?.status) {
+      @case ('pending') {
+        <div class="alert alert-warning" role="alert">
+          <h4 class="alert-heading">Payment Required</h4>
+          <p>
+            Your booking is pending payment. You will be redirected to the
+            payment page shortly.
+          </p>
+        </div>
+      }
+      @case ('confirmed') {
+        <div class="alert alert-success">
+          <h4 class="alert-heading">Confirmed</h4>
+          <p>Your booking is confirmed. We look forward to seeing you soon.</p>
+        </div>
+      }
+      @case ('cancelled') {
+        <div class="alert alert-danger" role="alert">
+          <h4 class="alert-heading">Cancelled</h4>
+          <p>
+            Your booking has been cancelled. Please contact us if you have any
+            questions.
+          </p>
+        </div>
+      }
+      @default {
+        <span class="badge badge-secondary">Unknown</span>
+      }
+    }
+  }
+</div>

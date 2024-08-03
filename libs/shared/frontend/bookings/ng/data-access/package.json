@@ -4,7 +4,6 @@
   "peerDependencies": {
     "@angular/common": "^18.0.0",
     "@angular/core": "^18.0.0",
-    "@mollie/api-client": "^3.7.0",
     "@nexanode/domain-interfaces": "0.1.0",
     "@nexanode/frontend-http-params-util": "0.0.1"
   },

@@ -1,0 +1,7 @@
+.wrapper {
+  @apply bg-primary text-secondary p-8 w-full min-h-screen flex flex-col justify-center items-center;
+}
+
+.alert {
+  @apply bg-secondary text-primary rounded-md shadow-md p-20;
+}

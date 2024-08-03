@@ -39,12 +39,12 @@ export const bookingsStore = signalStore(
       state.bookings().find((b) => b.id === state.selectedId()),
     ),
   })),
-  withMethods((store, bookingsServoce = inject(BookingsService)) => ({
+  withMethods((store, bookingsService = inject(BookingsService)) => ({
     getBookings: rxMethod<IQueryParams<IBooking>>(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((query) =>
-          bookingsServoce.getBookings(query).pipe(
+          bookingsService.getBookings(query).pipe(
             tapResponse({
               next: (bookings) => patchState(store, { bookings }),
               error: (error) => patchState(store, { error }),
@@ -64,7 +64,7 @@ export const bookingsStore = signalStore(
               patchState(store, { selectedId: booking.id, isLoading: false }),
             );
           } else {
-            return bookingsServoce.getBooking(id).pipe(
+            return bookingsService.getBooking(id).pipe(
               tapResponse({
                 next: (booking) =>
                   patchState(store, (state) => ({
@@ -83,7 +83,7 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((booking) =>
-          bookingsServoce.createBooking(booking).pipe(
+          bookingsService.createBooking(booking).pipe(
             tapResponse({
               next: (booking) =>
                 patchState(store, (state) => ({
@@ -101,7 +101,7 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap(({ id, booking }) =>
-          bookingsServoce.updateBooking(id, booking).pipe(
+          bookingsService.updateBooking(id, booking).pipe(
             tapResponse({
               next: (booking) =>
                 patchState(store, (state) => ({
@@ -121,7 +121,7 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         concatMap((id) =>
-          bookingsServoce.deleteBooking(id).pipe(
+          bookingsService.deleteBooking(id).pipe(
             tapResponse({
               next: () =>
                 patchState(store, (state) => ({
@@ -139,9 +139,9 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((id) =>
-          bookingsServoce.payBooking(id).pipe(
+          bookingsService.payBooking(id).pipe(
             tapResponse({
-              next: () => patchState(store, { isLoading: false }),
+              next: (paymentUrl) => (document.location.href = paymentUrl),
               error: (error) => patchState(store, { error }),
               finalize: () => patchState(store, { isLoading: false }),
             }),
@@ -153,7 +153,7 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap((id) =>
-          bookingsServoce.cancelBooking(id).pipe(
+          bookingsService.cancelBooking(id).pipe(
             tapResponse({
               next: (booking) =>
                 patchState(store, (state) => ({
@@ -172,7 +172,7 @@ export const bookingsStore = signalStore(
       pipe(
         tap(() => patchState(store, { isLoading: true })),
         switchMap(({ id, paymentId }) =>
-          bookingsServoce.confirmBooking(id, paymentId).pipe(
+          bookingsService.confirmBooking(id, paymentId).pipe(
             tapResponse({
               next: (booking) =>
                 patchState(store, (state) => ({
@@ -189,6 +189,14 @@ export const bookingsStore = signalStore(
     ),
     updateQuery(query: IQueryParams<IBooking>) {
       patchState(store, { query });
+    },
+    getBookingUnitsForEvent(eventId: string) {
+      return store.bookings().reduce((acc, booking) => {
+        if (booking.eventId === eventId) {
+          acc += booking.units;
+        }
+        return acc;
+      }, 0);
     },
   })),
   withHooks({
