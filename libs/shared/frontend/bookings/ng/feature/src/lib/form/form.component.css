@@ -1,0 +1,36 @@
+.wrapper {
+  @apply bg-primary text-secondary;
+}
+
+.booking {
+  @apply flex flex-col items-center justify-center p-8 md:p-12;
+}
+
+.booking h2 {
+  @apply text-3xl md:text-5xl mb-8;
+}
+
+.booking form {
+  @apply w-full max-w-2xl text-tertiary;
+}
+
+.booking form .form-group {
+  @apply w-full flex flex-col items-start justify-start;
+}
+
+.booking form .form-group label {
+  @apply text-xl mb-2;
+}
+
+.booking form input,
+.booking form textarea {
+  @apply w-full p-2 mb-4 rounded-md border-solid border-2 border-tertiary;
+}
+
+.booking form button {
+  @apply bg-tertiary text-primary p-2 rounded-md w-full;
+}
+
+.booking form button:disabled {
+  @apply bg-neutral-200 text-neutral-500;
+}

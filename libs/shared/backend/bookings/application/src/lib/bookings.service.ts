@@ -63,7 +63,7 @@ export class BookingsService {
       throw new BadRequestException('Event is free');
     }
     const payment = await this.paymentsService.initializePayment({
-      amount: event.price,
+      amount: event.price * booking.units,
       description: `Booking for ${event.name} ${event.from}`,
     });
 

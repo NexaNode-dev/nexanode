@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Payment } from '@mollie/api-client';
 import { IBooking, IQueryParams } from '@nexanode/domain-interfaces';
 import { convertToHttpParams } from '@nexanode/frontend-http-params-util';
 
@@ -34,7 +33,7 @@ export class BookingsService {
   }
 
   payBooking(id: string) {
-    return this.http.post<Payment>(`${this.apiUrl}/${id}/pay`, null);
+    return this.http.post<string>(`${this.apiUrl}/${id}/pay`, null);
   }
 
   cancelBooking(id: string) {
