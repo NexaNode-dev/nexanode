@@ -15,7 +15,7 @@ header .header {
 }
 
 .header-nav h1 {
-  @apply text-3xl lg:text-8xl mt-10 lg:mt-0 lg:ml-12 text-primary;
+  @apply text-3xl lg:text-8xl mt-10 lg:mt-0 lg:ml-12 mb-4 lg:mb-12 text-primary;
   font-family: 'Great Vibes', cursive;
 }
 
