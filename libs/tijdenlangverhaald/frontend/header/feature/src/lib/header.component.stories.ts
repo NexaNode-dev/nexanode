@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { HeaderComponent } from './header.component';
+import { TijdenlangHeaderComponent } from './header.component';
 
-const meta: Meta<HeaderComponent> = {
-  component: HeaderComponent,
+const meta: Meta<TijdenlangHeaderComponent> = {
+  component: TijdenlangHeaderComponent,
   title: 'TijdenlangHeaderComponent',
 };
 export default meta;
-type Story = StoryObj<HeaderComponent>;
+type Story = StoryObj<TijdenlangHeaderComponent>;
 
 export const Primary: Story = {
   args: {},
