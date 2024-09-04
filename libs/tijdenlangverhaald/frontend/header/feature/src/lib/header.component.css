@@ -46,4 +46,3 @@ header .header {
 .header-nav nav ul li a:hover {
   @apply text-tertiary;
 }
-

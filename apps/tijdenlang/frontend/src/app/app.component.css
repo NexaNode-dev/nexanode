@@ -1,0 +1,48 @@
+main {
+  @apply flex flex-col items-start justify-start h-full w-[80vw] mx-auto p-8;
+}
+
+.intro {
+  @apply p-4
+}
+
+.intro h1 {
+  @apply text-6xl mb-8;
+  font-family: 'Great Vibes', cursive;
+}
+
+.intro article {
+  @apply bg-secondary rounded-lg p-4 text-2xl mt-8;
+}
+
+.intro article p {
+  @apply m-2;
+}
+
+.services {
+  @apply p-4;
+}
+
+.services h2 {
+  @apply text-4xl mb-6;
+}
+
+.services ul {
+  @apply grid grid-cols-1 gap-4 w-full p-4 mb-4;
+}
+
+.services li {
+  @apply p-4 bg-secondary rounded-lg;
+}
+
+.services li h3 {
+  @apply text-2xl;
+}
+
+.about {
+  @apply p-4;
+}
+
+.about p {
+  @apply text-xl mb-4;
+}

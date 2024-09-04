@@ -31,7 +31,10 @@
             "output": "/assets/"
           }
         ],
-        "styles": ["apps/tijdenlang/frontend/src/styles.css"],
+        "styles": [
+          "@fontsource/roboto",
+          "apps/tijdenlang/frontend/src/styles.css"
+        ],
         "scripts": []
       },
       "configurations": {
