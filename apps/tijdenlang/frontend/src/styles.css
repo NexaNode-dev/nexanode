@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #076b6b;
+  --secondary: #f8c3b3;
+  --tertiary: #fdf5eb;
+  --quaternary: #404040;
+}
