@@ -32,7 +32,7 @@
           }
         ],
         "styles": [
-          "@fontsource/roboto",
+          "@fontsource/roboto/index.css",
           "apps/tijdenlang/frontend/src/styles.css"
         ],
         "scripts": []
