@@ -1,5 +1,5 @@
 header {
-  @apply bg-pink-100 lg:p-12;
+  @apply bg-secondary lg:p-12;
 }
 
 header .header {
@@ -15,12 +15,12 @@ header .header {
 }
 
 .header-nav h1 {
-  @apply text-3xl lg:text-8xl mt-10 lg:mt-0 lg:ml-12 text-teal-600;
+  @apply text-3xl lg:text-8xl mt-10 lg:mt-0 lg:ml-12 mb-4 lg:mb-12 text-primary;
   font-family: 'Great Vibes', cursive;
 }
 
 .header-nav h1 a {
-  @apply no-underline text-teal-600;
+  @apply no-underline text-primary;
 }
 
 .header-nav nav {
@@ -32,18 +32,17 @@ header .header {
 }
 
 .header-nav nav ul li {
-  @apply text-xl lg:text-4xl py-2 px-4 w-full lg:w-auto text-center lg:text-left rounded-xl border border-solid border-teal-600 mb-2 lg:mb-0 bg-yellow-50;
+  @apply text-xl lg:text-4xl py-2 px-4 w-full lg:w-auto text-center lg:text-left rounded-xl border border-solid border-primary mb-2 lg:mb-0 bg-tertiary;
 }
 
 .header-nav nav ul li:hover {
-  @apply bg-teal-600;
-  @apply text-yellow-50;
+  @apply bg-primary text-tertiary;
 }
 
 .header-nav nav ul li a {
-  @apply no-underline text-teal-600;
+  @apply no-underline text-primary;
 }
 
 .header-nav nav ul li a:hover {
-  @apply text-yellow-50;
+  @apply text-tertiary;
 }
