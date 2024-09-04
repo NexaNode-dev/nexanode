@@ -1,0 +1,24 @@
+footer {
+  @apply bg-primary text-tertiary w-full p-16;
+}
+
+footer .footer {
+  @apply w-full lg:w-[70vw] mx-auto py-4 flex justify-between;
+}
+
+footer .footer h2 {
+  @apply text-5xl mb-4;
+  font-family: 'Great Vibes', cursive;
+}
+
+footer .footer p {
+  @apply text-xl mt-8;
+}
+
+footer .footer ul {
+  @apply flex;
+}
+
+footer .footer ul li {
+  @apply mx-4;
+}
