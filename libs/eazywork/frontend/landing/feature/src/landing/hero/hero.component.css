@@ -1,0 +1,15 @@
+.hero {
+  @apply flex flex-col items-center justify-center text-center p-12;
+}
+
+.hero h1 {
+  @apply text-5xl md:text-7xl font-bold mb-6;
+}
+
+.hero p {
+  @apply text-2xl mb-4 max-w-2xl;
+}
+
+.hero a {
+  @apply bg-secondary text-primary px-8 py-4 rounded-full hover:bg-quaternary hover:text-secondary;
+}

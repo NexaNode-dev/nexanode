@@ -1,0 +1,35 @@
+.cta {
+  @apply bg-secondary text-primary text-center p-8;
+}
+
+.cta .content {
+  @apply mx-auto w-[45vw];
+}
+
+.cta .content h2 {
+  @apply text-3xl font-bold mb-4;
+}
+
+.cta .content p {
+  @apply mb-6;
+}
+
+.cta .content button {
+  @apply bg-tertiary text-white px-8 py-4 rounded-full;
+}
+
+.cta .dropdown {
+  @apply relative inline-block;
+}
+
+.dropdown-menu {
+  @apply hidden absolute mt-2 bg-white rounded-md shadow-lg w-full;
+}
+
+.dropdown:hover .dropdown-menu {
+  @apply block;
+}
+
+.dropdown-link {
+  @apply block px-4 py-2 text-tertiary hover:bg-primary hover:text-secondary;
+}
