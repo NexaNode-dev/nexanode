@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   animate,
