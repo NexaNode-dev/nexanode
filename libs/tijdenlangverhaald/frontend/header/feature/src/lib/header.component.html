@@ -1,17 +1,24 @@
 <header>
   <section class="header">
-    <img src="assets/tijdenlang.png" alt="Tijdenlangverhaald logo" />
+    <img src="assets/tijdenlang.png" alt="Tijdenlang Verhaald logo" />
     <section class="header-nav">
       <h1><a routerLink="/">Tijdenlang Verhaald</a></h1>
-      <!-- <nav>
+      <nav>
         <ul>
-          <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-          <li><a routerLink="/about" routerLinkActive="active">Over ons</a></li>
-          <li>
-            <a routerLink="/contact" routerLinkActive="active">Contact</a>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/">Home</a>
           </li>
+          <li routerLinkActive="active">
+            <a routerLink="/over-ons">Over Ons</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/aanbod">Aanbod</a>
+          </li>
+          <!-- <li routerLinkActive="active">
+            <a routerLink="/contact">Contact</a>
+          </li> -->
         </ul>
-      </nav> -->
+      </nav>
     </section>
   </section>
 </header>

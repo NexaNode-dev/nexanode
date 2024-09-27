@@ -1,0 +1,40 @@
+main {
+  @apply flex flex-col items-center justify-start h-full w-[80vw] mx-auto p-8;
+}
+
+.intro {
+  @apply p-4 text-center;
+}
+
+.intro h1 {
+  @apply text-6xl mb-8;
+  font-family: 'Great Vibes', cursive;
+}
+
+.intro article {
+  @apply bg-secondary rounded-lg p-6 text-2xl mt-8 max-w-3xl;
+}
+
+.intro article p {
+  @apply m-4;
+}
+
+.intro ul {
+  @apply list-disc list-inside my-4 text-2xl;
+}
+
+.intro ul li {
+  @apply mb-4;
+}
+
+.cta-buttons {
+  @apply mt-8 flex flex-col sm:flex-row gap-4;
+}
+
+.btn {
+  @apply bg-primary text-tertiary py-2 px-6 rounded-full text-xl transition-colors duration-500;
+}
+
+.btn:hover {
+  @apply bg-tertiary text-primary;
+}

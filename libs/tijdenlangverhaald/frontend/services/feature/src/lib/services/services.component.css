@@ -1,0 +1,32 @@
+main {
+  @apply flex flex-col items-center justify-start h-full w-[80vw] mx-auto p-8;
+}
+
+.services {
+  @apply p-4;
+}
+
+.services h1 {
+  @apply text-5xl mb-8;
+  font-family: 'Great Vibes', cursive;
+}
+
+.services h2 {
+  @apply text-4xl mb-6 mt-8;
+}
+
+.services ul {
+  @apply grid grid-cols-1 gap-4 w-full p-4 mb-4;
+}
+
+.services li {
+  @apply p-6 bg-secondary rounded-lg;
+}
+
+.services li h3 {
+  @apply text-2xl mb-2;
+}
+
+.services li p {
+  @apply text-xl;
+}
