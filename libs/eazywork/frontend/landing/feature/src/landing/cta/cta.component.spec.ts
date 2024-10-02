@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CtaComponent } from './cta.component';
+import { EazyworkCtaComponent } from './cta.component';
 
 describe('CtaComponent', () => {
-  let component: CtaComponent;
-  let fixture: ComponentFixture<CtaComponent>;
+  let component: EazyworkCtaComponent;
+  let fixture: ComponentFixture<EazyworkCtaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CtaComponent],
+      imports: [EazyworkCtaComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CtaComponent);
+    fixture = TestBed.createComponent(EazyworkCtaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
