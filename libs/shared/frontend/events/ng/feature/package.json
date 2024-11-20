@@ -2,13 +2,13 @@
   "name": "@nexanode/frontend-events-ng-feature",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "18.0.3",
+    "@angular/core": "18.2.9",
     "@nexanode/frontend-events-ng-state": "0.0.1",
-    "@nx/angular": "19.3.0",
-    "@angular/common": "18.0.3",
+    "@nx/angular": "20.1.2",
+    "@angular/common": "18.2.9",
     "@ng-icons/bootstrap-icons": "^27.4.0",
     "@ng-icons/core": "^27.4.0",
-    "@angular/router": "18.0.3"
+    "@angular/router": "18.2.9"
   },
   "sideEffects": false
 }

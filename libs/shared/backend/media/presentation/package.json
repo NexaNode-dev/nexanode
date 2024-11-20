@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "dependencies": {
     "tslib": "^2.3.0",
-    "@nestjs/common": "10.3.8",
+    "@nestjs/common": "10.4.8",
     "@nexanode/backend-media-application": "0.0.1",
     "@nexanode/domain-interfaces": "0.1.0",
     "class-validator": "^0.14.1",
-    "@nestjs/mapped-types": "2.0.5",
+    "@nestjs/mapped-types": "2.0.6",
     "@nexanode/backend-query-params-util": "0.0.1",
     "@webundsoehne/nest-fastify-file-upload": "^2.2.0"
   },

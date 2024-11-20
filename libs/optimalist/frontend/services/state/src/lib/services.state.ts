@@ -35,7 +35,7 @@ const initialState: ServicesState = {
 };
 
 export const ServicesStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withState(initialState),
   withMethods((store, servicesService = inject(ServicesService)) => ({
     async getServices() {

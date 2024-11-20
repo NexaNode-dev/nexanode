@@ -2,8 +2,8 @@
   "name": "@nexanode/frontend-iam-ng-data-access",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "18.0.3",
-    "@angular/core": "18.0.3",
+    "@angular/common": "18.2.9",
+    "@angular/core": "18.2.9",
     "@nexanode/domain-interfaces": "0.1.0"
   },
   "dependencies": {},

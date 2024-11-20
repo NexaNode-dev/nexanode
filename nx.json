@@ -141,6 +141,9 @@
     },
     "e2e-ci": {
       "cache": true
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": ["^build"]
     }
   },
   "plugins": [
@@ -225,5 +228,6 @@
         ]
       }
     }
-  }
+  },
+  "useLegacyCache": true
 }

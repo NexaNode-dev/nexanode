@@ -31,7 +31,7 @@ const initialState: JobOffersState = {
 };
 
 export const jobOffersStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('JobOffers'),
   withState(initialState),
   withComputed((state) => ({

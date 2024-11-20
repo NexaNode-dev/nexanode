@@ -31,7 +31,7 @@ const initialState: UsersState = {
 };
 
 export const usersStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('Users'),
   withState(initialState),
   withComputed((state) => ({
