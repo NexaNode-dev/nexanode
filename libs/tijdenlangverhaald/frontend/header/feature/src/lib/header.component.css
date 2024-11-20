@@ -1,8 +1,8 @@
 header {
-  @apply bg-pink-100 lg:p-12;
+  @apply bg-secondary lg:p-12;
 }
 
-header .header {
+.header {
   @apply w-full lg:w-[60vw] flex flex-col lg:flex-row items-center lg:items-end justify-between lg:mx-auto;
 }
 
@@ -11,39 +11,59 @@ header .header {
 }
 
 .header-nav {
-  @apply flex flex-col items-center lg:items-end;
+  @apply flex flex-col items-center lg:items-end mt-4 lg:mt-0;
 }
 
 .header-nav h1 {
-  @apply text-3xl lg:text-8xl mt-10 lg:mt-0 lg:ml-12 text-teal-600;
+  @apply text-3xl lg:text-6xl mb-4 lg:mb-6 text-primary;
   font-family: 'Great Vibes', cursive;
 }
 
 .header-nav h1 a {
-  @apply no-underline text-teal-600;
+  @apply no-underline text-primary;
 }
 
 .header-nav nav {
-  @apply w-full px-4;
+  @apply w-full lg:w-auto;
 }
 
 .header-nav nav ul {
-  @apply flex flex-col lg:flex-row lg:justify-between lg:items-end list-none mt-8 lg:mt-12;
+  @apply flex flex-col lg:flex-row lg:justify-end lg:items-center list-none mt-4 lg:mt-6 p-0;
 }
 
 .header-nav nav ul li {
-  @apply text-xl lg:text-4xl py-2 px-4 w-full lg:w-auto text-center lg:text-left rounded-xl border border-solid border-teal-600 mb-2 lg:mb-0 bg-yellow-50;
+  @apply text-xl lg:text-2xl py-2 px-4 lg:px-2 w-full lg:w-auto text-center lg:text-left rounded-lg mb-2 lg:mb-0 bg-tertiary;
 }
 
-.header-nav nav ul li:hover {
-  @apply bg-teal-600;
-  @apply text-yellow-50;
+/* Styling voor actieve menu-items */
+.header-nav nav ul li.active {
+  @apply bg-primary text-tertiary;
+}
+
+.header-nav nav ul li.active a {
+  @apply text-tertiary;
+}
+
+/* Hover-effect voor niet-actieve menu-items */
+.header-nav nav ul li:hover:not(.active) {
+  @apply bg-primary text-tertiary;
+}
+
+.header-nav nav ul li:hover:not(.active) a {
+  @apply text-tertiary;
 }
 
 .header-nav nav ul li a {
-  @apply no-underline text-teal-600;
+  @apply no-underline text-primary;
 }
 
-.header-nav nav ul li a:hover {
-  @apply text-yellow-50;
+@media (min-width: 1024px) {
+  /* Aanpassingen voor grotere schermen */
+  .header-nav h1 {
+    @apply text-6xl;
+  }
+
+  .header-nav nav ul li {
+    @apply mx-2;
+  }
 }
