@@ -28,19 +28,18 @@ type ServiceForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-services-form',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-  ],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-services-form',
+    imports: [
+        MatCardModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+    ],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminServicesFormComponent {
   private readonly store = inject(servicesStore);

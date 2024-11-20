@@ -5,10 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'optimalist-navbar',
-  standalone: true,
-  imports: [MatToolbarModule, MatMenuModule, RouterModule, MatButtonModule],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+    selector: 'optimalist-navbar',
+    imports: [MatToolbarModule, MatMenuModule, RouterModule, MatButtonModule],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {}

@@ -14,19 +14,18 @@ import { bootstrapCheckCircle } from '@ng-icons/bootstrap-icons';
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'nexanode-admin-feature-activate',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatProgressSpinnerModule,
-    RouterLink,
-    JsonPipe,
-    NgIconComponent,
-  ],
-  templateUrl: './activate.component.html',
-  styleUrl: './activate.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [provideIcons({ bootstrapCheckCircle })],
+    selector: 'nexanode-admin-feature-activate',
+    imports: [
+        MatCardModule,
+        MatProgressSpinnerModule,
+        RouterLink,
+        JsonPipe,
+        NgIconComponent,
+    ],
+    templateUrl: './activate.component.html',
+    styleUrl: './activate.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [provideIcons({ bootstrapCheckCircle })]
 })
 export class NexaNodeAdminAuthActivateComponent {
   private readonly store = inject(authStore);

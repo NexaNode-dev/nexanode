@@ -10,12 +10,11 @@ import { NexaNodeAmdinUiListComponent } from '@nexanode/admin-ui-util';
 import { eventsStore } from '@nexanode/frontend-events-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-events-list',
-  standalone: true,
-  imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-events-list',
+    imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminEventsListComponent {
   private readonly store = inject(eventsStore);

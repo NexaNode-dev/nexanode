@@ -26,22 +26,21 @@ type ResetForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-feature-reset',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    RouterLink,
-    NgIconComponent,
-  ],
-  templateUrl: './reset.component.html',
-  styleUrl: './reset.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })],
+    selector: 'nexanode-admin-feature-reset',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        RouterLink,
+        NgIconComponent,
+    ],
+    templateUrl: './reset.component.html',
+    styleUrl: './reset.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })]
 })
 export class NexaNodeAdminAuthResetComponent {
   private readonly store = inject(authStore);

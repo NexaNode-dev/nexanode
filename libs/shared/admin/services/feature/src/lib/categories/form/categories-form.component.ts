@@ -23,19 +23,18 @@ type CategoryForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-services-categories-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    JsonPipe,
-  ],
-  templateUrl: './categories-form.component.html',
-  styleUrl: './categories-form.component.css',
+    selector: 'nexanode-admin-services-categories-form',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        JsonPipe,
+    ],
+    templateUrl: './categories-form.component.html',
+    styleUrl: './categories-form.component.css'
 })
 export class NexanodeAdminServicesCategoriesFormComponent {
   private readonly store = inject(servicesStore);

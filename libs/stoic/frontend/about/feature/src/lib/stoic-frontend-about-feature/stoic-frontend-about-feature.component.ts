@@ -4,12 +4,11 @@ import { faker } from '@faker-js/faker';
 import '@nexanode/frontend-about-layout';
 
 @Component({
-  selector: 'nexanode-stoic-frontend-about-feature',
-  standalone: true,
-  imports: [MatCardModule],
-  templateUrl: './stoic-frontend-about-feature.component.html',
-  styleUrl: './stoic-frontend-about-feature.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'nexanode-stoic-frontend-about-feature',
+    imports: [MatCardModule],
+    templateUrl: './stoic-frontend-about-feature.component.html',
+    styleUrl: './stoic-frontend-about-feature.component.css',
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class StoicFrontendAboutFeatureComponent {
   people = [

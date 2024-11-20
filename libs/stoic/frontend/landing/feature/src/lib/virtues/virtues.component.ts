@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'stoic-virtues',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './virtues.component.html',
-  styleUrl: './virtues.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'stoic-virtues',
+    imports: [CommonModule],
+    templateUrl: './virtues.component.html',
+    styleUrl: './virtues.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VirtuesComponent {
   virtues = [

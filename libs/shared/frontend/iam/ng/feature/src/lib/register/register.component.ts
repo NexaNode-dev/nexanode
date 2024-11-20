@@ -19,12 +19,11 @@ type RegisterForm = {
 };
 
 @Component({
-  selector: 'nexanode-iam-feature-register',
-  standalone: true,
-  imports: [ReactiveFormsModule, NgClass],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-iam-feature-register',
+    imports: [ReactiveFormsModule, NgClass],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterComponent {
   private readonly store = inject(authStore);

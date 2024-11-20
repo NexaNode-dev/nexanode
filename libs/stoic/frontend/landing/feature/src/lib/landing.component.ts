@@ -5,11 +5,10 @@ import { BeliefsComponent } from './beliefs/beliefs.component';
 import { HeroComponent } from './hero/hero.component';
 
 @Component({
-  selector: 'stoic-landing',
-  standalone: true,
-  imports: [IntroComponent, VirtuesComponent, BeliefsComponent, HeroComponent],
-  templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'stoic-landing',
+    imports: [IntroComponent, VirtuesComponent, BeliefsComponent, HeroComponent],
+    templateUrl: './landing.component.html',
+    styleUrl: './landing.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent {}

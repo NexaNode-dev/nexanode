@@ -6,12 +6,11 @@ import {
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'lifeperformance-footer',
-  standalone: true,
-  imports: [NgIconComponent],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [provideIcons({ bootstrapLinkedin, bootstrapInstagram })],
+    selector: 'lifeperformance-footer',
+    imports: [NgIconComponent],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [provideIcons({ bootstrapLinkedin, bootstrapInstagram })]
 })
 export class FooterComponent {}

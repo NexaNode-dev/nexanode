@@ -10,19 +10,18 @@ import {
 } from '@ng-icons/bootstrap-icons';
 
 @Component({
-  selector: 'nexanode-landing',
-  standalone: true,
-  imports: [
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatGridListModule,
-    NgIconComponent,
-  ],
-  viewProviders: [provideIcons({ bootstrapTwitterX, bootstrapLinkedin })],
-  templateUrl: './frontend-nexanode-landing-feature.component.html',
-  styleUrl: './frontend-nexanode-landing-feature.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-landing',
+    imports: [
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatGridListModule,
+        NgIconComponent,
+    ],
+    viewProviders: [provideIcons({ bootstrapTwitterX, bootstrapLinkedin })],
+    templateUrl: './frontend-nexanode-landing-feature.component.html',
+    styleUrl: './frontend-nexanode-landing-feature.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FrontendNexanodeLandingFeatureComponent {
   onCtaClick(): void {

@@ -9,12 +9,11 @@ import { CommonModule } from '@angular/common';
 import { authStore } from '@nexanode/frontend-iam-ng-state';
 
 @Component({
-  selector: 'nexanode-iam-feature-activate',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './activate.component.html',
-  styleUrl: './activate.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-iam-feature-activate',
+    imports: [CommonModule],
+    templateUrl: './activate.component.html',
+    styleUrl: './activate.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ActivateComponent {
   private readonly store = inject(authStore);

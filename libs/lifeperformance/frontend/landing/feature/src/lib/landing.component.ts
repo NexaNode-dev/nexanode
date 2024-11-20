@@ -6,17 +6,16 @@ import { TeamComponent } from './team/team.component';
 import { NexaNodeServicesListComponent } from '@nexanode/frontend-services-ng-feature';
 
 @Component({
-  selector: 'lifeperformance-landing',
-  standalone: true,
-  imports: [
-    IntroComponent,
-    AboutComponent,
-    ServicesComponent,
-    TeamComponent,
-    NexaNodeServicesListComponent,
-  ],
-  templateUrl: './landing.component.html',
-  styleUrl: './landing.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'lifeperformance-landing',
+    imports: [
+        IntroComponent,
+        AboutComponent,
+        ServicesComponent,
+        TeamComponent,
+        NexaNodeServicesListComponent,
+    ],
+    templateUrl: './landing.component.html',
+    styleUrl: './landing.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LandingComponent {}

@@ -13,18 +13,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
-  selector: 'nexanode-admin-job-offers-detail',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    JsonPipe,
-    CurrencyPipe,
-  ],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-job-offers-detail',
+    imports: [
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        JsonPipe,
+        CurrencyPipe,
+    ],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminJobOffersDetailComponent {
   private readonly store = inject(jobOffersStore);

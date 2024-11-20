@@ -4,11 +4,10 @@ import { NexanodeAdminNavigationComponent } from '@nexanode/admin-navigation-fea
 import { authStore } from '@nexanode/frontend-iam-ng-state';
 
 @Component({
-  standalone: true,
-  imports: [RouterOutlet, NexanodeAdminNavigationComponent],
-  selector: 'lifeperformance-admin-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    imports: [RouterOutlet, NexanodeAdminNavigationComponent],
+    selector: 'lifeperformance-admin-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Lifeperformance Admin';

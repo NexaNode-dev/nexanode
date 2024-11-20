@@ -14,20 +14,19 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { authStore } from '@nexanode/frontend-iam-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-navigation',
-  standalone: true,
-  imports: [
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    RouterLink,
-    RouterLinkActive,
-  ],
-  templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-navigation',
+    imports: [
+        MatSidenavModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        RouterLink,
+        RouterLinkActive,
+    ],
+    templateUrl: './navigation.component.html',
+    styleUrl: './navigation.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminNavigationComponent {
   private readonly store = inject(authStore);

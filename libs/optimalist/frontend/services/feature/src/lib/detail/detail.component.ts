@@ -12,12 +12,11 @@ import { RouterModule } from '@angular/router';
 import { MarkdownPipe } from '@nexanode/frontend-markdown-util-pipe';
 
 @Component({
-  selector: 'optimalist-services-detail',
-  standalone: true,
-  imports: [RouterModule, MarkdownPipe],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'optimalist-services-detail',
+    imports: [RouterModule, MarkdownPipe],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetailComponent implements OnInit {
   private store = inject(ServicesStore);

@@ -15,31 +15,24 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'eazywork-benefits',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './benefits.component.html',
-  styleUrl: './benefits.component.css',
-  animations: [
-    trigger('slideInAnimation', [
-      state(
-        'out',
-        style({
-          opacity: 0,
-          transform: 'translateY(20%)',
-        }),
-      ),
-      state(
-        'in',
-        style({
-          opacity: 1,
-          transform: 'translateY(0)',
-        }),
-      ),
-      transition('out => in', animate('600ms ease-out')),
-    ]),
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'eazywork-benefits',
+    imports: [CommonModule],
+    templateUrl: './benefits.component.html',
+    styleUrl: './benefits.component.css',
+    animations: [
+        trigger('slideInAnimation', [
+            state('out', style({
+                opacity: 0,
+                transform: 'translateY(20%)',
+            })),
+            state('in', style({
+                opacity: 1,
+                transform: 'translateY(0)',
+            })),
+            transition('out => in', animate('600ms ease-out')),
+        ]),
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EazyworkBenefitsComponent implements OnInit {
   benefits = [

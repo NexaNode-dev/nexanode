@@ -17,18 +17,17 @@ type ForgotForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-feature-forgot',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-  ],
-  templateUrl: './forgot.component.html',
-  styleUrl: './forgot.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-feature-forgot',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+    ],
+    templateUrl: './forgot.component.html',
+    styleUrl: './forgot.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexaNodeAdminAuthForgotComponent {
   private readonly store = inject(authStore);

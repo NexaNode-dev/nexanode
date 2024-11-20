@@ -5,11 +5,10 @@ import { NexaNodeAmdinUiListComponent } from '@nexanode/admin-ui-util';
 import { servicesStore } from '@nexanode/frontend-services-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-services-list',
-  standalone: true,
-  imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
+    selector: 'nexanode-admin-services-list',
+    imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css'
 })
 export class NexanodeAdminServicesListComponent {
   private readonly store = inject(servicesStore);

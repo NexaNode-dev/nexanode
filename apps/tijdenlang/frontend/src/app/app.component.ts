@@ -5,11 +5,10 @@ import { TijdenlangFooterComponent } from '@nexanode/tijdenlangverhaald-frontend
 import { TijdenlangHeaderComponent } from '@nexanode/tijdenlangverhaald-frontend-header-feature';
 
 @Component({
-  standalone: true,
-  imports: [RouterOutlet, TijdenlangHeaderComponent, TijdenlangFooterComponent],
-  selector: 'tijdenlang-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    imports: [RouterOutlet, TijdenlangHeaderComponent, TijdenlangFooterComponent],
+    selector: 'tijdenlang-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Tijdenlang Verhaald';

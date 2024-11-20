@@ -8,12 +8,11 @@ import {
 import { ContactsStore } from '@nexanode/frontend-contacts-ng-state';
 
 @Component({
-  selector: 'nexanode-contact-form',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-contact-form',
+    imports: [ReactiveFormsModule],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactFormComponent {
   private readonly store = inject(ContactsStore);

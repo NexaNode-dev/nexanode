@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'stoic-beliefs',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './beliefs.component.html',
-  styleUrl: './beliefs.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'stoic-beliefs',
+    imports: [CommonModule],
+    templateUrl: './beliefs.component.html',
+    styleUrl: './beliefs.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BeliefsComponent {
   coreBeliefs = [

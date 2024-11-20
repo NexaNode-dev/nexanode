@@ -21,21 +21,20 @@ type LoginForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-feature-login',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    NgIconComponent,
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })],
+    selector: 'nexanode-admin-feature-login',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        NgIconComponent,
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })]
 })
 export class NexaNodeAdminAuthLoginComponent {
   private readonly store = inject(authStore);

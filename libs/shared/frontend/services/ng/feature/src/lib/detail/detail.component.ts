@@ -8,12 +8,11 @@ import {
 import { servicesStore } from '@nexanode/frontend-services-ng-state';
 
 @Component({
-  selector: 'nexanode-services-detail',
-  standalone: true,
-  imports: [CurrencyPipe],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-services-detail',
+    imports: [CurrencyPipe],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexaNodeServicesDetailComponent {
   private readonly store = inject(servicesStore);

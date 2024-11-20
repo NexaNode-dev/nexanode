@@ -20,12 +20,11 @@ type LoginForm = {
 };
 
 @Component({
-  selector: 'nexanode-iam-feature-login',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-iam-feature-login',
+    imports: [ReactiveFormsModule],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent {
   private readonly store = inject(authStore);

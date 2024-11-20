@@ -15,15 +15,14 @@ import {
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'nexanode-events-list',
-  standalone: true,
-  imports: [RouterLink, DatePipe, CurrencyPipe, NgIconComponent],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [
-    provideIcons({ bootstrapCalendarEvent, bootstrapMap, bootstrapCashStack }),
-  ],
+    selector: 'nexanode-events-list',
+    imports: [RouterLink, DatePipe, CurrencyPipe, NgIconComponent],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [
+        provideIcons({ bootstrapCalendarEvent, bootstrapMap, bootstrapCashStack }),
+    ]
 })
 export class NexanodeEventsListComponent {
   private readonly store = inject(eventsStore);

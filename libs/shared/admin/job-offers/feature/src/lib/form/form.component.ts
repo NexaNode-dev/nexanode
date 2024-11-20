@@ -28,19 +28,18 @@ type JobOfferForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-job-offers-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-  ],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-job-offers-form',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+    ],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminJobOffersFormComponent {
   private readonly store = inject(jobOffersStore);

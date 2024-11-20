@@ -30,20 +30,19 @@ type UserForm = {
 } & { confirmPassword: FormControl<string | null> };
 
 @Component({
-  selector: 'nexanode-admin-users-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    JsonPipe,
-  ],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-users-form',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        JsonPipe,
+    ],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminUsersFormComponent {
   private readonly store = inject(usersStore);

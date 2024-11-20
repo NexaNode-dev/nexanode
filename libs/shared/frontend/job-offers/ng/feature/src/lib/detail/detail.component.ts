@@ -11,12 +11,11 @@ import { jobOffersStore } from '@nexanode/frontend-job-offers-ng-state';
 import { organisationsStore } from '@nexanode/frontend-organisations-ng-state';
 
 @Component({
-  selector: 'nexanode-feature-job-offers-detail',
-  standalone: true,
-  imports: [],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-feature-job-offers-detail',
+    imports: [],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeJobOffersDetailComponent {
   private readonly store = inject(jobOffersStore);

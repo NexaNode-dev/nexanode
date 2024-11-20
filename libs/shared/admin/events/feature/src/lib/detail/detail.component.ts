@@ -13,19 +13,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { eventsStore } from '@nexanode/frontend-events-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-events-detail',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    JsonPipe,
-    CurrencyPipe,
-    DatePipe,
-  ],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-events-detail',
+    imports: [
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        JsonPipe,
+        CurrencyPipe,
+        DatePipe,
+    ],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminEventsDetailComponent {
   private readonly store = inject(eventsStore);

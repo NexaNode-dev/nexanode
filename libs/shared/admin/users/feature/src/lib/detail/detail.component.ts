@@ -13,18 +13,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { usersStore } from '@nexanode/frontend-users-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-users-detail',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    JsonPipe,
-    DatePipe,
-  ],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-users-detail',
+    imports: [
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        JsonPipe,
+        DatePipe,
+    ],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminUsersDetailComponent {
   private readonly store = inject(usersStore);

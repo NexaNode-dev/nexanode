@@ -30,22 +30,21 @@ type EventForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-events-form',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatSelectModule,
-  ],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-events-form',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        MatSelectModule,
+    ],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminEventsFormComponent {
   private readonly store = inject(eventsStore);

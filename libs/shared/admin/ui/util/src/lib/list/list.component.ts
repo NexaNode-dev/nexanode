@@ -31,22 +31,21 @@ interface IGenericElement {
 }
 
 @Component({
-  selector: 'nexanode-admin-ui-list',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    TitleCasePipe,
-  ],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-ui-list',
+    imports: [
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        TitleCasePipe,
+    ],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexaNodeAmdinUiListComponent<T extends IGenericElement> {
   data = input.required<T[]>();

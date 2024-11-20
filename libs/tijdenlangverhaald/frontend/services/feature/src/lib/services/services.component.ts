@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'tijdenlangverhaald-services',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'tijdenlangverhaald-services',
+    imports: [CommonModule],
+    templateUrl: './services.component.html',
+    styleUrl: './services.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TijdenlangverhaaldServicesComponent {
   pageTitle = 'Ons aanbod';

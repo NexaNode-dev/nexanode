@@ -7,17 +7,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { servicesStore } from '@nexanode/frontend-services-ng-state';
 
 @Component({
-  selector: 'nexanode-admin-services-detail',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    JsonPipe,
-    CurrencyPipe,
-  ],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
+    selector: 'nexanode-admin-services-detail',
+    imports: [
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        JsonPipe,
+        CurrencyPipe,
+    ],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css'
 })
 export class NexanodeAdminServicesDetailComponent {
   private readonly store = inject(servicesStore);

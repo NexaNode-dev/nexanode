@@ -10,12 +10,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'nexanode-admin-users-list',
-  standalone: true,
-  imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-admin-users-list',
+    imports: [NexaNodeAmdinUiListComponent, MatProgressSpinnerModule, JsonPipe],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NexanodeAdminUsersListComponent {
   private readonly store = inject(usersStore);

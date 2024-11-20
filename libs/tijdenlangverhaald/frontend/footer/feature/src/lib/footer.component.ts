@@ -10,21 +10,20 @@ import {
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'tijdenlangverhaald-footer',
-  standalone: true,
-  imports: [NgIconComponent],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [
-    provideIcons({
-      bootstrapInstagram,
-      bootstrapLinkedin,
-      bootstrapEnvelopeAtFill,
-      bootstrapGeoAltFill,
-      bootstrapEnvelopeFill,
-      bootstrapFileEarmarkTextFill,
-    }),
-  ],
+    selector: 'tijdenlangverhaald-footer',
+    imports: [NgIconComponent],
+    templateUrl: './footer.component.html',
+    styleUrl: './footer.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [
+        provideIcons({
+            bootstrapInstagram,
+            bootstrapLinkedin,
+            bootstrapEnvelopeAtFill,
+            bootstrapGeoAltFill,
+            bootstrapEnvelopeFill,
+            bootstrapFileEarmarkTextFill,
+        }),
+    ]
 })
 export class TijdenlangFooterComponent {}

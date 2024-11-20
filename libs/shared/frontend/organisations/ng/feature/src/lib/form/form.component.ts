@@ -25,12 +25,11 @@ type OrganisationForm = {
 };
 
 @Component({
-  selector: 'nexanode-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'nexanode-form',
+    imports: [ReactiveFormsModule, JsonPipe],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormComponent {
   private readonly store = inject(organisationsStore);

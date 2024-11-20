@@ -4,11 +4,10 @@ import { FooterComponent } from '@nexanode/lifeperformance-frontend-footer-featu
 import { HeaderComponent } from '@nexanode/lifeperformance-frontend-header-feature';
 
 @Component({
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
-  selector: 'liferperformance-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+    imports: [RouterOutlet, HeaderComponent, FooterComponent],
+    selector: 'liferperformance-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'life. performance';

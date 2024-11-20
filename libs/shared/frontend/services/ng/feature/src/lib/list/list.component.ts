@@ -12,13 +12,12 @@ import '@nexanode/frontend-services-layouts';
 import { mediaStore } from '@nexanode/frontend-media-ng-state';
 
 @Component({
-  selector: 'nexanode-services-list',
-  standalone: true,
-  imports: [],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    selector: 'nexanode-services-list',
+    imports: [],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class NexaNodeServicesListComponent {
   private readonly store = inject(servicesStore);

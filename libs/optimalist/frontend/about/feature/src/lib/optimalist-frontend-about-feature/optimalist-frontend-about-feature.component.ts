@@ -8,20 +8,19 @@ import {
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'optimalist-optimalist-frontend-about-feature',
-  standalone: true,
-  imports: [NgIconComponent],
-  templateUrl: './optimalist-frontend-about-feature.component.html',
-  styleUrl: './optimalist-frontend-about-feature.component.css',
-  viewProviders: [
-    provideIcons({
-      bootstrapLinkedin,
-      bootstrapGithub,
-      bootstrapTwitterX,
-      bootstrapEnvelopeAt,
-    }),
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'optimalist-optimalist-frontend-about-feature',
+    imports: [NgIconComponent],
+    templateUrl: './optimalist-frontend-about-feature.component.html',
+    styleUrl: './optimalist-frontend-about-feature.component.css',
+    viewProviders: [
+        provideIcons({
+            bootstrapLinkedin,
+            bootstrapGithub,
+            bootstrapTwitterX,
+            bootstrapEnvelopeAt,
+        }),
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OptimalistFrontendAboutFeatureComponent {
   sections = [

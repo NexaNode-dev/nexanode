@@ -26,21 +26,20 @@ type RegisterForm = {
 };
 
 @Component({
-  selector: 'nexanode-admin-feature-register',
-  standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatProgressSpinnerModule,
-    NgIconComponent,
-  ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })],
+    selector: 'nexanode-admin-feature-register',
+    imports: [
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        MatProgressSpinnerModule,
+        NgIconComponent,
+    ],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [provideIcons({ bootstrapEye, bootstrapEyeSlash })]
 })
 export class NexaNodeAdminAuthRegisterComponent {
   private readonly store = inject(authStore);

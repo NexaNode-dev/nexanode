@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'lifeperformance-landing-services',
-  standalone: true,
-  imports: [],
-  templateUrl: './services.component.html',
-  styleUrl: './services.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'lifeperformance-landing-services',
+    imports: [],
+    templateUrl: './services.component.html',
+    styleUrl: './services.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ServicesComponent {
   masterclasses = [

@@ -16,20 +16,19 @@ import {
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
 
 @Component({
-  selector: 'nexanode-events-detail',
-  standalone: true,
-  imports: [NgIconComponent, DatePipe, CurrencyPipe],
-  templateUrl: './detail.component.html',
-  styleUrl: './detail.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  viewProviders: [
-    provideIcons({
-      bootstrapCalendarEvent,
-      bootstrapMap,
-      bootstrapCashStack,
-      bootstrapPeople,
-    }),
-  ],
+    selector: 'nexanode-events-detail',
+    imports: [NgIconComponent, DatePipe, CurrencyPipe],
+    templateUrl: './detail.component.html',
+    styleUrl: './detail.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    viewProviders: [
+        provideIcons({
+            bootstrapCalendarEvent,
+            bootstrapMap,
+            bootstrapCashStack,
+            bootstrapPeople,
+        }),
+    ]
 })
 export class NexanodeEventsDetailComponent {
   private readonly store = inject(eventsStore);
