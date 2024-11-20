@@ -52,3 +52,4 @@ storybook-static
 /**/ormconfig.local.ts
 /**/*.sql
 /**/docker-compose.yml
+vite.config.*.timestamp*
