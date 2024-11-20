@@ -6715,12 +6715,12 @@ __metadata:
     jest: "npm:29.7.0"
     jest-environment-jsdom: "npm:29.7.0"
     jest-environment-node: "npm:^29.4.1"
-    jest-preset-angular: "npm:14.1.0"
+    jest-preset-angular: "npm:14.3.2"
     jsdom: "npm:~22.1.0"
     jsonc-eslint-parser: "npm:^2.1.0"
     lit: "npm:^3.1.4"
     marked: "npm:^12.0.1"
-    ng-mocks: "npm:^14.12.1"
+    ng-mocks: "npm:14.13.1"
     ng-packagr: "npm:19.0.0"
     ngx-spinner: "npm:^17.0.0"
     nodemailer: "npm:^6.9.14"
@@ -21497,9 +21497,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-preset-angular@npm:14.1.0":
-  version: 14.1.0
-  resolution: "jest-preset-angular@npm:14.1.0"
+"jest-preset-angular@npm:14.3.2":
+  version: 14.3.2
+  resolution: "jest-preset-angular@npm:14.3.2"
   dependencies:
     bs-logger: "npm:^0.2.6"
     esbuild: "npm:>=0.15.13"
@@ -21518,7 +21518,7 @@ __metadata:
   dependenciesMeta:
     esbuild:
       optional: true
-  checksum: 10c0/6ba09183191dd26ce8d78e6e2361cc3d739c4449a5abea0593d6ea1e2dd7dc9e498e2a17722be29b61ffc729d71f596805ff85be0b52c53c04cfd29ad23033ba
+  checksum: 10c0/ba37802521eba1f8eec78b48f0a8ebbc01a967d6d5946987356f47dbb2e77e1c0ae290978c81246a99063cfcdc3c6f47779bb58c8eecb5de50400452f21d51f6
   languageName: node
   linkType: hard
 
@@ -24725,15 +24725,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ng-mocks@npm:^14.12.1":
-  version: 14.13.0
-  resolution: "ng-mocks@npm:14.13.0"
+"ng-mocks@npm:14.13.1":
+  version: 14.13.1
+  resolution: "ng-mocks@npm:14.13.1"
   peerDependencies:
     "@angular/common": 5.0.0-alpha - 5 || 6.0.0-alpha - 6 || 7.0.0-alpha - 7 || 8.0.0-alpha - 8 || 9.0.0-alpha - 9 || 10.0.0-alpha - 10 || 11.0.0-alpha - 11 || 12.0.0-alpha - 12 || 13.0.0-alpha - 13 || 14.0.0-alpha - 14 || 15.0.0-alpha - 15 || 16.0.0-alpha - 16 || 17.0.0-alpha - 17 || 18.0.0-alpha - 18
     "@angular/core": 5.0.0-alpha - 5 || 6.0.0-alpha - 6 || 7.0.0-alpha - 7 || 8.0.0-alpha - 8 || 9.0.0-alpha - 9 || 10.0.0-alpha - 10 || 11.0.0-alpha - 11 || 12.0.0-alpha - 12 || 13.0.0-alpha - 13 || 14.0.0-alpha - 14 || 15.0.0-alpha - 15 || 16.0.0-alpha - 16 || 17.0.0-alpha - 17 || 18.0.0-alpha - 18
     "@angular/forms": 5.0.0-alpha - 5 || 6.0.0-alpha - 6 || 7.0.0-alpha - 7 || 8.0.0-alpha - 8 || 9.0.0-alpha - 9 || 10.0.0-alpha - 10 || 11.0.0-alpha - 11 || 12.0.0-alpha - 12 || 13.0.0-alpha - 13 || 14.0.0-alpha - 14 || 15.0.0-alpha - 15 || 16.0.0-alpha - 16 || 17.0.0-alpha - 17 || 18.0.0-alpha - 18
     "@angular/platform-browser": 5.0.0-alpha - 5 || 6.0.0-alpha - 6 || 7.0.0-alpha - 7 || 8.0.0-alpha - 8 || 9.0.0-alpha - 9 || 10.0.0-alpha - 10 || 11.0.0-alpha - 11 || 12.0.0-alpha - 12 || 13.0.0-alpha - 13 || 14.0.0-alpha - 14 || 15.0.0-alpha - 15 || 16.0.0-alpha - 16 || 17.0.0-alpha - 17 || 18.0.0-alpha - 18
-  checksum: 10c0/83d6089096e4764d41185dfc121046eb7efb91a3d1d45cbe513a52434cfede533df51f5b2e46ff0e023d47f95cd5896b47eccc8df00d95deb80e447d71dd0655
+  checksum: 10c0/44a07e015e9a47ca7e3ab4283c6f807bc7e6747779b0061894a10dd04645776f26befc68e3ddbf840d33042226364d8d610236946dbbaa4eea5e269a2fd57c15
   languageName: node
   linkType: hard
 
