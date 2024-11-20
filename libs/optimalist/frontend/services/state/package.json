@@ -2,8 +2,8 @@
   "name": "@nexanode/optimalist-frontend-services-state",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/core": "18.0.3",
-    "@ngrx/signals": "18.0.0-rc.1",
+    "@angular/core": "18.2.9",
+    "@ngrx/signals": "18.1.1",
     "@nexanode/optimalist-frontend-services-data-access": "0.0.1"
   },
   "dependencies": {},

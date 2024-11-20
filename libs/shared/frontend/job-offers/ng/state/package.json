@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/core": "^18.0.0",
-    "@angular-architects/ngrx-toolkit": "^0.3.1",
+    "@angular-architects/ngrx-toolkit": "18.1.1",
     "@nexanode/domain-interfaces": "0.1.0",
     "@nexanode/frontend-job-offers-ng-data-access": "0.0.1",
-    "@ngrx/operators": "18.0.0-rc.1",
-    "@ngrx/signals": "18.0.0-rc.1",
+    "@ngrx/operators": "18.1.1",
+    "@ngrx/signals": "18.1.1",
     "rxjs": "^7.8.0"
   },
   "sideEffects": false
