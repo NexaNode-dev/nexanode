@@ -8,6 +8,8 @@ const preview: Preview = {
       providers: [provideAnimations(), provideHttpClient(withFetch())],
     }),
   ],
+
+  tags: ['autodocs']
 };
 
 export default preview;

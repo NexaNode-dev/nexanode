@@ -33,7 +33,7 @@ const initialState: ServicesSate = {
 };
 
 export const servicesStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('services'),
   withState(initialState),
   withComputed((state) => ({

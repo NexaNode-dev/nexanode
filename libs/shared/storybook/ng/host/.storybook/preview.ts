@@ -7,6 +7,7 @@ const preview: Preview = {
       providers: [provideHttpClient(withFetch())],
     }),
   ],
+
   parameters: {
     cssprops: {
       'primary-light': {
@@ -59,6 +60,8 @@ const preview: Preview = {
       },
     },
   },
+
+  tags: ['autodocs']
 };
 
 export default preview;

@@ -34,7 +34,7 @@ const initialState: OrganisationsState = {
 };
 
 export const organisationsStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('organisations'),
   withState(initialState),
   withComputed((state) => ({
