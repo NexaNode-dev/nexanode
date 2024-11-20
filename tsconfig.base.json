@@ -299,11 +299,20 @@
       "@nexanode/testing-store-mocks-ng-util": [
         "libs/shared/testing/store-mocks/ng/util/src/index.ts"
       ],
+      "@nexanode/tijdenlangverhaald-frontend-about-feature": [
+        "libs/tijdenlangverhaald/frontend/about/feature/src/index.ts"
+      ],
       "@nexanode/tijdenlangverhaald-frontend-footer-feature": [
         "libs/tijdenlangverhaald/frontend/footer/feature/src/index.ts"
       ],
       "@nexanode/tijdenlangverhaald-frontend-header-feature": [
         "libs/tijdenlangverhaald/frontend/header/feature/src/index.ts"
+      ],
+      "@nexanode/tijdenlangverhaald-frontend-landing-feature": [
+        "libs/tijdenlangverhaald/frontend/landing/feature/src/index.ts"
+      ],
+      "@nexanode/tijdenlangverhaald-frontend-services-feature": [
+        "libs/tijdenlangverhaald/frontend/services/feature/src/index.ts"
       ],
       "@nexanode/zendens-frontend-landing-feature": [
         "libs/zendens/frontend/landing/feature/src/index.ts"

@@ -2,23 +2,59 @@ footer {
   @apply bg-primary text-tertiary w-full p-16;
 }
 
-footer .footer {
-  @apply w-full lg:w-[70vw] mx-auto py-4 flex justify-between;
+.footer {
+  @apply w-full lg:w-[70vw] mx-auto py-4 flex flex-col lg:flex-row justify-between items-start;
 }
 
-footer .footer h2 {
+.footer-left {
+  @apply mb-8 lg:mb-0;
+}
+
+.footer-left h2 {
   @apply text-5xl mb-4;
   font-family: 'Great Vibes', cursive;
 }
 
-footer .footer p {
-  @apply text-xl mt-8;
+.footer-left p {
+  @apply text-xl mt-4;
 }
 
-footer .footer ul {
+.footer-center {
+  @apply mb-8 lg:mb-0;
+}
+
+.contact-info {
+  @apply list-none p-0;
+}
+
+.contact-info li {
+  @apply flex items-center mb-4;
+}
+
+.contact-info li ng-icon {
+  @apply mr-2 text-secondary;
+}
+
+.contact-info a {
+  @apply text-tertiary underline;
+}
+
+.footer-right {
+  @apply mb-8 lg:mb-0;
+}
+
+.social-media {
   @apply flex;
 }
 
-footer .footer ul li {
+.social-media li {
   @apply mx-4;
+}
+
+.social-media a ng-icon {
+  @apply text-tertiary transition-colors duration-300;
+}
+
+.social-media a ng-icon:hover {
+  @apply text-secondary;
 }
