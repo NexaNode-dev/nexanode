@@ -69,7 +69,7 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
-    "@angular-architects/ngrx-toolkit": "^0.3.1",
+    "@angular-architects/ngrx-toolkit": "18.1.1",
     "@angular-devkit/build-angular": "18.2.9",
     "@angular-devkit/core": "18.2.9",
     "@angular-devkit/schematics": "18.2.9",
