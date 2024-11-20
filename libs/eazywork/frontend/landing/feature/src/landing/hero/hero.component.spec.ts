@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { EazyWorkLandingComponent } from './landing.component';
+import { EazyWorkHeroComponent } from './hero.component';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 
-describe('EazyWorkLandingComponent', () => {
-  let component: EazyWorkLandingComponent;
-  let fixture: ComponentFixture<EazyWorkLandingComponent>;
+describe('EazyWorkHeroComponent', () => {
+  let component: EazyWorkHeroComponent;
+  let fixture: ComponentFixture<EazyWorkHeroComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EazyWorkLandingComponent],
+      imports: [EazyWorkHeroComponent],
       providers: [provideNoopAnimations()],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EazyWorkLandingComponent);
+    fixture = TestBed.createComponent(EazyWorkHeroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,11 @@
+.benefits {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8 p-12;
+}
+
+.benefits div {
+  @apply bg-slate-50 text-primary p-6 rounded-lg shadow-xl text-center;
+}
+
+.benefits div h2 {
+  @apply text-2xl font-semibold mb-4;
+}

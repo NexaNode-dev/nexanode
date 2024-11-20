@@ -1,0 +1,8 @@
+<section class="benefits">
+  @for (benefit of benefits; track $index) {
+    <div [@slideInAnimation]="inView[$index] ? 'in' : 'out'" #benefitSection>
+      <h2>{{ benefit.title }}</h2>
+      <p>{{ benefit.description }}</p>
+    </div>
+  }
+</section>
