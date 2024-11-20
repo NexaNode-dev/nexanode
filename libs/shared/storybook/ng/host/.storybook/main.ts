@@ -1,11 +1,8 @@
 import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
-  stories: [
-    '../../../../../**/ng/feature/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../../../**/ng/ui/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../../../../../{stoic,lifeperformance,tijdenlangverhaald,eazywork}/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-  ],
+  stories: ['../../../../../**/ng/feature/**/*.@(mdx|stories.@(js|jsx|ts|tsx))', '../../../../../**/ng/ui/**/*.@(mdx|stories.@(js|jsx|ts|tsx))', '../../../../../{stoic,lifeperformance,tijdenlangverhaald,eazywork}/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
@@ -13,11 +10,15 @@ const config: StorybookConfig = {
     'storybook-addon-mock',
     'storybook-addon-angular-router',
     '@ljcl/storybook-addon-cssprops',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/angular',
     options: {},
   },
+
+  docs: {}
 };
 
 export default config;

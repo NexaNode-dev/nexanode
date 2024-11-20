@@ -29,7 +29,7 @@ const initialState: EventsState = {
 };
 
 export const eventsStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('Events'),
   withState(initialState),
   withComputed((state) => ({

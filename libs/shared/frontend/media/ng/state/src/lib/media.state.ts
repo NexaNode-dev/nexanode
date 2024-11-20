@@ -39,7 +39,7 @@ const initialState: MediaState = {
 };
 
 export const mediaStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withDevtools('Media'),
   withState(initialState),
   withComputed((state) => ({

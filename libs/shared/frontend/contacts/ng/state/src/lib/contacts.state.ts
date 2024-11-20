@@ -27,7 +27,7 @@ const initialState: ContactsState = {
 };
 
 export const ContactsStore = signalStore(
-  { providedIn: 'root' },
+  { providedIn: 'root', protectedState: false },
   withState(initialState),
   withComputed((state) => ({
     selectedContact: computed(() =>

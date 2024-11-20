@@ -1,7 +1,8 @@
 import type { StorybookConfig } from '@storybook/angular';
 
 const config: StorybookConfig = {
-  stories: ['../../../../../**/admin/**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../../../../../**/admin/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
@@ -9,11 +10,15 @@ const config: StorybookConfig = {
     'storybook-addon-mock',
     'storybook-addon-angular-router',
     '@ljcl/storybook-addon-cssprops',
+    '@chromatic-com/storybook'
   ],
+
   framework: {
     name: '@storybook/angular',
     options: {},
   },
+
+  docs: {}
 };
 
 export default config;
